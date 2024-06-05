@@ -166,6 +166,13 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Power Apps Notification V2",
+      "executionRestrictions": {
+        "apiId": "unknown",
+        "appVer": "3.24052.29",
+        "modifiedOn": "2024-06-05 12:15:39",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
       "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/version-mismatches-special-train/1.0.1670.3520/powerappsnotificationv2/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_powerappsnotificationv2",
       "parameterHints": {},

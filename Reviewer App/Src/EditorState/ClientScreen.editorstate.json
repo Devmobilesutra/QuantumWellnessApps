@@ -118,7 +118,7 @@
       "MetaDataIDKey": "",
       "Name": "BProduct_LabelCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1369,7 +1369,7 @@
       "MetaDataIDKey": "",
       "Name": "btnCancelCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2926,7 +2926,7 @@
       "MetaDataIDKey": "",
       "Name": "btnOkEC",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3268,7 +3268,7 @@
       "MetaDataIDKey": "",
       "Name": "btnOkremoveCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3589,7 +3589,7 @@
       "MetaDataIDKey": "",
       "Name": "btnOkSaveCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10433,7 +10433,7 @@
       "MetaDataIDKey": "",
       "Name": "grpEditSuccessPopup",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10485,7 +10485,7 @@
       "MetaDataIDKey": "",
       "Name": "grpRemovePopupCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 19,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12401,7 +12401,7 @@
       "MetaDataIDKey": "",
       "Name": "imgSuccessCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13127,7 +13127,7 @@
       "MetaDataIDKey": "",
       "Name": "innerRectangleCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13287,7 +13287,7 @@
       "MetaDataIDKey": "",
       "Name": "innerRectangleEC",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15550,7 +15550,7 @@
       "MetaDataIDKey": "",
       "Name": "lblclientAddedCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16182,7 +16182,7 @@
       "MetaDataIDKey": "",
       "Name": "lblClientName",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18996,7 +18996,7 @@
       "MetaDataIDKey": "",
       "Name": "lblremoveCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19941,7 +19941,7 @@
       "MetaDataIDKey": "",
       "Name": "lblSuccessCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20259,7 +20259,7 @@
       "MetaDataIDKey": "",
       "Name": "lblSucessEC",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20577,7 +20577,7 @@
       "MetaDataIDKey": "",
       "Name": "lblupdatesuccessEC",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21852,7 +21852,7 @@
       "MetaDataIDKey": "",
       "Name": "outerectanglesaveCS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22144,7 +22144,7 @@
       "MetaDataIDKey": "",
       "Name": "outerRectgangleEC",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24295,7 +24295,7 @@
       "MetaDataIDKey": "",
       "Name": "txtClientName",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
