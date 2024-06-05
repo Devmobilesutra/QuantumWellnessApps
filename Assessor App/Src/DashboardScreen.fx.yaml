@@ -1,0 +1,1670 @@
+DashboardScreen As screen:
+    OnVisible: |
+        =//Set(VarPopUpExitApp,false);
+        //Set(  varloader,  false);
+        //Set(LogOutTimer, -1800);
+        Set(VarPopupReportIssue,false);
+        Set(
+            VarLoaderReportIssue,
+            false
+        );
+        Set(
+            VarReportIssue,
+            false
+        );
+        UpdateIf(
+            gcProjectAssignment,
+            isCompleted = "Inprogress1",
+            {isCompleted: "Inprogress"}
+        );
+        SaveData(
+            gcProjectAssignment,
+            "localprojectassignment"
+        );
+
+    ctnMainDS As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        Width: =Parent.Width
+        ZIndex: =3
+
+        ctnHeaderDS As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            FillPortions: =0
+            Height: =81
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            PaddingRight: =10
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Rectangle1_16 As rectangle:
+                BorderColor: =RGBA(230, 230, 230, 1)
+                BorderThickness: =1
+                Fill: =RGBA(230, 230, 230, 1)
+                Height: =1
+                Width: =Parent.Width
+                Y: =80
+                ZIndex: =10
+
+            Image2_33 As image:
+                Height: =40
+                Image: =If(Connection.Connected,'internet green icon-1x','internet-1x')
+                Width: =30
+                X: =lblAssessmentPS_1.X+lblAssessmentPS_1.Width+20
+                Y: =25
+                ZIndex: =11
+
+            Image2_34 As image:
+                Height: =40
+                Image: ='refresh-1x'
+                OnSelect: |
+                    =UpdateIf(
+                        GcTraceLog,
+                        VarDebug = true,
+                        {
+                            Path: First(GcTraceLog).Path & "/Sync:Start=" & Text(
+                                Now(),
+                                "mm-dd-yy hh:mm:ss am/pm"
+                            )
+                        }
+                    );
+                    /*SaveData(
+                        GcTraceLog,
+                        "localGcTraceLog"
+                    );*/
+                    //get new assignment and completed assignment updates
+                    If(
+                        //here we check network is available or not
+                        Connection.Connected,
+                        //if assignment, unit , bank collection is empty then get data from server  
+                        If(
+                            CountRows(gcProjectAssignment) < 1 || CountRows(GC_bankAssessment) < 1 || CountRows(GC_unitAssessment) < 1,
+                            Set(
+                                popupDashSyncText,
+                                "Getting assignment assigned to you. "
+                            );
+                            Set(
+                                popupDashSyncSuccess,
+                                true
+                            );
+                            Concurrent(
+                    //client master data
+                                ClearCollect(
+                                    gcClient,
+                                    schindlerClients
+                                );
+                                SaveData(
+                                    gcClient,
+                                    "localclient"
+                                );
+                                ,
+                       //Banks master data
+                                ClearCollect(
+                                    gcBank,
+                                    schindlerBanks
+                                );
+                                SaveData(
+                                    gcBank,
+                                    "localbank"
+                                );
+                                ,
+                        //master units data
+                                ClearCollect(
+                                    gcBankunit,
+                                    bankUnits
+                                );
+                                SaveData(
+                                    gcBankunit,
+                                    "localgcbankunit"
+                                );
+                                ,
+                        //assignment data 
+                                ClearCollect(
+                                    gcProjectAssignmentAdd,
+                                    Filter(
+                                        assignments,
+                                        assessorId = varLoggedAssessor && isCompleted <> "Completed"
+                                    )
+                                );
+                                ClearCollect(
+                                    gcProjectAssignment,
+                                    AddColumns(
+                                        gcProjectAssignmentAdd,
+                                        AstatusUpdate,
+                                        2
+                                    )
+                                );
+                                ,
+                            //assignment unit
+                                ClearCollect(
+                                    gcAssignmentunit,
+                                    Filter(
+                                        assignmentUnits,
+                                        assignmentId.assessorId = varLoggedAssessor
+                                    )
+                                );
+                                SaveData(
+                                    gcAssignmentunit,
+                                    "localassignmentunits"
+                                );
+                                ,
+                            //bank Assessment
+                                ClearCollect(
+                                    GC_bankAssessmentAdd,
+                                    Filter(
+                                        bankAssessment,
+                                        assignmentId.assessorId = varLoggedAssessor && Assessment_Status <> "Completed"
+                                    )
+                                );
+                                ClearCollect(
+                                    GC_bankAssessment,
+                                    AddColumns(
+                                        GC_bankAssessmentAdd,
+                                        BstatusUpdate,
+                                        2
+                                    )
+                                );
+                                ,
+                            //unit assessment
+                                ClearCollect(
+                                    GC_unitAssessmentAdd,
+                                    Filter(
+                                        unitAssessment,
+                                        assignmentId.assessorId = varLoggedAssessor && Assessment_status <> "Completed"
+                                    )
+                                );
+                                ClearCollect(
+                                    GC_unitAssessment,
+                                    AddColumns(
+                                        GC_unitAssessmentAdd,
+                                        UstatusUpdate,
+                                        2
+                                    )
+                                );
+                            );
+                            //concurrent close
+                    ,
+                            If(
+                            //here we check assignment,bankassessment,unitassessment collection have any unsend data or not,if yes then gives message "Assessement records saved in your device has not yet submitted to server .Please submit and try again." otherwise get new assignment related data
+                                IsBlank(
+                                    LookUp(
+                                        gcProjectAssignment,
+                                        AstatusUpdate = 0 || AstatusUpdate = 1
+                                    )
+                                ) && IsBlank(
+                                    LookUp(
+                                        GC_bankAssessment,
+                                        BstatusUpdate = 0 || BstatusUpdate = 1
+                                    )
+                                ) && IsBlank(
+                                    LookUp(
+                                        GC_unitAssessment,
+                                        UstatusUpdate = 0 || UstatusUpdate = 1
+                                    )
+                                ),
+                                Set(
+                                    popupDashSyncText,
+                                    "Getting new assignment assigned to you. "
+                                );
+                                Set(
+                                    popupDashSyncSuccess,
+                                    true
+                                );
+                                Concurrent(
+                    //client master data
+                                    ClearCollect(
+                                        gcClient,
+                                        schindlerClients
+                                    );
+                                    SaveData(
+                                        gcClient,
+                                        "localclient"
+                                    );
+                                    ,
+                       //Banks master data
+                                    ClearCollect(
+                                        gcBank,
+                                        schindlerBanks
+                                    );
+                                    SaveData(
+                                        gcBank,
+                                        "localbank"
+                                    );
+                                    ,
+                        //master units data
+                                    ClearCollect(
+                                        gcBankunit,
+                                        bankUnits
+                                    );
+                                    SaveData(
+                                        gcBankunit,
+                                        "localgcbankunit"
+                                    );
+                                    ,
+                        //assignment data 
+                                    ClearCollect(
+                                        gcProjectAssignmentAdd,
+                                        Filter(
+                                            assignments,
+                                            assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    ClearCollect(
+                                        gcProjectAssignment,
+                                        AddColumns(
+                                            gcProjectAssignmentAdd,
+                                            AstatusUpdate,
+                                            2
+                                        )
+                                    );
+                                    ,
+                            //assignment unit
+                                    ClearCollect(
+                                        gcAssignmentunit,
+                                        Filter(
+                                            assignmentUnits,
+                                            assignmentId.assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    SaveData(
+                                        gcAssignmentunit,
+                                        "localassignmentunits"
+                                    );
+                                    ,
+                            //bank Assessment
+                                    ClearCollect(
+                                        GC_bankAssessmentAdd,
+                                        Filter(
+                                            bankAssessment,
+                                            assignmentId.assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    ClearCollect(
+                                        GC_bankAssessment,
+                                        AddColumns(
+                                            GC_bankAssessmentAdd,
+                                            BstatusUpdate,
+                                            2
+                                        )
+                                    );
+                                    ,
+                            //unit assessment
+                                    ClearCollect(
+                                        GC_unitAssessmentAdd,
+                                        Filter(
+                                            unitAssessment,
+                                            assignmentId.assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    ClearCollect(
+                                        GC_unitAssessment,
+                                        AddColumns(
+                                            GC_unitAssessmentAdd,
+                                            UstatusUpdate,
+                                            2
+                                        )
+                                    );
+                                );
+                                //concurrent close
+                    //delete completed assignment data from localcache 
+                    ForAll(
+                                    Filter(
+                                        gcProjectAssignment,
+                                        isCompleted = "Completed"
+                                    ) As i,
+                                    RemoveIf(
+                                        GC_bankAssessment,
+                                        assignmentId.Id = i.Id
+                                    );
+                                    RemoveIf(
+                                        GC_unitAssessment,
+                                        assignmentId.Id = i.Id
+                                    );
+                                    RemoveIf(
+                                        GcSectionAssessment,
+                                        assignmentId.Id = i.Id
+                                    );
+                                    RemoveIf(
+                                        GcCheckpointAssessment,
+                                        assignmentId.Id = i.Id
+                                    );
+                                    RemoveIf(
+                                        GC_checkpointItemAssessment,
+                                        assignmentId.Id = i.Id
+                                    );
+                                    RemoveIf(
+                                        GC_checkpointItem_ActionItem,
+                                        assignmentId.Id = i.Id
+                                    );
+                                    RemoveIf(
+                                        GC_checkpointItem_Images,
+                                        assignmentId.Id = i.Id
+                                    );
+                                );
+                                RemoveIf(
+                                    gcProjectAssignment,
+                                    isCompleted = "Completed"
+                                );
+                                
+                    //save data to localcache
+                    SaveData(
+                                    gcProjectAssignment,
+                                    "localprojectassignment"
+                                );
+                                SaveData(
+                                    GC_bankAssessment,
+                                    "localbankassessment"
+                                );
+                                SaveData(
+                                    GC_unitAssessment,
+                                    "localunitassessment"
+                                );
+                       /* SaveData(
+                            GcSectionAssessment,
+                            "localsectionassessment"
+                        );
+                        SaveData(
+                            GcCheckpointAssessment,
+                            "localcheckpointassessment"
+                        );
+                        SaveData(
+                            GC_checkpointItemAssessment,
+                            "localcheckpointitemassessment"
+                        );
+                        SaveData(
+                            GC_checkpointItem_ActionItem,
+                            "localcheckpointitemactionitem"
+                        );
+                        SaveData(
+                            GC_checkpointItem_Images,
+                            "localcheckpointitemimage"
+                        );*/
+                    Trace(
+                                    First(gcAssignmentunit).bankUnitId.unitNumber,
+                                    TraceSeverity.Information
+                                );
+                                ,
+                                Set(
+                                    popupDashSyncText,
+                                    "Assessement records saved in your device has not yet submitted to server .Please submit and try again."
+                                );
+                                Set(
+                                    popupDashSyncSuccess,
+                                    true
+                                );
+                            );
+                        );
+                        //assignment blank if
+                    ,
+                        Set(
+                            popupDashSyncText,
+                            "Network not available,Please check your network connection."
+                        );
+                        Set(
+                            popupDashSyncSuccess,
+                            true
+                        );
+                        
+                    );
+                    //update Inprogress1 status to Inprogress to fix dashboard update issue
+                    UpdateIf(
+                        gcProjectAssignment,
+                        isCompleted = "Inprogress1",
+                        {isCompleted: "Inprogress"}
+                    );
+                    SaveData(
+                        gcProjectAssignment,
+                        "localprojectassignment"
+                    );
+                    Clear(gcProjectAssignmentAdd);
+                    Clear(GC_bankAssessmentAdd);
+                    Clear(GC_unitAssessmentAdd);
+                    
+                    //Log Update
+                    UpdateIf(
+                        GcTraceLog,
+                        VarDebug = true,
+                        {
+                            Path: First(GcTraceLog).Path & "/Sync:End=" & Text(
+                                Now(),
+                                "mm-dd-yy hh:mm:ss am/pm"
+                            )
+                        }
+                    );
+                    /*SaveData(
+                        GcTraceLog,
+                        "localGcTraceLog"
+                    );*/
+                Visible: =Connection.Connected=true
+                Width: =40
+                X: =Image2_33.X+Image2_33.Width+20
+                Y: =27
+                ZIndex: =12
+
+            imgLogoPS_1 As image:
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =80
+                Image: ='schindler-logo'
+                PaddingBottom: =5
+                PaddingLeft: =2
+                PaddingRight: =1
+                PaddingTop: =5
+                Width: =ctnHeaderDS.Width/12
+                ZIndex: =13
+
+            lblAssessmentPS_1 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =FontWeight.Bold
+                Height: =81
+                Size: =Header.HeaderFontSize
+                Text: |-
+                    =//"Assignments"
+                    LookUp(
+                     'Environment Variable Values',
+                     'Environment Variable Definition'.'Schema Name' = "shlaf_AssessorAppName",
+                     Value
+                    )
+                Width: =If(Parent.Width>821,Parent.Width/1.95,Parent.Width/2)
+                X: =imgLogoPS_1.Width
+                ZIndex: =14
+
+            imgUserHeaderPS_1 As image:
+                Height: =50
+                Image: =userImg
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =ctnHeaderPS.Height/0.10
+                RadiusBottomRight: =ctnHeaderPS.Height/0.10
+                RadiusTopLeft: =ctnHeaderPS.Height/0.10
+                RadiusTopRight: =ctnHeaderPS.Height/0.10
+                Width: =50
+                X: =Image2_34.X+Image2_34.Width+20
+                Y: =18
+                ZIndex: =15
+
+            lblUsernameHeaderPS_1 As label:
+                Font: =Header.HeaderFont
+                FontWeight: =FontWeight.Bold
+                Height: =80
+                PaddingLeft: =20
+                Size: =Header.HeaderUserFontSize-2
+                Text: =username
+                Width: =ctnHeaderDS.Width/5.08
+                X: =imgUserHeaderPS_1.X+imgUserHeaderPS_1.Width
+                ZIndex: =16
+
+        ctnMiddleDS As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =Parent.Height/3
+            LayoutGap: =10
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =20
+            PaddingLeft: =20
+            PaddingRight: =20
+            PaddingTop: =20
+            Width: =Parent.Width
+            Y: =ctnHeaderDS.Height
+            ZIndex: =3
+
+            ctnProgressProjects As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =AllScreensCSS.RActiveColor
+                BorderThickness: =3
+                Fill: =AllScreensCSS.RActiveColor
+                FillPortions: =0
+                Height: |-
+                    =If(
+                        App.Width < 1000,
+                        Parent.Height / 1.8,
+                        App.Width > 1000 && App.Width < 1200,
+                        Parent.Height / 1.2,
+                        Parent.Height / 1.2
+                    )
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                Width: =Parent.Width/2.15
+                Y: =ctnHeaderDS.Height
+                ZIndex: =2
+
+                lblProgressProjects As label:
+                    AutoHeight: =true
+                    Color: =AllScreensCSS.RColorWhite
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height/3
+                    Size: |-
+                        =//Dashboard.DFontSize
+                        If(
+                            App.Width < 1000,
+                            20, 
+                            App.Width > 1000 && App.Width < 1200,
+                           24,
+                             26
+                        )
+                    Text: ="In-progress Assignments"
+                    Width: =Parent.Width/1.09
+                    X: =Parent.Width/21
+                    Y: =Parent.Height/8
+                    ZIndex: =1
+
+                lblCountProgressProjects As label:
+                    Color: =AllScreensCSS.RColorWhite
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height/3
+                    Size: |
+                        =If(App.Height<800,
+                        //Dashboard.DCountSize,
+                        18,30)
+                    Text: |-
+                        =//To display Inprogress assignment count of Specific assessor 
+                        CountRows(
+                            (Filter(
+                                gcProjectAssignment,
+                                assessorId = varLoggedAssessor && isCompleted = "Inprogress"
+                            ))
+                        )
+                    Width: =Parent.Width/2
+                    X: =Parent.Width/21
+                    Y: =lblProgressProjects.Y+lblProgressProjects.Height+10
+                    ZIndex: =2
+
+                imgProgressprojects As image:
+                    Height: =Parent.Height/3
+                    Image: =Vector
+                    Width: =Parent.Width/5
+                    X: =Parent.Width/1.3
+                    Y: =lblProgressProjects.Y+lblProgressProjects.Height+10
+                    ZIndex: =3
+
+                btnInprogressproject As button:
+                    BorderColor: =
+                    BorderThickness: =
+                    Color: |+
+                        =RGBA(0,0,0,0)
+                        
+                    DisabledBorderColor: =RGBA(0,0,0,0)
+                    DisabledColor: =RGBA(0,0,0,0)
+                    DisabledFill: =RGBA(0,0,0,0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =RGBA(0,0,0,0)
+                    FocusedBorderThickness: =
+                    Height: =ctnProgressProjects.Height
+                    HoverBorderColor: =RGBA(0,0,0,0)
+                    HoverColor: =RGBA(0,0,0,0)
+                    HoverFill: =ColorFade(RGBA(0,0,0,0),-20%)
+                    OnSelect: |
+                        =Set(
+                            comp,
+                            false
+                        );
+                        Set(
+                            upcomp,
+                            false
+                        );
+                        Set(
+                            inpro,
+                            true
+                        );
+                        //Log Update
+                        UpdateIf(
+                            GcTraceLog,
+                            VarDebug = true,
+                            {
+                                Path: First(GcTraceLog).Path & "/Inprogress=" & Text(
+                                    Now(),
+                                    "mm-dd-yy hh:mm:ss am/pm"
+                                )
+                            }
+                        );
+                        /*SaveData(
+                            GcTraceLog,
+                            "localGcTraceLog"
+                        );*/
+                        Navigate(ProjectScreen);
+                    PressedBorderColor: =RGBA(0,0,0,0)
+                    PressedColor: =RGBA(0,0,0,0)
+                    PressedFill: =RGBA(0,0,0,0)
+                    Text: =
+                    Width: =ctnProgressProjects.Width
+                    X: =0.34920634920632665
+                    ZIndex: =4
+
+            ctnUpcomingProjects As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =AllScreensCSS.RActiveColor
+                BorderThickness: =3
+                Fill: =AllScreensCSS.RActiveColor
+                FillPortions: =0
+                Height: |-
+                    =If(
+                        App.Width < 1000,
+                        Parent.Height / 1.8,
+                        App.Width > 1000 && App.Width < 1200,
+                        Parent.Height / 1.2,
+                        Parent.Height / 1.2
+                    )
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                Width: =Parent.Width/2.15
+                Y: =ctnHeaderDS.Height
+                ZIndex: =3
+
+                lblUpcomingProjects As label:
+                    AutoHeight: =true
+                    Color: =AllScreensCSS.RColorWhite
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height/3
+                    Size: |-
+                        =If(
+                            App.Width < 1000,
+                            20, 
+                            App.Width > 1000 && App.Width < 1200,
+                           24,
+                             26
+                        )
+                    Text: ="Upcoming Assignments"
+                    Width: =Parent.Width/1.09
+                    X: =Parent.Width/21
+                    Y: =Parent.Height/8
+                    ZIndex: =1
+
+                lblCountUpcomingProjects As label:
+                    Color: =AllScreensCSS.RColorWhite
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height/3
+                    Size: |
+                        =If(App.Height<800,
+                        //Dashboard.DCountSize,
+                        18,30)
+                    Text: |-
+                        =//To display Upcomming assignment count of Specific assessor 
+                        CountRows(
+                            (Filter(
+                                gcProjectAssignment,
+                                assessorId = varLoggedAssessor && isCompleted = "Upcomming" || isCompleted = "Inprogress1"
+                            ))
+                        )
+                    Width: =Parent.Width/2
+                    X: =Parent.Width/21
+                    Y: =lblUpcomingProjects.Y+lblUpcomingProjects.Height+10
+                    ZIndex: =2
+
+                imgUpcomingProjects As image:
+                    Height: =Parent.Height/3
+                    Image: =Vector22
+                    Width: =Parent.Width/5
+                    X: =Parent.Width/1.3
+                    Y: =lblUpcomingProjects.Y+lblUpcomingProjects.Height+10
+                    ZIndex: =3
+
+                iconUpcomingprojectindicator As circle:
+                    Fill: =RGBA(255, 191, 0, 1)
+                    Height: =20
+                    Visible: |
+                        =If(CountRows((Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Upcomming")))>0,true,false)
+                    Width: =20
+                    X: =Parent.Width-40
+                    Y: =20
+                    ZIndex: =4
+
+                btnUpcomingProjects As button:
+                    BorderColor: |
+                        =
+                    BorderThickness: =
+                    Color: |+
+                        =RGBA(0,0,0,0)
+                        
+                    DisabledBorderColor: =RGBA(0,0,0,0)
+                    DisabledColor: =RGBA(0,0,0,0)
+                    DisabledFill: =RGBA(0,0,0,0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =RGBA(0,0,0,0)
+                    FocusedBorderThickness: =
+                    Height: =ctnUpcomingProjects.Height
+                    HoverBorderColor: =RGBA(0,0,0,0)
+                    HoverColor: =RGBA(0,0,0,0)
+                    HoverFill: =ColorFade(RGBA(0,0,0,0),-20%)
+                    OnSelect: |
+                        =Set(
+                            comp,
+                            false
+                        );
+                        Set(
+                            inpro,
+                            false
+                        );
+                        Set(
+                            upcomp,
+                            true
+                        );
+                        //Log Update
+                        UpdateIf(
+                            GcTraceLog,
+                            VarDebug = true,
+                            {
+                                Path: First(GcTraceLog).Path & "/Upcomming=" & Text(
+                                    Now(),
+                                    "mm-dd-yy hh:mm:ss am/pm"
+                                )
+                            }
+                        );
+                        /*SaveData(
+                            GcTraceLog,
+                            "localGcTraceLog"
+                        );*/
+                        Navigate(ProjectScreen);
+                    PressedBorderColor: =RGBA(0,0,0,0)
+                    PressedColor: =RGBA(0,0,0,0)
+                    PressedFill: =RGBA(0,0,0,0)
+                    Text: =
+                    Width: =ctnUpcomingProjects.Width
+                    X: =0.34920634920632665
+                    ZIndex: =5
+
+        ctnlpdimg As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Center
+            FillPortions: =0
+            Height: |
+                =If(
+                    App.Height < 800,
+                    Parent.Height/1.5,
+                    Parent.Height/2
+                )
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =20
+            Width: =Parent.Width-80
+            ZIndex: =4
+
+            Button2 As button:
+                AlignInContainer: =AlignInContainer.Start
+                BorderThickness: =0
+                Fill: =AllScreensCSS.RActiveColor
+                FocusedBorderThickness: =0
+                Height: =50
+                HoverFill: |-
+                    =Self.Fill
+                    //ColorFade(RGBA(56, 96, 178, 1), -20%)
+                OnSelect: |-
+                    =
+                    Set(VarPopUpExitApp,true);
+                PaddingLeft: =0
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                Text: ="Exit App"
+                Visible: =false
+                Width: =190
+                ZIndex: =1
+
+            Label2 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Size: =14
+                Text: |-
+                    ="This app will allow only " & First(gcCollectionCapCounts).SavedImageCount & " unsubmitted images across all assignments. " & CountRows(
+                        Filter(
+                            GC_checkpointItem_Images,
+                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1
+                        )
+                    ) & " unsubmitted images are already stored. "
+                Width: =Parent.Width-40
+                ZIndex: =2
+
+            Button2_3 As button:
+                AlignInContainer: =AlignInContainer.Start
+                BorderThickness: =0
+                DisplayMode: =If(Connection.Connected, DisplayMode.Edit,DisplayMode.Disabled)
+                Fill: =AllScreensCSS.RActiveColor
+                FocusedBorderThickness: =//4
+                HoverBorderColor: =Self.Fill
+                HoverColor: =Self.Color
+                HoverFill: =//ColorFade(Self.Fill, -20%)
+                OnSelect: |
+                    =//Log Update
+                    UpdateIf(
+                        GcTraceLog,
+                        VarDebug = true,
+                        {
+                            Path: First(GcTraceLog).Path & "/ReportIssue=" & Text(
+                                Now(),
+                                "mm-dd-yy hh:mm:ss am/pm"
+                            )
+                        }
+                    );
+                    /*SaveData(
+                        GcTraceLog,
+                        "localGcTraceLog"
+                    );*/
+                    //check collection is empty or not ? if empty then load data from local cache 
+                    If(
+                        IsEmpty(GC_checkpointItemAssessment) && IsEmpty(GC_checkpointItem_ActionItem) && IsEmpty(GC_checkpointItem_Images),
+                        Concurrent(
+                            LoadData(
+                                GC_checkpointItemAssessment,
+                                "localcheckpointitemassessment",
+                                true
+                            );
+                            ,
+                            LoadData(
+                                GC_checkpointItem_ActionItem,
+                                "localcheckpointitemactionitem",
+                                true
+                            );
+                            ,
+                            LoadData(
+                                GC_checkpointItem_Images,
+                                "localcheckpointitemimage",
+                                true
+                            );
+                        );
+                        
+                    );
+                    Set(
+                        VarReportIssue,
+                        true
+                    );
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                Text: |-
+                    =//CountRows(tempReportIssueAssessment) & CountRows(GC_checkpointItemAssessment)  &
+                     " Report Issue" 
+                Width: =200
+                ZIndex: =4
+
+            imgGraphicDS As image:
+                AlignInContainer: =AlignInContainer.End
+                Height: =Parent.Height-100
+                Image: ='lift image-1x'
+                Width: =Parent.Width-500
+                ZIndex: =5
+
+        ctnlpdname As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =20
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =5
+
+    imgloaderDSExit As image:
+        Fill: =RGBA(0, 0, 0, 0.29)
+        Height: =Parent.Height
+        Image: ='ajax-loader 2'
+        ImagePosition: =ImagePosition.Center
+        Visible: =//varloader = true 
+        Width: =Parent.Width
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =5
+
+    grSyncSuccessDS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        iconOuterRectangleDS As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =popupDashSyncSuccess =true
+            Width: =Parent.Width
+            ZIndex: =8
+
+        iconInnerRectsngleDS As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =popupDashSyncSuccess =true
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =9
+
+        imgInfoDS As image:
+            Height: =52
+            Image: =info
+            Visible: =popupDashSyncSuccess =true
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =iconInnerRectsngleDS.Y+20
+            ZIndex: =10
+
+        LblTextDS As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =100
+            Size: =15
+            Text: =popupDashSyncText
+            Visible: =popupDashSyncSuccess =true
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =imgInfoDS.Y+imgInfoDS.Height
+            ZIndex: =12
+
+        btnSuccessDS As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |+
+                =Set(
+                    popupDashSyncSuccess,
+                    false
+                );
+                
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: =popupDashSyncSuccess =true
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2
+            Y: =LblTextDS.Y+ LblTextDS.Height+5
+            ZIndex: =13
+
+    Grp_exit_Confirmation As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Rectangle1_18 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =VarPopUpExitApp
+            Width: =Parent.Width
+            ZIndex: =17
+
+        Rectangle2_15 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =280
+            Visible: =VarPopUpExitApp
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =18
+
+        Image2_25 As image:
+            Height: =52
+            Image: =info
+            Visible: =VarPopUpExitApp
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Rectangle2_15.Y+20
+            ZIndex: =19
+
+        Label2_17 As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Bold
+            Height: =100
+            Size: =15
+            Text: ="Are you sure you want to exit ?"
+            Visible: =VarPopUpExitApp
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Image2_25.Y+ Image2_25.Height+2
+            ZIndex: =20
+
+        btnExitOk As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |-
+                =/*Set(
+                    VarPopUpExitApp,
+                    false
+                );
+                Set(
+                    varloader,
+                    true
+                );
+                SaveData(
+                    gcProjectAssignment,
+                    "localprojectassignment"
+                );
+                SaveData(
+                    GC_bankAssessment,
+                    "localbankassessment"
+                );
+                SaveData(
+                    GC_unitAssessment,
+                    "localunitassessment"
+                );
+                SaveData(
+                    GcSectionAssessment,
+                    "localsectionassessment"
+                );
+                SaveData(
+                    GcCheckpointAssessment,
+                    "localcheckpointassessment"
+                );
+                SaveData(
+                    GC_checkpointItemAssessment,
+                    "localcheckpointitemassessment"
+                );
+                SaveData(
+                    GC_checkpointItem_ActionItem,
+                    "localcheckpointitemactionitem"
+                );
+                SaveData(
+                    GC_checkpointItem_Images,
+                    "localcheckpointitemimage"
+                );
+                SaveData(
+                    gcActionItemDelete,
+                    "localgcActionItemDelete"
+                );
+                SaveData(
+                    gcImageDelete,
+                    "localgcImageDelete"
+                );
+                Set(
+                    varloader,
+                    false
+                );
+                Exit()*/
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: =VarPopUpExitApp
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2.3
+            Y: =Label2_17.Y+ Label2_17.Height+10
+            ZIndex: =21
+
+        btnSuccess_12 As button:
+            BorderColor: =RGBA(75, 125, 6, 1)
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverBorderColor: =RGBA(75, 125, 6, 1)
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: =Set(VarPopUpExitApp,false);
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Cancel"
+            Visible: =VarPopUpExitApp
+            Width: =120
+            X: =btnExitOk.X+btnExitOk.Width+20
+            Y: =Label2_17.Y+ Label2_17.Height+10
+            ZIndex: =22
+
+    grExitAppLoadder As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        iconOuterRectangleBS_2 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =varloader
+            Width: =Parent.Width
+            ZIndex: =23
+
+        iconInnerRectangleBS_2 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =varloader
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =24
+
+        imgloaderBS_2 As image:
+            Height: =52
+            Image: ='ajax-loader 2'
+            Visible: =varloader
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =iconInnerRectangleBS_2.Y+20
+            ZIndex: =25
+
+        lblSyncSuccessPatchBS_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(14, 161, 26, 1)
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Bold
+            PaddingBottom: =0
+            Size: =18
+            Text: ="Saving..."
+            Visible: =varloader
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =imgloaderBS_2.Y+imgloaderBS_2.Height+10
+            ZIndex: =26
+
+        lblsyncSuccessBS_2 As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =140
+            Size: =15
+            Text: ="Saving data to your device cache. Please do not kill the App."
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =varloader
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =lblSyncSuccessPatchBS_2.Y+lblSyncSuccessPatchBS_2.Height+10
+            ZIndex: =27
+
+    imgLoaderReportIssue As image:
+        Fill: =RGBA(0, 0, 0, 0.29)
+        Height: =Parent.Height
+        Image: ='ajax-loader 2'
+        ImagePosition: =ImagePosition.Center
+        Visible: =VarLoaderReportIssue = true 
+        Width: =Parent.Width
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =34
+
+    Grp_ReportIssue As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =34
+
+        Rectangle1 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =VarReportIssue
+            Width: =Parent.Width
+            ZIndex: =28
+
+        Rectangle2 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =405
+            Visible: =VarReportIssue
+            Width: =700
+            X: =(Parent.Width -Self.Width)/2
+            Y: =(Parent.Height - Self.Height)/2
+            ZIndex: =29
+
+        Container2_1 As groupContainer.horizontalAutoLayoutContainer:
+            Height: =50
+            LayoutMode: =LayoutMode.Auto
+            Visible: =VarReportIssue
+            Width: =Rectangle2.Width
+            X: =Rectangle2.X
+            Y: =Rectangle2.Y+10
+            ZIndex: =30
+
+            Label2_1 As label:
+                FontWeight: =FontWeight.Semibold
+                PaddingLeft: =20
+                Text: ="Add Issue description along with GO Number and Unit number"
+                Width: =Parent.Width-70
+                ZIndex: =1
+
+            Icon1 As icon.Add:
+                Color: =RGBA(153, 153, 153, 1)
+                Height: =35
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =Set(VarReportIssue,false);
+                    Reset(TextInput1);
+                Width: =30
+                ZIndex: =2
+
+        TextInput1 As text:
+            BorderColor: =RGBA(202, 202, 202, 1)
+            Default: =""
+            FocusedBorderThickness: =2
+            Height: =250
+            HintText: ="Enter issue description along with GO Number and Unit number"
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =//RGBA(186, 202, 226, 1)
+            Mode: =TextMode.MultiLine
+            Reset: =true
+            Visible: =VarReportIssue
+            Width: =656
+            X: =Rectangle2.X+20
+            Y: =Container2_1.Y+Container2_1.Height +10
+            ZIndex: =31
+
+        Icon2 As icon.Add:
+            Color: =RGBA(179, 179, 179, 1)
+            Fill: =RGBA(179, 179, 179, 1)
+            Height: =2
+            Icon: =Icon.HorizontalLine
+            Visible: =VarReportIssue
+            Width: =TextInput1.Width
+            X: =TextInput1.X
+            Y: =TextInput1.Y +TextInput1.Height+10
+            ZIndex: =32
+
+        Button3 As button:
+            BorderThickness: =0
+            DisplayMode: =If(Connection.Connected,DisplayMode.Edit,DisplayMode.Disabled)
+            Fill: =AllScreensCSS.RActiveColor
+            FocusedBorderColor: =//Self.BorderColor
+            FocusedBorderThickness: =0
+            HoverColor: =Self.Color
+            HoverFill: =//Self.Fill
+            OnSelect: |
+                =
+                UpdateIf(
+                    GcTraceLog,
+                    VarDebug = true,
+                    {
+                        Path: First(GcTraceLog).Path & "/ReportSubmit=" & Text(
+                            Now(),
+                            "mm-dd-yy hh:mm:ss am/pm"
+                        )
+                    }
+                );
+                If(
+                    IsBlank(TextInput1.Text),
+                    Notify(
+                        "Please Enter Issue description.",
+                        NotificationType.Warning
+                    );
+                    ,
+                    Set(
+                        VarLoaderReportIssue,
+                        true
+                    );
+                    Set(
+                        VarReportGuid,
+                        Text(GUID())
+                    );
+                    Patch(
+                        ReportIssueMasters,
+                        Defaults(ReportIssueMasters),
+                        {
+                            Id: VarReportGuid,
+                            ReportedBy: VarUserEmail,
+                            ReportDescription: TextInput1.Text,
+                            Sender: "Assessor",
+                            AssignmentCount: CountRows(gcProjectAssignment),
+                            AssignmentSavedCount: CountRows(
+                                Filter(
+                                    gcProjectAssignment,
+                                    AstatusUpdate = 0 || AstatusUpdate = 1
+                                )
+                            ),
+                            BankCount: CountRows(GC_bankAssessment),
+                            BankSavedCount: CountRows(
+                                Filter(
+                                    GC_bankAssessment,
+                                    BstatusUpdate = 0 || BstatusUpdate = 1
+                                )
+                            ),
+                            UnitCount: CountRows(GC_unitAssessment),
+                            UnitSavedCount: CountRows(
+                                Filter(
+                                    GC_unitAssessment,
+                                    UstatusUpdate = 0 || UstatusUpdate = 1
+                                )
+                            ),
+                            CheckpointItemAssessmentCount: CountRows(GC_checkpointItemAssessment),
+                            CheckpointItemActionItemCount: CountRows(GC_checkpointItem_ActionItem),
+                            CheckpointItemImagesCount: CountRows(GC_checkpointItem_Images),
+                            MasterTemplateCheckpointItemCount: CountRows(GC_templateCheckpointsItem),
+                            MasterTemplateActionItemCount: CountRows(GC_actionItems),
+                            CurrentClientName: VarCurrentAssignmentData.clientId.name,
+                            CurrentGONumber: VarCurrentAssignmentData.GONumber,
+                            CurrentUnitNumber: VarCurrentUnitNumber,
+                            CurrentAssignmentID: VarCurrentAssignmentData.Id,
+                            CurrentBankID: VarCurrentAssignmentData.bankId.Id,
+                            CurrentBankUnitID: varBankUnitId,
+                            CurrentAppVersion: lblappVersion.Text
+                        }
+                    );
+                    If(
+                        (!IsEmpty(Errors(ReportIssueMasters))),
+                        Notify(
+                            "ReportIssueMasters Patch function Error -- " & Concat(
+                                Errors(ReportIssueMasters),
+                                Column & ": " & Message
+                            ),
+                            NotificationType.Error
+                        );
+                        Set(
+                            VarLoaderReportIssue,
+                            false
+                        );
+                        ,
+                        Refresh(ReportIssueMasters);
+                        ClearCollect(
+                            tempReportIssueAssessment,
+                            LookUp(
+                                ReportIssueAssessments,
+                                Id = "0d0c02db-1aca-ed11-b597-000d3a5655ba"
+                            )
+                        );
+                        Clear(tempReportIssueAssessment);
+                        ForAll(
+                            GC_checkpointItemAssessment As i,
+                            Collect(
+                                tempReportIssueAssessment,
+                                {
+                                    Id: Text(GUID()),
+                                    ReportIssueMasterLID: LookUp(
+                                        ReportIssueMasters,
+                                        Id = VarReportGuid
+                                    ),
+                                    AssignmentId: LookUp(
+                                        assignments,
+                                        Id = i.assignmentId.Id
+                                    ),
+                                    GoNumber: i.assignmentId.GONumber,
+                                    UnitNumber: i.bankUnitId.unitNumber,
+                                    CheckpointItemName: i.checkpointItemName,
+                                    ActionCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_ActionItem,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                        )
+                                    ),
+                                    SavedActionCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_ActionItem,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIAstatusUpdate = 0
+                                        )
+                                    ),
+                                    UnsubmitedActionCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_ActionItem,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIAstatusUpdate = 1
+                                        )
+                                    ),
+                                    SubmitedActionCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_ActionItem,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIAstatusUpdate = 2
+                                        )
+                                    ),
+                                    ImageCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_Images,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                        )
+                                    ),
+                                    SavedImageCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_Images,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIIstatusUpdate = 0
+                                        )
+                                    ),
+                                    UnsubmitedImageCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_Images,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIIstatusUpdate = 1
+                                        )
+                                    ),
+                                    SubmitedImageCount: CountRows(
+                                        Filter(
+                                            GC_checkpointItem_Images,
+                                            checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIIstatusUpdate = 2
+                                        )
+                                    )
+                                }
+                            );
+                        );
+                        Patch(
+                            ReportIssueAssessments,
+                            ShowColumns(
+                                tempReportIssueAssessment,
+                                Id,
+                                ReportIssueMasterLID,
+                                GoNumber,
+                                AssignmentId,
+                                UnitNumber,
+                                CheckpointItemName,
+                                ActionCount,
+                                SavedActionCount,
+                                SubmitedActionCount,
+                                UnsubmitedActionCount,
+                                ImageCount,
+                                SavedImageCount,
+                                SubmitedImageCount,
+                                UnsubmitedImageCount
+                            )
+                        );
+                        If(
+                            (!IsEmpty(Errors(ReportIssueAssessments))),
+                            Notify(
+                                "ReportIssueAssessments Patch function Error -- " & Concat(
+                                    Errors(ReportIssueAssessments),
+                                    Column & ": " & Message
+                                ),
+                                NotificationType.Error
+                            );
+                            Set(
+                                VarLoaderReportIssue,
+                                false
+                            );
+                            ,
+                            //Patch logs to Dataverse
+                            If(VarDebug=true,
+                            Patch(
+                                TraceUserLogs,
+                                Defaults(TraceUserLogs),
+                                {
+                                    LogUser: VarUserEmail,
+                                    LogDate: Now(),
+                                    LogPath: First(GcTraceLog).Path
+                                }
+                            );
+                            If(
+                                IsEmpty(Errors(TraceUserLogs)),
+                //for Logs
+                                UpdateIf(
+                                    GcTraceLog,
+                                    VarDebug = true,
+                                    {
+                                        Path: "/OnReportIssue=" & Text(
+                                            Now(),
+                                            "mm-dd-yy hh:mm:ss am/pm"
+                                        )
+                                    }
+                                );
+                            );
+                            /*SaveData(
+                                GcTraceLog,
+                                "localGcTraceLog"
+                            );*/
+                            );
+                            Set(
+                                VarReportIssue,
+                                false
+                            );
+                            Reset(TextInput1);
+                            Set(
+                                VarLoaderReportIssue,
+                                false
+                            );
+                            Set(
+                                VarPopupReportIssue,
+                                true
+                            );
+                        );
+                        //IfError Report assessment
+                    );
+                    //IfError Report master
+                );
+                //Is blank
+                /****counts
+                Patch(
+                        CollectionCounts,
+                        Defaults(CollectionCounts),
+                        {
+                            MasterTemplateCheckpointItem:CountRows(GC_templateCheckpointsItem),
+                            MasterTemplateActionItems:CountRows(GC_actionItems),
+                            CheckpointItemAssessment:CountRows(GC_checkpointItemAssessment),
+                            CheckpointItemActionItem:CountRows(GC_checkpointItem_ActionItem),
+                            CheckpointItemImages:CountRows(GC_checkpointItem_Images),
+                            submittedBy:username
+                        }
+                    );*/
+                /*Patch(
+                        ReportIssueAssessments,
+                        Defaults(ReportIssueAssessments),
+                        {
+                            Id: Text(GUID()),
+                            ReportIssueMasterId: LookUp(
+                        ReportIssueMasters,
+                        Id = VarReportGuid
+                    ),
+                            AssignmentId: LookUp(
+                                assignments,
+                                Id = i.assignmentId.Id
+                            ),
+                            GoNumber: i.bank_id.Go_Number,
+                            UnitNumber: i.bankUnitId.unitNumber,
+                            CheckpointItemName: i.checkpointItemName,
+                            ActionCount: CountRows(
+                                Filter(
+                                    GC_checkpointItem_ActionItem,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                )
+                            ),
+                            SavedActionCount: CountRows(
+                                Filter(
+                                    GC_checkpointItem_ActionItem,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIAstatusUpdate=0
+                                )
+                            ),
+                            UnsubmitedActionCount: CountRows(
+                                Filter(
+                                    GC_checkpointItem_ActionItem,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIAstatusUpdate=1
+                                )
+                            ),
+                            SubmitedActionCount:  CountRows(
+                                Filter(
+                                    GC_checkpointItem_ActionItem,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIAstatusUpdate=2
+                                )
+                            ),
+                            ImageCount:  CountRows(
+                                Filter(
+                                    GC_checkpointItem_Images,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                )
+                            ),
+                            SavedImageCount:  CountRows(
+                                Filter(
+                                    GC_checkpointItem_Images,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIIstatusUpdate=0
+                                )
+                            ),
+                            UnsubmitedImageCount: CountRows(
+                                Filter(
+                                    GC_checkpointItem_Images,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIIstatusUpdate=1
+                                )
+                            ),
+                            SubmitedImageCount: CountRows(
+                                Filter(
+                                    GC_checkpointItem_Images,
+                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIIstatusUpdate=2
+                                )
+                            )
+                        }
+                    );
+                    */
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="Submit"
+            Visible: =VarReportIssue
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Icon2.Y+20
+            ZIndex: =33
+
+    Button5 As button:
+        OnSelect: =Navigate(Screen1,ScreenTransition.CoverRight)
+        Text: ="Add Image +"
+        Visible: =false
+        X: =173
+        Y: =54
+        ZIndex: =40
+
+    GrpPopupReportIssueSuccess As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =40
+
+        iconOuterRectangleDS_1 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =VarPopupReportIssue =true
+            Width: =Parent.Width
+            ZIndex: =35
+
+        iconInnerRectsngleDS_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =VarPopupReportIssue =true
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =36
+
+        imgInfoDS_1 As image:
+            Height: =52
+            Image: =Group
+            Visible: =VarPopupReportIssue =true
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =iconInnerRectsngleDS_1.Y+20
+            ZIndex: =37
+
+        LblTextDS_1 As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =100
+            Size: =15
+            Text: ="Report issue submitted successfully."
+            Visible: =VarPopupReportIssue =true
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =imgInfoDS_1.Y+imgInfoDS_1.Height
+            ZIndex: =38
+
+        btnSuccessDS_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |+
+                =Set(
+                    VarPopupReportIssue,
+                    false
+                );
+                
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: =VarPopupReportIssue =true
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2
+            Y: =LblTextDS_1.Y+ LblTextDS_1.Height+5
+            ZIndex: =39
+

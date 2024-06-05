@@ -1,0 +1,47 @@
+Screen3 As screen:
+
+    Image2 As image:
+        Height: =Parent.Height-80
+        Image: =If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
+        Width: =Parent.Width
+        Y: =20
+        ZIndex: =1
+
+    Button6 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnSelect: =Navigate(Screen2,ScreenTransition.UnCoverRight);
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        Text: ="Retake"
+        Width: =200
+        X: =20
+        Y: =Parent.Height-50
+        ZIndex: =4
+
+    Button8 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnSelect: |-
+            =UpdateIf(
+                GC_checkpointItem_Images,
+                checkpointItemImagesId = GlryImagesFS.Selected.checkpointItemImagesId,
+                {Image: VarPhoto,
+                CIIstatusUpdate:0}
+            );
+            Navigate(
+                FindingScreen,
+                ScreenTransition.Cover
+            )
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        Text: ="Use Photo"
+        Width: =200
+        X: =Parent.Width-Self.Width-20
+        Y: =Parent.Height-50
+        ZIndex: =5
+
