@@ -1,0 +1,926 @@
+TemplateCreation As screen:
+    OnVisible: =
+
+    Container4 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        ctnHeaderDashboardScreen_1 As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            imguserDS_1 As image:
+                Fill: =RGBA(253, 222, 207, 1)
+                Height: =50
+                Image: =userdata.userImage
+                RadiusBottomLeft: =91
+                RadiusBottomRight: =91
+                RadiusTopLeft: =91
+                RadiusTopRight: =91
+                Width: =50
+                X: =lblheaderDS_1.X+lblheaderDS_1.Width
+                Y: =16
+                ZIndex: =1
+
+            lblusernameDS_1 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderUserFontSize
+                Text: =userdata.userdisplayName
+                Width: =ctnHeaderDashboardScreen_1.Width/8
+                X: =imguserDS_1.X+ imguserDS_1.Height
+                ZIndex: =2
+
+            lblheaderDS_1 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderFontSize
+                Text: ="Template Creation"
+                Width: =ctnHeaderDashboardScreen_1.Width/1.6
+                X: =imgSchindlerlogoDS_1.Width+imgSchindlerlogoDS_1.X
+                ZIndex: =3
+
+            imgSchindlerlogoDS_1 As image:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height
+                Image: =Schindler_logo_PNG1_1
+                PaddingBottom: =5
+                PaddingLeft: =2
+                PaddingRight: =1
+                PaddingTop: =5
+                Width: =ctnHeaderDashboardScreen_1.Width/10
+                ZIndex: =4
+
+            Icon3_4 As icon.BackArrow:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =44
+                Icon: =Icon.BackArrow
+                OnSelect: =Back()
+                Width: =44
+                X: =imgSchindlerlogoDS_1.X+imgSchindlerlogoDS_1.Width+20
+                Y: =Parent.Height/4
+                ZIndex: =5
+
+        Container6 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =70
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Label1 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                FontWeight: =FontWeight.Bold
+                Size: =16
+                Text: ="Add New Template"
+                Width: =Parent.Width/2
+                ZIndex: =1
+
+            Label2 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                FontWeight: =FontWeight.Bold
+                Size: =16
+                Text: ="Existing Products"
+                Width: =Parent.Width/2
+                ZIndex: =2
+
+        Container7 As groupContainer.horizontalAutoLayoutContainer:
+            BorderColor: =RGBA(149, 149, 149, 1)
+            BorderThickness: =1
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            Container8 As groupContainer.verticalAutoLayoutContainer:
+                BorderColor: =RGBA(149, 149, 149, 1)
+                BorderThickness: =1
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                ZIndex: =1
+
+                Form1 As form:
+                    DataSource: =product
+                    Height: =550
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =400
+                    NumberOfColumns: =1
+                    ZIndex: =1
+
+                    product_Model_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="quantum_product_model"
+                        Default: =ThisItem.product_Model
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_model)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_model)
+                        Required: =false
+                        Update: =DataCardValue1.Text
+                        Width: =684
+                        X: =0
+                        Y: =3
+                        ZIndex: =1
+
+                        DataCardKey1 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Template Model"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue1 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =DataCardValue4.Text
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode.Disabled
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage1 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue1.Y + DataCardValue1.Height
+                            ZIndex: =3
+
+                        StarVisible1 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey1.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey1.Y
+                            ZIndex: =4
+
+                    product_Type_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack //RGBA(0, 18, 107, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="quantum_product_type"
+                        Default: =ThisItem.product_Type
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_type)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_type)
+                        Required: =false
+                        Update: =DataCardValue5.Text
+                        Width: =683
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey5 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Template Type "//Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue5 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Color: =VarBlack
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage5 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue5.Y + DataCardValue5.Height
+                            ZIndex: =3
+
+                        StarVisible5 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey5.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey5.Y
+                            ZIndex: =4
+
+                    product_Name_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="quantum_product_name"
+                        Default: =ThisItem.product_Name
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_name)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_name)
+                        Required: =false
+                        Update: =DataCardValue4.Text
+                        Width: =683
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey4 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Template Name"//Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue4 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Color: =VarBlack
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage4 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue4.Y + DataCardValue4.Height
+                            ZIndex: =3
+
+                        StarVisible4 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey4.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey4.Y
+                            ZIndex: =4
+
+                    product_Description_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="quantum_product_description"
+                        Default: =ThisItem.product_Description
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_description)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_description)
+                        Required: =false
+                        Update: =DataCardValue2.Text
+                        Width: =683
+                        X: =0
+                        Y: =2
+                        ZIndex: =2
+
+                        DataCardKey2 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Template Description "
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue2 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Color: =VarBlack
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage2 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue2.Y + DataCardValue2.Height
+                            ZIndex: =3
+
+                        StarVisible2 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey2.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey2.Y
+                            ZIndex: =4
+
+                Button1 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    Fill: =referenceCSS.RActiveColor
+                    HoverColor: =Self.Color
+                    HoverFill: =ColorFade(Self.Fill, -20%)
+                    OnSelect: |-
+                        =SubmitForm(Form1);
+                        NewForm(Form1);
+                    PressedColor: =Self.Color
+                    PressedFill: =Self.Fill
+                    Text: ="Create"
+                    ZIndex: =2
+
+            "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderColor: =RGBA(149, 149, 149, 1)
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Items: =Sort(product,'Created On')
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =104
+                ZIndex: =3
+
+                Title1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(71, 69, 64, 1)
+                    DisabledColor: =RGBA(186, 186, 186, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.product_Name
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 200
+                    X: =20
+                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+                    ZIndex: =2
+
+                Subtitle1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(71, 69, 64, 1)
+                    DisabledColor: =RGBA(186, 186, 186, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.product_Type
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Title1.Width
+                    X: =Title1.X
+                    Y: =Title1.Y + Title1.Height
+                    ZIndex: =3
+
+                NextArrow1 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(255, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                    DisabledColor: =RGBA(119, 119, 119, 1)
+                    Height: =50
+                    Icon: =Icon.Add
+                    OnSelect: |-
+                        =Navigate(TemplateSection);
+                        NewForm(Form2);
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    Tooltip: ="View item details"
+                    Visible: =false
+                    Width: =50
+                    X: =Parent.TemplateWidth - Self.Width - 12
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =4
+
+                Separator1 As rectangle:
+                    BorderColor: =RGBA(202, 202, 202, 1)
+                    BorderThickness: =0.5
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =0.5
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle2 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator1.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =false //ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                Button5 As button:
+                    BorderColor: =ColorFade(Self.Color, -15%)
+                    Color: =referenceCSS.RActiveColor
+                    Fill: =RGBA(0, 0, 0, 0)
+                    HoverColor: =Self.Color
+                    HoverFill: =ColorFade(Self.Fill, -20%)
+                    OnSelect: |-
+                        =Navigate(TemplateSection);
+                        NewForm(Form2);
+                    PressedColor: =Self.Color
+                    PressedFill: =Self.Fill
+                    Text: ="Add Section"
+                    X: =Parent.TemplateWidth - Self.Width - 22
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =7
+
+                Icon5_1 As icon.Edit:
+                    Color: =referenceCSS.RActiveColor
+                    Height: =30
+                    Icon: =Icon.Edit
+                    OnSelect: |
+                        =EditForm(Form1_1);
+                        Set(VarEditTemplate,true);
+                    Width: =30
+                    X: =Parent.TemplateWidth - Self.Width - Button5_1.Width-32
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =8
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Rectangle9_1 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =Parent.Height
+            Visible: =VarEditTemplate
+            Width: =Parent.Width
+            ZIndex: =2
+
+        Rectangle10_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =520
+            Visible: =VarEditTemplate
+            Width: =700
+            X: =(Parent.Width/2)-(Self.Width/2)
+            Y: =(Parent.Height/2)-(Self.Height/2)
+            ZIndex: =3
+
+        Label3_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Size: =16
+            Text: ="Edit Template"
+            Visible: =VarEditTemplate
+            Width: =Rectangle10_1.Width
+            X: =Rectangle10_1.X
+            Y: =Rectangle10_1.Y
+            ZIndex: =5
+
+        Button3_4 As button:
+            Fill: =referenceCSS.RActiveColor
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+                =Set(VarEditTemplate,false);
+                ResetForm(Form1_1);
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="Cancel"
+            Visible: =VarEditTemplate
+            X: =(Parent.Width/1.7)-(Self.Width/2)
+            Y: =Form1_1.Y+Form1_1.Height+5
+            ZIndex: =6
+
+        Button3_3 As button:
+            Fill: =referenceCSS.RActiveColor
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+                =SubmitForm(Form1_1);
+                Set(VarEditTemplate,false);
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="save"
+            Visible: =VarEditTemplate
+            X: =(Parent.Width/2.4)-(Self.Width/2)
+            Y: =Form1_1.Y+Form1_1.Height+5
+            ZIndex: =7
+
+        Form1_1 As form:
+            DataSource: =product
+            Height: =400
+            Item: =Gallery1.Selected
+            NumberOfColumns: =1
+            Visible: =VarEditTemplate
+            Width: =Rectangle10_1.Width
+            X: =Rectangle10_1.X
+            Y: =Label3_1.Y+Label3_1.Height
+            ZIndex: =8
+
+            product_Model_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="quantum_product_model"
+                Default: =ThisItem.product_Model
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_model)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_model)
+                Required: =false
+                Update: =DataCardValue1_1.Text
+                Width: =684
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey1_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Template Model"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =DataCardValue4_1.Text
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey1_1.Y + DataCardKey1_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage1_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue1_1.Y + DataCardValue1_1.Height
+                    ZIndex: =3
+
+                StarVisible1_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey1_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey1_1.Y
+                    ZIndex: =4
+
+            product_Type_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack //RGBA(0, 18, 107, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="quantum_product_type"
+                Default: =ThisItem.product_Type
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_type)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_type)
+                Required: =false
+                Update: =DataCardValue5_1.Text
+                Width: =683
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey5_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Template Type "//Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue5_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Color: =VarBlack
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey5_1.Y + DataCardKey5_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage5_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue5_1.Y + DataCardValue5_1.Height
+                    ZIndex: =3
+
+                StarVisible5_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey5_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey5_1.Y
+                    ZIndex: =4
+
+            product_Name_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="quantum_product_name"
+                Default: =ThisItem.product_Name
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_name)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_name)
+                Required: =false
+                Update: =DataCardValue4_1.Text
+                Width: =683
+                X: =0
+                Y: =1
+                ZIndex: =2
+
+                DataCardKey4_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Template Name"//Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Color: =VarBlack
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage4_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue4_1.Y + DataCardValue4_1.Height
+                    ZIndex: =3
+
+                StarVisible4_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey4_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey4_1.Y
+                    ZIndex: =4
+
+            product_Description_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="quantum_product_description"
+                Default: =ThisItem.product_Description
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@product],DataSourceInfo.DisplayName,quantum_product_description)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@product], DataSourceInfo.MaxLength, quantum_product_description)
+                Required: =false
+                Update: =DataCardValue2_1.Text
+                Width: =683
+                X: =0
+                Y: =2
+                ZIndex: =2
+
+                DataCardKey2_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Template Description "
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Color: =VarBlack
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey2_1.Y + DataCardKey2_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage2_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue2_1.Y + DataCardValue2_1.Height
+                    ZIndex: =3
+
+                StarVisible2_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey2_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey2_1.Y
+                    ZIndex: =4
+

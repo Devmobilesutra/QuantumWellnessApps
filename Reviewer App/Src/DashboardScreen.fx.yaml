@@ -1,0 +1,604 @@
+DashboardScreen As screen:
+    OnVisible: |
+        =Refresh(assignments);
+        Set(
+            VarPopupReportIssue,
+            false
+        );
+
+    ctnmainDS As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =20
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        Width: =Parent.Width
+        Y: =ctnHeaderDashboardScreen.Y + ctnHeaderDashboardScreen.Height+10
+        ZIndex: =1
+
+        "'ctnmainC-I-RDS' As groupContainer.verticalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =(Parent.Height/2)
+            LayoutGap: =20
+            LayoutMinHeight: =384
+            LayoutMinWidth: =300
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingLeft: =20
+            PaddingRight: =20
+            Width: =Parent.Width - 40
+            Y: =ctnHeaderDashboardScreen.Height
+            ZIndex: =4
+
+            ctnCompletedDS As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(230, 230, 230, 1)
+                BorderThickness: =5
+                Height: |-
+                    =
+                    If(App.Height<700,Parent.Height/1.02,App.Height<900 && App.Width<1200,Parent.Height/1.6, App.Width<1200,Parent.Height/1.9,Parent.Height/1.02)
+                LayoutMinHeight: =100
+                LayoutMinWidth: =50
+                Width: =Parent.Width/2.1
+                ZIndex: =3
+
+                lblCompletedCountDS As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 0, 0, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: |-
+                        =
+                        Dashboard.DCountSize
+                    Text: |-
+                        =
+                        CountRows(
+                            Filter(
+                                assignments,
+                                //reviewerId = loginReviewer && 
+                                isCompleted = "Completed"
+                            )
+                        )
+                    Width: =Parent.Width
+                    Y: =lblCompletedDS.Y+lblCompletedDS.Height+2
+                    ZIndex: =3
+
+                lblCompletedDS As label:
+                    Align: =Align.Center
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =77
+                    Size: |-
+                        =
+                        Dashboard.DFontSize
+                    Text: ="Completed"
+                    Width: =Parent.Width
+                    Y: =Parent.Height/8
+                    ZIndex: =4
+
+                iconcircleDS As circle:
+                    Fill: =RGBA(246, 88, 16, 1)
+                    Height: =30
+                    Width: =30
+                    X: =604
+                    Y: =20
+                    ZIndex: =5
+
+                imgCompletedDS As image:
+                    Height: =71
+                    Image: =completed
+                    Width: =66
+                    X: =(Parent.Width-Self.Width)/2
+                    Y: =lblCompletedCountDS.Y +lblCompletedCountDS.Height+10
+                    ZIndex: =6
+
+                btnCompletedDS As button:
+                    BorderThickness: =0
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =376
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Navigate(AllProject);
+                        Set(comp,true);
+                        Set(inpro,false);
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =""
+                    Width: =Parent.Width
+                    Y: =ctnClientRD.Y
+                    ZIndex: =7
+
+            ctnInprogressDS As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(230, 230, 230, 1)
+                BorderThickness: =5
+                Height: |-
+                    =
+                    
+                    If(App.Height<700,Parent.Height/1.02,App.Height<900 && App.Width<1200,Parent.Height/1.6, App.Width<1200,Parent.Height/1.9,Parent.Height/1.02)
+                LayoutMinHeight: =100
+                LayoutMinWidth: =50
+                Width: =Parent.Width/2.1
+                ZIndex: =4
+
+                lblInprogressDS As label:
+                    Align: =Align.Center
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =77
+                    Size: =Dashboard.DFontSize
+                    Text: ="In Progress"
+                    Width: =Parent.Width
+                    Y: =Parent.Height/8
+                    ZIndex: =1
+
+                lblinprogressCountDS As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 0, 0, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =Dashboard.DCountSize
+                    Text: |+
+                        =//LookUp(projectAggregations,assessorId.email =User().Email,inProgressProjects)
+                        CountRows(
+                            Filter(
+                                assignments,
+                               // reviewerId = loginReviewer && 
+                                isCompleted = "Inprogress"
+                            )
+                        )
+                        
+                    Width: =Parent.Width
+                    Y: =lblInprogressDS.Y+lblInprogressDS.Height+2
+                    ZIndex: =3
+
+                imgInprogressDS As image:
+                    Height: =71
+                    Image: =inprogress
+                    Width: =66
+                    X: =(Parent.Width-Self.Width)/2
+                    Y: =lblinprogressCountDS.Y+lblinprogressCountDS.Height+10
+                    ZIndex: =4
+
+                btnInprogressDS As button:
+                    BorderThickness: =0
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =376
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Refresh(assignments);
+                        Navigate(AllProject);
+                        Set(inpro,true);
+                        Set(comp,false);
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =""
+                    Width: =Parent.Width
+                    Y: =ctnClientRD.Y
+                    ZIndex: =5
+
+            ctnReferenceDataDS As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(230, 230, 230, 1)
+                BorderThickness: =5
+                Height: =If(App.Height<700,Parent.Height/1.02,App.Height<900 && App.Width<1200,Parent.Height/1.6, App.Width<1200,Parent.Height/1.9,Parent.Height/1.02)
+                LayoutMinHeight: =100
+                LayoutMinWidth: =50
+                Width: =Parent.Width/2.1
+                ZIndex: =5
+
+                lblReferenceDS As label:
+                    Align: =Align.Center
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =50
+                    Size: |-
+                        =
+                        Dashboard.DFontSize
+                    Text: ="Reference"
+                    Width: =Parent.Width
+                    Y: =Parent.Height/8
+                    ZIndex: =1
+
+                lblDataDS As label:
+                    Align: =Align.Center
+                    Font: =Dashboard.DFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =35
+                    Size: =Dashboard.DFontSize
+                    Text: ="Data"
+                    Width: =Parent.Width
+                    Y: =lblReferenceDS.Y+lblReferenceDS.Height
+                    ZIndex: =2
+
+                imgReferenceDataDS As image:
+                    BorderColor: =RGBA(255, 0, 0, 1)
+                    Height: =71
+                    Image: ='370092_add_plus_create_new_icon'
+                    ImagePosition: =ImagePosition.Fill
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =3
+                    PaddingTop: =3
+                    Width: =71
+                    X: =(Parent.Width-Self.Width)/2
+                    Y: =lblDataDS.Y+lblDataDS.Height+30
+                    ZIndex: =3
+
+                btnReferenceDataDS As button:
+                    BorderThickness: =0
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Parent.Height
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Navigate(ReferanceData)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =""
+                    Width: =Parent.Width
+                    Y: =ctnClientRD.Y
+                    ZIndex: =4
+
+        ctnImageDashboardScreen As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Center
+            FillPortions: =0
+            Height: =If(App.Height<900, Parent.Height ,Parent.Height/3)
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingLeft: =10
+            PaddingTop: =5
+            Width: =Parent.Width-40
+            X: =
+            ZIndex: =5
+
+            Button11_5 As button:
+                BorderThickness: =0
+                DisabledFill: =RGBA(237, 237, 237, 1)
+                DisplayMode: |-
+                    =If(
+                        Connection.Connected,
+                        DisplayMode.Edit,
+                        DisplayMode.Disabled
+                    )
+                Fill: =referenceCSS.RActiveColor
+                FocusedBorderThickness: =
+                HoverFill: =
+                OnSelect: =Set(VarReportIssue,true);
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                Text: ="Report Issue"
+                Width: =200
+                ZIndex: =1
+
+            imgDashboardScreen As image:
+                AlignInContainer: =AlignInContainer.Start
+                Height: =Parent.Height
+                Image: =graphic
+                PaddingLeft: =
+                Width: =Parent.Width-500
+                ZIndex: =2
+
+            Button2 As button:
+                Fill: =referenceCSS.RActiveColor
+                HoverColor: =Self.Color
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                OnSelect: |-
+                    =Set(VarBlack,RGBA(0, 0, 0, 1));
+                    Navigate(TemplateCreation);
+                     NewForm(Form1)
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                Text: ="create template"
+                Width: =260
+                ZIndex: =3
+
+        ctnLogoDashboardScreen As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =250
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =6
+
+            "'imgLogoSadhboard Screen' As image":
+                Height: =Parent.Height
+                Image: ='lpd red'
+                ImagePosition: =ImagePosition.Center
+                Width: =Parent.Width
+                ZIndex: =1
+
+    imgspinnerDS As image:
+        Height: =135
+        Image: =circularanimation_2
+        Transparency: =0.4
+        Visible: =lodder
+        Width: =150
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2.5
+        ZIndex: =2
+
+    ctnHeaderDashboardScreen As groupContainer.manualLayoutContainer:
+        Fill: =Header.HeaderFill
+        Height: =80
+        Width: =Parent.Width
+        ZIndex: =3
+
+        imguserDS As image:
+            Fill: =RGBA(253, 222, 207, 1)
+            Height: =50
+            Image: =userdata.userImage
+            RadiusBottomLeft: =91
+            RadiusBottomRight: =91
+            RadiusTopLeft: =91
+            RadiusTopRight: =91
+            Width: =50
+            X: =lblheaderDS.X+lblheaderDS.Width
+            Y: =16
+            ZIndex: =1
+
+        lblusernameDS As label:
+            Align: =Align.Center
+            Color: =Header.HeaderColor
+            Font: =Header.HeaderFont
+            FontWeight: =Header.FontWeight
+            Height: =Parent.Height
+            Size: =Header.HeaderUserFontSize
+            Text: =userdata.userdisplayName
+            Width: =ctnHeaderDashboardScreen.Width/8
+            X: =imguserDS.X+ imguserDS.Height
+            ZIndex: =2
+
+        lblheaderDS As label:
+            Align: =Align.Center
+            Color: =Header.HeaderColor
+            Font: =Header.HeaderFont
+            FontWeight: =Header.FontWeight
+            Height: =Parent.Height
+            Size: =Header.HeaderFontSize
+            Text: ="Wellness Assessments"
+            Width: =ctnHeaderDashboardScreen.Width/1.6
+            X: =imgSchindlerlogoDS.Width+imgSchindlerlogoDS.X
+            ZIndex: =3
+
+        imgSchindlerlogoDS As image:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height
+            Image: =Schindler_logo_PNG1_1
+            PaddingBottom: =5
+            PaddingLeft: =2
+            PaddingRight: =1
+            PaddingTop: =5
+            Width: =ctnHeaderDashboardScreen.Width/10
+            ZIndex: =4
+
+    ReportIssueGroup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Rectangle1_5 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =VarReportIssue
+            Width: =Parent.Width
+            ZIndex: =4
+
+        Rectangle5_5 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =405
+            Visible: =VarReportIssue
+            Width: =700
+            X: =(Parent.Width -Self.Width)/2
+            Y: =(Parent.Height - Self.Height)/2
+            ZIndex: =5
+
+        Container38_5 As groupContainer.horizontalAutoLayoutContainer:
+            Height: =50
+            LayoutMode: =LayoutMode.Auto
+            Visible: =VarReportIssue
+            Width: =Rectangle5_5.Width
+            X: =Rectangle5_5.X
+            Y: =Rectangle5_5.Y+10
+            ZIndex: =6
+
+            Label41_5 As label:
+                FontWeight: =FontWeight.Semibold
+                PaddingLeft: =40
+                Text: ="Add issue description "
+                Width: =Parent.Width-70
+                ZIndex: =1
+
+            Icon2_5 As icon.Cancel:
+                Color: =RGBA(153, 153, 153, 1)
+                Height: =35
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =Set(VarReportIssue,false);
+                    Reset(TextInput2_7);
+                Width: =30
+                ZIndex: =2
+
+        Rectangle6_5 As rectangle:
+            BorderColor: =RGBA(179, 179, 179, 1)
+            BorderThickness: =2
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =250
+            Visible: =VarReportIssue
+            Width: =656
+            X: =Rectangle5_5.X+20
+            Y: =Container38_5.Y+Container38_5.Height +10
+            ZIndex: =7
+
+        Icon4_5 As icon.Add:
+            Color: =RGBA(179, 179, 179, 1)
+            Fill: =RGBA(179, 179, 179, 1)
+            Height: =2
+            Icon: =Icon.HorizontalLine
+            Visible: =VarReportIssue
+            Width: =Rectangle6_5.Width
+            X: =Rectangle6_5.X
+            Y: =Rectangle6_5.Y +Rectangle6_5.Height+10
+            ZIndex: =8
+
+        Button11_6 As button:
+            BorderThickness: =0
+            DisabledFill: =RGBA(237, 237, 237, 1)
+            DisplayMode: |-
+                =If(
+                    Connection.Connected,
+                    DisplayMode.Edit,
+                    DisplayMode.Disabled
+                )
+            Fill: =referenceCSS.RActiveColor
+            FocusedBorderThickness: =
+            HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+                =If(
+                    IsBlank(TextInput2_7.Text),
+                    Notify(
+                        "Please Enter your Issue description.",
+                        NotificationType.Warning
+                    );
+                    ,
+                    Set(
+                        VarReportGUID,
+                        Text(GUID())
+                    );
+                    Patch(
+                        ReportIssueMasters,
+                        Defaults(ReportIssueMasters),
+                        {
+                            Id: VarReportGUID,
+                            ReportedBy: User().Email,
+                            ReportDescription: TextInput2_7.Text,
+                            Sender: "Reviewer"
+                        }
+                    );
+                    If(
+                        (!IsEmpty(Errors(ReportIssueMasters))),
+                        Notify(
+                            "ReportIssueMasters Patch function Error -- " & Concat(
+                                Errors(ReportIssueMasters),
+                                Column & ": " & Message
+                            ),
+                            NotificationType.Error
+                        );
+                        ,
+                        Set(
+                            VarReportIssue,
+                            false
+                        );
+                        Reset(TextInput2_7);
+                        Set(
+                            VarPopupReportIssue,
+                            true
+                        );
+                    );
+                    
+                )
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="Submit"
+            Visible: =VarReportIssue
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Icon4_5.Y+20
+            ZIndex: =9
+
+        TextInput2_7 As text:
+            BorderThickness: =0
+            Default: =
+            Fill: =RGBA(255,255,255,1)
+            FocusedBorderColor: =RGBA(179, 179, 179, 1)
+            FocusedBorderThickness: =2
+            Height: =Rectangle6_5.Height
+            HintText: ="Enter.."
+            HoverBorderColor: =RGBA(179, 179, 179, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Mode: =TextMode.MultiLine
+            PressedBorderColor: =RGBA(179, 179, 179, 1)
+            Size: =referenceCSS.RInputFontSize
+            Visible: =VarReportIssue
+            Width: =Rectangle6_5.Width
+            X: =Rectangle6_5.X
+            Y: =Rectangle6_5.Y
+            ZIndex: =10
+
+    GrpPopupReportIssue As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+        iconOuterRectangleDS_1 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =VarPopupReportIssue =true
+            Width: =Parent.Width
+            ZIndex: =11
+
+        iconInnerRectsngleDS_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =VarPopupReportIssue =true
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =12
+
+        imgInfoDS_1 As image:
+            Height: =52
+            Image: =success
+            Visible: =VarPopupReportIssue =true
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =iconInnerRectsngleDS_1.Y+20
+            ZIndex: =13
+
+        LblTextDS_1 As label:
+            Align: =Align.Center
+            Font: =referenceCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =100
+            Size: =15
+            Text: ="Report issue submitted successfully."
+            Visible: =VarPopupReportIssue =true
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =imgInfoDS_1.Y+imgInfoDS_1.Height
+            ZIndex: =14
+
+        btnSuccessDS_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =referenceCSS.RViewFontSize
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |+
+                =Set(
+                    VarPopupReportIssue,
+                    false
+                );
+                
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: =VarPopupReportIssue =true
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2
+            Y: =LblTextDS_1.Y+ LblTextDS_1.Height+5
+            ZIndex: =15
+

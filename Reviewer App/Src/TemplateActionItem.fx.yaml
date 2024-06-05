@@ -1,0 +1,563 @@
+TemplateActionItem As screen:
+
+    Container20 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        ctnHeaderDashboardScreen_5 As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            imguserDS_5 As image:
+                Fill: =RGBA(253, 222, 207, 1)
+                Height: =50
+                Image: =userdata.userImage
+                RadiusBottomLeft: =91
+                RadiusBottomRight: =91
+                RadiusTopLeft: =91
+                RadiusTopRight: =91
+                Width: =50
+                X: =lblheaderDS_5.X+lblheaderDS_5.Width
+                Y: =16
+                ZIndex: =1
+
+            lblusernameDS_5 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderUserFontSize
+                Text: =userdata.userdisplayName
+                Width: =ctnHeaderDashboardScreen_5.Width/8
+                X: =imguserDS_5.X+ imguserDS_5.Height
+                ZIndex: =2
+
+            lblheaderDS_5 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =16
+                Text: =Gallery3.Selected.checkpointName
+                Width: =ctnHeaderDashboardScreen_5.Width/1.6
+                X: =imgSchindlerlogoDS_5.Width+imgSchindlerlogoDS_5.X
+                ZIndex: =3
+
+            imgSchindlerlogoDS_5 As image:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height
+                Image: =Schindler_logo_PNG1_1
+                PaddingBottom: =5
+                PaddingLeft: =2
+                PaddingRight: =1
+                PaddingTop: =5
+                Width: =ctnHeaderDashboardScreen_5.Width/10
+                ZIndex: =4
+
+            Icon3 As icon.BackArrow:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =44
+                Icon: =Icon.BackArrow
+                OnSelect: =Back()
+                Width: =44
+                X: =imgSchindlerlogoDS_5.X+imgSchindlerlogoDS_5.Width+10
+                Y: =Parent.Height/4
+                ZIndex: =5
+
+        Container6_4 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =70
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Label1_4 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                FontWeight: =FontWeight.Bold
+                Size: =16
+                Text: ="Add New Action"
+                Width: =Parent.Width/2
+                ZIndex: =1
+
+            Label2_6 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                FontWeight: =FontWeight.Bold
+                Size: =16
+                Text: ="Existing Actions"
+                Width: =Parent.Width/2
+                ZIndex: =2
+
+        Container21 As groupContainer.horizontalAutoLayoutContainer:
+            BorderColor: =RGBA(149, 149, 149, 1)
+            BorderThickness: =1
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            Container22 As groupContainer.verticalAutoLayoutContainer:
+                BorderColor: =RGBA(149, 149, 149, 1)
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                ZIndex: =1
+
+                Form5 As form:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(149, 149, 149, 1)
+                    DataSource: =actionItems
+                    Height: =400
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =400
+                    NumberOfColumns: =1
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                    sectionId_DataCard4 As typedDataCard.comboBoxEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="cr28a_sectionId"
+                        Default: =ThisItem.sectionId
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@actionItems],DataSourceInfo.DisplayName,cr28a_sectionId)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue29.Selected
+                        Width: =683
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey29 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Section Name"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue29 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DefaultSelectedItems: =LookUp(templateSections,sectionId=Gallery2.Selected.sectionId)
+                            DisplayFields: =["shlaf_sectionname"]
+                            DisplayMode: =Parent.DisplayMode.Disabled
+                            Items: =Choices([@actionItems].cr28a_sectionId)
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            SearchFields: =["shlaf_sectionname"]
+                            SearchItems: =Search(Choices([@actionItems].cr28a_sectionId),DataCardValue29.SearchText,shlaf_sectionname)
+                            SelectMultiple: =false
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey29.Y + DataCardKey29.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage28 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue29.Y + DataCardValue29.Height
+                            ZIndex: =3
+
+                        StarVisible28 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey29.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey29.Y
+                            ZIndex: =4
+
+                    actionItemName_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="shlaf_actionitemname"
+                        Default: =ThisItem.actionItemName
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@actionItems],DataSourceInfo.DisplayName,shlaf_actionitemname)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@actionItems], DataSourceInfo.MaxLength, shlaf_actionitemname)
+                        Required: =false
+                        Update: =DataCardValue30.Text
+                        Width: =683
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey30 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Action Item Name"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue30 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey30.Y + DataCardKey30.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage29 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue30.Y + DataCardValue30.Height
+                            ZIndex: =3
+
+                        StarVisible29 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey30.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey30.Y
+                            ZIndex: =4
+
+                Button7 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    Fill: =referenceCSS.RActiveColor
+                    HoverFill: =ColorFade(Self.Fill, -20%)
+                    OnSelect: |-
+                        =SubmitForm(Form5);
+                        NewForm(Form5);
+                    PressedColor: =Self.Color
+                    PressedFill: =Self.Fill
+                    Text: ="Add Action Item"
+                    Width: =200
+                    ZIndex: =2
+
+            "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderColor: =RGBA(149, 149, 149, 1)
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Items: =Sort(Filter(actionItems,sectionId.sectionId=Gallery2.Selected.sectionId),'Created On')
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =104
+                ZIndex: =2
+
+                Subtitle5 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(71, 69, 64, 1)
+                    DisabledColor: =RGBA(186, 186, 186, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.actionItemName
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 50
+                    X: =20
+                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8 )) / 2
+                    ZIndex: =3
+
+                Separator5 As rectangle:
+                    BorderColor: =RGBA(202, 202, 202, 1)
+                    BorderThickness: =0.5
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =0.5
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle8 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator5.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =false //ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                Icon5_3 As icon.Edit:
+                    Color: =referenceCSS.RActiveColor
+                    Height: =30
+                    Icon: =Icon.Edit
+                    OnSelect: |
+                        =EditForm(Form5_1);
+                        Set(VarEditAction,true);
+                    Width: =30
+                    X: =Parent.TemplateWidth - Self.Width-40
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =7
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Rectangle9_3 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =Parent.Height
+            Visible: =VarEditAction
+            Width: =Parent.Width
+            ZIndex: =2
+
+        Rectangle10_3 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =420
+            Visible: =VarEditAction
+            Width: =700
+            X: =(Parent.Width/2)-(Self.Width/2)
+            Y: =(Parent.Height/2)-(Self.Height/2)
+            ZIndex: =3
+
+        Label3_3 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Size: =16
+            Text: ="Edit Action"
+            Visible: =VarEditAction
+            Width: =Rectangle10_3.Width
+            X: =Rectangle10_3.X
+            Y: =Rectangle10_3.Y
+            ZIndex: =4
+
+        Button3_8 As button:
+            Fill: =referenceCSS.RActiveColor
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+                =Set(VarEditAction,false);
+                ResetForm(Form5_1);
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="Cancel"
+            Visible: =VarEditAction
+            X: =(Parent.Width/1.7)-(Self.Width/2)
+            Y: =Form5_1.Y+Form5_1.Height+5
+            ZIndex: =5
+
+        Button3_7 As button:
+            Fill: =referenceCSS.RActiveColor
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+                =SubmitForm(Form5_1);
+                Set(VarEditAction,false);
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="save"
+            Visible: =VarEditAction
+            X: =(Parent.Width/2.4)-(Self.Width/2)
+            Y: =Form5_1.Y+Form5_1.Height+5
+            ZIndex: =6
+
+        Form5_1 As form:
+            BorderColor: =RGBA(149, 149, 149, 1)
+            DataSource: =actionItems
+            Height: =280
+            Item: =Gallery5.Selected
+            NumberOfColumns: =1
+            Visible: =VarEditAction
+            Width: =Rectangle10_3.Width
+            X: =Rectangle10_3.X
+            Y: =Label3_3.Y+Label3_3.Height
+            ZIndex: =7
+
+            sectionId_DataCard4_1 As typedDataCard.comboBoxEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr28a_sectionId"
+                Default: =ThisItem.sectionId
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@actionItems],DataSourceInfo.DisplayName,cr28a_sectionId)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue29_1.Selected
+                Width: =683
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey29_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Section Name"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue29_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =LookUp(templateSections,sectionId=Gallery2.Selected.sectionId)
+                    DisplayFields: =["shlaf_sectionname"]
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    Items: =Choices([@actionItems].cr28a_sectionId)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["shlaf_sectionname"]
+                    SearchItems: =Search(Choices([@actionItems].cr28a_sectionId),DataCardValue29_1.SearchText,shlaf_sectionname)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey29_1.Y + DataCardKey29_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage28_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue29_1.Y + DataCardValue29_1.Height
+                    ZIndex: =3
+
+                StarVisible28_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey29_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey29_1.Y
+                    ZIndex: =4
+
+            actionItemName_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="shlaf_actionitemname"
+                Default: =ThisItem.actionItemName
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@actionItems],DataSourceInfo.DisplayName,shlaf_actionitemname)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@actionItems], DataSourceInfo.MaxLength, shlaf_actionitemname)
+                Required: =false
+                Update: =DataCardValue30_1.Text
+                Width: =683
+                X: =0
+                Y: =1
+                ZIndex: =2
+
+                DataCardKey30_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Action Item Name"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue30_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey30_1.Y + DataCardKey30_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage29_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue30_1.Y + DataCardValue30_1.Height
+                    ZIndex: =3
+
+                StarVisible29_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey30_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey30_1.Y
+                    ZIndex: =4
+

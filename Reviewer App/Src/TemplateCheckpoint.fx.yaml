@@ -1,0 +1,1064 @@
+TemplateCheckpoint As screen:
+
+    Container14 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        ctnHeaderDashboardScreen_3 As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            imguserDS_3 As image:
+                Fill: =RGBA(253, 222, 207, 1)
+                Height: =50
+                Image: =userdata.userImage
+                RadiusBottomLeft: =91
+                RadiusBottomRight: =91
+                RadiusTopLeft: =91
+                RadiusTopRight: =91
+                Width: =50
+                X: =lblheaderDS_3.X+lblheaderDS_3.Width
+                Y: =16
+                ZIndex: =1
+
+            lblusernameDS_3 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderUserFontSize
+                Text: =userdata.userdisplayName
+                Width: =ctnHeaderDashboardScreen_3.Width/8
+                X: =imguserDS_3.X+ imguserDS_3.Height
+                ZIndex: =2
+
+            lblheaderDS_3 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderFontSize
+                Text: =Gallery2.Selected.sectionname
+                Width: =ctnHeaderDashboardScreen_3.Width/1.6
+                X: =imgSchindlerlogoDS_3.Width+imgSchindlerlogoDS_3.X
+                ZIndex: =3
+
+            imgSchindlerlogoDS_3 As image:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height
+                Image: =Schindler_logo_PNG1_1
+                PaddingBottom: =5
+                PaddingLeft: =2
+                PaddingRight: =1
+                PaddingTop: =5
+                Width: =ctnHeaderDashboardScreen_3.Width/10
+                ZIndex: =4
+
+            Icon3_2 As icon.BackArrow:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =44
+                Icon: =Icon.BackArrow
+                OnSelect: =Back()
+                Width: =44
+                X: =imgSchindlerlogoDS_3.X+imgSchindlerlogoDS_3.Width+20
+                Y: =Parent.Height/4
+                ZIndex: =5
+
+        Container6_2 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =70
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Label1_2 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                FontWeight: =FontWeight.Bold
+                Size: =16
+                Text: ="Add New Checkpoint"
+                Width: =Parent.Width/2
+                ZIndex: =1
+
+            Label2_4 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                FontWeight: =FontWeight.Bold
+                Size: =16
+                Text: ="Existing Checkpoints"
+                Width: =Parent.Width/2
+                ZIndex: =2
+
+        Container15 As groupContainer.horizontalAutoLayoutContainer:
+            BorderColor: =RGBA(149, 149, 149, 1)
+            BorderThickness: =1
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            Container16 As groupContainer.verticalAutoLayoutContainer:
+                BorderColor: =RGBA(149, 149, 149, 1)
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                ZIndex: =1
+
+                Form3 As form:
+                    DataSource: =templateCheckpoints
+                    Height: =600
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =400
+                    NumberOfColumns: =1
+                    ZIndex: =1
+
+                    seriesName_DataCard2 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="shlaf_seriesname"
+                        Default: =ThisItem.seriesName
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_seriesname)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@templateCheckpoints], DataSourceInfo.MaxLength, shlaf_seriesname)
+                        Required: =false
+                        Update: =DataCardValue16.Text
+                        Width: =683
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey16 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Template Name"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue16 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Gallery1.Selected.product_Name
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode.Disabled
+                            FocusedBorderThickness: =3
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage16 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue16.Y + DataCardValue16.Height
+                            ZIndex: =3
+
+                        StarVisible16 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey16.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey16.Y
+                            ZIndex: =4
+
+                    sectionId_DataCard2 As typedDataCard.comboBoxEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="shlaf_sectionName"
+                        Default: =ThisItem.sectionId
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_sectionName)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue15.Selected
+                        Width: =683
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey15 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Section Name"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue15 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =LookUp(templateSections,sectionId=Gallery2.Selected.sectionId)
+                            DefaultSelectedItems: =LookUp(templateSections,sectionId=Gallery2.Selected.sectionId) //Parent.Default
+                            DisplayFields: =["shlaf_sectionname"]
+                            DisplayMode: =Parent.DisplayMode.Disabled
+                            FocusedBorderThickness: =3
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            IsSearchable: =false
+                            Items: =Choices([@templateCheckpoints].shlaf_sectionName)
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            SearchFields: =["shlaf_sectionname"]
+                            SearchItems: =[]
+                            SelectMultiple: =false
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage15 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue15.Y + DataCardValue15.Height
+                            ZIndex: =3
+
+                        StarVisible15 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey15.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey15.Y
+                            ZIndex: =4
+
+                    checkpointName_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="shlaf_checkpointname"
+                        Default: =ThisItem.checkpointName
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_checkpointname)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@templateCheckpoints], DataSourceInfo.MaxLength, shlaf_checkpointname)
+                        Required: =false
+                        Update: =DataCardValue13.Text
+                        Width: =683
+                        X: =0
+                        Y: =2
+                        ZIndex: =2
+
+                        DataCardKey13 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Checkpoint Name"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue13 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey13.Y + DataCardKey13.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage13 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue13.Y + DataCardValue13.Height
+                            ZIndex: =3
+
+                        StarVisible13 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey13.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey13.Y
+                            ZIndex: =4
+
+                    checkIsApplicable_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="shlaf_checkisapplicable"
+                        Default: =ThisItem.checkIsApplicable
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_checkisapplicable)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue12.Selected.Value
+                        Width: =683
+                        X: =0
+                        Y: =3
+                        ZIndex: =2
+
+                        DataCardKey12 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Checkpoint Is Applicable "
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue12 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            ChevronBackground: =RGBA(77, 77, 77, 1)
+                            ChevronHoverBackground: =ColorFade(VarBlack, -20%)
+                            DefaultSelectedItems: =LookUp(Choices('checkIsApplicable (templateCheckpoints)'),Value=false)
+                            DisplayFields: =["Value"]
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            IsSearchable: =false
+                            Items: =Choices('checkIsApplicable (templateCheckpoints)')
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            SearchFields: =["Value"]
+                            SearchItems: =[]
+                            SelectionColor: =RGBA(255,255,255,1)
+                            SelectionFill: =RGBA(77, 77, 77, 1)
+                            SelectMultiple: =false
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey12.Y + DataCardKey12.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage12 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue12.Y + DataCardValue12.Height
+                            ZIndex: =3
+
+                        StarVisible12 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey12.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey12.Y
+                            ZIndex: =4
+
+                    checkpointSequence_DataCard1 As typedDataCard.textualEditCard:
+                        BorderColor: =VarBlack
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="shlaf_checkpointsequence"
+                        Default: =ThisItem.checkpointSequence
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_checkpointsequence)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@templateCheckpoints], DataSourceInfo.MaxLength, shlaf_checkpointsequence)
+                        Required: =false
+                        Update: =DataCardValue14.Text
+                        Width: =683
+                        X: =0
+                        Y: =4
+                        ZIndex: =2
+
+                        DataCardKey14 As label:
+                            AutoHeight: =true
+                            Color: =VarBlack
+                            Height: =34
+                            Text: ="Checkpoint Sequence"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue14 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =3
+                            HoverBorderColor: =VarBlack
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey14.Y + DataCardKey14.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage14 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue14.Y + DataCardValue14.Height
+                            ZIndex: =3
+
+                        StarVisible14 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey14.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey14.Y
+                            ZIndex: =4
+
+                Button4 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    Fill: =referenceCSS.RActiveColor
+                    HoverColor: =Self.Color
+                    HoverFill: =ColorFade(Self.Fill, -20%)
+                    OnSelect: |-
+                        =SubmitForm(Form3);
+                        NewForm(Form3);
+                    PressedColor: =Self.Color
+                    PressedFill: =Self.Fill
+                    Text: ="Add Checkpoint"
+                    Width: =180
+                    ZIndex: =2
+
+            "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderColor: =RGBA(149, 149, 149, 1)
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Items: =Sort(Filter(templateCheckpoints,seriesName = Gallery1.Selected.product_Name && sectionId.sectionId = Gallery2.Selected.sectionId),Value(checkpointSequence))
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =104
+                ZIndex: =2
+
+                Title3 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(71, 69, 64, 1)
+                    DisabledColor: =RGBA(186, 186, 186, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =14
+                    Text: =ThisItem.checkpointSequence &" "& ThisItem.checkpointName
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 290
+                    X: =20
+                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8)) / 2
+                    ZIndex: =2
+
+                NextArrow3 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(255, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                    DisabledColor: =RGBA(119, 119, 119, 1)
+                    Height: =50
+                    Icon: =Icon.Add
+                    OnSelect: |-
+                        =Navigate(TemplateCheckpointItem);
+                        NewForm(Form4);
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    Tooltip: ="View item details"
+                    Visible: =false
+                    Width: =50
+                    X: =Parent.TemplateWidth - Self.Width - 12
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =4
+
+                Separator3 As rectangle:
+                    BorderColor: =RGBA(202, 202, 202, 1)
+                    BorderThickness: =0.5
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =0.5
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle4 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator3.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =false //ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                Button8 As button:
+                    BorderColor: =ColorFade(Self.Color, -15%)
+                    Color: =referenceCSS.RActiveColor
+                    Fill: =RGBA(0, 0, 0, 0)
+                    HoverColor: =Self.Color
+                    HoverFill: =ColorFade(Self.Fill, -20%)
+                    OnSelect: |-
+                        =Navigate(TemplateActionItem);
+                        NewForm(Form5);
+                    PressedColor: =Self.Color
+                    PressedFill: =Self.Fill
+                    Text: ="Add Action"
+                    Width: =120
+                    X: =Parent.TemplateWidth - Self.Width - Button5_2.Width -20
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =7
+
+                Button5_2 As button:
+                    BorderColor: =ColorFade(Self.Color, -15%)
+                    Color: =referenceCSS.RActiveColor
+                    Fill: =RGBA(0, 0, 0, 0)
+                    HoverColor: =Self.Color
+                    HoverFill: =ColorFade(Self.Fill, -20%)
+                    OnSelect: |-
+                        =Navigate(TemplateCheckpointItem);
+                        NewForm(Form4);
+                    PressedColor: =Self.Color
+                    PressedFill: =Self.Fill
+                    Text: ="Add Items"
+                    Width: =120
+                    X: =Parent.TemplateWidth - Self.Width - 12
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =8
+
+                Icon5_2 As icon.Edit:
+                    Color: =referenceCSS.RActiveColor
+                    Height: =30
+                    Icon: =Icon.Edit
+                    OnSelect: |
+                        =EditForm(Form3_1);
+                        Set(VarEditCheckpoint,true);
+                    Width: =30
+                    X: =Parent.TemplateWidth - Self.Width - Button5_1.Width-90
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =9
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Rectangle9_2 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =Parent.Height
+            Visible: =VarEditCheckpoint
+            Width: =Parent.Width
+            ZIndex: =2
+
+        Rectangle10_2 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =520
+            Visible: =VarEditCheckpoint
+            Width: =700
+            X: =(Parent.Width/2)-(Self.Width/2)
+            Y: =(Parent.Height/2)-(Self.Height/2)
+            ZIndex: =3
+
+        Label3_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            Size: =16
+            Text: ="Edit checkpoint"
+            Visible: =VarEditCheckpoint
+            Width: =Rectangle10_2.Width
+            X: =Rectangle10_2.X
+            Y: =Rectangle10_2.Y
+            ZIndex: =4
+
+        Button3_6 As button:
+            Fill: =referenceCSS.RActiveColor
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+                =Set(VarEditCheckpoint,false);
+                ResetForm(Form3_1);
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="Cancel"
+            Visible: =VarEditCheckpoint
+            X: =(Parent.Width/1.7)-(Self.Width/2)
+            Y: =Form3_1.Y+Form3_1.Height+5
+            ZIndex: =5
+
+        Button3_5 As button:
+            Fill: =referenceCSS.RActiveColor
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+                =SubmitForm(Form3_1);
+                Set(VarEditCheckpoint,false);
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Text: ="save"
+            Visible: =VarEditCheckpoint
+            X: =(Parent.Width/2.4)-(Self.Width/2)
+            Y: =Form3_1.Y+Form3_1.Height+5
+            ZIndex: =6
+
+        Form3_1 As form:
+            DataSource: =templateCheckpoints
+            Height: =400
+            Item: =Gallery3.Selected
+            NumberOfColumns: =1
+            Visible: =VarEditCheckpoint
+            Width: =Rectangle10_2.Width
+            X: =Rectangle10_2.X
+            Y: =Label3_2.Y+Label3_2.Height
+            ZIndex: =7
+
+            sectionId_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="shlaf_sectionName"
+                Default: =ThisItem.sectionId
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_sectionName)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue3.Selected
+                Width: =Parent.Width
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey3 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    ChevronBackground: =RGBA(77, 77, 77, 1)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["shlaf_sectionid"]
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =Choices([@templateCheckpoints].shlaf_sectionName)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["shlaf_sectionid"]
+                    SearchItems: =Search(Choices([@templateCheckpoints].shlaf_sectionName),DataCardValue3.SearchText,shlaf_sectionid)
+                    SelectionFill: =RGBA(149, 149, 149, 1)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue3.Y + DataCardValue3.Height
+                    ZIndex: =3
+
+                StarVisible3 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey3.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey3.Y
+                    ZIndex: =4
+
+            seriesName_DataCard2_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="shlaf_seriesname"
+                Default: =ThisItem.seriesName
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_seriesname)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@templateCheckpoints], DataSourceInfo.MaxLength, shlaf_seriesname)
+                Required: =false
+                Update: =DataCardValue16_1.Text
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey16_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Template Name"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue16_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Gallery1.Selected.product_Name
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    FocusedBorderThickness: =3
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey16_1.Y + DataCardKey16_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage16_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue16_1.Y + DataCardValue16_1.Height
+                    ZIndex: =3
+
+                StarVisible16_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey16_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey16_1.Y
+                    ZIndex: =4
+
+            checkpointName_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="shlaf_checkpointname"
+                Default: =ThisItem.checkpointName
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_checkpointname)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@templateCheckpoints], DataSourceInfo.MaxLength, shlaf_checkpointname)
+                Required: =false
+                Update: =DataCardValue13_1.Text
+                Width: =Parent.Width
+                X: =0
+                Y: =2
+                ZIndex: =2
+
+                DataCardKey13_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Checkpoint Name"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue13_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey13_1.Y + DataCardKey13_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage13_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue13_1.Y + DataCardValue13_1.Height
+                    ZIndex: =3
+
+                StarVisible13_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey13_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey13_1.Y
+                    ZIndex: =4
+
+            checkIsApplicable_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="shlaf_checkisapplicable"
+                Default: =ThisItem.checkIsApplicable
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_checkisapplicable)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue12_1.Selected.Value
+                Width: =Parent.Width
+                X: =0
+                Y: =3
+                ZIndex: =2
+
+                DataCardKey12_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Checkpoint Is Applicable "
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue12_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    ChevronBackground: =RGBA(77, 77, 77, 1)
+                    ChevronHoverBackground: =ColorFade(VarBlack, -20%)
+                    DefaultSelectedItems: =LookUp(Choices('checkIsApplicable (templateCheckpoints)'),Value=false)
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =3
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    IsSearchable: =false
+                    Items: =Choices('checkIsApplicable (templateCheckpoints)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionColor: =RGBA(255,255,255,1)
+                    SelectionFill: =RGBA(77, 77, 77, 1)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey12_1.Y + DataCardKey12_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage12_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue12_1.Y + DataCardValue12_1.Height
+                    ZIndex: =3
+
+                StarVisible12_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey12_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey12_1.Y
+                    ZIndex: =4
+
+            checkpointSequence_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderColor: =VarBlack
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="shlaf_checkpointsequence"
+                Default: =ThisItem.checkpointSequence
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@templateCheckpoints],DataSourceInfo.DisplayName,shlaf_checkpointsequence)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@templateCheckpoints], DataSourceInfo.MaxLength, shlaf_checkpointsequence)
+                Required: =false
+                Update: =DataCardValue14_1.Text
+                Width: =683
+                X: =0
+                Y: =4
+                ZIndex: =2
+
+                DataCardKey14_1 As label:
+                    AutoHeight: =true
+                    Color: =VarBlack
+                    Height: =34
+                    Text: ="Checkpoint Sequence"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue14_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =3
+                    HoverBorderColor: =VarBlack
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey14_1.Y + DataCardKey14_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage14_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue14_1.Y + DataCardValue14_1.Height
+                    ZIndex: =3
+
+                StarVisible14_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey14_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey14_1.Y
+                    ZIndex: =4
+
