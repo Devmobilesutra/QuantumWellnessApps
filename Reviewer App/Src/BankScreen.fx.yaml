@@ -260,7 +260,7 @@ BankScreen As screen:
                         PressedFill: =Self.Fill
                         Size: =12
                         Text: ="Inspection Report"
-                        Width: =If(btnDistributeReportBS.Visible=true,140,200)
+                        Width: =If(btnDistributeReportBS.Visible=true,160,200)
                         X: =btnDistributeReportBS.Width+btnDistributeReportBS.X //Parent.Width-100
                         ZIndex: =7
 
@@ -311,7 +311,7 @@ BankScreen As screen:
                         PressedFill: =Self.Fill
                         Size: =12
                         Text: ="Inspection Report PDF"
-                        Width: =If(btnDistributeReportBS.Visible=true,140,200)
+                        Width: =If(btnDistributeReportBS.Visible=true,190,200)
                         X: =btnActionTrackerBS.Width+btnActionTrackerBS.X //Parent.Width-100
                         ZIndex: =9
 

@@ -1075,6 +1075,7 @@ ViewAssessment As screen:
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
+                PaddingRight: =10
                 Width: =Parent.Width/2.3
                 X: =
                 ZIndex: =3

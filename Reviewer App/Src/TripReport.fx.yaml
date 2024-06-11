@@ -676,7 +676,7 @@ TripReport As screen:
                         Size: =20
                         Text: |-
                             ="Unit : " & ThisItem.unit & "  " & "Section : " & ThisItem.section
-                        Width: =630
+                        Width: =Parent.Width-80
                         Y: =Gallery14.Y
                         ZIndex: =1
 
