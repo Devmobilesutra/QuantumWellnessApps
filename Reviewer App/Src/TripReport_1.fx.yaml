@@ -181,7 +181,7 @@ TripReport_1 As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =Parent.Height
                         Size: =referenceCSS.RFontSize-2
-                        Text: ="Trip Report "
+                        Text: ="Inspection Report "
                         Width: =Parent.Width
                         ZIndex: =1
 

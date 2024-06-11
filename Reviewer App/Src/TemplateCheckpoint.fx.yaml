@@ -234,7 +234,7 @@ TemplateCheckpoint As screen:
                             FocusedBorderThickness: =3
                             HoverFill: =RGBA(0, 0, 0, 0)
                             IsSearchable: =false
-                            Items: =Choices([@templateCheckpoints].shlaf_sectionName)
+                            Items: =Choices([@templateCheckpoints].sectionId)
                             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                             SearchFields: =["shlaf_sectionname"]
                             SearchItems: =[]

@@ -228,7 +228,7 @@ TemplateCheckpointItem As screen:
                             DefaultSelectedItems: =LookUp(templateSections,sectionId=Gallery2.Selected.sectionId)
                             DisplayFields: =["shlaf_sectionname"]
                             DisplayMode: =Parent.DisplayMode.Disabled
-                            Items: =Choices([@templateCheckpointsItems].shlaf_sectionId)
+                            Items: =Choices([@templateCheckpointsItems].sectionId)
                             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                             SearchFields: =["shlaf_sectionname"]
                             SearchItems: =Search(Choices([@templateCheckpointsItems].shlaf_sectionId),DataCardValue26.SearchText,shlaf_sectionname)
@@ -299,7 +299,7 @@ TemplateCheckpointItem As screen:
                             DisplayMode: =Parent.DisplayMode.Disabled
                             Items: |-
                                 =//Choices([@templateCheckpointsItems].shlaf_checkpointId)
-                                Choices([@templateCheckpointsItems].shlaf_checkpointId)
+                                Choices([@templateCheckpointsItems].checkpointId)
                             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                             SearchFields: =["shlaf_checkpointname"]
                             SearchItems: |-
@@ -892,7 +892,7 @@ TemplateCheckpointItem As screen:
                     DefaultSelectedItems: =LookUp(templateSections,sectionId=Gallery2.Selected.sectionId)
                     DisplayFields: =["shlaf_sectionname"]
                     DisplayMode: =Parent.DisplayMode.Disabled
-                    Items: =Choices([@templateCheckpointsItems].shlaf_sectionId)
+                    Items: =Choices([@templateCheckpointsItems].sectionId)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["shlaf_sectionname"]
                     SearchItems: =Search(Choices([@templateCheckpointsItems].shlaf_sectionId),DataCardValue26_1.SearchText,shlaf_sectionname)
@@ -963,7 +963,7 @@ TemplateCheckpointItem As screen:
                     DisplayMode: =Parent.DisplayMode.Disabled
                     Items: |-
                         =//Choices([@templateCheckpointsItems].shlaf_checkpointId)
-                        Choices([@templateCheckpointsItems].shlaf_checkpointId)
+                        Choices([@templateCheckpointsItems].checkpointId)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["shlaf_checkpointname"]
                     SearchItems: |-

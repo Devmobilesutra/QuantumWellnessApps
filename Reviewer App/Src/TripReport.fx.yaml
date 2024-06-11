@@ -73,7 +73,7 @@ TripReport As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Trip Report"
+                Text: ="Inspection Report"
                 Width: =Container3_21.Width/1.6
                 X: =Image1_27.Width+Image1_27.X
                 ZIndex: =8
@@ -183,7 +183,7 @@ TripReport As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =Parent.Height
                         Size: =referenceCSS.RFontSize-2
-                        Text: ="Trip Report "
+                        Text: ="Inspection Report "
                         Width: =Parent.Width
                         ZIndex: =1
 
@@ -291,9 +291,7 @@ TripReport As screen:
                     Font: =referenceCSS.RFont
                     Height: =Parent.Height
                     Size: =referenceCSS.RInputFontSize
-                    Text: |-
-                        =/*LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,reviewer_name)*/
-                        glryProject.Selected.reviewerName
+                    Text: =glryProject.Selected.reviewerName
                     X: =Label18_1.Width+Label18_1.X
                     ZIndex: =2
 
@@ -352,9 +350,7 @@ TripReport As screen:
                     Font: =referenceCSS.RFont
                     Height: =Parent.Height
                     Size: =referenceCSS.RInputFontSize
-                    Text: |-
-                        =/*LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,Text(assignmentId.assignedDate,"mm-dd-yyyy"))*/
-                        Text(glryProject.Selected.assignedDate,"mm-dd-yyyy")
+                    Text: =Text(glryProject.Selected.assignedDate,"mm-dd-yyyy")
                     Width: =Parent.Width/6
                     X: =Label28_2.Width+Label28_2.X
                     ZIndex: =2
@@ -373,9 +369,7 @@ TripReport As screen:
                 Label33_2 As label:
                     Font: =referenceCSS.RFont
                     Size: =referenceCSS.RInputFontSize
-                    Text: |-
-                        =//LookUp(schindlerBanks,goNumber=lblBankName.Text,productId.product_Type)
-                        LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,product_id.product_Type)
+                    Text: =LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,product_id.product_Type)
                     Width: =Parent.Width/6
                     X: =Label30_2.Width+Label30_2.X
                     ZIndex: =4
@@ -426,9 +420,7 @@ TripReport As screen:
                     Font: =referenceCSS.RFont
                     Height: =Parent.Height
                     Size: =referenceCSS.RInputFontSize
-                    Text: |-
-                        =/*LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,assignmentId.assessmentType)*/
-                        glryProject.Selected.assessmentType
+                    Text: =glryProject.Selected.assessmentType
                     X: =Label31_1.Width+Label31_1.X
                     ZIndex: =2
 
@@ -532,9 +524,7 @@ TripReport As screen:
                     Font: =referenceCSS.RFont
                     LayoutMinHeight: =100
                     Size: =referenceCSS.RInputFontSize
-                    Text: |-
-                        =//LookUp(BankTripReport,bankId.goNumber=lblBankName.Text,Background)
-                        LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,Background)
+                    Text: =LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,Background)
                     Width: =Parent.Width
                     ZIndex: =1
 
@@ -613,8 +603,11 @@ TripReport As screen:
                     Height: =Parent.Height
                     Size: =referenceCSS.RInputFontSize
                     Text: |-
-                        =//LookUp(schindlerBanks,goNumber=lblBankName.Text,productId.product_Name)
-                        LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,product_id.product_Name)
+                        =LookUp(
+                            BankTripReport,
+                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id,
+                            product_id.product_Name
+                        )
                     ZIndex: =2
 
             Container5 As groupContainer.verticalAutoLayoutContainer:
@@ -1026,8 +1019,11 @@ TripReport As screen:
                     LayoutMinHeight: =100
                     Size: =referenceCSS.RInputFontSize
                     Text: |-
-                        =//LookUp(BankTripReport,bankId.goNumber=lblBankName.Text,Background)
-                        LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id,General_Recommendation)
+                        =LookUp(
+                            BankTripReport,
+                            assignmentId.Id = glryProject.Selected.Id,
+                            General_Recommendation
+                        )
                     Visible: =false
                     Width: =Parent.Width
                     ZIndex: =1

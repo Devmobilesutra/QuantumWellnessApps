@@ -15199,7 +15199,7 @@
       "MetaDataIDKey": "",
       "Name": "DatePicker3_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21469,7 +21469,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"Trip Report \"",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -24576,7 +24583,7 @@
       "MetaDataIDKey": "",
       "Name": "Label29_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25277,7 +25284,7 @@
       "MetaDataIDKey": "",
       "Name": "Label30_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26417,7 +26424,7 @@
       "MetaDataIDKey": "",
       "Name": "Label33_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26783,7 +26790,7 @@
       "MetaDataIDKey": "",
       "Name": "Label34_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27163,7 +27170,7 @@
       "MetaDataIDKey": "",
       "Name": "Label35_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -38109,7 +38116,7 @@
       "MetaDataIDKey": "",
       "Name": "lblMaterialestimatevalueVA_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -38897,7 +38904,7 @@
       "MetaDataIDKey": "",
       "Name": "lblOwnervalueVA_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39692,7 +39699,7 @@
       "MetaDataIDKey": "",
       "Name": "lblPriorityvalueVA_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -42049,7 +42056,7 @@
       "MetaDataIDKey": "",
       "Name": "lblTimeestimatevalueVA_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -43913,7 +43920,7 @@
       "MetaDataIDKey": "",
       "Name": "txtMaterialValueAR_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -44425,7 +44432,7 @@
       "MetaDataIDKey": "",
       "Name": "txtTimeEstimateValueAR_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

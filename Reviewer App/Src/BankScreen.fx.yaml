@@ -160,8 +160,19 @@ BankScreen As screen:
                         Font: =referenceCSS.RFont
                         Height: =Parent.Height
                         Size: =referenceCSS.RViewFontSize
-                        Text: |
-                            =If(comp=true,"",If(LookUp(BankTripReport,assignmentId.Id=glryProject.Selected.Id && bankId.Id=glryProject.Selected.bankId.Id,ReviewerComments)<> Blank(),"Comment Sent"))
+                        Text: |-
+                            =If(
+                                comp = true,
+                                "",
+                                If(
+                                    LookUp(
+                                        BankTripReport,
+                                        assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id,
+                                        ReviewerComments
+                                    ) <> Blank(),
+                                    "Comment Sent"
+                                )
+                            )
                         Width: |-
                             =170
                             //Parent.Width/4
@@ -248,7 +259,7 @@ BankScreen As screen:
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
                         Size: =12
-                        Text: ="Trip Report"
+                        Text: ="Inspection Report"
                         Width: =If(btnDistributeReportBS.Visible=true,140,200)
                         X: =btnDistributeReportBS.Width+btnDistributeReportBS.X //Parent.Width-100
                         ZIndex: =7
@@ -290,7 +301,7 @@ BankScreen As screen:
                         HoverFill: =Self.Fill
                         OnSelect: |
                             =//generate tripreport pdf by automate flow 
-                            Set(VarPDFLable,"Trip Report in PDF format will be sent to your Email Id");
+                            Set(VarPDFLable,"Inspection Report in PDF format will be sent to your Email Id");
                             Set(VarGeneratePDF,
                             Assessor_TR.Run(glryProject.Selected.assignments,glryProject.Selected.reviewerEmail));
                             
@@ -299,7 +310,7 @@ BankScreen As screen:
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
                         Size: =12
-                        Text: ="Trip Report PDF"
+                        Text: ="Inspection Report PDF"
                         Width: =If(btnDistributeReportBS.Visible=true,140,200)
                         X: =btnActionTrackerBS.Width+btnActionTrackerBS.X //Parent.Width-100
                         ZIndex: =9
@@ -792,7 +803,7 @@ BankScreen As screen:
             FontWeight: =FontWeight.Bold
             Height: =100
             Size: =15
-            Text: ="Bank Trip Report has been distributed successfully."
+            Text: ="Bank Inspection Report has been distributed successfully."
             Visible: =VarDistributePDF=true
             Width: =324
             X: =(Parent.Width-Self.Width)/2
