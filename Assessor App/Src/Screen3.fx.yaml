@@ -1,9 +1,11 @@
 Screen3 As screen:
 
     Image2 As image:
-        Height: =Parent.Height-80
+        Height: =Parent.Height-100
         Image: =If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
-        Width: =Parent.Width
+        ImagePosition: =ImagePosition.Fill
+        Width: =Parent.Width-40
+        X: =20
         Y: =20
         ZIndex: =1
 
@@ -27,7 +29,10 @@ Screen3 As screen:
         HoverColor: =Self.Color
         HoverFill: =Self.Fill
         OnSelect: |-
-            =UpdateIf(
+            =
+            
+            
+            UpdateIf(
                 GC_checkpointItem_Images,
                 checkpointItemImagesId = GlryImagesFS.Selected.checkpointItemImagesId,
                 {Image: VarPhoto,
@@ -49,8 +54,53 @@ Screen3 As screen:
         Color: =RGBA(0, 0, 0, 1)
         Height: =44
         Icon: =Icon.Edit
+        OnSelect: =Set(VarImageEdit,true);
+        Visible: =VarImageEdit= false
         Width: =44
-        X: =Parent.Width-Self.Width-30
+        X: =Parent.Width-Self.Width-20
         Y: =30
         ZIndex: =6
+
+    PenInput1 As inkControl:
+        BorderThickness: =0
+        Height: =Parent.Height-20
+        Visible: =VarImageEdit =true
+        Width: =Parent.Width-120
+        X: =60
+        ZIndex: =7
+
+    Icon7 As icon.Save:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =44
+        Icon: =Icon.Save
+        OnSelect: |-
+            =Set(VarImageEdit,false);
+            PowerAppsButton.Run(
+                Substitute(
+                    JSON(
+                        PenInput1.Image,
+                        JSONFormat.IncludeBinaryData
+                    ),
+                    """",
+                    ""
+                ),
+                Substitute(
+                    JSON(
+                        Image2.Image,
+                        JSONFormat.IncludeBinaryData
+                    ),
+                    """",
+                    ""
+                ),
+                Parent.Width,
+                Parent.Height,
+                Parent.Width,
+                Parent.Height
+            );
+            Refresh(MarkupImages);
+        Visible: =VarImageEdit
+        Width: =44
+        X: =Parent.Width-Self.Width-20
+        Y: =30
+        ZIndex: =8
 

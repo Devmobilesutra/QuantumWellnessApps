@@ -50,9 +50,54 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "c78d3088-ee44-45ee-aee4-9f449a65957d"
+      "c78d3088-ee44-45ee-aee4-9f449a65957d",
+      "770b88db-d04c-4caf-9de4-fc329131f3b9"
     ],
     "id": "707fd938-90f1-4e0e-b781-260a197bc02c"
+  },
+  "770b88db-d04c-4caf-9de4-fc329131f3b9": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/patelronak/specialtrain-logicflows-2/1.0.1692.3734/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "707fd938-90f1-4e0e-b781-260a197bc02c": {
+          "value": "shared_commondataserviceforapps"
+        },
+        "workflowDisplayName": {
+          "value": "PowerApps Button"
+        },
+        "workflowEntityId": {
+          "value": "c50eb780-b328-ef11-840a-002248043173"
+        },
+        "workflowName": {
+          "value": "6530e437-5997-bbc1-964b-b275df456885"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "707fd938-90f1-4e0e-b781-260a197bc02c"
+        },
+        "workflowDisplayName": {
+          "value": "PowerApps Button"
+        },
+        "workflowEntityId": {
+          "value": "c50eb780-b328-ef11-840a-002248043173"
+        },
+        "workflowName": {
+          "value": "6530e437-5997-bbc1-964b-b275df456885"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerAppsButton"
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "707fd938-90f1-4e0e-b781-260a197bc02c"
+    },
+    "dependents": [],
+    "id": "770b88db-d04c-4caf-9de4-fc329131f3b9"
   },
   "c2db23f9-ba3c-4bc8-b95e-e54fb4758ee5": {
     "appActions": [],

@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cre40_markupimages",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cre40_markupimage",
+    "Name": "MarkupImages",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cre40_image": "Image",
+      "cre40_imageid": "cre40_ImageId",
+      "cre40_imagemarkup": "ImageMarkup",
+      "cre40_imagemarkupid": "cre40_ImageMarkupId",
+      "cre40_imageurl": "ImageURL",
+      "cre40_markupimage_AsyncOperations": "System Jobs",
+      "cre40_markupimage_BulkDeleteFailures": "Bulk Delete Failures",
+      "cre40_markupimage_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cre40_markupimage_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cre40_markupimage_ProcessSession": "Process Sessions",
+      "cre40_markupimage_SyncErrors": "Sync Errors",
+      "cre40_markupimageid": "MarkupImage",
+      "cre40_newcolumn": "New column",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "MarkupImages",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "MarkupImages (Views)",
+    "Name": "_cre40_markupimage_views",
+    "RelatedEntityName": "MarkupImages",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4a41c3cc-a025-4461-a3cd-52a11cd0e472": "Active MarkupImages",
+      "6f5e7b64-7c93-42dc-a45d-b4c8dbec00d9": "MarkupImage Lookup View",
+      "7f7edeab-5ff9-4316-9694-2f9fac02a7f6": "Inactive MarkupImages",
+      "82c984ad-7773-406a-906d-91a5d6a37187": "MarkupImage Advanced Find View",
+      "d3af8a53-b8e4-4865-8792-e19be5929218": "MarkupImage Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (MarkupImages)",
+    "Name": "cre40_markupimage_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "MarkupImages"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "MarkupImages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (MarkupImages)",
+    "Name": "cre40_markupimage_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "MarkupImages"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "MarkupImages",
+    "Type": "OptionSetInfo"
+  }
+]

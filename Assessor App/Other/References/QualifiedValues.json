@@ -374,6 +374,13 @@
       "Values": {
         "Information": "39f81e84-581b-4f45-b75e-69def9cab56a"
       }
+    },
+    {
+      "Kind": "default.cds_cre40_markupimage_forms",
+      "Namespace": "MarkupImages (Forms)",
+      "Values": {
+        "Information": "cddc5896-47cb-4a49-97b1-ddd52e0ae005"
+      }
     }
   ]
 }
