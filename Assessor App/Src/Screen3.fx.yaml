@@ -45,3 +45,12 @@ Screen3 As screen:
         Y: =Parent.Height-50
         ZIndex: =5
 
+    Icon5 As icon.Edit:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =44
+        Icon: =Icon.Edit
+        Width: =44
+        X: =Parent.Width-Self.Width-30
+        Y: =30
+        ZIndex: =6
+
