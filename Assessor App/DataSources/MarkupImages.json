@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cre40_markupimage",
+    "MaxGetRowsCount": 2000,
     "Name": "MarkupImages",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

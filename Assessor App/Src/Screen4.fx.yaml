@@ -2,10 +2,10 @@ Screen4 As screen:
     OnVisible: =Refresh(MarkupImages)
 
     Image4 As image:
-        Height: =680
+        Height: =540
         Image: =First(Sort(MarkupImages,'Created On',SortOrder.Descending)).Image.Full
         ImagePosition: =ImagePosition.Fill
-        Width: =1164
+        Width: =922
         X: =40
         Y: =40
         ZIndex: =1

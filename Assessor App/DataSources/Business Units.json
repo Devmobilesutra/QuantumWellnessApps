@@ -99,6 +99,7 @@
       "business_unit_cr33a_tech_subcount": "TECH_Subcounts",
       "business_unit_cr33a_tech_subunits": "TECH_SubUnits",
       "business_unit_cr33a_unit": "TECH_Units",
+      "business_unit_cre40_markupimage": "MarkupImages",
       "business_unit_credential": "Credentials",
       "business_unit_customapi": "Custom APIs",
       "business_unit_datalakefolder": "Data Lake Folders",
