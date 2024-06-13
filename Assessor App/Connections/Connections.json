@@ -61,9 +61,6 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/u/patelronak/specialtrain-logicflows-2/1.0.1692.3734/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "707fd938-90f1-4e0e-b781-260a197bc02c": {
-          "value": "shared_commondataserviceforapps"
-        },
         "workflowDisplayName": {
           "value": "PowerApps Button"
         },
@@ -75,9 +72,6 @@
         }
       },
       "parameterHintsV2": {
-        "shared_commondataserviceforapps": {
-          "value": "707fd938-90f1-4e0e-b781-260a197bc02c"
-        },
         "workflowDisplayName": {
           "value": "PowerApps Button"
         },

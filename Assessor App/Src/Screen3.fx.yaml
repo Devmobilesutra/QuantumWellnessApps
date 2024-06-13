@@ -35,7 +35,7 @@ Screen3 As screen:
             UpdateIf(
                 GC_checkpointItem_Images,
                 checkpointItemImagesId = GlryImagesFS.Selected.checkpointItemImagesId,
-                {Image: VarPhoto,
+                {Image: VarOutput,
                 CIIstatusUpdate:0}
             );
             Navigate(
@@ -75,7 +75,7 @@ Screen3 As screen:
         Icon: =Icon.Save
         OnSelect: |-
             =Set(VarImageEdit,false);
-            PowerAppsButton.Run(
+            Set(VarOutput,PowerAppsButton.Run(
                 Substitute(
                     JSON(
                         PenInput1.Image,
@@ -96,7 +96,7 @@ Screen3 As screen:
                 Image2.Height,
                 PenInput1.Width,
                 PenInput1.Height
-            );
+            ).overlapimage;);
             Refresh(MarkupImages);
         Visible: =VarImageEdit
         Width: =44
