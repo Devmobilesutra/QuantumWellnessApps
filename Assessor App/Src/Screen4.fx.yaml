@@ -1,9 +1,9 @@
 Screen4 As screen:
-    OnVisible: =Refresh(MarkupImages)
+    OnVisible: =
 
     Image4 As image:
         Height: =540
-        Image: =First(Sort(MarkupImages,'Created On',SortOrder.Descending)).Image.Full
+        Image: =VarOutput
         ImagePosition: =ImagePosition.Fill
         Width: =922
         X: =40
@@ -11,7 +11,7 @@ Screen4 As screen:
         ZIndex: =1
 
     Button9 As button:
-        OnSelect: =Refresh(MarkupImages)
+        OnSelect: =//Refresh(MarkupImages)
         Text: ="Button"
         X: =60
         Y: =60

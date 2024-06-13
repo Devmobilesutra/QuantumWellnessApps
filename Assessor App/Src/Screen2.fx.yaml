@@ -1,5 +1,6 @@
 Screen2 As screen:
     ImagePosition: =ImagePosition.Fill
+    OnVisible: =Set(VarOutput,Blank());
 
     Camera1 As camera:
         Camera: =VarCameraFlag
