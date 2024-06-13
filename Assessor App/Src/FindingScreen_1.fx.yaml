@@ -259,7 +259,8 @@ FindingScreen_1 As screen:
                                 GC_checkpointItem_Images,
                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA 
                              //&& (Image14_2.Image) = Blank()
-                            && IsBlank(Image) && CIIstatusUpdate <> 2
+                            && IsBlank(Image)  
+                            && CIIstatusUpdate <> 2
                             );
                             If(
                                 glryItmesAS.Selected.checkpointItemImage &&

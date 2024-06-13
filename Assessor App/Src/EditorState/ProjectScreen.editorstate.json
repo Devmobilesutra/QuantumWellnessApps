@@ -2733,7 +2733,7 @@
       "MetaDataIDKey": "",
       "Name": "grImageIcons",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 30,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2785,7 +2785,7 @@
       "MetaDataIDKey": "",
       "Name": "grLabel",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 29,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
