@@ -2,12 +2,12 @@ Screen3 As screen:
     OnVisible: =Set(VarImageEdit,false);
 
     Image2 As image:
-        Height: =Parent.Height-150
+        Height: =Parent.Height-100
         Image: |-
             =//If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
             If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
-        Width: =Parent.Width-80
-        X: =40
+        Width: =Parent.Width-200
+        X: =(Parent.Width-Self.Width)/2
         Y: =20
         ZIndex: =1
 
@@ -68,10 +68,11 @@ Screen3 As screen:
 
     PenInput1 As inkControl:
         BorderThickness: =0
-        Height: =Parent.Height-20
+        Height: =Image2.Height
         Visible: =VarImageEdit =true
-        Width: =Parent.Width-120
-        X: =60
+        Width: =Image2.Width-300
+        X: =(Parent.Width-Self.Width)/2
+        Y: =20
         ZIndex: =7
 
     Icon7 As icon.Save:
@@ -97,10 +98,11 @@ Screen3 As screen:
                     """",
                     ""
                 ),
-                 Image2.Width,
-                Image2.Height,
+                
                 PenInput1.Width,
-                PenInput1.Height
+                PenInput1.Height,
+                 Image2.Width,
+                Image2.Height
             ).overlapimage;);
             Set(VarImageEdit,false);
             Set(VarImgEditSpiner,false);
