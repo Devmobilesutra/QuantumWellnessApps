@@ -257,10 +257,10 @@ FindingScreen As screen:
                             );
                             RemoveIf(
                                 GC_checkpointItem_Images,
-                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA 
+                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA //&& IsBlank(Image) && CIIstatusUpdate <> 2
+                                && CIIstatusUpdate=Blank()
                              //&& (Image14_2.Image) = Blank()
-                            && IsBlank(Image) 
-                            && CIIstatusUpdate <> 2
+                            
                             );
                             If(
                                 glryItmesAS.Selected.checkpointItemImage &&

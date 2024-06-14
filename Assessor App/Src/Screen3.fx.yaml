@@ -37,8 +37,9 @@ Screen3 As screen:
             UpdateIf(
                 GC_checkpointItem_Images,
                 checkpointItemImagesId = GlryImagesFS.Selected.checkpointItemImagesId,
-                {Image:Image2.Image,
-                CIIstatusUpdate:0}
+                {Image:Image2.Image//,
+                //CIIstatusUpdate:0
+                }
             );
             Navigate(
                 FindingScreen,

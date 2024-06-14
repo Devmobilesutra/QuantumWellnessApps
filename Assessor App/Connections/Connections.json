@@ -50,20 +50,16 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "c78d3088-ee44-45ee-aee4-9f449a65957d",
-      "770b88db-d04c-4caf-9de4-fc329131f3b9"
+      "c78d3088-ee44-45ee-aee4-9f449a65957d"
     ],
     "id": "707fd938-90f1-4e0e-b781-260a197bc02c"
   },
   "770b88db-d04c-4caf-9de4-fc329131f3b9": {
     "connectionRef": {
       "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/u/patelronak/specialtrain-logicflows-2/1.0.1692.3734/logicflows/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "707fd938-90f1-4e0e-b781-260a197bc02c": {
-          "value": "shared_commondataserviceforapps"
-        },
         "workflowDisplayName": {
           "value": "PowerApps Button"
         },
@@ -75,9 +71,6 @@
         }
       },
       "parameterHintsV2": {
-        "shared_commondataserviceforapps": {
-          "value": "707fd938-90f1-4e0e-b781-260a197bc02c"
-        },
         "workflowDisplayName": {
           "value": "PowerApps Button"
         },
@@ -93,9 +86,7 @@
     "dataSources": [
       "PowerAppsButton"
     ],
-    "dependencies": {
-      "shared_commondataserviceforapps": "707fd938-90f1-4e0e-b781-260a197bc02c"
-    },
+    "dependencies": {},
     "dependents": [],
     "id": "770b88db-d04c-4caf-9de4-fc329131f3b9"
   },
