@@ -834,6 +834,25 @@ AssessmentScreen As screen:
                                 true
                             );
                             //Notify("finding endd",NotificationType.Information);
+                            //Finding screen on visible screen
+                            If(
+                                CountRows(
+                                    Filter(
+                                        GC_checkpointItem_Images,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId &&
+                             checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA && CIIstatusUpdate =2
+                                    )
+                                ) > 0,
+                                Set(
+                                    VarImageIsDownloaded,
+                                    false
+                                );
+                                ,
+                                Set(
+                                    VarImageIsDownloaded,
+                                    true
+                                )
+                            );
                             Navigate(FindingScreen);
                         PressedBorderColor: =Self.BorderColor
                         PressedColor: =Self.Color

@@ -1,6 +1,6 @@
 FindingScreen As screen:
     OnVisible: |-
-        =If(
+        =/*If(
             CountRows(
                 Filter(
                     GC_checkpointItem_Images,
@@ -17,7 +17,7 @@ FindingScreen As screen:
                 VarImageIsDownloaded,
                 true
             )
-        );
+        );*/
         Set(
              VarDownloadImagesRestrict,
             false
