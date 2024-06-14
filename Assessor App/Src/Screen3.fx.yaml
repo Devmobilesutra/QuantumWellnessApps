@@ -79,7 +79,7 @@ Screen3 As screen:
         Height: =44
         Icon: =Icon.Save
         OnSelect: |
-            =Set(VarImageEdit,false);
+            =Set(VarImgEditSpiner,true);
             Set(VarOutput,PowerAppsButton.Run(
                 Substitute(
                     JSON(
@@ -102,9 +102,22 @@ Screen3 As screen:
                 PenInput1.Width,
                 PenInput1.Height
             ).overlapimage;);
+            Set(VarImageEdit,false);
+            Set(VarImgEditSpiner,false);
         Visible: =VarImageEdit
         Width: =44
         X: =Parent.Width-Self.Width-20
         Y: =30
         ZIndex: =8
+
+    imgSpinnerResume_1 As image:
+        Fill: =RGBA(0, 0, 0, 0.29)
+        Height: =Parent.Height
+        Image: ='ajax-loader 2'
+        ImagePosition: =ImagePosition.Center
+        Visible: =VarImgEditSpiner
+        Width: =Parent.Width
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =9
 
