@@ -1,11 +1,7 @@
 App As appinfo:
     BackEnabled: =false
     OnStart: |
-        =ClearCollect(
-            asasas,
-            assignmentUnits
-        );
-        // Global CSS
+        =// Global CSS
         Set(
             //for header
             Header,
@@ -153,6 +149,7 @@ App As appinfo:
                 id
             )
         );
+        
         //for disable
         Set(
             lodder,
