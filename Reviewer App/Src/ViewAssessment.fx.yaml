@@ -383,7 +383,7 @@ ViewAssessment As screen:
                                 ThisItem.Image.Full
                             OnSelect: |-
                                 =Set(VarFullImage,ThisItem.Image.Full);
-                                Navigate(Screen1);
+                                Navigate(CompanyDetails);
                             PaddingBottom: =5
                             PaddingTop: =5
                             Width: |-

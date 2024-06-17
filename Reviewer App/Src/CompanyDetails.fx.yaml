@@ -1,4 +1,4 @@
-Screen1 As screen:
+CompanyDetails As screen:
 
     "glryActionItemsVA_4 As gallery.'BrowseLayout_Flexible_SocialFeed_ver4.0'":
         '#CopilotOverlayLabel': ="Filtered"
@@ -226,4 +226,68 @@ Screen1 As screen:
                 X: =txtMaterialValueAR_2.Width+txtMaterialValueAR_2.X+10
                 Y: =lblPriorityVA_4.Y+lblPriorityVA_4.Height
                 ZIndex: =14
+
+    ctnHeaderDashboardScreen_6 As groupContainer.manualLayoutContainer:
+        Fill: =Header.HeaderFill
+        Height: =80
+        Width: =Parent.Width
+        ZIndex: =2
+
+        imguserDS_6 As image:
+            Fill: =RGBA(253, 222, 207, 1)
+            Height: =50
+            Image: =userdata.userImage
+            RadiusBottomLeft: =91
+            RadiusBottomRight: =91
+            RadiusTopLeft: =91
+            RadiusTopRight: =91
+            Width: =50
+            X: =lblheaderDS_6.X+lblheaderDS_6.Width
+            Y: =16
+            ZIndex: =1
+
+        lblusernameDS_6 As label:
+            Align: =Align.Center
+            Color: =Header.HeaderColor
+            Font: =Header.HeaderFont
+            FontWeight: =Header.FontWeight
+            Height: =Parent.Height
+            Size: =Header.HeaderUserFontSize
+            Text: =userdata.userdisplayName
+            Width: =ctnHeaderDashboardScreen_6.Width/8
+            X: =imguserDS_6.X+ imguserDS_6.Height
+            ZIndex: =2
+
+        lblheaderDS_6 As label:
+            Align: =Align.Center
+            Color: =Header.HeaderColor
+            Font: =Header.HeaderFont
+            FontWeight: =Header.FontWeight
+            Height: =Parent.Height
+            Size: =16
+            Text: ="Company Information"
+            Width: =ctnHeaderDashboardScreen_6.Width/1.6
+            X: =imgSchindlerlogoDS_6.Width+imgSchindlerlogoDS_6.X
+            ZIndex: =3
+
+        imgSchindlerlogoDS_6 As image:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height
+            Image: =Schindler_logo_PNG1_1
+            PaddingBottom: =5
+            PaddingLeft: =2
+            PaddingRight: =1
+            PaddingTop: =5
+            Width: =ctnHeaderDashboardScreen_6.Width/10
+            ZIndex: =4
+
+        Icon3_5 As icon.BackArrow:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =44
+            Icon: =Icon.BackArrow
+            OnSelect: =Back()
+            Width: =44
+            X: =imgSchindlerlogoDS_6.X+imgSchindlerlogoDS_6.Width+20
+            Y: =Parent.Height/4
+            ZIndex: =5
 

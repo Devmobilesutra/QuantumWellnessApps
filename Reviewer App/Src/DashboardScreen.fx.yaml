@@ -291,7 +291,7 @@ DashboardScreen As screen:
                 Fill: =referenceCSS.RActiveColor
                 HoverColor: =Self.Color
                 HoverFill: =ColorFade(Self.Fill, -20%)
-                OnSelect: =Navigate(Screen1);
+                OnSelect: =Navigate(CompanyDetails);
                 PressedColor: =Self.Color
                 PressedFill: =Self.Fill
                 Text: ="Add Logo"

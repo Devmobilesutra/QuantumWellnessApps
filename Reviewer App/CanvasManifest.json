@@ -148,11 +148,11 @@
     "ViewAssessment_1",
     "TripReport",
     "TripReport_1",
-    "Screen1",
     "TemplateCreation",
     "TemplateSection",
     "TemplateCheckpoint",
     "TemplateActionItem",
-    "TemplateCheckpointItem"
+    "TemplateCheckpointItem",
+    "CompanyDetails"
   ]
 }
