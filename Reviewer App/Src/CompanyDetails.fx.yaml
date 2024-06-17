@@ -1,5 +1,6 @@
 CompanyDetails As screen:
     Fill: =RGBA(237, 237, 237, 1)
+    OnVisible: =false
 
     ctnHeaderDashboardScreen_6 As groupContainer.manualLayoutContainer:
         Fill: =Header.HeaderFill
@@ -38,7 +39,7 @@ CompanyDetails As screen:
             Font: =Header.HeaderFont
             FontWeight: =Header.FontWeight
             Height: =Parent.Height
-            Size: =16
+            Size: =26
             Text: ="Company Information"
             Width: =ctnHeaderDashboardScreen_6.Width/1.6
             X: =imgSchindlerlogoDS_6.Width+imgSchindlerlogoDS_6.X
@@ -88,7 +89,8 @@ CompanyDetails As screen:
 
         TextInput1 As text:
             BorderColor: =RGBA(219, 219, 219, 1)
-            Default: ="Enter"
+            Default: =
+            HintText: ="Enter"
             Width: =Parent.Width-100
             ZIndex: =2
 
@@ -122,6 +124,7 @@ CompanyDetails As screen:
                 BorderColor: =referenceCSS.RActiveColor
                 BorderThickness: =2
                 Height: =50
+                Reset: =VarImageReset
                 Size: =16
                 Text: ="+ Image"
                 Width: =200
@@ -137,15 +140,43 @@ CompanyDetails As screen:
 
         Button9 As button:
             Fill: =referenceCSS.RActiveColor
-            OnSelect: |-
-                =UpdateIf(
-                    CollectionCapCounts,
-                    ID = "1",
-                    {
-                        CompanyName: TextInput1.Text,
-                        CompanyLogo: UploadedImage1.Image
-                    }
-                )
+            OnSelect: |
+                =Set(
+                    VarUpdate,
+                    Blank()
+                );
+                Set(
+                    VarUpdate,
+                    UpdateIf(
+                        CollectionCapCounts,
+                        ID = "1",
+                        {
+                            CompanyName: TextInput1.Text,
+                            CompanyLogo: UploadedImage1.Image
+                        }
+                    )
+                );
+                If(
+                    IsBlank(VarUpdate),
+                    Notify(
+                        "Error,please try again.",
+                        NotificationType.Information
+                    ),
+                    Notify(
+                        "Save Successfully",
+                        NotificationType.Information
+                    );
+                    Reset(TextInput1);
+                    Set(
+                        VarImageReset,
+                        false
+                    );
+                    Set(
+                        VarImageReset,
+                        true
+                    );
+                    
+                );
             PaddingTop: =0
             Text: ="Save"
             ZIndex: =7
