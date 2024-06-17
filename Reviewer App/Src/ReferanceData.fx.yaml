@@ -126,7 +126,7 @@ ReferanceData As screen:
                 Y: =ctnHeaderRD.Height
                 ZIndex: =2
 
-                ctnClientRD As groupContainer.manualLayoutContainer:
+                ctnClientRD_1 As groupContainer.manualLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderColor: =RGBA(230, 230, 230, 1)
                     BorderThickness: =5
@@ -136,6 +136,49 @@ ReferanceData As screen:
                     LayoutMinWidth: =50
                     Width: =Parent.Width/2.1
                     ZIndex: =1
+
+                    lblClientRD_1 As label:
+                        Align: =Align.Center
+                        Color: =referenceCSS.RColorBlack
+                        FontWeight: =FontWeight.Bold
+                        Height: =70
+                        Size: =referenceCSS.RFontSize
+                        Text: ="Create Checklist Template"
+                        Width: =Parent.Width
+                        Y: =Parent.Height/6-20
+                        ZIndex: =4
+
+                    imgClientRD_1 As image:
+                        Height: =90
+                        Image: =accordianPlus
+                        Width: =90
+                        X: =(Parent.Width-Self.Width)/2
+                        Y: =lblClientRD_1.Y+lblClientRD_1.Height+10
+                        ZIndex: =6
+
+                    btnClientRD_1 As button:
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Parent.Height
+                        HoverFill: =RGBA(0,0,0,0)
+                        OnSelect: |-
+                            =Set(VarBlack,RGBA(0, 0, 0, 1));
+                            Navigate(TemplateCreation);
+                             NewForm(Form1)
+                        Text: =""
+                        Width: =Parent.Width
+                        Y: =ctnClientRD_1.Y
+                        ZIndex: =7
+
+                ctnClientRD As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(230, 230, 230, 1)
+                    BorderThickness: =5
+                    Height: |
+                        =If(App.Height<900,Parent.Height/1.04, App.Width<1200,Parent.Height/2.4,Parent.Height/1.2)
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =50
+                    Width: =Parent.Width/2.1
+                    ZIndex: =2
 
                     lblClientRD As label:
                         Align: =Align.Center
