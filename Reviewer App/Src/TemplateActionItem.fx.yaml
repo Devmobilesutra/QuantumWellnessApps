@@ -54,14 +54,14 @@ TemplateActionItem As screen:
                 ZIndex: =3
 
             imgSchindlerlogoDS_5 As image:
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =referenceCSS.RActiveColor
                 Height: =Parent.Height
-                Image: =Schindler_logo_PNG1_1
+                Image: =VarLogo.CompanyLogo
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderDashboardScreen_5.Width/10
+                Width: =80//ctnHeaderDashboardScreen_5.Width/10
                 ZIndex: =4
 
             Icon3 As icon.BackArrow:

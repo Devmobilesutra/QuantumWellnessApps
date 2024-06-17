@@ -18,14 +18,14 @@ TripReport As screen:
             ZIndex: =1
 
             Image1_27 As image:
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =referenceCSS.RActiveColor
                 Height: =Parent.Height
-                Image: =Schindler_logo_PNG1
+                Image: =VarLogo.CompanyLogo
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =Container3_21.Width/10
+                Width: =80//Container3_21.Width/10
                 ZIndex: =1
 
             Image2_33 As image:

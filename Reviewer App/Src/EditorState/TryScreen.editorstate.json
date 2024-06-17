@@ -71,7 +71,7 @@
       "MetaDataIDKey": "",
       "Name": "btnActionVA_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9161,7 +9161,7 @@
       "MetaDataIDKey": "",
       "Name": "glryCheckpointitemimagesVA_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
