@@ -291,13 +291,10 @@ DashboardScreen As screen:
                 Fill: =referenceCSS.RActiveColor
                 HoverColor: =Self.Color
                 HoverFill: =ColorFade(Self.Fill, -20%)
-                OnSelect: |-
-                    =Set(VarBlack,RGBA(0, 0, 0, 1));
-                    Navigate(TemplateCreation);
-                     NewForm(Form1)
+                OnSelect: =Navigate(Screen1);
                 PressedColor: =Self.Color
                 PressedFill: =Self.Fill
-                Text: ="create template"
+                Text: ="Add Logo"
                 Width: =260
                 ZIndex: =3
 
