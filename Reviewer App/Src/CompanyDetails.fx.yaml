@@ -185,6 +185,7 @@ CompanyDetails As screen:
                         VarImageReset,
                         true
                     );
+                    Set(VarLogo,First(CollectionCapCounts));
                     
                 );
             PaddingTop: =0

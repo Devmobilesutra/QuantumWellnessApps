@@ -20,14 +20,15 @@ ReferanceData As screen:
             ZIndex: =1
 
             imgLogoReferenceData As image:
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =referenceCSS.RActiveColor
                 Height: =Parent.Height
-                Image: =Schindler_logo_PNG1
+                Image: =VarLogo.CompanyLogo
+                ImagePosition: =ImagePosition.Stretch
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderRD.Width/10
+                Width: =80//ctnHeaderRD.Width/10
                 ZIndex: =1
 
             imguserprofileReferenceData As image:

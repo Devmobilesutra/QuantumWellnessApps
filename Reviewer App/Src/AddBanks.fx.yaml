@@ -49,14 +49,14 @@ AddBanks As screen:
             ZIndex: =1
 
             imglogoAddBanks As image:
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =referenceCSS.RActiveColor
                 Height: =Parent.Height
-                Image: =Schindler_logo_PNG1
+                Image: =VarLogo.CompanyLogo
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderAddBanks.Width/10
+                Width: =80//ctnHeaderAddBanks.Width/10
                 ZIndex: =1
 
             imguserprofileAddBanks As image:

@@ -150,6 +150,8 @@ App As appinfo:
             )
         );
         
+        Set(VarLogo,First(CollectionCapCounts));
+        
         //for disable
         Set(
             lodder,
