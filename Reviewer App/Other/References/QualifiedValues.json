@@ -272,6 +272,13 @@
       "Kind": "default.cds_aaduser_forms",
       "Namespace": "AAD Users (Forms)",
       "Values": {}
+    },
+    {
+      "Kind": "default.cds_shlaf_collectioncapcount_forms",
+      "Namespace": "CollectionCapCounts (Forms)",
+      "Values": {
+        "Information": "da8d7163-1873-452a-b150-820e14f9efdb"
+      }
     }
   ]
 }

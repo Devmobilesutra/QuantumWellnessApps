@@ -137,6 +137,15 @@ CompanyDetails As screen:
 
         Button9 As button:
             Fill: =referenceCSS.RActiveColor
+            OnSelect: |-
+                =UpdateIf(
+                    CollectionCapCounts,
+                    ID = "1",
+                    {
+                        CompanyName: TextInput1.Text,
+                        CompanyLogo: UploadedImage1.Image
+                    }
+                )
             PaddingTop: =0
             Text: ="Save"
             ZIndex: =7
