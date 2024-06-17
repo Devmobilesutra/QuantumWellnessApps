@@ -60,7 +60,17 @@ CompanyDetails As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =44
             Icon: =Icon.BackArrow
-            OnSelect: =Back()
+            OnSelect: |-
+                =Back();
+                Reset(TextInput1);
+                    Set(
+                        VarImageReset,
+                        false
+                    );
+                    Set(
+                        VarImageReset,
+                        true
+                    );
             Width: =44
             X: =imgSchindlerlogoDS_6.X+imgSchindlerlogoDS_6.Width+20
             Y: =Parent.Height/4
