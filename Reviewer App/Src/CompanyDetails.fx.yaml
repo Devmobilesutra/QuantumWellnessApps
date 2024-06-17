@@ -68,17 +68,20 @@ CompanyDetails As screen:
     Container23 As groupContainer.verticalAutoLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
         Height: =500
+        LayoutAlignItems: =LayoutAlignItems.Center
         LayoutDirection: =LayoutDirection.Vertical
         LayoutGap: =10
         LayoutMode: =LayoutMode.Auto
         PaddingBottom: =10
-        PaddingLeft: =10
         PaddingTop: =10
         X: =(Parent.Width-Self.Width)/2
         Y: =(Parent.Height-Self.Height)/2
         ZIndex: =3
 
         Label4 As label:
+            FontWeight: =FontWeight.Semibold
+            PaddingLeft: =15
+            Size: =16
             Text: ="Enter Company Name"
             Width: =Parent.Width
             ZIndex: =1
@@ -89,6 +92,9 @@ CompanyDetails As screen:
             ZIndex: =2
 
         Label5 As label:
+            FontWeight: =FontWeight.Semibold
+            PaddingLeft: =15
+            Size: =16
             Text: ="Add Logo"
             Width: =Parent.Width
             ZIndex: =3
@@ -106,7 +112,7 @@ CompanyDetails As screen:
                 Height: =200
                 Image: =If(IsBlank(AddMediaButton1.Media), SampleImage, AddMediaButton1.Media)
                 ImagePosition: =ImagePosition.Fill
-                Width: =250
+                Width: =200
                 X: =AddMediaButton1.X
                 Y: =AddMediaButton1.Y
                 ZIndex: =5
@@ -115,14 +121,15 @@ CompanyDetails As screen:
                 BorderColor: =referenceCSS.RActiveColor
                 BorderThickness: =2
                 Height: =50
-                Size: =20
+                Size: =16
                 Text: ="+ Image"
-                Width: =250
+                Width: =200
                 X: =60
                 Y: =60
                 ZIndex: =6
 
         Button9 As button:
-            Text: ="Button"
+            Fill: =referenceCSS.RActiveColor
+            Text: ="Save"
             ZIndex: =7
 
