@@ -78,7 +78,7 @@ CompanyDetails As screen:
 
     Container23 As groupContainer.verticalAutoLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =510
+        Height: =500
         LayoutAlignItems: =LayoutAlignItems.Center
         LayoutDirection: =LayoutDirection.Vertical
         LayoutGap: =10
@@ -86,7 +86,7 @@ CompanyDetails As screen:
         PaddingBottom: =10
         PaddingTop: =10
         X: =(Parent.Width-Self.Width)/2
-        Y: =(Parent.Height-Self.Height)/2
+        Y: =(Parent.Height-Self.Height)/2+30
         ZIndex: =3
 
         Label4 As label:

@@ -200,7 +200,7 @@ DashboardScreen As screen:
                     Size: |-
                         =
                         Dashboard.DFontSize
-                    Text: ="Reference"
+                    Text: ="Inspection"
                     Width: =Parent.Width
                     Y: =Parent.Height/8
                     ZIndex: =1
@@ -211,7 +211,7 @@ DashboardScreen As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =35
                     Size: =Dashboard.DFontSize
-                    Text: ="Data"
+                    Text: ="Configuration"
                     Width: =Parent.Width
                     Y: =lblReferenceDS.Y+lblReferenceDS.Height
                     ZIndex: =2
@@ -365,7 +365,7 @@ DashboardScreen As screen:
             FontWeight: =Header.FontWeight
             Height: =Parent.Height
             Size: =Header.HeaderFontSize
-            Text: ="Inspection"
+            Text: =VarLogo.CompanyName
             Width: =ctnHeaderDashboardScreen.Width/1.6
             X: =imgSchindlerlogoDS.Width+imgSchindlerlogoDS.X
             ZIndex: =3
