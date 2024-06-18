@@ -122,12 +122,12 @@ FindingScreen As screen:
                 DisplayMode: =DisplayMode.View
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =Parent.Height
-                Image: ='schindler-logo'
+                Image: =First(gcCollectionCapCounts).CompanyLogo
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderFS.Width/12
+                Width: =80//ctnHeaderFS.Width/12
                 ZIndex: =1
 
             lblAssessmentPFS_3 As label:
@@ -2562,7 +2562,7 @@ FindingScreen As screen:
                                 OnSelect: |-
                                     =ClearCollect(tempPhoto,{Id:1,image:'Sample Image'});
                                     Set(VarCameraFlag,0);
-                                    Navigate(Screen2);
+                                    Navigate(CaptureImage);
                                 PressedColor: =Self.Color
                                 PressedFill: =Self.Fill
                                 Text: |-

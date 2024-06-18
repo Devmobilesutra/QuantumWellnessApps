@@ -52,12 +52,12 @@ SectionScreen As screen:
                 DisplayMode: =DisplayMode.View
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =80
-                Image: ='schindler-logo'
+                Image: =First(gcCollectionCapCounts).CompanyLogo
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderBS.Width/12
+                Width: =80//ctnHeaderBS.Width/12
                 ZIndex: =1
 
             lblAssessmentBS_4 As label:

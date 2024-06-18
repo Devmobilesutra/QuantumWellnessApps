@@ -1,12 +1,13 @@
-Screen3 As screen:
+SaveImage As screen:
     OnVisible: =Set(VarImageEdit,false);
 
     Image2 As image:
-        Height: =Parent.Height-100
+        Height: =Parent.Height-150
         Image: |-
             =//If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
             If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
-        Width: =Parent.Width-200
+        ImagePosition: =ImagePosition.Fill
+        Width: =Parent.Width
         X: =(Parent.Width-Self.Width)/2
         Y: =20
         ZIndex: =1
@@ -16,14 +17,14 @@ Screen3 As screen:
         Fill: =RGBA(0, 0, 0, 0)
         HoverColor: =Self.Color
         HoverFill: =Self.Fill
-        OnSelect: =Navigate(Screen2,ScreenTransition.UnCoverRight);
+        OnSelect: =Navigate(CaptureImage,ScreenTransition.UnCoverRight);
         PressedColor: =Self.Color
         PressedFill: =Self.Fill
         Text: ="Retake"
         Width: =200
         X: =20
         Y: =Parent.Height-50
-        ZIndex: =4
+        ZIndex: =2
 
     Button8 As button:
         Color: =RGBA(0, 0, 0, 1)
@@ -51,7 +52,7 @@ Screen3 As screen:
         Width: =206
         X: =1143
         Y: =Parent.Height-50
-        ZIndex: =5
+        ZIndex: =3
 
     Icon5 As icon.Edit:
         Color: =RGBA(0, 0, 0, 1)
@@ -64,16 +65,26 @@ Screen3 As screen:
         Width: =44
         X: =Parent.Width-Self.Width-20
         Y: =30
-        ZIndex: =6
+        ZIndex: =4
 
     PenInput1 As inkControl:
-        BorderThickness: =0
-        Height: =Image2.Height
+        BorderThickness: =5
+        Height: =Parent.Height//Image2.Height+120
         Visible: =VarImageEdit =true
-        Width: =Image2.Width-300
+        Width: =Image2.Width
         X: =(Parent.Width-Self.Width)/2
-        Y: =20
-        ZIndex: =7
+        ZIndex: =5
+
+    imgSpinnerResume_1 As image:
+        Fill: =RGBA(0, 0, 0, 0.29)
+        Height: =Parent.Height
+        Image: ='ajax-loader 2'
+        ImagePosition: =ImagePosition.Center
+        Visible: =VarImgEditSpiner
+        Width: =Parent.Width
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =6
 
     Icon7 As icon.Save:
         Color: =RGBA(0, 0, 0, 1)
@@ -101,7 +112,7 @@ Screen3 As screen:
                 
                 PenInput1.Width,
                 PenInput1.Height,
-                 Image2.Width,
+                 Image2.Width+600,
                 Image2.Height
             ).overlapimage;);
             Set(VarImageEdit,false);
@@ -110,16 +121,5 @@ Screen3 As screen:
         Width: =44
         X: =Parent.Width-Self.Width-20
         Y: =30
-        ZIndex: =8
-
-    imgSpinnerResume_1 As image:
-        Fill: =RGBA(0, 0, 0, 0.29)
-        Height: =Parent.Height
-        Image: ='ajax-loader 2'
-        ImagePosition: =ImagePosition.Center
-        Visible: =VarImgEditSpiner
-        Width: =Parent.Width
-        X: =(Parent.Width-Self.Width)/2
-        Y: =(Parent.Height-Self.Height)/2
-        ZIndex: =9
+        ZIndex: =7
 

@@ -196,7 +196,7 @@ TripReportNewScreen As screen:
                         Height: =ctnBankASTRS_1.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="G.O./Commission number"
+                        Text: ="Inspection Module Id"
                         Width: |-
                             =//ctnMiddleAS.Width/9
                             350
@@ -473,7 +473,7 @@ TripReportNewScreen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =ctnAssessmntTypeAS_8.Height
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="G.O./Commission number"
+                        Text: ="Inspection Module Id "
                         Width: |-
                             =//ctnMiddleAS.Width/4.5
                             350
@@ -1109,12 +1109,12 @@ TripReportNewScreen As screen:
                 DisplayMode: =DisplayMode.View
                 Fill: =RGBA(255, 255, 255, 1)
                 Height: =ctnHeaderTRS_1.Height
-                Image: ='schindler-logo'
+                Image: =First(gcCollectionCapCounts).CompanyLogo
                 PaddingBottom: =5
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderTRS_1.Width/12
+                Width: =80//ctnHeaderTRS_1.Width/12
                 ZIndex: =1
 
             lblAssessmentTRS_1 As label:

@@ -968,7 +968,7 @@
       "MetaDataIDKey": "",
       "Name": "btnBackPFS_4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21918,7 +21918,7 @@
       "MetaDataIDKey": "",
       "Name": "iconOuterRectangleBS_6",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25348,7 +25348,14 @@
         "AutoDisableOnSelect",
         "X",
         "Y",
-        "Width",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "ctnHeaderFS_1.Width/12",
+          "InvariantPropertyName": "Width",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -25436,7 +25443,7 @@
         {
           "Category": "Design",
           "PropertyName": "Width",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -34353,7 +34360,7 @@
       "MetaDataIDKey": "",
       "Name": "Label9_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -40835,7 +40842,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"G.O./Commission number\"",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -40936,7 +40950,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",
@@ -46093,7 +46107,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle1_24",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46285,7 +46299,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle1_25",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46477,7 +46491,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle1_26",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46669,7 +46683,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle1_27",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46861,7 +46875,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle1_28",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -47067,7 +47081,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_20",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -47273,7 +47287,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_21",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -47479,7 +47493,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_22",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -47685,7 +47699,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_23",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -47891,7 +47905,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_24",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -48090,7 +48104,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_25",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -48796,7 +48810,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInput5_13",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -50055,7 +50069,7 @@
       "MetaDataIDKey": "",
       "Name": "TimerglryProject_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
