@@ -2940,14 +2940,14 @@ FindingScreen As screen:
                                                 ),
                                                 JSONFormat.IncludeBinaryData
                                             )
-                                        )+ Len(
+                                        )/*+ Len(
                                             JSON(
                                                 DropColumns(
                                                     gcCollectionCapCounts,
-                                                    Owner
+                                                    Owner,
                                                 )
                                             )
-                                        )
+                                        )*/
                                     );
                                     /*Set(
                                         VarJsonStringItem,
