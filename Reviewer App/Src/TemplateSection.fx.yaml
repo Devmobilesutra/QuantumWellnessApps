@@ -87,7 +87,7 @@ TemplateSection As screen:
                 AlignInContainer: =AlignInContainer.Center
                 FontWeight: =FontWeight.Bold
                 Size: =16
-                Text: ="Add New Section"
+                Text: ="Add New Checklist"
                 Width: =Parent.Width/2
                 ZIndex: =1
 
