@@ -127,7 +127,7 @@ FindingScreen_1 As screen:
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
-                Width: =ctnHeaderFS_1.Width/12
+                Width: =80//ctnHeaderFS_1.Width/12
                 ZIndex: =1
 
             lblAssessmentPFS_4 As label:
@@ -369,7 +369,7 @@ FindingScreen_1 As screen:
                         Height: =ctnBankAS_6.Height
                         PaddingLeft: =20
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="G.O./Commission number"
+                        Text: ="Inspection Module Id"
                         Width: =330
                         ZIndex: =3
 

@@ -1,4 +1,4 @@
-Screen2 As screen:
+CaptureImage As screen:
     ImagePosition: =ImagePosition.Fill
     OnVisible: =Set(VarOutput,Blank());
 
@@ -15,7 +15,7 @@ Screen2 As screen:
         Icon: =Icon.CameraAperture
         OnSelect: |-
             =Set(VarPhoto,Camera1.Stream);
-            Navigate(Screen3);
+            Navigate(SaveImage);
         Width: =140
         X: =(Parent.Width-Self.Width)/2
         Y: =Parent.Height-100
