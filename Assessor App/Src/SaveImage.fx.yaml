@@ -6,8 +6,7 @@ SaveImage As screen:
         Image: |-
             =//If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
             If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
-        ImagePosition: =ImagePosition.Fill
-        Width: =Parent.Width
+        Width: =Parent.Width-100
         X: =(Parent.Width-Self.Width)/2
         Y: =20
         ZIndex: =1
@@ -68,11 +67,11 @@ SaveImage As screen:
         ZIndex: =4
 
     PenInput1 As inkControl:
-        BorderThickness: =5
+        BorderThickness: =0
         Height: =Parent.Height//Image2.Height+120
         Visible: =VarImageEdit =true
-        Width: =Image2.Width
-        X: =(Parent.Width-Self.Width)/2
+        Width: =Image2.Width-60
+        X: =90
         ZIndex: =5
 
     imgSpinnerResume_1 As image:
