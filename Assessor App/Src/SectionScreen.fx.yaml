@@ -262,7 +262,7 @@ SectionScreen As screen:
                         Height: =ctnBankSS.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="G.O./Commission number"
+                        Text: ="Inspection Module Id"
                         Width: =350
                         ZIndex: =1
 
@@ -402,7 +402,7 @@ SectionScreen As screen:
                                 gcBank,
                                 Id = VarBankId,
                                 productId.product_Model
-                            ) & " series section list"
+                            ) & " Product Checklist"
                         Width: =ctnproductSS.Width/1.4
                         X: =
                         Y: =

@@ -458,6 +458,85 @@ ProjectScreen As screen:
                         Y: =lblDueDate.Y+lblDueDate.Height
                         ZIndex: =36
 
+                grImageIcons As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =39
+
+                    imglogo As image:
+                        Image: ='lift image-1x'
+                        OnSelect: =Select(Parent)
+                        X: =Parent.Width-Self.Width*2
+                        Y: =glryProject.TemplateHeight/1.5
+                        ZIndex: =24
+
+                    imgAssignedDate As image:
+                        Height: =20
+                        Image: =calendar
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =glryProject.Width/20
+                        Y: =lblBank.Height+lblBank.Y+5
+                        ZIndex: =27
+
+                    imgStartDate As image:
+                        Height: =20
+                        Image: =calendar
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =glryProject.Width/20
+                        Y: =lblAssignedDate.Height+lblAssignedDate.Y+5
+                        ZIndex: =28
+
+                    imgDueDate As image:
+                        Height: =20
+                        Image: =calendar
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =glryProject.Width/20
+                        Y: =lblStartDate.Y+lblStartDate.Height+5
+                        ZIndex: =29
+
+                    imgAddress As image:
+                        Height: =20
+                        Image: =location
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =glryProject.Width/20
+                        Y: =(lblProjectName.Y+lblProjectName.Height)+25
+                        ZIndex: =31
+
+                    imgContact As image:
+                        Height: =20
+                        Image: =call
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =glryProject.Width/20
+                        Y: |+
+                            =lblContact.Y+5
+                            
+                        ZIndex: =32
+
+                    imgBank As image:
+                        Height: =20
+                        Image: ='549-5498573_office-building-white-building-icon-png-clipart'
+                        OnSelect: =Select(Parent)
+                        Width: =20
+                        X: =glryProject.Width/20
+                        Y: =lblContactNumber.Y+lblContactNumber.Height+5
+                        ZIndex: =34
+
+                    imgReviewer As image:
+                        Height: =23
+                        Image: =Sample_User_Icon
+                        OnSelect: =Select(Parent)
+                        Width: =23
+                        X: =glryProject.Width/20
+                        Y: =lblDueDate.Y+lblDueDate.Height+5
+                        ZIndex: =37
+
                 grLabel As group:
                     Height: =5
                     Width: =5
@@ -474,7 +553,7 @@ ProjectScreen As screen:
                         PaddingLeft: =10
                         PaddingRight: =10
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="G.O./Commission number"
+                        Text: ="Inspection Module Id"
                         Width: =300
                         X: =Parent.Width/13
                         Y: =lblContactNumber.Y+lblContactNumber.Height
@@ -561,83 +640,4 @@ ProjectScreen As screen:
                         X: =Parent.Width/13
                         Y: =lblDueDate.Y+lblDueDate.Height
                         ZIndex: =35
-
-                grImageIcons As group:
-                    Height: =5
-                    Width: =5
-                    X: =40
-                    Y: =40
-                    ZIndex: =39
-
-                    imglogo As image:
-                        Image: ='lift image-1x'
-                        OnSelect: =Select(Parent)
-                        X: =Parent.Width-Self.Width*2
-                        Y: =glryProject.TemplateHeight/1.5
-                        ZIndex: =24
-
-                    imgAssignedDate As image:
-                        Height: =20
-                        Image: =calendar
-                        OnSelect: =Select(Parent)
-                        Width: =20
-                        X: =glryProject.Width/20
-                        Y: =lblBank.Height+lblBank.Y+5
-                        ZIndex: =27
-
-                    imgStartDate As image:
-                        Height: =20
-                        Image: =calendar
-                        OnSelect: =Select(Parent)
-                        Width: =20
-                        X: =glryProject.Width/20
-                        Y: =lblAssignedDate.Height+lblAssignedDate.Y+5
-                        ZIndex: =28
-
-                    imgDueDate As image:
-                        Height: =20
-                        Image: =calendar
-                        OnSelect: =Select(Parent)
-                        Width: =20
-                        X: =glryProject.Width/20
-                        Y: =lblStartDate.Y+lblStartDate.Height+5
-                        ZIndex: =29
-
-                    imgAddress As image:
-                        Height: =20
-                        Image: =location
-                        OnSelect: =Select(Parent)
-                        Width: =20
-                        X: =glryProject.Width/20
-                        Y: =(lblProjectName.Y+lblProjectName.Height)+25
-                        ZIndex: =31
-
-                    imgContact As image:
-                        Height: =20
-                        Image: =call
-                        OnSelect: =Select(Parent)
-                        Width: =20
-                        X: =glryProject.Width/20
-                        Y: |+
-                            =lblContact.Y+5
-                            
-                        ZIndex: =32
-
-                    imgBank As image:
-                        Height: =20
-                        Image: ='549-5498573_office-building-white-building-icon-png-clipart'
-                        OnSelect: =Select(Parent)
-                        Width: =20
-                        X: =glryProject.Width/20
-                        Y: =lblContactNumber.Y+lblContactNumber.Height+5
-                        ZIndex: =34
-
-                    imgReviewer As image:
-                        Height: =23
-                        Image: =Sample_User_Icon
-                        OnSelect: =Select(Parent)
-                        Width: =23
-                        X: =glryProject.Width/20
-                        Y: =lblDueDate.Y+lblDueDate.Height+5
-                        ZIndex: =37
 

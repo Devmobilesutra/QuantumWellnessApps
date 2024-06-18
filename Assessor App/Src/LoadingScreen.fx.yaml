@@ -37,8 +37,8 @@ LoadingScreen As screen:
 
     ImgLS As image:
         Height: =Parent.Height
-        Image: ='042 splash-2x'
-        ImagePosition: =ImagePosition.Fill
+        Image: =MSLogo
+        ImagePosition: =ImagePosition.Center
         Width: =Parent.Width
         ZIndex: =1
 
