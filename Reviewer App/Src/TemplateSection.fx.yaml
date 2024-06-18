@@ -521,8 +521,8 @@ TemplateSection As screen:
                         NewForm(Form3);
                     PressedColor: =Self.Color
                     PressedFill: =Self.Fill
-                    Text: ="Add Checkpoint"
-                    Width: =180
+                    Text: ="Create Sub-Checklist"
+                    Width: =210
                     X: =Parent.TemplateWidth - Self.Width - 22
                     Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                     ZIndex: =7

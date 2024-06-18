@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "shlaf_collectioncapcount",
+    "MaxGetRowsCount": 500,
     "Name": "CollectionCapCounts",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

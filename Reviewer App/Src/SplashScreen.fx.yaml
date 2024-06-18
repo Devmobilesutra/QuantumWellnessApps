@@ -22,9 +22,8 @@ SplashScreen As screen:
         ZIndex: =2
 
     ImgLS As image:
-        Fill: =RGBA(219, 219, 219, 1)
         Height: =Parent.Height
-        Image: =MS_logo
+        Image: =MSLogo
         ImagePosition: =ImagePosition.Center
         Width: =Parent.Width
         ZIndex: =4
