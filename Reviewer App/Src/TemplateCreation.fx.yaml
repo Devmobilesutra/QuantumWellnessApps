@@ -49,7 +49,7 @@ TemplateCreation As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Template Creation"
+                Text: ="Product Creation"
                 Width: =ctnHeaderDashboardScreen_1.Width/1.6
                 X: =imgSchindlerlogoDS_1.Width+imgSchindlerlogoDS_1.X
                 ZIndex: =3
@@ -88,7 +88,7 @@ TemplateCreation As screen:
                 AlignInContainer: =AlignInContainer.Center
                 FontWeight: =FontWeight.Bold
                 Size: =16
-                Text: ="Add New Template"
+                Text: ="Add New Product"
                 Width: =Parent.Width/2
                 ZIndex: =1
 
@@ -149,7 +149,7 @@ TemplateCreation As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Model"
+                            Text: ="Product Model"
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -222,7 +222,7 @@ TemplateCreation As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Type "//Parent.DisplayName
+                            Text: ="Product Type "
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -296,7 +296,7 @@ TemplateCreation As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Name"//Parent.DisplayName
+                            Text: ="Product Name"
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -370,7 +370,7 @@ TemplateCreation As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Description "
+                            Text: ="Product Description "
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -536,7 +536,8 @@ TemplateCreation As screen:
                         NewForm(Form2);
                     PressedColor: =Self.Color
                     PressedFill: =Self.Fill
-                    Text: ="Add Section"
+                    Text: ="Create Checklist"
+                    Width: =180
                     X: =Parent.TemplateWidth - Self.Width - 22
                     Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                     ZIndex: =7

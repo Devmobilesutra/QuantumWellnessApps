@@ -10,9 +10,6 @@
     "Name": "CollectionCapCounts",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
-      "cr33a_companylogo": "CompanyLogo",
-      "cr33a_companylogoid": "cr33a_CompanyLogoId",
-      "cr33a_companyname": "CompanyName",
       "createdby": "Created By",
       "createdon": "Created On",
       "createdonbehalfby": "Created By (Delegate)",

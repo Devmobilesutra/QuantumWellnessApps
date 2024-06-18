@@ -365,7 +365,7 @@ DashboardScreen As screen:
             FontWeight: =Header.FontWeight
             Height: =Parent.Height
             Size: =Header.HeaderFontSize
-            Text: ="Wellness Assessments"
+            Text: ="Inspection"
             Width: =ctnHeaderDashboardScreen.Width/1.6
             X: =imgSchindlerlogoDS.Width+imgSchindlerlogoDS.X
             ZIndex: =3

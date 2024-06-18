@@ -233,7 +233,7 @@ ReferanceData As screen:
                         Size: |-
                             =
                             referenceCSS.RFontSize
-                        Text: ="Banks"
+                        Text: ="Module"
                         Width: =Parent.Width
                         Y: =Parent.Height/6
                         ZIndex: =1

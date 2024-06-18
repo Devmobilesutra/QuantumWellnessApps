@@ -93,7 +93,7 @@ AddBanks As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Banks"
+                Text: ="Module"
                 Width: =ctnHeaderAddBanks.Width/1.6
                 X: =imglogoAddBanks.Width+imglogoAddBanks.X
                 ZIndex: =8
@@ -205,7 +205,7 @@ AddBanks As screen:
                         Size: |-
                             =
                             referenceCSS.RFontSize
-                        Text: ="New Bank"
+                        Text: ="New Module"
                         Width: =Parent.Width
                         ZIndex: =1
 
@@ -254,7 +254,7 @@ AddBanks As screen:
                         PressedColor: =
                         PressedFill: =
                         Size: =referenceCSS.RFontSize
-                        Text: ="Existing Banks"
+                        Text: ="Existing Module"
                         Width: =Parent.Width
                         ZIndex: =1
 
@@ -647,7 +647,7 @@ AddBanks As screen:
                         PaddingLeft: =0
                         PaddingTop: =20
                         Size: =referenceCSS.RLabelFontSize
-                        Text: ="G.O./Commission Number *"
+                        Text: ="Inspection Module Id *"
                         Width: =Parent.Width/2
                         ZIndex: =3
 

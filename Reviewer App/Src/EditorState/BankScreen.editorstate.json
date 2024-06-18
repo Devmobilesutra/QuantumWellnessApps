@@ -9133,7 +9133,7 @@
       "MetaDataIDKey": "",
       "Name": "imgCompletedBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10413,7 +10413,7 @@
       "MetaDataIDKey": "",
       "Name": "imgSettingActiveBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11000,7 +11000,7 @@
       "MetaDataIDKey": "",
       "Name": "imgViewActiveBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11126,7 +11126,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -11280,7 +11280,7 @@
       "MetaDataIDKey": "",
       "Name": "lblActionItemtrackerBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11605,7 +11605,7 @@
       "MetaDataIDKey": "",
       "Name": "lblActionItemtrackerBS_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11930,7 +11930,7 @@
       "MetaDataIDKey": "",
       "Name": "lblActionItemtrackerBS_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13675,7 +13675,7 @@
       "MetaDataIDKey": "",
       "Name": "lblAssStatusBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14024,7 +14024,7 @@
       "MetaDataIDKey": "",
       "Name": "lblCommentSentBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15036,7 +15036,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -15623,7 +15623,7 @@
       "MetaDataIDKey": "",
       "Name": "lblToBS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

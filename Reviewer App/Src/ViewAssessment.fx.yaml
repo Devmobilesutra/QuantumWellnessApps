@@ -149,7 +149,7 @@ ViewAssessment As screen:
                         Height: =ctnAssessorAS_1.Height
                         PaddingLeft: =0
                         Size: =referenceCSS.RViewFontSize
-                        Text: ="G.O./Commission Number "
+                        Text: ="Inspection Module Id "
                         Width: =300
                         ZIndex: =1
 
@@ -283,7 +283,7 @@ ViewAssessment As screen:
                         Height: =ctnGonumberVA.Height
                         Size: =referenceCSS.RFontSize
                         Text: |-
-                            =glryAssignmentBS.Selected.productModel & " Series Section list"
+                            =glryAssignmentBS.Selected.productModel & " Product Checklist"
                             
                             //lblBankName.Text go no
                         Width: =ctnHeaderViewAssessment.Width/1.02
@@ -1161,7 +1161,7 @@ ViewAssessment As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Banks"
+                Text: ="Assessment"
                 Width: =ctnHeaderViewAssessment.Width/1.6
                 X: =imgLogoVA.Width+imgLogoVA.X
                 ZIndex: =8
