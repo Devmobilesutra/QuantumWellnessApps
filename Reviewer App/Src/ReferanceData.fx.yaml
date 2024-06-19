@@ -1,4 +1,5 @@
 ReferanceData As screen:
+    OnVisible: = Set(VarLogo,First(CollectionCapCounts));
 
     ctnMainReferenceData As groupContainer.verticalAutoLayoutContainer:
         Height: =Parent.Height

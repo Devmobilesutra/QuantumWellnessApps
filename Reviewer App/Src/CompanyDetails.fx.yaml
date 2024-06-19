@@ -183,6 +183,8 @@ CompanyDetails As screen:
                         "Save Successfully",
                         NotificationType.Information
                     );
+                    Set(VarLogo,First(CollectionCapCounts));
+                    Back();
                     Reset(TextInput1);
                     Set(
                         VarImageReset,
@@ -192,8 +194,7 @@ CompanyDetails As screen:
                         VarImageReset,
                         true
                     );
-                    Set(VarLogo,First(CollectionCapCounts));
-                    Back();
+                   
                    
                     
                 );
