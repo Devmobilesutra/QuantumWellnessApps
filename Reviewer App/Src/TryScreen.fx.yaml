@@ -116,7 +116,7 @@ TryScreen As screen:
                         Height: =ctnAssessorAS_3.Height
                         PaddingLeft: =0
                         Size: =referenceCSS.RViewFontSize
-                        Text: ="G.O./Commission Number "
+                        Text: ="Inspection Set Id "
                         Width: =300
                         ZIndex: =1
 

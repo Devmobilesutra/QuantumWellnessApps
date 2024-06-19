@@ -149,7 +149,7 @@ ViewAssessment As screen:
                         Height: =ctnAssessorAS_1.Height
                         PaddingLeft: =0
                         Size: =referenceCSS.RViewFontSize
-                        Text: ="Inspection Module Id "
+                        Text: ="Inspection Set Id "
                         Width: =300
                         ZIndex: =1
 

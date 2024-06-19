@@ -211,7 +211,7 @@ EditprojectAssignment As screen:
                         PaddingLeft: =0
                         PaddingTop: =20
                         Size: =referenceCSS.RLabelFontSize
-                        Text: ="G.O./Commission Number *"
+                        Text: ="Inspection Set Id *"
                         Width: =Parent.Width/2
                         Y: =10
                         ZIndex: =3

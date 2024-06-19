@@ -186,7 +186,7 @@ projectAssignment As screen:
                         Default: =
                         FocusedBorderThickness: =2
                         FontWeight: =FontWeight.Semibold
-                        HintText: ="Search on G.O. Number"
+                        HintText: ="Search on Inspection Set Id"
                         HoverBorderColor: =
                         HoverFill: =RGBA(0, 0, 0, 0)
                         OnChange: |
@@ -430,7 +430,7 @@ projectAssignment As screen:
                             PaddingLeft: =0
                             PaddingTop: =20
                             Size: =referenceCSS.RLabelFontSize
-                            Text: ="Inspection Module Id *"
+                            Text: ="Inspection Set Id *"
                             Width: =Parent.Width/2
                             Y: =10
                             ZIndex: =3
@@ -1077,7 +1077,7 @@ projectAssignment As screen:
                                 PaddingRight: =0
                                 PaddingTop: =0
                                 Size: =referenceCSS.RLabelFontSize
-                                Text: ="Inspection Module Id "
+                                Text: ="Inspection Set Id "
                                 VerticalAlign: =VerticalAlign.Top
                                 Width: =250
                                 X: =10

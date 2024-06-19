@@ -134,7 +134,7 @@ AllProject As screen:
                         Default: =
                         FocusedBorderThickness: =2
                         FontWeight: =FontWeight.Semibold
-                        HintText: ="Search on Inspection Module Id"
+                        HintText: ="Search on Inspection Set Id"
                         HoverBorderColor: =
                         HoverColor: =
                         HoverFill: =RGBA(0, 0, 0, 0)
@@ -308,7 +308,7 @@ AllProject As screen:
                     PaddingLeft: =10
                     PaddingRight: =10
                     Size: =referenceCSS.RLabelFontSize
-                    Text: ="Inspection Module Id"
+                    Text: ="Inspection Set Id"
                     Width: =210
                     X: =Parent.Width/13
                     Y: =lblContactNumber.Y+lblContactNumber.Height

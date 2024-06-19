@@ -310,7 +310,7 @@ TripReport As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =Parent.Height
                     Size: =referenceCSS.RLabelFontSize
-                    Text: ="Inspection Module Id "
+                    Text: ="Inspection Set Id "
                     Width: |-
                         =//Parent.Width/6
                         250
@@ -562,7 +562,7 @@ TripReport As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =Parent.Height
                     Size: =referenceCSS.RLabelFontSize
-                    Text: ="Inspection Module Id "
+                    Text: ="Inspection Set Id "
                     Width: =Parent.Width/6
                     ZIndex: =1
 

@@ -517,7 +517,7 @@ BankScreen As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Module"
+                Text: ="Inspection Set"
                 Width: =ctnHeaderBankScreen.Width/1.6
                 X: =imgLogoBankScreen.Width+imgLogoBankScreen.X
                 ZIndex: =8

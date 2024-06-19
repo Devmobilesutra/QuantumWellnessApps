@@ -115,7 +115,7 @@ ViewAssessment_1 As screen:
                         Height: =ctnAssessorAS_2.Height
                         PaddingLeft: =0
                         Size: =referenceCSS.RViewFontSize
-                        Text: ="G.O./Commission Number "
+                        Text: ="Inspection Set Id "
                         Width: =300
                         ZIndex: =1
 
