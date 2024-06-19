@@ -70,8 +70,8 @@ SaveImage As screen:
         BorderThickness: =0
         Height: =Parent.Height//Image2.Height+120
         Visible: =VarImageEdit =true
-        Width: =Image2.Width-60
-        X: =90
+        Width: =Image2.Width//-60
+        X: =Image2.X //90
         ZIndex: =5
 
     imgSpinnerResume_1 As image:

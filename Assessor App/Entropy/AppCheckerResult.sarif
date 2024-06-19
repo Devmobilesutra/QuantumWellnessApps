@@ -19553,6 +19553,94 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen2"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Screen2",
+                "type": "Screen2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-ReadableScreenNameNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.PenInput2"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.PenInput2",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Screen2",
+                "type": "Screen2.PenInput2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-AlternativeInputNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.PenInput2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.PenInput2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen2",
+                "type": "Screen2.PenInput2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.varExpanded"
                 }
               ],
@@ -19576,7 +19664,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -19606,7 +19694,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -19636,7 +19724,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -19666,36 +19754,6 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-CollectDelegatableDataSource",
           "ruleIndex": 7
         },
         {
@@ -19726,7 +19784,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19756,7 +19814,37 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19786,7 +19874,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19816,7 +19904,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19846,7 +19934,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19876,7 +19964,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19906,7 +19994,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19936,7 +20024,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19966,7 +20054,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -19996,7 +20084,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20026,7 +20114,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20056,7 +20144,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20086,7 +20174,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20116,7 +20204,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20146,7 +20234,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20176,7 +20264,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20206,7 +20294,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -20235,7 +20323,7 @@
             "level": "Medium"
           },
           "ruleId": "app-DataSourceDefaultMaxRowsLimit",
-          "ruleIndex": 8
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -20264,7 +20352,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -20294,7 +20382,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20324,7 +20412,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20354,7 +20442,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20384,7 +20472,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20414,7 +20502,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20444,7 +20532,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20474,7 +20562,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20504,7 +20592,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20534,7 +20622,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20564,7 +20652,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20594,7 +20682,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20624,7 +20712,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20654,7 +20742,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20684,7 +20772,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20714,7 +20802,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20744,7 +20832,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20774,7 +20862,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20804,7 +20892,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20834,7 +20922,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20864,7 +20952,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20894,7 +20982,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20924,7 +21012,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20954,7 +21042,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -20984,7 +21072,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21014,7 +21102,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21044,7 +21132,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21074,7 +21162,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21104,7 +21192,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21134,7 +21222,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21164,7 +21252,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21194,7 +21282,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21224,7 +21312,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21254,7 +21342,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21284,7 +21372,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21314,7 +21402,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21344,7 +21432,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21374,7 +21462,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21404,7 +21492,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21434,7 +21522,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21464,7 +21552,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21494,7 +21582,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21523,7 +21611,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -21553,7 +21641,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21583,7 +21671,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21613,7 +21701,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21643,7 +21731,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21673,7 +21761,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21703,7 +21791,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21733,7 +21821,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21763,7 +21851,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21793,7 +21881,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21823,7 +21911,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21853,7 +21941,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21883,7 +21971,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21913,7 +22001,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21943,7 +22031,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -21973,7 +22061,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22003,7 +22091,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22033,7 +22121,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22063,7 +22151,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22093,7 +22181,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22123,7 +22211,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22152,7 +22240,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -22182,7 +22270,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22212,7 +22300,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22242,7 +22330,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22272,7 +22360,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22302,7 +22390,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22332,7 +22420,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22362,7 +22450,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22392,7 +22480,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22422,7 +22510,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22452,7 +22540,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22482,7 +22570,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22512,7 +22600,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22542,7 +22630,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22571,7 +22659,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -22601,7 +22689,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22631,7 +22719,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22661,7 +22749,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22691,7 +22779,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22721,7 +22809,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22751,7 +22839,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22781,7 +22869,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22811,7 +22899,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22841,7 +22929,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22871,7 +22959,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22901,7 +22989,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22931,7 +23019,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22961,7 +23049,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -22991,7 +23079,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -23021,7 +23109,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
+          "ruleIndex": 11
         }
       ],
       "tool": {
@@ -23114,6 +23202,23 @@
                 "level": "Low",
                 "primaryCategory": "accessibility",
                 "whyFix": "Some users can't use a pen and require another way to input information. Example: Typing in a signature."
+              }
+            },
+            {
+              "id": "acc-ReadableScreenNameNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Revise screen name"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Give the screen  a title that describes what's on the screen or what it's used for."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
               }
             },
             {

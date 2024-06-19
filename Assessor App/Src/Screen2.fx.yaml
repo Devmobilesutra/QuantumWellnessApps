@@ -1,0 +1,42 @@
+Screen2 As screen:
+
+    Image1 As image:
+        Height: =292
+        Image: =OIP
+        Width: =377
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    PenInput2 As inkControl:
+        Height: =355
+        Width: =388
+        X: =40
+        Y: =40
+        ZIndex: =2
+
+    Button4 As button:
+        OnSelect: |-
+            =Set(Img1,Image1.Image);
+            Set(Img2,PenInput2.Image);
+        Text: ="Overlap Image"
+        X: =86
+        Y: =486
+        ZIndex: =3
+
+    Image4 As image:
+        Height: =Image1.Height
+        Image: =Img1
+        Width: =Image1.Width
+        X: =760
+        Y: =68
+        ZIndex: =4
+
+    Image4_1 As image:
+        Height: =PenInput2.Height
+        Image: =Img2
+        Width: =PenInput2.Width
+        X: =760
+        Y: =68
+        ZIndex: =5
+
