@@ -116,13 +116,13 @@
     "Id": "d592be94-de9c-4682-adf8-1286413d3866",
     "InstrumentationKey": "",
     "ManualOfflineProfileId": "",
-    "Name": "Quantum Reviewer App",
+    "Name": "Reviewer App",
     "OriginatingVersion": "1.320",
     "ParserErrorCount": 0,
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "Quantum Reviewer App",
+    "AppName": "Reviewer App",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",

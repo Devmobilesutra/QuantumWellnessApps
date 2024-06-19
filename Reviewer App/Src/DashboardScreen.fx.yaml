@@ -209,7 +209,6 @@ DashboardScreen As screen:
                     Align: =Align.Center
                     Font: =Dashboard.DFont
                     FontWeight: =FontWeight.Bold
-                    Height: =35
                     Size: =Dashboard.DFontSize
                     Text: ="Configuration"
                     Width: =Parent.Width
@@ -295,6 +294,7 @@ DashboardScreen As screen:
                 PressedColor: =Self.Color
                 PressedFill: =Self.Fill
                 Text: ="Add Logo"
+                Visible: =false
                 Width: =260
                 ZIndex: =3
 
