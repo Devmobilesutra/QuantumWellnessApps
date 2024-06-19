@@ -9,7 +9,7 @@ Screen2 As screen:
         ZIndex: =1
 
     PenInput2 As inkControl:
-        Height: =Image1.Height+30
+        Height: =Image1.Height+40
         Width: =Image1.Width
         X: =40
         Y: =40
@@ -25,18 +25,18 @@ Screen2 As screen:
         ZIndex: =3
 
     Image4 As image:
-        Height: =Image1.Height+250
+        Height: =Image1.Height
         Image: =Img1
-        Width: =Image1.Width+250
-        X: =747
+        Width: =Image1.Width
+        X: =740
         Y: =68
         ZIndex: =4
 
     Image4_1 As image:
-        Height: =PenInput2.Height+250
+        Height: =PenInput2.Height
         Image: =Img2
-        Width: =PenInput2.Width+250
-        X: =760
+        Width: =PenInput2.Width
+        X: =740
         Y: =68
         ZIndex: =5
 
