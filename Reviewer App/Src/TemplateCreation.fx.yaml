@@ -582,7 +582,7 @@ TemplateCreation As screen:
             FontWeight: =FontWeight.Semibold
             Height: =50
             Size: =16
-            Text: ="Edit Template"
+            Text: ="Edit Product"
             Visible: =VarEditTemplate
             Width: =Rectangle10_1.Width
             X: =Rectangle10_1.X
@@ -651,7 +651,7 @@ TemplateCreation As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Model"
+                    Text: ="Product Model"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -724,7 +724,7 @@ TemplateCreation As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Type "//Parent.DisplayName
+                    Text: ="Product Type "
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -798,7 +798,7 @@ TemplateCreation As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Name"//Parent.DisplayName
+                    Text: ="Product Name"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -872,7 +872,7 @@ TemplateCreation As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Description "
+                    Text: ="Product Description "
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30

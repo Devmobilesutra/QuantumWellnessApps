@@ -96,7 +96,7 @@ TemplateSection As screen:
                 AlignInContainer: =AlignInContainer.Center
                 FontWeight: =FontWeight.Bold
                 Size: =16
-                Text: ="Existing Sections"
+                Text: ="Existing Checklist"
                 Width: =Parent.Width/2
                 ZIndex: =2
 
@@ -149,7 +149,7 @@ TemplateSection As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Name " //Parent.DisplayName
+                            Text: ="Product Name " //Parent.DisplayName
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -594,7 +594,7 @@ TemplateSection As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Name " //Parent.DisplayName
+                    Text: ="Product Name "
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
@@ -869,7 +869,7 @@ TemplateSection As screen:
             FontWeight: =FontWeight.Semibold
             Height: =50
             Size: =16
-            Text: ="Edit Section"
+            Text: ="Edit Checklist"
             Visible: =VarEditSection
             Width: =Rectangle10.Width
             X: =Rectangle10.X

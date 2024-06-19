@@ -87,7 +87,7 @@ TemplateCheckpoint As screen:
                 AlignInContainer: =AlignInContainer.Center
                 FontWeight: =FontWeight.Bold
                 Size: =16
-                Text: ="Add New Checkpoint"
+                Text: ="Add New Sub-Checklist"
                 Width: =Parent.Width/2
                 ZIndex: =1
 
@@ -96,7 +96,7 @@ TemplateCheckpoint As screen:
                 AlignInContainer: =AlignInContainer.Center
                 FontWeight: =FontWeight.Bold
                 Size: =16
-                Text: ="Existing Checkpoints"
+                Text: ="Existing Sub-Checklist"
                 Width: =Parent.Width/2
                 ZIndex: =2
 
@@ -147,7 +147,7 @@ TemplateCheckpoint As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Name"
+                            Text: ="Product Name"
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -619,7 +619,7 @@ TemplateCheckpoint As screen:
                         =EditForm(Form3_1);
                         Set(VarEditCheckpoint,true);
                     Width: =30
-                    X: =Parent.TemplateWidth - Self.Width - Button5_1.Width-90
+                    X: =Parent.TemplateWidth - Self.Width - Button5_1.Width-60
                     Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                     ZIndex: =9
 
@@ -729,13 +729,13 @@ TemplateCheckpoint As screen:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     ChevronBackground: =RGBA(77, 77, 77, 1)
                     DefaultSelectedItems: =Parent.Default
-                    DisplayFields: =["shlaf_sectionid"]
+                    DisplayFields: =["shlaf_sectionname"]
                     DisplayMode: =Parent.DisplayMode.Disabled
                     HoverFill: =RGBA(0, 0, 0, 0)
                     Items: =Choices([@templateCheckpoints].shlaf_sectionName)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SearchFields: =["shlaf_sectionid"]
-                    SearchItems: =Search(Choices([@templateCheckpoints].shlaf_sectionName),DataCardValue3.SearchText,shlaf_sectionid)
+                    SearchFields: =["shlaf_sectionname"]
+                    SearchItems: =Search(Choices([@templateCheckpoints].shlaf_sectionName),DataCardValue3.SearchText,shlaf_sectionname)
                     SelectionFill: =RGBA(149, 149, 149, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
@@ -790,7 +790,7 @@ TemplateCheckpoint As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Name"
+                    Text: ="Product Name"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
