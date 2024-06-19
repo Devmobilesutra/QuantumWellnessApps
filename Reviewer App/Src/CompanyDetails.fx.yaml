@@ -101,6 +101,8 @@ CompanyDetails As screen:
             BorderColor: =RGBA(219, 219, 219, 1)
             Default: =
             HintText: ="Enter"
+            HoverBorderColor: =RGBA(51, 51, 51, 1)
+            HoverFill: =Self.Fill
             Width: =Parent.Width-100
             ZIndex: =2
 
@@ -134,6 +136,7 @@ CompanyDetails As screen:
                 BorderColor: =referenceCSS.RActiveColor
                 BorderThickness: =2
                 Height: =50
+                PressedFill: =Self.Fill
                 Reset: =VarImageReset
                 Size: =16
                 Text: ="+ Image"
@@ -150,6 +153,7 @@ CompanyDetails As screen:
 
         Button9 As button:
             Fill: =referenceCSS.RActiveColor
+            HoverFill: =ColorFade(Self.Fill, -20%)
             OnSelect: |
                 =Set(
                     VarUpdate,
@@ -166,12 +170,15 @@ CompanyDetails As screen:
                         }
                     )
                 );
+                 Refresh(CollectionCapCounts);
                 If(
                     IsBlank(VarUpdate),
                     Notify(
                         "Error,please try again.",
                         NotificationType.Information
                     ),
+                   
+                   
                     Notify(
                         "Save Successfully",
                         NotificationType.Information
@@ -186,6 +193,8 @@ CompanyDetails As screen:
                         true
                     );
                     Set(VarLogo,First(CollectionCapCounts));
+                    Back();
+                   
                     
                 );
             PaddingTop: =0
