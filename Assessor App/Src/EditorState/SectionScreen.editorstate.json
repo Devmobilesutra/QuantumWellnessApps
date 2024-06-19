@@ -4477,7 +4477,7 @@
       "MetaDataIDKey": "",
       "Name": "ctnCommentHeaderSS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6762,7 +6762,7 @@
       "MetaDataIDKey": "",
       "Name": "iconBackgorundRectangleSS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7729,7 +7729,7 @@
       "MetaDataIDKey": "",
       "Name": "iconRectanglecmntboxSS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7903,7 +7903,7 @@
       "MetaDataIDKey": "",
       "Name": "iconRectangleCommentSS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8052,7 +8052,7 @@
       "MetaDataIDKey": "",
       "Name": "iconRectangleSafetyPopup",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9942,7 +9942,7 @@
       "MetaDataIDKey": "",
       "Name": "imgSafetySS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11045,7 +11045,7 @@
       "MetaDataIDKey": "",
       "Name": "imgUserHeaderBS_4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17886,7 +17886,7 @@
       "MetaDataIDKey": "",
       "Name": "lblUsernameHeaderBS_4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18624,7 +18624,7 @@
       "MetaDataIDKey": "",
       "Name": "txtSectionCommentSS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
