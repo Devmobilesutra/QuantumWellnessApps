@@ -146,7 +146,7 @@ TemplateCheckpointItem As screen:
                             AutoHeight: =true
                             Color: =VarBlack
                             Height: =34
-                            Text: ="Template Name"
+                            Text: ="Product Name"
                             Width: =Parent.Width - 60
                             Wrap: =false
                             X: =30
@@ -810,7 +810,7 @@ TemplateCheckpointItem As screen:
                     AutoHeight: =true
                     Color: =VarBlack
                     Height: =34
-                    Text: ="Template Name"
+                    Text: ="Product Name"
                     Width: =Parent.Width - 60
                     Wrap: =false
                     X: =30
