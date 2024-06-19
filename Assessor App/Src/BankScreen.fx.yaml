@@ -179,7 +179,7 @@ BankScreen As screen:
                         PaddingLeft: =20
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            ="Inspection Module Id :   " & lblBankName.Text
+                            ="Inspection Set Id :   " & lblBankName.Text
                         Width: =Parent.Width
                         X: |
                             =//lblAssessmentBS_2.X+lblAssessmentBS_2.Width

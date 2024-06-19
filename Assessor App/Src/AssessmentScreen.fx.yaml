@@ -180,7 +180,7 @@ AssessmentScreen As screen:
                         Height: =ctnBankAS_3.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="Inspection Module Id"
+                        Text: ="Inspection Set Id"
                         Width: |-
                             =//ctnMiddleAS.Width/9
                             350

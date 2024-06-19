@@ -262,7 +262,7 @@ SectionScreen As screen:
                         Height: =ctnBankSS.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="Inspection Module Id"
+                        Text: ="Inspection Set Id"
                         Width: =350
                         ZIndex: =1
 

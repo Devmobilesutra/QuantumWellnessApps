@@ -196,7 +196,7 @@ TripReportNewScreen As screen:
                         Height: =ctnBankASTRS_1.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="Inspection Module Id"
+                        Text: ="Inspection Set Id"
                         Width: |-
                             =//ctnMiddleAS.Width/9
                             350
@@ -473,7 +473,7 @@ TripReportNewScreen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =ctnAssessmntTypeAS_8.Height
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="Inspection Module Id "
+                        Text: ="Inspection Set Id "
                         Width: |-
                             =//ctnMiddleAS.Width/4.5
                             350

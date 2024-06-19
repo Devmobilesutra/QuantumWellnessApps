@@ -369,7 +369,7 @@ FindingScreen_1 As screen:
                         Height: =ctnBankAS_6.Height
                         PaddingLeft: =20
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="Inspection Module Id"
+                        Text: ="Inspection Set Id"
                         Width: =330
                         ZIndex: =3
 
