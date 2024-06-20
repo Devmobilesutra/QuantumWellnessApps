@@ -2578,6 +2578,43 @@ FindingScreen As screen:
                                 Y: =Image9_2.Height+Image9_2.Y+10
                                 ZIndex: =7
 
+                            Image9_4 As image:
+                                Height: =Min(Self.Width, Parent.TemplateHeight - 115)
+                                Image: |-
+                                    =If(
+                                        IsBlank(ThisItem.Image) ,
+                                        If(ThisItem.CIIstatusUpdate = 2,
+                                        'submitted-cloud',
+                                        'Sample Image'),
+                                        ThisItem.Image
+                                    )
+                                OnSelect: |-
+                                    =//for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            TimeUnit.Seconds
+                                        ) > SafetyCheckTime,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
+                                    Set(VarPhoto,GlryImagesFS.Selected.Image.Full);
+                                    Navigate(SaveImage);
+                                Visible: =true//If(UP,false)
+                                Width: =Parent.TemplateWidth/1.8
+                                X: =Parent.TemplateWidth/7
+                                Y: =40
+                                ZIndex: =8
+
                         ctnAddImageFS As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
                             Height: =50
