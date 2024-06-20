@@ -2584,7 +2584,7 @@ FindingScreen As screen:
                                         If(ThisItem.CIIstatusUpdate = 2,
                                         'submitted-cloud',
                                         'Sample Image'),
-                                        ThisItem.Image
+                                        ThisItem.EditedImage
                                     )
                                 OnSelect: |-
                                     =//for safety check
@@ -2606,6 +2606,7 @@ FindingScreen As screen:
                                         
                                     );
                                     Set(VarPhoto,GlryImagesFS.Selected.Image.Full);
+                                    Set(VarPenInput,GlryImagesFS.Selected.EditedImage.Full);
                                     Navigate(SaveImage);
                                 Visible: =true//If(UP,false)
                                 Width: =Image9_2.Width

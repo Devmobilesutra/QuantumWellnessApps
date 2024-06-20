@@ -5,7 +5,8 @@ SaveImage As screen:
         Height: =Parent.Height
         Image: |-
             =//If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
-            If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
+            //If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
+            VarPhoto
         Width: =Parent.Width
         X: =(Parent.Width-Self.Width)/2
         ZIndex: =1
