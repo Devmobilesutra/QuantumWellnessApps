@@ -2,77 +2,13 @@ SaveImage As screen:
     OnVisible: =Set(VarImageEdit,false);
 
     Image2 As image:
-        Height: =Parent.Height-150
+        Height: =Parent.Height
         Image: |-
             =//If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
             If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
-        Width: =Parent.Width-100
+        Width: =Parent.Width
         X: =(Parent.Width-Self.Width)/2
-        Y: =20
         ZIndex: =1
-
-    Button6 As button:
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(0, 0, 0, 0)
-        HoverColor: =Self.Color
-        HoverFill: =Self.Fill
-        OnSelect: =Navigate(CaptureImage,ScreenTransition.UnCoverRight);
-        PressedColor: =Self.Color
-        PressedFill: =Self.Fill
-        Text: ="Retake"
-        Width: =200
-        X: =20
-        Y: =Parent.Height-50
-        ZIndex: =2
-
-    Button8 As button:
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(0, 0, 0, 0)
-        HoverColor: =Self.Color
-        HoverFill: =Self.Fill
-        OnSelect: |-
-            =
-            //UpdateContext({demooo:VarOutput});
-            
-            UpdateIf(
-                GC_checkpointItem_Images,
-                checkpointItemImagesId = GlryImagesFS.Selected.checkpointItemImagesId,
-                {Image:Image2.Image//,
-                //CIIstatusUpdate:0
-                }
-            );
-            Navigate(
-                FindingScreen,
-                ScreenTransition.Cover
-            )
-        PressedColor: =Self.Color
-        PressedFill: =Self.Fill
-        Text: ="Use Photo"
-        Width: =206
-        X: =Parent.Width-Button8.Width-20
-        Y: =Parent.Height-50
-        ZIndex: =3
-
-    Icon5 As icon.Edit:
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =44
-        Icon: =Icon.Edit
-        OnSelect: |-
-            =Reset(PenInput1);
-            Set(VarImageEdit,true);
-        Visible: =VarImageEdit= false
-        Width: =44
-        X: =Parent.Width-Self.Width-20
-        Y: =30
-        ZIndex: =4
-
-    PenInput1 As inkControl:
-        BorderThickness: =0
-        Height: =Parent.Height//Image2.Height+120
-        Visible: =VarImageEdit =true
-        Width: =Image2.Width//-60
-        X: =Image2.X //90
-        ZIndex: =5
 
     imgSpinnerResume_1 As image:
         Fill: =RGBA(0, 0, 0, 0.29)
@@ -83,7 +19,28 @@ SaveImage As screen:
         Width: =Parent.Width
         X: =(Parent.Width-Self.Width)/2
         Y: =(Parent.Height-Self.Height)/2
-        ZIndex: =6
+        ZIndex: =2
+
+    Image2_2 As image:
+        Height: =Image2.Height
+        Image: |-
+            =VarPenInput
+            //If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
+            //If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
+        Visible: =VarImageEdit =false
+        Width: =Image2.Width
+        X: =(Parent.Width-Self.Width)/2
+        Y: =Image2.Y
+        ZIndex: =3
+
+    PenInput1 As inkControl:
+        BorderThickness: =0
+        Height: =Image2.Height
+        Visible: =VarImageEdit =true
+        Width: =Image2.Width//-60
+        X: =Image2.X //90
+        Y: =Image2.Y
+        ZIndex: =4
 
     Icon7 As icon.Save:
         Color: =RGBA(0, 0, 0, 1)
@@ -115,13 +72,14 @@ SaveImage As screen:
                  Image2.Width+600,
                 Image2.Height
             ).overlapimage;);*/
+            Set(VarPenInput,PenInput1.Image);
             Set(VarImageEdit,false);
             Set(VarImgEditSpiner,false);
         Visible: =VarImageEdit
         Width: =44
         X: =Parent.Width-Self.Width-20
         Y: =30
-        ZIndex: =7
+        ZIndex: =5
 
     Icon4 As icon.Add:
         Color: =RGBA(0, 0, 0, 1)
@@ -134,5 +92,61 @@ SaveImage As screen:
         Width: =44
         X: =20
         Y: =30
+        ZIndex: =6
+
+    Icon5 As icon.Edit:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =44
+        Icon: =Icon.Edit
+        OnSelect: |-
+            =Reset(PenInput1);
+            Set(VarImageEdit,true);
+        Visible: =VarImageEdit= false
+        Width: =44
+        X: =Parent.Width-Self.Width-20
+        Y: =30
+        ZIndex: =7
+
+    Button6 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnSelect: =Navigate(CaptureImage,ScreenTransition.UnCoverRight);
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        Text: ="Retake"
+        Width: =200
+        X: =20
+        Y: =Parent.Height-50
         ZIndex: =8
+
+    Button8 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnSelect: |-
+            =
+            //UpdateContext({demooo:VarOutput});
+            UpdateIf(
+                GC_checkpointItem_Images,
+                checkpointItemImagesId = GlryImagesFS.Selected.checkpointItemImagesId,
+                {
+                    Image: Image2.Image,
+                    EditedImage: Image2_2.Image
+                //CIIstatusUpdate:0
+                }
+            );
+            Navigate(
+                FindingScreen,
+                ScreenTransition.Cover
+            )
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        Text: ="Use Photo"
+        Width: =206
+        X: =Parent.Width-Button8.Width-20
+        Y: =Parent.Height-50
+        ZIndex: =9
 
