@@ -2409,11 +2409,7 @@ FindingScreen As screen:
                                         ThisItem.Image
                                     )
                                 OnSelect: |-
-                                    =/*//for reset ideal timer
-                                    Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());*/
-                                    
-                                    //for safety check
+                                    =//for safety check
                                     If(
                                         DateDiff(
                                             UserLastNavigatedTime,
@@ -2431,8 +2427,8 @@ FindingScreen As screen:
                                         );
                                         
                                     );
-                                    
-                                    Select(Parent)
+                                    Set(VarPhoto,GlryImagesFS.Selected.Image.Full);
+                                    Navigate(SaveImage);
                                 Visible: =true//If(UP,false)
                                 Width: =Parent.TemplateWidth/1.8
                                 X: =Parent.TemplateWidth/7
