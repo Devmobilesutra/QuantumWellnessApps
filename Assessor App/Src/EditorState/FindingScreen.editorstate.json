@@ -12195,7 +12195,7 @@
       "MetaDataIDKey": "",
       "Name": "ctnAddImageFS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20284,7 +20284,7 @@
       "MetaDataIDKey": "",
       "Name": "GlryImagesFS",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

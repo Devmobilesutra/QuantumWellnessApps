@@ -49,7 +49,7 @@ SaveImage As screen:
         PressedFill: =Self.Fill
         Text: ="Use Photo"
         Width: =206
-        X: =1143
+        X: =Parent.Width-Button8.Width-20
         Y: =Parent.Height-50
         ZIndex: =3
 
@@ -121,4 +121,17 @@ SaveImage As screen:
         X: =Parent.Width-Self.Width-20
         Y: =30
         ZIndex: =7
+
+    Icon4 As icon.Add:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =44
+        Icon: =Icon.Cancel
+        OnSelect: |-
+            =Reset(PenInput1);
+            Set(VarImageEdit,false);
+        Visible: =VarImageEdit
+        Width: =44
+        X: =20
+        Y: =30
+        ZIndex: =8
 
