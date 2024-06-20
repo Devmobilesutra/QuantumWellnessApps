@@ -2605,8 +2605,8 @@ FindingScreen As screen:
                                         );
                                         
                                     );
-                                    Set(VarPhoto,GlryImagesFS.Selected.Image.Full);
-                                    Set(VarPenInput,GlryImagesFS.Selected.EditedImage.Full);
+                                    Set(VarPhoto,GlryImagesFS.Selected.Image.Value);
+                                    Set(VarPenInput,GlryImagesFS.Selected.EditedImage.Value);
                                     Navigate(SaveImage);
                                 Visible: =true//If(UP,false)
                                 Width: =Image9_2.Width
