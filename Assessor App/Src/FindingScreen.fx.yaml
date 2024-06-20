@@ -2396,7 +2396,7 @@ FindingScreen As screen:
                                 Width: =Parent.Width/3
                                 X: =Parent.TemplateWidth/12
                                 Y: =Button4_1.Height+Button4_1.Y+10
-                                ZIndex: =2
+                                ZIndex: =1
 
                             Image9_2 As image:
                                 Height: =Min(Self.Width, Parent.TemplateHeight - 115)
@@ -2408,7 +2408,7 @@ FindingScreen As screen:
                                         'Sample Image'),
                                         ThisItem.Image
                                     )
-                                OnSelect: |-
+                                OnSelect: |
                                     =//for safety check
                                     If(
                                         DateDiff(
@@ -2427,13 +2427,11 @@ FindingScreen As screen:
                                         );
                                         
                                     );
-                                    Set(VarPhoto,GlryImagesFS.Selected.Image.Full);
-                                    Navigate(SaveImage);
                                 Visible: =true//If(UP,false)
                                 Width: =Parent.TemplateWidth/1.8
                                 X: =Parent.TemplateWidth/7
                                 Y: =16
-                                ZIndex: =5
+                                ZIndex: =2
 
                             Button5_22 As button:
                                 BorderColor: =AllScreensCSS.RActiveColor
@@ -2540,7 +2538,7 @@ FindingScreen As screen:
                                 Width: =40
                                 X: =Image9_2.X+Image9_2.Width+10
                                 Y: =Image9_2.Y
-                                ZIndex: =6
+                                ZIndex: =3
 
                             Button4_1 As button:
                                 BorderThickness: =0
@@ -2576,10 +2574,10 @@ FindingScreen As screen:
                                 Width: =Parent.TemplateWidth/1.8
                                 X: =Parent.TemplateWidth/7
                                 Y: =Image9_2.Height+Image9_2.Y+10
-                                ZIndex: =7
+                                ZIndex: =4
 
                             Image9_4 As image:
-                                Height: =Min(Self.Width, Parent.TemplateHeight - 115)
+                                Height: =Image9_2.Height
                                 Image: |-
                                     =If(
                                         IsBlank(ThisItem.Image) ,
@@ -2610,10 +2608,10 @@ FindingScreen As screen:
                                     Set(VarPhoto,GlryImagesFS.Selected.Image.Full);
                                     Navigate(SaveImage);
                                 Visible: =true//If(UP,false)
-                                Width: =Parent.TemplateWidth/1.8
-                                X: =Parent.TemplateWidth/7
-                                Y: =40
-                                ZIndex: =8
+                                Width: =Image9_2.Width
+                                X: =Image9_2.X
+                                Y: =Image9_2.Y
+                                ZIndex: =5
 
                         ctnAddImageFS As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
