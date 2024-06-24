@@ -425,7 +425,7 @@ ViewAssessment As screen:
                                 Parent.TemplateHeight/1.2
                             Image: |-
                                 =//camera
-                                ThisItem.EditedImage.Value
+                                ThisItem.EditedImage.Full
                             OnSelect: |-
                                 =Set(VarFullImage,ThisItem.Image.Full);
                                 Navigate(CompanyDetails);
