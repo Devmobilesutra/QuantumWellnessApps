@@ -732,7 +732,7 @@ TemplateCheckpoint As screen:
                     DisplayFields: =["shlaf_sectionname"]
                     DisplayMode: =Parent.DisplayMode.Disabled
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Choices([@templateCheckpoints].shlaf_sectionName)
+                    Items: =Choices([@templateCheckpoints].sectionId)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["shlaf_sectionname"]
                     SearchItems: =Search(Choices([@templateCheckpoints].shlaf_sectionName),DataCardValue3.SearchText,shlaf_sectionname)
