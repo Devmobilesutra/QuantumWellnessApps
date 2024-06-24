@@ -4680,7 +4680,9 @@ BankScreen As screen:
                             UpdateIf(
                                 GC_checkpointItem_Images,
                                 bankUnitId.Id = varBankUnitId,
-                                {Image: Blank()}
+                                {Image: Blank(),
+                                EditedImage:Blank()
+                                }
                             );
                             ForAll(
                                 Filter(
@@ -4707,6 +4709,7 @@ BankScreen As screen:
                                             checkpointItem_Id: i.checkpointItem_Id,
                                             product_id: i.product_id,
                                             Image: i.Image,
+                                            EditedImage:i.EditedImage,
                                             image_annotation: i.image_annotation,
                                             CIIstatusUpdate: i.CIIstatusUpdate
                                         }
@@ -4728,6 +4731,7 @@ BankScreen As screen:
                                             checkpointItem_Id: i.checkpointItem_Id,
                                             product_id: i.product_id,
                                             Image: i.Image,
+                                            EditedImage:i.EditedImage,
                                             image_annotation: i.image_annotation,
                                             CIIstatusUpdate: i.CIIstatusUpdate
                                         }
@@ -4770,6 +4774,7 @@ BankScreen As screen:
                                             checkpointItem_Id: i.checkpointItem_Id,
                                             product_id: i.product_id,
                                             Image: Blank(),
+                                            EditedImage:Blank(),
                                             // i.Image,
                 image_annotation: i.image_annotation,
                                             CIIstatusUpdate: 2
@@ -4801,6 +4806,7 @@ BankScreen As screen:
                                                 checkpointItem_Id: i.checkpointItem_Id,
                                                 product_id: i.product_id,
                                                 Image: i.Image,
+                                                EditedImage:i.EditedImage,
                                                 image_annotation: i.image_annotation,
                                                 CIIstatusUpdate: i.CIIstatusUpdate
                                             }
@@ -4822,6 +4828,7 @@ BankScreen As screen:
                                                 checkpointItem_Id: i.checkpointItem_Id,
                                                 product_id: i.product_id,
                                                 Image: i.Image,
+                                                EditedImage:i.EditedImage,
                                                 image_annotation: i.image_annotation,
                                                 CIIstatusUpdate: i.CIIstatusUpdate
                                             }
