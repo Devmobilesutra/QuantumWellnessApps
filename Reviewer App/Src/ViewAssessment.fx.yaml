@@ -414,6 +414,31 @@ ViewAssessment As screen:
                                  imgcheckpointitemimageVA.Height+10
                             ZIndex: =2
 
+                        imgcheckpointitemimageVA_4 As image:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =2
+                            CalculateOriginalDimensions: =true
+                            Height: |-
+                                =//450
+                                //Parent.TemplateHeight/1.2
+                                //imgcheckpointitemimageVA.OriginalHeight
+                                Parent.TemplateHeight/1.2
+                            Image: |-
+                                =//camera
+                                ThisItem.EditedImage.Full
+                            OnSelect: |-
+                                =Set(VarFullImage,ThisItem.Image.Full);
+                                Navigate(CompanyDetails);
+                            PaddingBottom: =5
+                            PaddingTop: =5
+                            Width: |-
+                                =Parent.TemplateWidth/2
+                                //144
+                                //imgcheckpointitemimageVA.OriginalWidth
+                            X: =Parent.Width/3.5
+                            Y: =16
+                            ZIndex: =3
+
                     iconLineVA As icon.HorizontalLine:
                         Color: =RGBA(204, 204, 204, 1)
                         Fill: =RGBA(204, 204, 204, 1)
