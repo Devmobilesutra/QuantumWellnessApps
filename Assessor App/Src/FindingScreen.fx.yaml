@@ -3293,6 +3293,7 @@ FindingScreen As screen:
                                                             checkpointItemImagesId = i.checkpointItemImagesId,
                                                             {
                                                                 Image: i.Image9_2.Image,
+                                                                EditedImage:Image9_4.Image,
                                                                 image_annotation: i.TextInput6_2.Text,
                                                                 CIIstatusUpdate: 0,
                                                                 ImageSortSequence: LookUp(
