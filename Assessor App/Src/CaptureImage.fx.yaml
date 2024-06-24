@@ -15,6 +15,7 @@ CaptureImage As screen:
         Icon: =Icon.CameraAperture
         OnSelect: |-
             =Set(VarPhoto,Camera1.Stream);
+            Set(VarPenInput,Blank());
             Navigate(SaveImage);
         Width: =140
         X: =(Parent.Width-Self.Width)/2

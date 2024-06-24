@@ -282,7 +282,8 @@ FindingScreen As screen:
                                 //checkpoint_id.checkpointAssessment_id = GuidId && 
                             //checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA &&
                              CIIstatusUpdate = 2,
-                                {Image: Blank()}
+                                {Image: Blank(),
+                                EditedImage:Blank()}
                             );
                             Navigate(AssessmentScreen);
                         PaddingBottom: =10
@@ -1354,7 +1355,8 @@ FindingScreen As screen:
                                             UpdateIf(
                                                 GC_checkpointItem_Images,
                                                 checkpointItemImagesId = i.checkpointItemImagesId && CIIstatusUpdate = 2,
-                                                {Image: i.Image}
+                                                {Image: i.Image,
+                                                EditedImage:i.EditedImage}
                                             )
                                         );
                                         Set(
@@ -2264,7 +2266,8 @@ FindingScreen As screen:
                                                 UpdateIf(
                                                     GC_checkpointItem_Images,
                                                     checkpointItemImagesId = i.checkpointItemImagesId && CIIstatusUpdate = 2,
-                                                    {Image: i.Image}
+                                                    {Image: i.Image,
+                                                    EditedImage:i.EditedImage}
                                                 )
                                             );
                                             Set(
@@ -3293,6 +3296,7 @@ FindingScreen As screen:
                                                             checkpointItemImagesId = i.checkpointItemImagesId,
                                                             {
                                                                 Image: i.Image9_2.Image,
+                                                                EditedImage:Image9_4.Image,
                                                                 image_annotation: i.TextInput6_2.Text,
                                                                 CIIstatusUpdate: 0,
                                                                 ImageSortSequence: LookUp(
@@ -3634,6 +3638,7 @@ FindingScreen As screen:
                                                     product_id: i.product_id,
                                                     // Image:Image14_2.Image,
                                                     Image: i.Image,
+                                                    EditedImage:i.EditedImage,
                                                     image_annotation: i.image_annotation,
                                                     CIIstatusUpdate: i.CIIstatusUpdate
                                                 }
@@ -3656,6 +3661,7 @@ FindingScreen As screen:
                                                     product_id: i.product_id,
                                                     // Image:Image14_2.Image,
                                                     Image: i.Image,
+                                                    EditedImage:i.EditedImage,
                                                     image_annotation: i.image_annotation,
                                                     CIIstatusUpdate: i.CIIstatusUpdate
                                                 }
@@ -5236,7 +5242,8 @@ FindingScreen As screen:
                             UpdateIf(
                                 GC_checkpointItem_Images,
                                 bankUnitId.Id = varBankUnitId,
-                                {Image: Blank()}
+                                {Image: Blank(),
+                                EditedImage:Blank()}
                             );
                             ForAll(
                                 Filter(
@@ -5263,6 +5270,7 @@ FindingScreen As screen:
                                             checkpointItem_Id: i.checkpointItem_Id,
                                             product_id: i.product_id,
                                             Image: i.Image,
+                                            EditedImage:i.EditedImage,
                                             image_annotation: i.image_annotation,
                                             CIIstatusUpdate: i.CIIstatusUpdate
                                         }
@@ -5284,6 +5292,7 @@ FindingScreen As screen:
                                             checkpointItem_Id: i.checkpointItem_Id,
                                             product_id: i.product_id,
                                             Image: i.Image,
+                                            EditedImage:i.EditedImage,
                                             image_annotation: i.image_annotation,
                                             CIIstatusUpdate: i.CIIstatusUpdate
                                         }
@@ -5326,6 +5335,7 @@ FindingScreen As screen:
                                             checkpointItem_Id: i.checkpointItem_Id,
                                             product_id: i.product_id,
                                             Image: Blank(),
+                                            EditedImage:Blank(),
                                             // i.Image,
                 image_annotation: i.image_annotation,
                                             CIIstatusUpdate: 2
@@ -5357,6 +5367,7 @@ FindingScreen As screen:
                                                 checkpointItem_Id: i.checkpointItem_Id,
                                                 product_id: i.product_id,
                                                 Image: i.Image,
+                                                EditedImage:i.EditedImage,
                                                 image_annotation: i.image_annotation,
                                                 CIIstatusUpdate: i.CIIstatusUpdate
                                             }
@@ -5378,6 +5389,7 @@ FindingScreen As screen:
                                                 checkpointItem_Id: i.checkpointItem_Id,
                                                 product_id: i.product_id,
                                                 Image: i.Image,
+                                                EditedImage:i.EditedImage,
                                                 image_annotation: i.image_annotation,
                                                 CIIstatusUpdate: i.CIIstatusUpdate
                                             }
