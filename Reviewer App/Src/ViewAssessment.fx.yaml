@@ -341,107 +341,6 @@ ViewAssessment As screen:
                     X: =100
                     ZIndex: =2
 
-                    "glryCheckpointitemimagesVA As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnVariant_ver4.0'":
-                        '#CopilotOverlayLabel': ="Filtered"
-                        BorderColor: =RGBA(168, 0, 0, 1)
-                        Height: |-
-                            =CountRows(glryCheckpointitemimagesVA.AllItems)*(glryCheckpointitemimagesVA.TemplateHeight)
-                            +glryCheckpointitemimagesVA.TemplatePadding
-                            
-                            //Parent.Height
-                        Items: |-
-                            =Filter(
-                                checkpointItem_Images,
-                                assignmentId.Id = glryAssignmentBS.Selected.assignmentId.Id && bankUnitId.Id = glryAssignmentBS.Selected.bankUnitId.Id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                     // && Image.Value <> Blank()
-                            )
-                        Layout: =Layout.Vertical
-                        ShowScrollbar: =false
-                        TemplatePadding: =4
-                        TemplateSize: =800//600
-                        Width: =Parent.Width/1.08
-                        X: =10
-                        Y: |-
-                            =//glryActionItemsVA.Height + glryActionItemsVA.Y
-                            //iconlineannotationVA_1.Height+iconlineannotationVA_1.Y
-                            
-                            If(CountRows(glryActionItemsVA.AllItems)>0,glryActionItemsVA.Y+glryActionItemsVA.Height,iconlineannotationVA.Y + iconlineannotationVA.Height)
-                            //glryActionItemsVA.Y+glryActionItemsVA.Height
-                        ZIndex: =1
-
-                        imgcheckpointitemimageVA As image:
-                            BorderColor: =RGBA(0, 0, 0, 1)
-                            BorderThickness: =2
-                            CalculateOriginalDimensions: =true
-                            Height: |-
-                                =700
-                                //450
-                                //Parent.TemplateHeight/1.2
-                                //imgcheckpointitemimageVA.OriginalHeight
-                                //Parent.TemplateHeight/1.2
-                            Image: |-
-                                =//camera
-                                ThisItem.Image.Full
-                            OnSelect: |-
-                                =Set(VarFullImage,ThisItem.Image.Full);
-                                Navigate(CompanyDetails);
-                            PaddingBottom: =5
-                            PaddingTop: =5
-                            Width: |-
-                                =700//Parent.TemplateWidth/2
-                                //144
-                                //imgcheckpointitemimageVA.OriginalWidth
-                            X: =Parent.Width/3.5
-                            Y: =16
-                            ZIndex: =1
-
-                        lblimageannotationVA As label:
-                            AutoHeight: =true
-                            Height: =Self.Size * 1.8
-                            OnSelect: =
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Size: =referenceCSS.RLabelFontSize
-                            Text: =ThisItem.image_annotation
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Parent.TemplateWidth/1.1
-                            X: |-
-                                =//Image16_2.X/2
-                                Parent.Width/3.5
-                            Y: |-
-                                =imgcheckpointitemimageVA.Y +
-                                 imgcheckpointitemimageVA.Height+10
-                            ZIndex: =2
-
-                        imgcheckpointitemimageVA_4 As image:
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderThickness: =2
-                            CalculateOriginalDimensions: =true
-                            Height: |-
-                                =imgcheckpointitemimageVA.Height
-                                //450
-                                //Parent.TemplateHeight/1.2
-                                //imgcheckpointitemimageVA.OriginalHeight
-                                //Parent.TemplateHeight/1.2
-                            Image: |-
-                                =//camera
-                                ThisItem.EditedImage.Full
-                            OnSelect: |-
-                                =Set(VarFullImage,ThisItem.Image.Full);
-                                Navigate(CompanyDetails);
-                            PaddingBottom: =5
-                            PaddingTop: =5
-                            Width: |-
-                                =imgcheckpointitemimageVA.Width
-                                //Parent.TemplateWidth/2
-                                //144
-                                //imgcheckpointitemimageVA.OriginalWidth
-                            X: =Parent.Width/3.5
-                            Y: =16
-                            ZIndex: =3
-
                     iconLineVA As icon.HorizontalLine:
                         Color: =RGBA(204, 204, 204, 1)
                         Fill: =RGBA(204, 204, 204, 1)
@@ -455,7 +354,7 @@ ViewAssessment As screen:
                         Y: |-
                             =ctnItemVA.Height+ctnItemVA.Y
                             //ctnAssessmentType_6.Height+ctnAssessmentType_6.Y
-                        ZIndex: =8
+                        ZIndex: =1
 
                     "glryActionItemsVA As gallery.'BrowseLayout_Flexible_SocialFeed_ver4.0'":
                         '#CopilotOverlayLabel': ="Filtered"
@@ -475,7 +374,7 @@ ViewAssessment As screen:
                         TemplateSize: =200
                         Width: =Parent.Width
                         Y: =iconlineannotationVA.Y + iconlineannotationVA.Height
-                        ZIndex: =9
+                        ZIndex: =2
 
                         lblActionVA As label:
                             FontWeight: =FontWeight.Bold
@@ -649,7 +548,7 @@ ViewAssessment As screen:
                         Visible: =false
                         X: =Parent.Width/3
                         Y: =728
-                        ZIndex: =11
+                        ZIndex: =3
 
                     iconlineannotationVA As icon.HorizontalLine:
                         Color: =RGBA(204, 204, 204, 1)
@@ -663,7 +562,7 @@ ViewAssessment As screen:
                         Y: |-
                             =ctnAnnotationVA.Height+ctnAnnotationVA.Y
                             //ctnAnnotationVA.Y+lblAnnotationVA.Height+lblItemAnnotationVA.Height+10
-                        ZIndex: =12
+                        ZIndex: =4
 
                     ctnSectionVA As groupContainer.horizontalAutoLayoutContainer:
                         Height: =40//Parent.Height/2.5
@@ -674,7 +573,7 @@ ViewAssessment As screen:
                         PaddingRight: =43
                         Width: =Parent.Width -150
                         Y: =Parent.Y
-                        ZIndex: =13
+                        ZIndex: =5
 
                         lblSectionVA As label:
                             Font: =globalcss.fontRobotoR
@@ -708,7 +607,7 @@ ViewAssessment As screen:
                         PaddingRight: =40
                         Width: =Parent.Width-150
                         Y: =ctnCheckpointVA.Height+ctnCheckpointVA.Y
-                        ZIndex: =14
+                        ZIndex: =6
 
                         lblItemVA As label:
                             Font: =globalcss.fontRobotoR
@@ -739,7 +638,7 @@ ViewAssessment As screen:
                         Y: |-
                             =//ctnbank_18.Y+ctnbank_18.Height
                             iconLineVA.Y+iconLineVA.Height
-                        ZIndex: =15
+                        ZIndex: =7
 
                         lblfindingVA As label:
                             Font: =globalcss.fontRobotoR
@@ -760,7 +659,7 @@ ViewAssessment As screen:
                         PaddingRight: =40
                         Width: =Parent.Width - 150
                         Y: =ctnSectionVA.Y+ctnSectionVA.Height
-                        ZIndex: =16
+                        ZIndex: =8
 
                         lblCheckpointVA As label:
                             Font: =globalcss.fontRobotoR
@@ -794,7 +693,7 @@ ViewAssessment As screen:
                         Visible: =false
                         Width: =Parent.Width-80
                         Y: =//ctnbank_7.Height+ctnbank_7.Y
-                        ZIndex: =17
+                        ZIndex: =9
 
                         ctnAssessmentTypeVA As groupContainer.verticalAutoLayoutContainer:
                             AlignInContainer: =AlignInContainer.SetByContainer
@@ -915,7 +814,7 @@ ViewAssessment As screen:
                         Y: |-
                             =//Icon3_12.Y+Icon3_12.Height+10 
                             ctnfindingVA.Height+ctnfindingVA.Y
-                        ZIndex: =18
+                        ZIndex: =10
 
                         lblAnnotationVA As label:
                             Font: =globalcss.fontRobotoR
@@ -970,7 +869,7 @@ ViewAssessment As screen:
                             //If(CountRows(Gallery14_3.AllItems)=1,380,CountRows(Gallery14_3.AllItems)*(Gallery14_3.TemplateHeight)/2)
                             //700
                         Width: =Parent.Width-20
-                        ZIndex: =19
+                        ZIndex: =11
 
                     btnCheckpointitemCommentVA As button:
                         BorderThickness: =0
@@ -994,7 +893,7 @@ ViewAssessment As screen:
                         Width: =120
                         X: =ctnItemVA.X+ctnItemVA.Width
                         Y: =ctnItemVA.Y+5
-                        ZIndex: =20
+                        ZIndex: =12
 
                     btnCheckointCommentVA As button:
                         BorderThickness: =0
@@ -1017,7 +916,7 @@ ViewAssessment As screen:
                         Width: =120
                         X: =ctnCheckpointVA.X+ctnCheckpointVA.Width
                         Y: =ctnCheckpointVA.Y+5
-                        ZIndex: =21
+                        ZIndex: =13
 
                     btnSectionCommentVA As button:
                         BorderThickness: =0
@@ -1040,7 +939,109 @@ ViewAssessment As screen:
                         Width: =120
                         X: =ctnSectionVA.X+ctnSectionVA.Width
                         Y: =ctnSectionVA.Y+5
-                        ZIndex: =22
+                        ZIndex: =14
+
+                    "glryCheckpointitemimagesVA As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnVariant_ver4.0'":
+                        '#CopilotOverlayLabel': ="Filtered"
+                        BorderColor: =RGBA(168, 0, 0, 1)
+                        Height: |-
+                            =CountRows(glryCheckpointitemimagesVA.AllItems)*(glryCheckpointitemimagesVA.TemplateHeight)
+                            +glryCheckpointitemimagesVA.TemplatePadding
+                            
+                            //Parent.Height
+                        Items: |-
+                            =Filter(
+                                checkpointItem_Images,
+                                assignmentId.Id = glryAssignmentBS.Selected.assignmentId.Id && bankUnitId.Id = glryAssignmentBS.Selected.bankUnitId.Id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                     // && Image.Value <> Blank()
+                            )
+                        Layout: =Layout.Vertical
+                        ShowScrollbar: =false
+                        TemplatePadding: =4
+                        TemplateSize: =800//600
+                        Width: =Parent.Width/1.08
+                        X: =10
+                        Y: |-
+                            =//glryActionItemsVA.Height + glryActionItemsVA.Y
+                            //iconlineannotationVA_1.Height+iconlineannotationVA_1.Y
+                            
+                            If(CountRows(glryActionItemsVA.AllItems)>0,glryActionItemsVA.Y+glryActionItemsVA.Height,iconlineannotationVA.Y + iconlineannotationVA.Height)
+                            //glryActionItemsVA.Y+glryActionItemsVA.Height
+                        ZIndex: =15
+
+                        imgcheckpointitemimageVA As image:
+                            BorderColor: =RGBA(0, 0, 0, 1)
+                            BorderThickness: =2
+                            CalculateOriginalDimensions: =true
+                            Height: |-
+                                =700
+                                //450
+                                //Parent.TemplateHeight/1.2
+                                //imgcheckpointitemimageVA.OriginalHeight
+                                //Parent.TemplateHeight/1.2
+                            Image: |-
+                                =//camera
+                                ThisItem.Image.Full
+                            OnSelect: |-
+                                =//Set(VarFullImage,ThisItem.Image.Full);
+                                //Navigate(CompanyDetails);
+                            PaddingBottom: =5
+                            PaddingTop: =5
+                            Width: |-
+                                =700//Parent.TemplateWidth/2
+                                //144
+                                //imgcheckpointitemimageVA.OriginalWidth
+                            X: =Parent.Width/3.5
+                            Y: =16
+                            ZIndex: =1
+
+                        lblimageannotationVA As label:
+                            AutoHeight: =true
+                            Height: =Self.Size * 1.8
+                            OnSelect: =
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =referenceCSS.RLabelFontSize
+                            Text: =ThisItem.image_annotation
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Parent.TemplateWidth/1.1
+                            X: |-
+                                =//Image16_2.X/2
+                                Parent.Width/3.5
+                            Y: |-
+                                =imgcheckpointitemimageVA.Y +
+                                 imgcheckpointitemimageVA.Height+10
+                            ZIndex: =2
+
+                        imgcheckpointitemimageVA_4 As image:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =2
+                            CalculateOriginalDimensions: =true
+                            Height: |-
+                                =imgcheckpointitemimageVA.Height
+                                //450
+                                //Parent.TemplateHeight/1.2
+                                //imgcheckpointitemimageVA.OriginalHeight
+                                //Parent.TemplateHeight/1.2
+                            Image: |-
+                                =//camera
+                                ThisItem.EditedImage.Full
+                            OnSelect: |-
+                                =Notify("hiiiiiiiiiiiiiiii",NotificationType.Error);
+                                //Set(VarFullImage,ThisItem.Image.Full);
+                                //Navigate(CompanyDetails);
+                            PaddingBottom: =5
+                            PaddingTop: =5
+                            Width: |-
+                                =imgcheckpointitemimageVA.Width
+                                //Parent.TemplateWidth/2
+                                //144
+                                //imgcheckpointitemimageVA.OriginalWidth
+                            X: =Parent.Width/3.5
+                            Y: =16
+                            ZIndex: =3
 
             Container13 As groupContainer.horizontalAutoLayoutContainer:
                 FillPortions: =0
