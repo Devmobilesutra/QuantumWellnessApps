@@ -41,7 +41,7 @@ SaveImage As screen:
         Visible: =VarImageEdit =true
         Width: =Image2.Width//-60
         X: =Image2.X //90
-        Y: =Image2.Y-10
+        Y: =Image2.Y
         ZIndex: =4
 
     Icon7 As icon.Save:
@@ -121,6 +121,7 @@ SaveImage As screen:
         PressedColor: =Self.Color
         PressedFill: =Self.Fill
         Text: ="Retake"
+        Visible: =VarImageEdit=false
         Width: =200
         X: =20
         Y: =Parent.Height-50
@@ -150,6 +151,7 @@ SaveImage As screen:
         PressedColor: =Self.Color
         PressedFill: =Self.Fill
         Text: ="Use Photo"
+        Visible: =VarImageEdit=false
         Width: =206
         X: =Parent.Width-Button8.Width-20
         Y: =Parent.Height-50
