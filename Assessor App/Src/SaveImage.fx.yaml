@@ -2,13 +2,14 @@ SaveImage As screen:
     OnVisible: =Set(VarImageEdit,false);
 
     Image2 As image:
-        Height: =Parent.Height
+        Height: =700//Parent.Height
         Image: |-
             =//If(IsBlank(VarPhoto),'Sample Image',VarPhoto)
             //If(IsBlank(VarOutput) ,VarPhoto,VarOutput)
             VarPhoto
-        Width: =Parent.Width
+        Width: =700//Parent.Width
         X: =(Parent.Width-Self.Width)/2
+        Y: =((Parent.Height-Self.Height)/2)-20
         ZIndex: =1
 
     imgSpinnerResume_1 As image:
@@ -40,7 +41,7 @@ SaveImage As screen:
         Visible: =VarImageEdit =true
         Width: =Image2.Width//-60
         X: =Image2.X //90
-        Y: =Image2.Y
+        Y: =Image2.Y-10
         ZIndex: =4
 
     Icon7 As icon.Save:
