@@ -358,7 +358,7 @@ ViewAssessment As screen:
                         Layout: =Layout.Vertical
                         ShowScrollbar: =false
                         TemplatePadding: =4
-                        TemplateSize: =600
+                        TemplateSize: =800//600
                         Width: =Parent.Width/1.08
                         X: =10
                         Y: |-
@@ -374,10 +374,11 @@ ViewAssessment As screen:
                             BorderThickness: =2
                             CalculateOriginalDimensions: =true
                             Height: |-
-                                =//450
+                                =700
+                                //450
                                 //Parent.TemplateHeight/1.2
                                 //imgcheckpointitemimageVA.OriginalHeight
-                                Parent.TemplateHeight/1.2
+                                //Parent.TemplateHeight/1.2
                             Image: |-
                                 =//camera
                                 ThisItem.Image.Full
@@ -387,7 +388,7 @@ ViewAssessment As screen:
                             PaddingBottom: =5
                             PaddingTop: =5
                             Width: |-
-                                =Parent.TemplateWidth/2
+                                =700//Parent.TemplateWidth/2
                                 //144
                                 //imgcheckpointitemimageVA.OriginalWidth
                             X: =Parent.Width/3.5

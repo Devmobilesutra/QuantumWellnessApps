@@ -164,7 +164,7 @@ TemplateActionItem As screen:
                             Items: =Choices([@actionItems].sectionId)
                             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                             SearchFields: =["shlaf_sectionname"]
-                            SearchItems: =Search(Choices([@actionItems].cr28a_sectionId),DataCardValue29.SearchText,shlaf_sectionname)
+                            SearchItems: =Search(Choices([@actionItems].sectionId),DataCardValue29.SearchText,shlaf_sectionname)
                             SelectMultiple: =false
                             Tooltip: =Parent.DisplayName
                             Width: =Parent.Width - 60
@@ -455,7 +455,7 @@ TemplateActionItem As screen:
                     Items: =Choices([@actionItems].sectionId)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["shlaf_sectionname"]
-                    SearchItems: =Search(Choices([@actionItems].cr28a_sectionId),DataCardValue29_1.SearchText,shlaf_sectionname)
+                    SearchItems: =Search(Choices([@actionItems].sectionId),DataCardValue29_1.SearchText,shlaf_sectionname)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60

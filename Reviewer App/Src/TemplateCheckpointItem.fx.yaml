@@ -231,7 +231,7 @@ TemplateCheckpointItem As screen:
                             Items: =Choices([@templateCheckpointsItems].sectionId)
                             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                             SearchFields: =["shlaf_sectionname"]
-                            SearchItems: =Search(Choices([@templateCheckpointsItems].shlaf_sectionId),DataCardValue26.SearchText,shlaf_sectionname)
+                            SearchItems: =Search(Choices([@templateCheckpointsItems].sectionId),DataCardValue26.SearchText,shlaf_sectionname)
                             SelectMultiple: =false
                             Tooltip: =Parent.DisplayName
                             Width: =Parent.Width - 60
@@ -304,7 +304,7 @@ TemplateCheckpointItem As screen:
                             SearchFields: =["shlaf_checkpointname"]
                             SearchItems: |-
                                 =Search(//Choices([@templateCheckpointsItems].shlaf_checkpointId)
-                                Choices([@templateCheckpointsItems].shlaf_checkpointId),DataCardValue22.SearchText,shlaf_checkpointname)
+                                Choices([@templateCheckpointsItems].checkpointId),DataCardValue22.SearchText,shlaf_checkpointname)
                             SelectMultiple: =false
                             Tooltip: =Parent.DisplayName
                             Width: =Parent.Width - 60
@@ -895,7 +895,7 @@ TemplateCheckpointItem As screen:
                     Items: =Choices([@templateCheckpointsItems].sectionId)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["shlaf_sectionname"]
-                    SearchItems: =Search(Choices([@templateCheckpointsItems].shlaf_sectionId),DataCardValue26_1.SearchText,shlaf_sectionname)
+                    SearchItems: =Search(Choices([@templateCheckpointsItems].sectionId),DataCardValue26_1.SearchText,shlaf_sectionname)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
@@ -968,7 +968,7 @@ TemplateCheckpointItem As screen:
                     SearchFields: =["shlaf_checkpointname"]
                     SearchItems: |-
                         =Search(//Choices([@templateCheckpointsItems].shlaf_checkpointId)
-                        Choices([@templateCheckpointsItems].shlaf_checkpointId),DataCardValue22_1.SearchText,shlaf_checkpointname)
+                        Choices([@templateCheckpointsItems].checkpointId),DataCardValue22_1.SearchText,shlaf_checkpointname)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60

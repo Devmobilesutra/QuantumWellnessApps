@@ -735,7 +735,7 @@ TemplateCheckpoint As screen:
                     Items: =Choices([@templateCheckpoints].sectionId)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["shlaf_sectionname"]
-                    SearchItems: =Search(Choices([@templateCheckpoints].shlaf_sectionName),DataCardValue3.SearchText,shlaf_sectionname)
+                    SearchItems: =Search(Choices([@templateCheckpoints].sectionId),DataCardValue3.SearchText,shlaf_sectionname)
                     SelectionFill: =RGBA(149, 149, 149, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
