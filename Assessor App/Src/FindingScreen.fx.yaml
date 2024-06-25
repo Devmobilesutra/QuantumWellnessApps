@@ -2409,7 +2409,7 @@ FindingScreen As screen:
                                         If(ThisItem.CIIstatusUpdate = 2,
                                         'submitted-cloud',
                                         'Sample Image'),
-                                        ThisItem.Image
+                                        ThisItem.Image.Value
                                     )
                                 OnSelect: |
                                     =//for safety check
@@ -2587,7 +2587,7 @@ FindingScreen As screen:
                                         If(ThisItem.CIIstatusUpdate = 2,
                                         'submitted-cloud',
                                         'Sample Image'),
-                                        ThisItem.EditedImage
+                                        ThisItem.EditedImage.Value
                                     )
                                 OnSelect: |-
                                     =//for safety check
@@ -2608,9 +2608,29 @@ FindingScreen As screen:
                                         );
                                         
                                     );
-                                    Set(VarPhoto,GlryImagesFS.Selected.Image.Value);
-                                    Set(VarPenInput,GlryImagesFS.Selected.EditedImage.Value);
-                                    Navigate(SaveImage);
+                                    If(
+                                        IsBlank(ThisItem.Image.Full),
+                                        Set(
+                                            VarPhoto,
+                                            GlryImagesFS.Selected.Image.Value
+                                        );
+                                        Set(
+                                            VarPenInput,
+                                            GlryImagesFS.Selected.EditedImage.Value
+                                        );
+                                        Navigate(SaveImage);
+                                        ,
+                                        Set(
+                                            VarPhoto,
+                                            GlryImagesFS.Selected.Image.Full
+                                        );
+                                        Set(
+                                            VarPenInput,
+                                            GlryImagesFS.Selected.EditedImage.Full
+                                        );
+                                        Navigate(SaveImage);
+                                        
+                                    )
                                 Visible: =true//If(UP,false)
                                 Width: =Image9_2.Width
                                 X: =Image9_2.X
