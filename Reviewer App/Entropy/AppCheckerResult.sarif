@@ -19774,36 +19774,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "ViewAssessment",
-                "type": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6.AccessibleLabel"
                 }
               ],
@@ -19828,6 +19798,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ViewAssessment",
+                "type": "ViewAssessment.ctnMainBankViewAssessment.ctnMiddleBS_2.ctnCheckpointitemVA.glryCheckpointIiemVA.Gallery8.imgcheckpointitemimageVA_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -19995,36 +19995,6 @@
               },
               "properties": {
                 "member": "CId",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.VarImageAnnotation"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.VarImageAnnotation",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "VarImageAnnotation",
                 "module": "App",
                 "type": "App"
               }

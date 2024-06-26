@@ -1092,6 +1092,7 @@ ViewAssessment As screen:
                             OnSelect: |
                                 =Notify("hiiiiiiiiiiiiiiii",NotificationType.Error);
                                 Set(VarImageFull,ThisItem.Image);
+                                Set(VarEditedImg,ThisItem.EditedImage);
                                 Set(VarImageAnnotation,ThisItem.image_annotation);
                                 Set(VarFullImage,true);
                             PaddingBottom: =5
@@ -1484,7 +1485,7 @@ ViewAssessment As screen:
         Align: =Align.Center
         AutoHeight: =true
         Size: =16
-        Text: =Gallery8.Selected.image_annotation
+        Text: =VarImageAnnotation
         Visible: =VarFullImage
         Width: =Parent.Width-80
         X: =40
@@ -1502,12 +1503,11 @@ ViewAssessment As screen:
 
     Image5_1 As image:
         Height: =Parent.Height-200
-        Image: =VarImageFull
-        ImagePosition: =ImagePosition.Stretch
+        Image: =VarEditedImg.Full
         Visible: =VarFullImage
         Width: =Parent.Width-200
         X: =(Parent.Width-Self.Width)/2
-        Y: =80
+        Y: =60
         ZIndex: =17
 
     Icon6 As icon.Cancel:
