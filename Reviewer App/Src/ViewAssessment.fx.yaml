@@ -1043,6 +1043,72 @@ ViewAssessment As screen:
                             Y: =16
                             ZIndex: =3
 
+                    "Gallery8 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Height: =300
+                        Items: |-
+                            =Filter(
+                                checkpointItem_Images,
+                                assignmentId.Id = glryAssignmentBS.Selected.assignmentId.Id && bankUnitId.Id = glryAssignmentBS.Selected.bankUnitId.Id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                     // && Image.Value <> Blank()
+                            )
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =Min(440, Self.Height - 60)*1.3
+                        Width: =Parent.Width-40
+                        X: =20
+                        Y: =60
+                        ZIndex: =16
+
+                        imgcheckpointitemimageVA_5 As image:
+                            BorderColor: =RGBA(0, 0, 0, 1)
+                            BorderThickness: =2
+                            CalculateOriginalDimensions: =true
+                            Height: =Parent.Height
+                            Image: |-
+                                =//camera
+                                ThisItem.Image.Full
+                            OnSelect: |-
+                                =//Set(VarFullImage,ThisItem.Image.Full);
+                                //Navigate(CompanyDetails);
+                            PaddingBottom: =5
+                            PaddingTop: =5
+                            Width: =Parent.Width/4.2
+                            ZIndex: =4
+
+                        lblimageannotationVA_4 As label:
+                            AutoHeight: =true
+                            Height: =Self.Size * 1.8
+                            OnSelect: =
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =referenceCSS.RLabelFontSize
+                            Text: =ThisItem.image_annotation
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Parent.TemplateWidth/1.1
+                            X: =40.00000000000006
+                            Y: =550
+                            ZIndex: =5
+
+                        imgcheckpointitemimageVA_6 As image:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =2
+                            CalculateOriginalDimensions: =true
+                            Height: =Parent.Height
+                            Image: |-
+                                =//camera
+                                ThisItem.EditedImage.Full
+                            OnSelect: |-
+                                =Notify("hiiiiiiiiiiiiiiii",NotificationType.Error);
+                                //Set(VarFullImage,ThisItem.Image.Full);
+                                //Navigate(CompanyDetails);
+                            PaddingBottom: =5
+                            PaddingTop: =5
+                            Width: =Parent.Width/4.2
+                            ZIndex: =6
+
             Container13 As groupContainer.horizontalAutoLayoutContainer:
                 FillPortions: =0
                 LayoutMinHeight: =100
