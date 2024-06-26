@@ -728,9 +728,7 @@ TripReport_1 As screen:
                             Image: |-
                                 =//camera
                                 ThisItem.Image.Full
-                            OnSelect: |-
-                                =Set(VarFullImage,ThisItem.Image.Full);
-                                Navigate(CompanyDetails);
+                            OnSelect: =
                             PaddingBottom: =5
                             PaddingTop: =5
                             Width: |-
