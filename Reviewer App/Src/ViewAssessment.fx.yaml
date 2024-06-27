@@ -1481,34 +1481,21 @@ ViewAssessment As screen:
             Y: =lblupdatesuccessEC.Y+ Self.Height+10
             ZIndex: =13
 
-    Label6 As label:
-        Align: =Align.Center
-        AutoHeight: =true
-        Size: =16
-        Text: =VarImageAnnotation
+    Image5 As image:
+        Height: =550
+        Image: =VarImageFull.Full
         Visible: =VarFullImage
-        Width: =Parent.Width-80
-        X: =40
-        Y: =Image5.Y+Image5.Height+20
+        Width: =550
+        X: =(Parent.Width-Self.Width)/2
         ZIndex: =15
 
-    Image5 As image:
-        Height: =Parent.Height-200
-        Image: =VarImageFull
-        Visible: =VarFullImage
-        Width: =Parent.Width-200
-        X: =(Parent.Width-Self.Width)/2
-        Y: =60
-        ZIndex: =16
-
     Image5_1 As image:
-        Height: =Parent.Height-200
+        Height: =550
         Image: =VarEditedImg.Full
         Visible: =VarFullImage
-        Width: =Parent.Width-200
+        Width: =550
         X: =(Parent.Width-Self.Width)/2
-        Y: =60
-        ZIndex: =17
+        ZIndex: =16
 
     Icon6 As icon.Cancel:
         Color: =RGBA(0, 0, 0, 1)
@@ -1519,5 +1506,16 @@ ViewAssessment As screen:
         Width: =44
         X: =Parent.Width-100
         Y: =40
+        ZIndex: =17
+
+    Label6 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Size: =16
+        Text: =VarImageAnnotation
+        Visible: =VarFullImage
+        Width: =Parent.Width-80
+        X: =40
+        Y: =Image5.Y+Image5.Height
         ZIndex: =18
 
