@@ -1,2 +1,10 @@
 Screen1 As screen:
 
+    Video1 As videoPlayback:
+        Height: =562
+        Media: ='Audio and Video controls in Power Apps - Power Apps _ Microsoft Learn - Google Chrome 2024-07-03 13-05-19'
+        Width: =1014
+        X: =40
+        Y: =40
+        ZIndex: =1
+
