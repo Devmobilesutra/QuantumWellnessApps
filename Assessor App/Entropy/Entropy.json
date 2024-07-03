@@ -16,8 +16,9 @@
   "ControlUniqueGuids": {},
   "ControlUniqueIds": {
     "AddMediaButton1_3": 869,
-    "AddMediaButton2": 938,
+    "AddMediaButton2": 941,
     "AddMediaWithImage1_3": 871,
+    "AddMediaWithImage3": 942,
     "App": 1,
     "AssessmentScreen": 316,
     "BankScreen": 408,
@@ -104,7 +105,6 @@
     "Button3_5": 618,
     "Button3_6": 793,
     "Button3_7": 795,
-    "Button4": 933,
     "Button4_1": 691,
     "Button5_16": 685,
     "Button5_17": 860,
@@ -940,14 +940,13 @@
     "txtSectionCommentTRS_1": 309,
     "txtTimeEstimateValueAR_1": 292,
     "UploadedImage1_3": 868,
-    "UploadVideo": 937,
-    "UploadVideocontrol": 939,
+    "UploadedImage3": 940,
     "UserName": 44,
     "Video1": 932
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "07/03/2024 11:47:28",
+  "HeaderLastSavedDateTimeUTC": "07/03/2024 11:52:02",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "177e23aa-d6de-4866-8e8f-9c27c7eed207": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/shared-sharepointonl-ff6ab72d-b8be-4758-9f4b-9c58ef2d3395\"",
@@ -1309,6 +1308,10 @@
       "AddMediaButton1_3": 1,
       "UploadedImage1_3": 0
     },
+    "AddMediaWithImage3": {
+      "AddMediaButton2": 1,
+      "UploadedImage3": 0
+    },
     "CommentPopupBS": {
       "btnPopupcloseBS": 5,
       "Container38_2": 2,
@@ -1622,10 +1625,6 @@
       "imgloaderBS": 2,
       "lblsyncSuccessBS": 4,
       "lblSyncSuccessPatchBS": 3
-    },
-    "UploadVideocontrol": {
-      "AddMediaButton2": 1,
-      "UploadVideo": 0
     }
   },
   "OrderPcfTemplate": {},
@@ -1654,6 +1653,7 @@
     "AddMediaButton1_3": {},
     "AddMediaButton2": {},
     "AddMediaWithImage1_3": {},
+    "AddMediaWithImage3": {},
     "App": {},
     "AssessmentScreen": {},
     "BankScreen": {},
@@ -1740,7 +1740,6 @@
     "Button3_5": {},
     "Button3_6": {},
     "Button3_7": {},
-    "Button4": {},
     "Button4_1": {},
     "Button5_16": {},
     "Button5_17": {},
@@ -2576,8 +2575,7 @@
     "txtSectionCommentTRS_1": {},
     "txtTimeEstimateValueAR_1": {},
     "UploadedImage1_3": {},
-    "UploadVideo": {},
-    "UploadVideocontrol": {},
+    "UploadedImage3": {},
     "UserName": {},
     "Video1": {}
   },
@@ -2587,6 +2585,7 @@
     "AddMediaButton1_3": 792,
     "AddMediaButton2": 869,
     "AddMediaWithImage1_3": 790,
+    "AddMediaWithImage3": 865,
     "App": 0,
     "AssessmentScreen": 47,
     "BankScreen": 139,
@@ -2673,7 +2672,6 @@
     "Button3_5": 541,
     "Button3_6": 715,
     "Button3_7": 717,
-    "Button4": 865,
     "Button4_1": 614,
     "Button5_16": 606,
     "Button5_17": 782,
@@ -3509,10 +3507,9 @@
     "txtSectionCommentTRS_1": 295,
     "txtTimeEstimateValueAR_1": 276,
     "UploadedImage1_3": 791,
-    "UploadVideo": 867,
-    "UploadVideocontrol": 868,
+    "UploadedImage3": 866,
     "UserName": 875,
-    "Video1": 866
+    "Video1": 868
   },
   "ResourcesJsonIndices": {
     "Image-042 splash-2x": 2,
