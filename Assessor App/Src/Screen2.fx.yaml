@@ -1,7 +1,7 @@
 Screen2 As screen:
 
     Video4 As videoPlayback:
-        Media: =First(checkpointItem_Images).image_annotation
+        Media: =First(checkpointItem_Images).
         X: =40
         Y: =40
         ZIndex: =1
