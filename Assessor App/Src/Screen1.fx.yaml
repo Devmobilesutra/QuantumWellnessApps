@@ -55,7 +55,7 @@ Screen1 As screen:
                     }
                 )
             )
-        Text: ="Button"
+        Text: ="add to collection"
         Width: =247
         X: =692
         Y: =50
@@ -63,8 +63,19 @@ Screen1 As screen:
 
     Video2 As videoPlayback:
         Media: |
-            =First(UploadedVideos).VideoUrl
+            =//First(UploadedVideos).VideoUrl
+            First(checkpointItem_Images).image_annotation
         X: =810
         Y: =180
         ZIndex: =7
+
+    Button9 As button:
+        Height: =105
+        OnSelect: |-
+            =UpdateIf(checkpointItem_Images,checkpointItemImagesId="d713f426-2974-4fc8-b16a-508d760d65c9cii06252024165745-0.7431728",{image_annotation:First(UploadedVideos).VideoUrl});
+        Text: ="Add  to dataverse"
+        Width: =377
+        X: =650
+        Y: =492
+        ZIndex: =8
 
