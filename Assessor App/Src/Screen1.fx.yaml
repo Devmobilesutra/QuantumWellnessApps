@@ -57,14 +57,14 @@ Screen1 As screen:
             )
         Text: ="Button"
         Width: =247
-        X: =926
-        Y: =130
+        X: =692
+        Y: =50
         ZIndex: =6
 
     Video2 As videoPlayback:
         Media: |
             =First(UploadedVideos).VideoUrl
-        X: =618
-        Y: =452
+        X: =810
+        Y: =180
         ZIndex: =7
 
