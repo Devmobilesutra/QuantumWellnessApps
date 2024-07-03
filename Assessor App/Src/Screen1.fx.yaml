@@ -1,6 +1,9 @@
 Screen1 As screen:
 
     Video1 As videoPlayback:
+        BorderColor: =RGBA(149, 149, 149, 1)
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
         Height: =382
         Media: =First(UploadedVideos).Value
         Width: =423
@@ -16,22 +19,34 @@ Screen1 As screen:
         ZIndex: =3
 
         UploadedImage3 As image:
+            BorderColor: =RGBA(255, 0, 0, 1)
+            BorderThickness: =2
             Height: =0
             Image: =If(IsBlank(AddMediaButton2.Media), SampleImage, AddMediaButton2.Media)
             ImagePosition: =ImagePosition.Fill
-            Width: =455
+            Width: =0
             X: =AddMediaButton2.X
             Y: =541
             ZIndex: =4
 
         AddMediaButton2 As addMedia:
+            BorderColor: =RGBA(255, 0, 0, 1)
+            BorderThickness: =2
             ChangePictureText: ="Change Video"
             Height: =81
             OnChange: =  ClearCollect(UploadedVideos, AddMediaButton2.Media)
             Size: =25
             Text: ="Tap or click to add a Video"
-            Width: =455
+            Width: =500
             X: =42
             Y: =527
             ZIndex: =5
+
+    Button5 As button:
+        Height: =85
+        Text: ="Button"
+        Width: =247
+        X: =926
+        Y: =130
+        ZIndex: =6
 
