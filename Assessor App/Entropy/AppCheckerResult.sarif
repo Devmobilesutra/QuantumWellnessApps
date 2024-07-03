@@ -19822,6 +19822,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen1.AddMediaButton2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1.AddMediaButton2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen1",
+                "type": "Screen1.AddMediaButton2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.varExpanded"
                 }
               ],
@@ -19983,6 +20013,36 @@
               },
               "properties": {
                 "member": "OIP",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Audio and Video controls in Power Apps - Power Apps _ Microsoft Learn - Google Chrome 2024-07-03 13-05-19"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Audio and Video controls in Power Apps - Power Apps _ Microsoft Learn - Google Chrome 2024-07-03 13-05-19",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Audio and Video controls in Power Apps - Power Apps _ Microsoft Learn - Google Chrome 2024-07-03 13-05-19",
                 "module": "App",
                 "type": "App"
               }
