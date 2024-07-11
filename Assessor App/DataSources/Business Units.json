@@ -121,6 +121,8 @@
       "business_unit_fabricaiskill": "Fabric AISkill",
       "business_unit_fax_activities": "Faxes",
       "business_unit_featurecontrolsetting": "featurecontrolsettings",
+      "business_unit_federatedknowledgeconfiguration": "FederatedKnowledgeConfigurations",
+      "business_unit_federatedknowledgeentityconfiguration": "FederatedKnowledgeEntityConfigurations",
       "business_unit_feedback": "Feedback",
       "business_unit_flowcapacityassignment": "Flow Capacity Assignments",
       "business_unit_flowcredentialapplication": "Flow Credential Applications",

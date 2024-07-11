@@ -3099,6 +3099,427 @@ FindingScreen As screen:
                                 Width: =300
                                 ZIndex: =4
 
+                            lblAddImageFS_2 As label:
+                                Color: =AllScreensCSS.RColorBlack
+                                DisplayMode: |-
+                                    =If(
+                                        CountRows(GlryImagesFS.AllItems) = 6,DisplayMode.Disabled,DisplayMode.Edit)
+                                Font: =AllScreensCSS.RFont
+                                FontWeight: =FontWeight.Bold
+                                Size: =18
+                                Text: ="Add Video" 
+                                ZIndex: =5
+
+                            btnAddImageFS_2 As button:
+                                BorderColor: =AllScreensCSS.RActiveColor
+                                DisplayMode: |-
+                                    =If(
+                                        CountRows(GlryImagesFS.AllItems) = 4,DisplayMode.Disabled,DisplayMode.Edit)
+                                Fill: =AllScreensCSS.RActiveColor
+                                Font: =AllScreensCSS.ButtonFont
+                                HoverFill: =AllScreensCSS.RActiveColor
+                                OnSelect: |
+                                    =//for Logs
+                                    UpdateIf(
+                                        GcTraceLog,
+                                        VarDebug = true,
+                                        {
+                                            Path: First(GcTraceLog).Path & "/AddImg=" & Text(
+                                                Now(),
+                                                "mm-dd-yy hh:mm:ss am/pm"
+                                            )
+                                        }
+                                    );
+                                    /*SaveData(
+                                        GcTraceLog,
+                                        "localGcTraceLog"
+                                    );*/
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            TimeUnit.Seconds
+                                        ) > SafetyCheckTime,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
+                                    /*
+                                    If(
+                                        First(gcCollectionCapCounts).IsIndividualCollection = true && (CountRows(GC_checkpointItemAssessment) > Value(First(gcCollectionCapCounts).IndividualCollectionCount)
+                                          || CountRows(GC_checkpointItem_ActionItem) > Value(First(gcCollectionCapCounts).IndividualCollectionCount) || CountRows(GC_checkpointItem_Images) > Value(First(gcCollectionCapCounts).IndividualCollectionCount)),
+                                        Set(
+                                            VarMemoryPressurePopupMessage,
+                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
+                                        );
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            true
+                                        ),
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            false
+                                        )
+                                    );
+                                    If(
+                                        First(gcCollectionCapCounts).IsAllCollection = true && (CountRows(GC_actionItems) + CountRows(GC_bankAssessment) + CountRows(GC_checkpointItem_ActionItem) + CountRows(GC_checkpointItemAssessment) + CountRows(GC_unitAssessment) + CountRows(gcAssignmentunit) + CountRows(gcProjectAssignment) + CountRows(gcBankunit) + CountRows(gcBank) + CountRows(gcClient) + CountRows(GC_product) + CountRows(GC_templateCheckpointsItem) + CountRows(GC_templateCheckpoints) + CountRows(GC_templateSections) + CountRows(gcImageDelete) + CountRows(gcActionItemDelete) + CountRows(GC_checkpointItem_Images) + CountRows(GcCheckpointAssessment) + CountRows(GcSectionAssessment)) > Value(First(gcCollectionCapCounts).CombinedCollectionCount),
+                                        Set(
+                                            VarMemoryPressurePopupMessage,
+                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
+                                        );
+                                        Set(
+                                            VarMemoryPressurePopup1,
+                                            true
+                                        ),
+                                        Set(
+                                            VarMemoryPressurePopup1,
+                                            false
+                                        )
+                                    );*/
+                                    If(
+                                        VarImageIsDownloaded = true,
+                                        If(
+                                            CountRows(
+                                                Filter(
+                                                    GC_checkpointItem_Images,
+                                                    CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                )
+                                            ) >= First(gcCollectionCapCounts).SavedImageCount,
+                                            Set(
+                                                VarImagesExceedPopupText,
+                                                "You have reached limit of " & First(gcCollectionCapCounts).SavedImageCount & " Unsubmitted images. Please submit before continuing the assessment."
+                                            );
+                                     // Notify("You have reached limit of 75 images.You can not add Images.",NotificationType.Error);
+                                    Set(
+                                                VarImagesExceedPopup,
+                                                true
+                                            );
+                                            ,
+                                            If(
+                                                CountRows(
+                                                    Filter(
+                                                        GC_checkpointItem_Images,
+                                                        CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                    )
+                                                ) > First(gcCollectionCapCounts).SavedImageCount - 10,
+                                                Set(
+                                                    VarImagesExceedPopupText,
+                                                    CountRows(
+                                                        Filter(
+                                                            GC_checkpointItem_Images,
+                                                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                        )
+                                                    ) & " Unsubmitted Images are already stored. Now you can add only " & First(gcCollectionCapCounts).SavedImageCount - CountRows(
+                                                        Filter(
+                                                            GC_checkpointItem_Images,
+                                                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                        )
+                                                    ) & " images more."
+                                                );
+                                      //Notify(CountRows(GC_checkpointItem_Images) & " Images are already stored. 75 is a limit.",NotificationType.Error);
+                                    Set(
+                                                    VarImagesExceedPopup,
+                                                    true
+                                                );
+                                            );
+                                            Set(
+                                                UP,
+                                                false
+                                            );
+                                            If(
+                                                CountRows(GlryImagesFS.AllItems) < 4,
+                                                Collect(
+                                                    GC_checkpointItem_Images,
+                                                    {
+                                                        // checkpointItemImagesId:GUID(),
+                                                        checkpointItemImagesId: varBankUnitId & "cii" & Text(
+                                                            Now(),
+                                                            "mmddyyyyhhmmss"
+                                                        ) & "-" & Rand(),
+                                                        assignmentId: LookUp(
+                                                            DropColumns(
+                                                                gcProjectAssignment,
+                                                                AstatusUpdate
+                                                            ),
+                                                            Id = varAssignmentId
+                                                        ),
+                                                        //  bankId:LookUp(gcBank,Id=VarBankId),
+                                                        bankUnitId: LookUp(
+                                                            gcBankunit,
+                                                            Id = varBankUnitId
+                                                        ),
+                                                        section_id: LookUp(
+                                                            DropColumns(
+                                                                GcSectionAssessment,
+                                                                SstatusUpdate
+                                                            ),
+                                                            'sectionAssessment (quantum_sectionassessment)' = varSA
+                                                        ),
+                                                        checkpoint_id: LookUp(
+                                                            DropColumns(
+                                                                GcCheckpointAssessment,
+                                                                CstatusUpdate
+                                                            ),
+                                                            checkpointAssessment_id = GuidId
+                                                        ),
+                                                        checkpointItem_Id: LookUp(
+                                                            DropColumns(
+                                                                GC_checkpointItemAssessment,
+                                                                CIstatusUpdate
+                                                            ),
+                                                            'checkpointItemAssessment (quantum_checkpointitemassessment)' = Text(varCItemA)
+                                                        ),
+                                                        product_id: LookUp(
+                                                            GC_product,
+                                                            product_Model = glryUnitBS.Selected.productModel
+                                                        ),
+                                                        image_annotation: "",
+                                                        ImageSortSequence: LookUp(
+                                                            GC_templateSections,
+                                                            sectionId = VarSectionId,
+                                                            sectionSequence
+                                                        ) & LookUp(
+                                                            GC_templateCheckpoints,
+                                                            checkpointId = ChId,
+                                                            checkpointSequence
+                                                        ) & LookUp(
+                                                            GC_templateCheckpointsItem,
+                                                            checkpointItemId = varCheckpointitemID,
+                                                            checkpointItemSequence
+                                                        ),
+                                                        CIIstatusUpdate: Blank()
+                                                    }
+                                                );
+                                                If(
+                                                    CountRows(GlryImagesFS.AllItems) >= 4,
+                                                    Notify("You can capture 4 images only."),
+                                                    NotificationType.Warning
+                                                )
+                                            );
+                                            Set(
+                                                varImage,
+                                                true
+                                            );
+                                        );
+                                        ,
+                                        Set(
+                                            VarDownloadImagesRestrict,
+                                            true
+                                        )
+                                    );
+                                    
+                                    // Calculate the length of the JSON string
+                                    Set(
+                                        VarBytesEstimate,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_actionItems,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_product,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_templateSections,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_templateCheckpoints,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_templateCheckpointsItem,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(JSON(gcActionItemDelete)) + Len(JSON(gcImageDelete)) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcClient,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcBank,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcBankunit,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcProjectAssignment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcAssignmentunit,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_bankAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_unitAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GcSectionAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GcCheckpointAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItemAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_ActionItem,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_Images,
+                                                    Owner
+                                                ),
+                                                JSONFormat.IncludeBinaryData
+                                            )
+                                        )/*+ Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcCollectionCapCounts,
+                                                    Owner,
+                                                )
+                                            )
+                                        )*/
+                                    );
+                                    /*Set(
+                                        VarJsonStringItem,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItemAssessment,
+                                                    "_ownerid_value"
+                                                )
+                                            )
+                                        )
+                                    );
+                                    Set(
+                                        VarJsonStringAction,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_ActionItem,
+                                                    "_ownerid_value"
+                                                )
+                                            )
+                                        )
+                                    );
+                                    Set(
+                                        VarJsonStringImage,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_Images,
+                                                    "_ownerid_value"
+                                                ),
+                                                JSONFormat.IncludeBinaryData
+                                            )
+                                        )
+                                    );*/
+                                    // Convert characters to bytes (considering UTF-16 encoding)
+                                    /*Set(
+                                        VarBytesEstimate,
+                                        (VarJsonStringAllCol)
+                                    );*/
+                                    //((VarJsonStringItem + VarJsonStringAction + VarJsonStringImage) * 2)
+                                    //*0.0009765625mb
+                                    //convert bytes to MB
+                                    Set(
+                                        VarBytestoMB,
+                                        (VarBytesEstimate / (1024 * 1024))
+                                    );
+                                    //*0.0009765625mb
+                                    If(
+                                        VarBytestoMB > 40,
+                                        Set(
+                                            VarMemoryPressurePopupMessage,
+                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
+                                        );
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            true
+                                        ),
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            false
+                                        )
+                                    );
+                                PressedFill: =AllScreensCSS.RActiveColor
+                                RadiusBottomLeft: =1
+                                RadiusBottomRight: =1
+                                RadiusTopLeft: =1
+                                RadiusTopRight: =1
+                                Text: ="+"
+                                Width: =40
+                                Y: =lblAddImageFS.Y
+                                ZIndex: =6
+
                         Container2 As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
                             Height: =100

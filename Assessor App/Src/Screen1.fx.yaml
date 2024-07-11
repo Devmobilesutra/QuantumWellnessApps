@@ -64,15 +64,25 @@ Screen1 As screen:
     Video2 As videoPlayback:
         Media: |
             =//First(UploadedVideos).VideoUrl
-            First(checkpointItem_Images).image_annotation
+            //First(checkpointItem_Images).image_annotation
+            //videooo.image_annotation
+            "appres://blobmanager/5cdcd2a8659349fba2cf3a193c1b0b32/212"
         X: =810
         Y: =180
         ZIndex: =7
 
     Button9 As button:
         Height: =105
-        OnSelect: |-
-            =UpdateIf(checkpointItem_Images,checkpointItemImagesId="d713f426-2974-4fc8-b16a-508d760d65c9cii06252024165745-0.7431728",{image_annotation:First(UploadedVideos).VideoUrl});
+        OnSelect: |
+            =UpdateIf(
+                checkpointItem_Images,
+                checkpointItemImagesId = "d713f426-2974-4fc8-b16a-508d760d65c9cii06252024165745-0.7431728",
+                {image_annotation: First(UploadedVideos).VideoUrl}
+            );
+            Set(
+                videooo,
+                First(Sort( checkpointItem_Images,'Modified On',SortOrder.Ascending))
+            );
         Text: ="Add  to dataverse"
         Width: =377
         X: =650
