@@ -3173,7 +3173,7 @@ FindingScreen As screen:
                                 BorderColor: =AllScreensCSS.RActiveColor
                                 DisplayMode: |-
                                     =If(
-                                        CountRows(GlryImagesFS.AllItems) = 4,DisplayMode.Disabled,DisplayMode.Edit)
+                                        CountRows(GlryImagesFS.AllItems) = 1,DisplayMode.Disabled,DisplayMode.Edit)
                                 Fill: =AllScreensCSS.RActiveColor
                                 Font: =AllScreensCSS.ButtonFont
                                 HoverFill: =AllScreensCSS.RActiveColor
