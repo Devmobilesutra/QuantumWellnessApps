@@ -3140,6 +3140,7 @@ FindingScreen As screen:
                                     ChangePictureText: ="Change Video"
                                     Color: =RGBA(255, 255, 255, 1)
                                     Fill: =RGBA(153, 188, 242, 1)
+                                    FocusedBorderThickness: =0
                                     Height: =60
                                     OnChange: =  ClearCollect(UploadedVideos, AddMediaButton2_1.Media)
                                     Size: =16
