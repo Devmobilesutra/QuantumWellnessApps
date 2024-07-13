@@ -1408,7 +1408,7 @@ FindingScreen As screen:
                                 CountRows(GlryImagesFS.AllItems) = 1,
                                 380,
                                 CountRows(GlryImagesFS.AllItems) * (GlryImagesFS.TemplateHeight) / 2
-                            ) + 240
+                            ) + 240+Container3.Height+ ctnAddImageFS_2.Height
                             
                             
                             //380 240
@@ -1430,7 +1430,7 @@ FindingScreen As screen:
                             Size: =AllScreensCSS.RLabelFontSize
                             Text: ="Add annotation" 
                             Width: =Parent.Width
-                            ZIndex: =2
+                            ZIndex: =1
 
                         txtAnnotationFS As text:
                             AlignInContainer: =AlignInContainer.Start
@@ -1571,7 +1571,7 @@ FindingScreen As screen:
                             Size: =AllScreensCSS.RLabelFontSize
                             Width: =If(App.Width<1024,Parent.Width/1.1,Parent.Width/1.06)
                             Y: =lblAnnotationFS.Height+lblAnnotationFS.Y
-                            ZIndex: =3
+                            ZIndex: =2
 
                         "GlryActionItemFS As gallery.'BrowseLayout_Flexible_SocialFeed_ver4.0'":
                             '#CopilotOverlayLabel': ="Filtered"
@@ -1592,7 +1592,7 @@ FindingScreen As screen:
                             Visible: =Q
                             Width: =Parent.Width/1.05
                             Y: =ctnAddActionFS.Height
-                            ZIndex: =4
+                            ZIndex: =3
 
                             TextInput5_10 As text:
                                 BorderColor: =RGBA(0, 0, 0, 1)
@@ -2032,7 +2032,7 @@ FindingScreen As screen:
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutWrap: =true
-                            ZIndex: =5
+                            ZIndex: =4
 
                             Label20_8 As label:
                                 Font: =AllScreensCSS.RFont
@@ -2317,7 +2317,7 @@ FindingScreen As screen:
                             Visible: =Q
                             Width: =Parent.Width/1.2
                             WrapCount: =2
-                            ZIndex: =6
+                            ZIndex: =5
 
                             TextInput6_2 As text:
                                 BorderColor: =RGBA(0, 0, 0, 1)
@@ -2644,7 +2644,7 @@ FindingScreen As screen:
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutWrap: =true
-                            ZIndex: =7
+                            ZIndex: =6
 
                             lblAddImageFS As label:
                                 Color: =AllScreensCSS.RColorBlack
@@ -3099,7 +3099,65 @@ FindingScreen As screen:
                                 Width: =300
                                 ZIndex: =4
 
-                            lblAddImageFS_2 As label:
+                        Container3 As groupContainer.manualLayoutContainer:
+                            FillPortions: =0
+                            Height: =350
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            ZIndex: =7
+
+                            Video1_1 As videoPlayback:
+                                BorderColor: =RGBA(149, 149, 149, 1)
+                                BorderThickness: =2
+                                Fill: =RGBA(0, 0, 0, 0)
+                                Height: =250
+                                Media: =First(UploadedVideos).Value
+                                Width: =400
+                                X: =40
+                                Y: =18
+                                ZIndex: =1
+
+                            AddMediaWithImage3_1 As group:
+                                Height: =5
+                                Width: =5
+                                X: =-2
+                                Y: =-110
+                                ZIndex: =2
+
+                                UploadedImage3_1 As image:
+                                    BorderColor: =RGBA(255, 0, 0, 1)
+                                    Fill: =RGBA(153, 188, 242, 1)
+                                    Height: =0
+                                    Image: =If(IsBlank(AddMediaButton2_1.Media), SampleImage, AddMediaButton2_1.Media)
+                                    ImagePosition: =ImagePosition.Fill
+                                    Width: =0
+                                    X: =AddMediaButton2_1.X
+                                    Y: =400
+                                    ZIndex: =3
+
+                                AddMediaButton2_1 As addMedia:
+                                    BorderColor: =RGBA(255, 0, 0, 1)
+                                    ChangePictureText: ="Change Video"
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(153, 188, 242, 1)
+                                    Height: =60
+                                    OnChange: =  ClearCollect(UploadedVideos, AddMediaButton2_1.Media)
+                                    Size: =16
+                                    Text: ="Click to add a Video"
+                                    Width: =460
+                                    Y: =Video1_1.Y+Video1_1.Height+10
+                                    ZIndex: =4
+
+                        ctnAddImageFS_2 As groupContainer.horizontalAutoLayoutContainer:
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutWrap: =true
+                            ZIndex: =8
+
+                            lblAddImageFS_4 As label:
                                 Color: =AllScreensCSS.RColorBlack
                                 DisplayMode: |-
                                     =If(
@@ -3110,7 +3168,7 @@ FindingScreen As screen:
                                 Text: ="Add Video" 
                                 ZIndex: =5
 
-                            btnAddImageFS_2 As button:
+                            btnAddImageFS_4 As button:
                                 BorderColor: =AllScreensCSS.RActiveColor
                                 DisplayMode: |-
                                     =If(
@@ -3517,7 +3575,7 @@ FindingScreen As screen:
                                 RadiusTopRight: =1
                                 Text: ="+"
                                 Width: =40
-                                Y: =lblAddImageFS.Y
+                                Y: =lblAddImageFS_3.Y
                                 ZIndex: =6
 
                         Container2 As groupContainer.horizontalAutoLayoutContainer:
@@ -3531,7 +3589,7 @@ FindingScreen As screen:
                             LayoutMode: =LayoutMode.Auto
                             Width: =Parent.Width -40
                             Y: =btnAddImageFS.Height+btnAddImageFS.Y+50
-                            ZIndex: =8
+                            ZIndex: =9
 
                             btnSaveFS As button:
                                 BorderColor: =Self.Fill
