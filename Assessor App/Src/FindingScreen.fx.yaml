@@ -3111,7 +3111,16 @@ FindingScreen As screen:
                                 BorderThickness: =2
                                 Fill: =RGBA(0, 0, 0, 0)
                                 Height: =250
-                                Media: =//glryItmesAS.Selected.VideoLink
+                                Media: |-
+                                    =If(
+                                        IsBlank(AddMediaButton2_1.Media),
+                                        LookUp(
+                                            GC_checkpointItemAssessment,
+                                            assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                            VideoLink
+                                        ),
+                                        AddMediaButton2_1.Media
+                                    )
                                 Width: =400
                                 X: =40
                                 Y: =18
@@ -3142,7 +3151,7 @@ FindingScreen As screen:
                                     Fill: =RGBA(153, 188, 242, 1)
                                     FocusedBorderThickness: =0
                                     Height: =60
-                                    OnChange: =  ClearCollect(UploadedVideos, AddMediaButton2_1.Media)
+                                    OnChange: =  //ClearCollect(UploadedVideos, AddMediaButton2_1.Media)
                                     Size: =16
                                     Text: ="Click to add a Video"
                                     Width: =460
@@ -3576,7 +3585,7 @@ FindingScreen As screen:
                                 RadiusTopRight: =1
                                 Text: ="+"
                                 Width: =40
-                                Y: =lblAddImageFS_3.Y
+                                Y: =lblAddImageFS_4.Y
                                 ZIndex: =6
 
                         Container2 As groupContainer.horizontalAutoLayoutContainer:
@@ -3747,7 +3756,9 @@ FindingScreen As screen:
                                                             "Check",
                                                             "Uncheck"
                                                         ),
+                                                         VideoLink:AddMediaButton2_1.Media,
                                                         CIstatusUpdate: 0
+                                                       
                                                     }
                                                 );
                                              //Notify("update action"& CountRows(GC_checkpointItem_ActionItem));
