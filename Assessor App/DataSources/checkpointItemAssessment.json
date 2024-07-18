@@ -25,6 +25,7 @@
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
       "cr28a_checkpointitemsequence": "checkpointitemSequence",
+      "cr33a_videolink": "VideoLink",
       "createdby": "Created By",
       "createdon": "Created On",
       "createdonbehalfby": "Created By (Delegate)",

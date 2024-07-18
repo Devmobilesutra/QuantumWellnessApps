@@ -3111,7 +3111,7 @@ FindingScreen As screen:
                                 BorderThickness: =2
                                 Fill: =RGBA(0, 0, 0, 0)
                                 Height: =250
-                                Media: =First(UploadedVideos).Value
+                                Media: =//glryItmesAS.Selected.VideoLink
                                 Width: =400
                                 X: =40
                                 Y: =18
