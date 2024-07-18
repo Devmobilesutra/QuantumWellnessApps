@@ -1052,7 +1052,8 @@ BankScreen As screen:
                                                             assessmentStatus: i.assessmentStatus,
                                                             CIstatusUpdate: i.CIstatusUpdate,
                                                             checkpointitemSequence: i.checkpointitemSequence,
-                                                            checkpointItemComment: i.checkpointItemComment
+                                                            checkpointItemComment: i.checkpointItemComment,
+                                                            VideoLink:i.VideoLink
                                                         }
                                                     );
                                                     ,
@@ -1076,7 +1077,8 @@ BankScreen As screen:
                                                             assessmentStatus: i.assessmentStatus,
                                                             CIstatusUpdate: i.CIstatusUpdate,
                                                             checkpointitemSequence: i.checkpointitemSequence,
-                                                            checkpointItemComment: i.checkpointItemComment
+                                                            checkpointItemComment: i.checkpointItemComment,
+                                                            VideoLink:i.VideoLink
                                                         }
                                                     );
                                                 );
@@ -1121,7 +1123,8 @@ BankScreen As screen:
                                                             assessmentStatus: i.assessmentStatus,
                                                             CIstatusUpdate: 2,
                                                             checkpointitemSequence: i.checkpointitemSequence,
-                                                            checkpointItemComment: i.checkpointItemComment
+                                                            checkpointItemComment: i.checkpointItemComment,
+                                                            VideoLink:i.VideoLink
                                                         }
                                                     )
                                                 );
@@ -1155,7 +1158,8 @@ BankScreen As screen:
                                                                 assessmentStatus: i.assessmentStatus,
                                                                 CIstatusUpdate: i.CIstatusUpdate,
                                                                 checkpointitemSequence: i.checkpointitemSequence,
-                                                                checkpointItemComment: i.checkpointItemComment
+                                                                checkpointItemComment: i.checkpointItemComment,
+                                                                VideoLink:i.VideoLink
                                                             }
                                                         );
                                                         ,
@@ -1179,7 +1183,8 @@ BankScreen As screen:
                                                                 assessmentStatus: i.assessmentStatus,
                                                                 CIstatusUpdate: i.CIstatusUpdate,
                                                                 checkpointitemSequence: i.checkpointitemSequence,
-                                                                checkpointItemComment: i.checkpointItemComment
+                                                                checkpointItemComment: i.checkpointItemComment,
+                                                                VideoLink:i.VideoLink
                                                             }
                                                         );
                                                     );
@@ -1612,7 +1617,7 @@ BankScreen As screen:
                                 );
                                 
                             //net connected
-                            Clear(GcSectionAssessmentAdd);
+                                Clear(GcSectionAssessmentAdd);
                                 Clear(GcCheckpointAssessmentAdd);
                                 Clear(GC_checkpointItemAssessmentAdd);
                                 Clear(GC_checkpointItem_ActionItemAdd);

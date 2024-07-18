@@ -800,7 +800,8 @@ AssessmentScreen As screen:
                                             GC_templateCheckpointsItem,
                                             checkpointItemId = varCheckpointitemID,
                                             checkpointItemSequence
-                                        )
+                                        ),
+                                        VideoLink:""
                                     }
                                 ),
                                 Set(
