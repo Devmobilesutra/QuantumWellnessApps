@@ -3543,7 +3543,7 @@ FindingScreen As screen:
                                 BorderThickness: =2
                                 Fill: =RGBA(0, 0, 0, 0)
                                 Height: =250
-                                Media: |-
+                                Media: |+
                                     =If(
                                         IsBlank(AddMediaButton2_1.Media),
                                         LookUp(
@@ -3573,6 +3573,7 @@ FindingScreen As screen:
                                         ),
                                         AddMediaButton2_1.Media
                                     )*/
+                                    
                                 Width: =400
                                 X: =40
                                 Y: =18
@@ -3778,7 +3779,16 @@ FindingScreen As screen:
                                                             "Check",
                                                             "Uncheck"
                                                         ),
-                                                         VideoLink:If(IsBlank(AddMediaButton2_1.Media),"",AddMediaButton2_1.Media),
+                                                         VideoLink:If(
+                                        IsBlank(AddMediaButton2_1.Media),
+                                        LookUp(
+                                            GC_checkpointItemAssessment,
+                                            assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                            VideoLink
+                                        ),
+                                        AddMediaButton2_1.Media
+                                    ),
+                                                         
                                                         CIstatusUpdate: 0
                                                        
                                                     }
