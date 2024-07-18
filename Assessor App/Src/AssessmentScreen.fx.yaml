@@ -854,6 +854,7 @@ AssessmentScreen As screen:
                                     true
                                 )
                             );
+                            Reset(AddMediaButton2_1);
                             Navigate(FindingScreen);
                         PressedBorderColor: =Self.BorderColor
                         PressedColor: =Self.Color
@@ -3407,7 +3408,8 @@ AssessmentScreen As screen:
                                             assessmentStatus: i.assessmentStatus,
                                             CIstatusUpdate: i.CIstatusUpdate,
                                             checkpointitemSequence: i.checkpointitemSequence,
-                                            checkpointItemComment: i.checkpointItemComment
+                                            checkpointItemComment: i.checkpointItemComment,
+                                            VideoLink:i.VideoLink
                                         }
                                     );
                                     ,
@@ -3431,7 +3433,8 @@ AssessmentScreen As screen:
                                             assessmentStatus: i.assessmentStatus,
                                             CIstatusUpdate: i.CIstatusUpdate,
                                             checkpointitemSequence: i.checkpointitemSequence,
-                                            checkpointItemComment: i.checkpointItemComment
+                                            checkpointItemComment: i.checkpointItemComment,
+                                            VideoLink:i.VideoLink
                                         }
                                     );
                                 );

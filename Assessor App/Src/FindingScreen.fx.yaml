@@ -285,6 +285,7 @@ FindingScreen As screen:
                                 {Image: Blank(),
                                 EditedImage:Blank()}
                             );
+                            Reset(AddMediaButton2_1);
                             Navigate(AssessmentScreen);
                         PaddingBottom: =10
                         PaddingLeft: =0
@@ -3552,6 +3553,26 @@ FindingScreen As screen:
                                         ),
                                         AddMediaButton2_1.Media
                                     )
+                                    /*For sample video
+                                    If(
+                                        IsBlank(AddMediaButton2_1.Media),
+                                        If(
+                                            IsBlank(
+                                                LookUp(
+                                                    GC_checkpointItemAssessment,
+                                                    assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                                    VideoLink
+                                                )
+                                            ),
+                                            SampleVideo,
+                                            LookUp(
+                                                GC_checkpointItemAssessment,
+                                                assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                                VideoLink
+                                            )
+                                        ),
+                                        AddMediaButton2_1.Media
+                                    )*/
                                 Width: =400
                                 X: =40
                                 Y: =18
@@ -3582,7 +3603,7 @@ FindingScreen As screen:
                                     Fill: =RGBA(153, 188, 242, 1)
                                     FocusedBorderThickness: =0
                                     Height: =60
-                                    OnChange: =  //ClearCollect(UploadedVideos, AddMediaButton2_1.Media)
+                                    OnChange: = 
                                     Size: =16
                                     Text: ="Click to add a Video"
                                     Width: =460
@@ -3669,7 +3690,7 @@ FindingScreen As screen:
                                             LookUp(
                                                 GlryImagesFS.AllItems,
                                                 //(Image9_2.Image) = Blank()
-                                                Image9_2.Image='Sample Image'|| Image9_2.Image = 'submitted-cloud'
+                                                Image9_2.Image='Sample Image'//|| Image9_2.Image = 'submitted-cloud'
                                                        )
                                         ),
                                         Set(
@@ -3757,7 +3778,7 @@ FindingScreen As screen:
                                                             "Check",
                                                             "Uncheck"
                                                         ),
-                                                         VideoLink:AddMediaButton2_1.Media,
+                                                         VideoLink:If(IsBlank(AddMediaButton2_1.Media),"",AddMediaButton2_1.Media),
                                                         CIstatusUpdate: 0
                                                        
                                                     }
@@ -4013,7 +4034,8 @@ FindingScreen As screen:
                                                     assessmentStatus: i.assessmentStatus,
                                                     CIstatusUpdate: i.CIstatusUpdate,
                                                     checkpointitemSequence: i.checkpointitemSequence,
-                                                    checkpointItemComment: i.checkpointItemComment
+                                                    checkpointItemComment: i.checkpointItemComment,
+                                                    VideoLink:i.VideoLink
                                                 }
                                             );
                                             ,
@@ -4037,7 +4059,8 @@ FindingScreen As screen:
                                                     assessmentStatus: i.assessmentStatus,
                                                     CIstatusUpdate: i.CIstatusUpdate,
                                                     checkpointitemSequence: i.checkpointitemSequence,
-                                                    checkpointItemComment: i.checkpointItemComment
+                                                    checkpointItemComment: i.checkpointItemComment,
+                                                    VideoLink:i.VideoLink
                                                 }
                                             );
                                         );

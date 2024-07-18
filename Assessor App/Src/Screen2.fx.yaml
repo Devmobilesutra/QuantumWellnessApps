@@ -14,3 +14,8 @@ Screen2 As screen:
         Y: =132
         ZIndex: =2
 
+    Video5 As videoPlayback:
+        X: =410
+        Y: =325
+        ZIndex: =3
+
