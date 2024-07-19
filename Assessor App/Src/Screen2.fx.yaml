@@ -15,6 +15,9 @@ Screen2 As screen:
         ZIndex: =2
 
     Video5 As videoPlayback:
+        Media: |-
+            =///SampleVideo
+            "appres://blobmanager/a3b0175aab6b49e6b6ba6c855715160b/63"
         X: =410
         Y: =325
         ZIndex: =3

@@ -3544,7 +3544,8 @@ FindingScreen As screen:
                                 Fill: =RGBA(0, 0, 0, 0)
                                 Height: =250
                                 Media: |+
-                                    =If(
+                                    =//"appres://blobmanager/a3b0175aab6b49e6b6ba6c855715160b/63"
+                                    If(
                                         IsBlank(AddMediaButton2_1.Media),
                                         LookUp(
                                             GC_checkpointItemAssessment,
