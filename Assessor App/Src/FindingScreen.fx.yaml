@@ -3790,7 +3790,8 @@ FindingScreen As screen:
                                         AddMediaButton2_1.Media
                                     ),
                                                          
-                                                        CIstatusUpdate: 0
+                                                        CIstatusUpdate: 0//,
+                                                       // Video:VI
                                                        
                                                     }
                                                 );
