@@ -3612,6 +3612,25 @@ FindingScreen As screen:
                                     Y: =Video1_1.Y+Video1_1.Height+10
                                     ZIndex: =4
 
+                            Button11 As button:
+                                OnSelect: |-
+                                    =ClearCollect(
+                                        VI,
+                                        {VideoText: AddMediaButton2_1.Media}
+                                    );
+                                    UpdateIf(
+                                        checkpointItemAssessment,
+                                        assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = varCheckpointitemID,
+                                        {
+                                            VideoLink:AddMediaButton2_1.Media//,
+                                           // Video:First(VI).VideoText
+                                        }
+                                    )
+                                Text: ="Button"
+                                X: =Parent.Width-300
+                                Y: =60
+                                ZIndex: =5
+
                         Container2 As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
                             Height: =100
@@ -3633,7 +3652,8 @@ FindingScreen As screen:
                                 FontWeight: =FontWeight.Normal
                                 HoverFill: =AllScreensCSS.RActiveColor
                                 OnSelect: |
-                                    =//for Logs
+                                    =
+                                    //for Logs
                                     UpdateIf(
                                         GcTraceLog,
                                         VarDebug = true,
@@ -3791,7 +3811,7 @@ FindingScreen As screen:
                                     ),
                                                          
                                                         CIstatusUpdate: 0//,
-                                                       // Video:VI
+                                                      //  Video: First(VI).VideoText
                                                        
                                                     }
                                                 );

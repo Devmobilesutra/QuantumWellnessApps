@@ -15,10 +15,102 @@ Screen2 As screen:
         ZIndex: =2
 
     Video5 As videoPlayback:
-        Media: |-
-            =///SampleVideo
-            "appres://blobmanager/a3b0175aab6b49e6b6ba6c855715160b/63"
-        X: =410
-        Y: =325
+        Media: =First(Sort(GC_checkpointItemAssessment,'Modified On',SortOrder.Descending)).Video.FileName
+        X: =716
+        Y: =192
         ZIndex: =3
+
+    Form1 As form:
+        DataSource: =Filter(GC_checkpointItemAssessment,assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = varCheckpointitemID)
+        Height: =372
+        NumberOfColumns: =1
+        Width: =362
+        X: =67
+        Y: =340
+        ZIndex: =4
+
+        Video_DataCard1 As typedDataCard.fileEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr33a_video"
+            Default: |-
+                =If(!IsBlank(ThisItem.Video.FileName), Table({DisplayName: ThisItem.Video.FileName, Value: ThisItem.Video.Value}), Blank())
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@checkpointItemAssessment],DataSourceInfo.DisplayName,cr33a_video)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue6.Attachments
+            Width: =362
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey6 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue6 As attachments:
+                AddAttachmentText: ="Upload file"
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =170
+                IsInDataCard: =true
+                Items: =Parent.Default
+                MaxAttachments: =1
+                MaxAttachmentsText: =""
+                NoAttachmentsText: ="There is no file."
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue6.Y + DataCardValue6.Height
+                ZIndex: =3
+
+            StarVisible6 As label:
+                Align: =Align.Center
+                Height: =DataCardKey6.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey6.Y
+                ZIndex: =4
+
+    Button4 As button:
+        OnSelect: = SubmitForm(Form1)
+        Text: ="Save Video"
+        X: =510
+        Y: =590
+        ZIndex: =5
+
+    Button12 As button:
+        OnSelect: =NewForm(Form1)
+        Text: ="Button"
+        X: =492
+        Y: =382
+        ZIndex: =6
 
