@@ -2,7 +2,7 @@ Screen4 As screen:
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Items: =Sort(checkpointItemAssessment,'Modified On',SortOrder.Descending)
+        Items: =Sort(GC_checkpointItemAssessment,'Modified On',SortOrder.Descending)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =EditForm(Form4)
@@ -37,7 +37,7 @@ Screen4 As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =14
-            Text: =ThisItem.assessmentStatus
+            Text: =ThisItem.checkpointItemName
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 173
             X: =103
@@ -55,7 +55,7 @@ Screen4 As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.checkpointItemName
+            Text: =ThisItem.VideoLink
             VerticalAlign: =VerticalAlign.Top
             Width: =Title1.Width
             X: =Title1.X
@@ -100,7 +100,7 @@ Screen4 As screen:
     Form4 As form:
         DataSource: =checkpointItemAssessment
         Height: =447
-        Item: =Gallery1.Selected
+        Item: =LookUp(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessmentid)'=  Gallery1.Selected.'checkpointItemAssessment (quantum_checkpointitemassessmentid)')
         NumberOfColumns: =1
         Width: =482
         X: =557
