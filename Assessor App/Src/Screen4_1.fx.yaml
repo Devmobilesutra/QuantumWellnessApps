@@ -1,11 +1,11 @@
-Screen4 As screen:
+Screen4_1 As screen:
 
-    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Items: =Sort(checkpointItemAssessment,'Modified On',SortOrder.Descending)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: =EditForm(Form4)
+        OnSelect: =EditForm(Form4_1)
         TemplatePadding: =0
         TemplateSize: =104
         Width: =490
@@ -13,7 +13,7 @@ Screen4 As screen:
         Y: =40
         ZIndex: =1
 
-        Image1 As image:
+        Image1_2 As image:
             Height: =72
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =8
@@ -25,7 +25,7 @@ Screen4 As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =1
 
-        Title1 As label:
+        Title1_1 As label:
             BorderColor: =RGBA(0, 0, 0, 1)
             Color: =RGBA(71, 69, 64, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
@@ -41,10 +41,10 @@ Screen4 As screen:
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 173
             X: =103
-            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1_1.Size * 1.8)) / 2
             ZIndex: =2
 
-        Subtitle1 As label:
+        Subtitle1_1 As label:
             BorderColor: =RGBA(0, 0, 0, 1)
             Color: =RGBA(71, 69, 64, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
@@ -57,12 +57,12 @@ Screen4 As screen:
             PaddingTop: =0
             Text: =ThisItem.checkpointItemName
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title1.Width
-            X: =Title1.X
-            Y: =Title1.Y + Title1.Height
+            Width: =Title1_1.Width
+            X: =Title1_1.X
+            Y: =Title1_1.Y + Title1_1.Height
             ZIndex: =3
 
-        NextArrow1 As icon.ChevronRight:
+        NextArrow1_1 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             BorderColor: =RGBA(0, 0, 0, 1)
             Color: =RGBA(166, 166, 166, 1)
@@ -81,7 +81,7 @@ Screen4 As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =4
 
-        Separator1 As rectangle:
+        Separator1_1 As rectangle:
             BorderColor: =RGBA(0, 0, 255, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =8
@@ -90,24 +90,24 @@ Screen4 As screen:
             Y: =Parent.TemplateHeight - Self.Height
             ZIndex: =5
 
-        Rectangle3 As rectangle:
-            Height: =Parent.TemplateHeight - Separator1.Height
+        Rectangle3_1 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1_1.Height
             OnSelect: =Select(Parent)
             Visible: =ThisItem.IsSelected
             Width: =4
             ZIndex: =6
 
-    Form4 As form:
+    Form4_1 As form:
         DataSource: =checkpointItemAssessment
         Height: =447
-        Item: =Gallery1.Selected
+        Item: =Gallery1_1.Selected
         NumberOfColumns: =1
         Width: =482
         X: =557
         Y: =20
         ZIndex: =2
 
-        Video_DataCard3 As typedDataCard.fileEditCard:
+        Video_DataCard3_1 As typedDataCard.fileEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="cr33a_video"
             Default: |-
@@ -117,13 +117,13 @@ Screen4 As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue25.Attachments
+            Update: =DataCardValue25_1.Attachments
             Width: =482
             X: =0
             Y: =1
             ZIndex: =1
 
-            DataCardKey25 As label:
+            DataCardKey25_1 As label:
                 AutoHeight: =true
                 Height: =34
                 Text: =Parent.DisplayName
@@ -133,7 +133,7 @@ Screen4 As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue25 As attachments:
+            DataCardValue25_1 As attachments:
                 AddAttachmentText: ="Upload file"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode
@@ -150,10 +150,10 @@ Screen4 As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey25.Y + DataCardKey25.Height + 5
+                Y: =DataCardKey25_1.Y + DataCardKey25_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage24 As label:
+            ErrorMessage24_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -165,20 +165,20 @@ Screen4 As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue25.Y + DataCardValue25.Height
+                Y: =DataCardValue25_1.Y + DataCardValue25_1.Height
                 ZIndex: =3
 
-            StarVisible24 As label:
+            StarVisible24_1 As label:
                 Align: =Align.Center
-                Height: =DataCardKey25.Height
+                Height: =DataCardKey25_1.Height
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey25.Y
+                Y: =DataCardKey25_1.Y
                 ZIndex: =4
 
-        checkpointItemName_DataCard3 As typedDataCard.textualEditCard:
+        checkpointItemName_DataCard3_1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="quantum_checkpointitemname"
             Default: =ThisItem.checkpointItemName
@@ -188,13 +188,13 @@ Screen4 As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@checkpointItemAssessment], DataSourceInfo.MaxLength, quantum_checkpointitemname)
             Required: =false
-            Update: =DataCardValue22.Text
+            Update: =DataCardValue22_1.Text
             Width: =482
             X: =0
             Y: =0
             ZIndex: =3
 
-            DataCardKey22 As label:
+            DataCardKey22_1 As label:
                 AutoHeight: =true
                 Height: =34
                 Text: =Parent.DisplayName
@@ -204,7 +204,7 @@ Screen4 As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue22 As text:
+            DataCardValue22_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -218,10 +218,10 @@ Screen4 As screen:
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                Y: =DataCardKey22_1.Y + DataCardKey22_1.Height + 5
                 ZIndex: =2
 
-            ErrorMessage21 As label:
+            ErrorMessage21_1 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -233,29 +233,29 @@ Screen4 As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue22.Y + DataCardValue22.Height
+                Y: =DataCardValue22_1.Y + DataCardValue22_1.Height
                 ZIndex: =3
 
-            StarVisible21 As label:
+            StarVisible21_1 As label:
                 Align: =Align.Center
-                Height: =DataCardKey22.Height
+                Height: =DataCardKey22_1.Height
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey22.Y
+                Y: =DataCardKey22_1.Y
                 ZIndex: =4
 
-    Icon10 As icon.Add:
+    Icon10_1 As icon.Add:
         Icon: =Icon.Save
-        OnSelect: =SubmitForm(Form4)
+        OnSelect: =SubmitForm(Form4_1)
         X: =950
         Y: =348
         ZIndex: =3
 
-    Video3 As videoPlayback:
+    Video3_1 As videoPlayback:
         Height: =194
-        Media: =Gallery1.Selected.Video.Value
+        Media: =Gallery1_1.Selected.Video.Value
         Width: =386
         X: =605
         Y: =449
