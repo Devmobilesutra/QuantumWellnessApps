@@ -1,4 +1,4 @@
-Screen4_1 As screen:
+TryOutVideoFromControl As screen:
 
     "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true

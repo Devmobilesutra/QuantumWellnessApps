@@ -143,13 +143,10 @@
     "SectionScreen",
     "AssessmentScreen",
     "FindingScreen",
-    "FindingScreen_1",
     "CaptureImage",
     "SaveImage",
-    "Screen1",
-    "Screen2",
-    "Screen3",
-    "Screen4",
-    "Screen4_1"
+    "FindingScreen_1",
+    "TryOutVideoAddMediaControl",
+    "TryOutVideoFromControl"
   ]
 }

@@ -1,4 +1,4 @@
-Screen1 As screen:
+TryOutVideoAddMediaControl As screen:
 
     Video1 As videoPlayback:
         BorderColor: =RGBA(149, 149, 149, 1)

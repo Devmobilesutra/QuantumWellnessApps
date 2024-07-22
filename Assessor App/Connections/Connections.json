@@ -9,18 +9,8 @@
       "parameterHints": {},
       "parameterHintsV2": {}
     },
-    "datasets": {
-      "https://quantumintegratorsllc.sharepoint.com/sites/Virtuals": {
-        "dataSources": {
-          "VideoLibrary": {
-            "tableName": "bb6e7fe7-bd5a-48d4-9968-9773179183c6"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "VideoLibrary"
-    ],
+    "datasets": {},
+    "dataSources": [],
     "dependencies": {},
     "dependents": [
       "c78d3088-ee44-45ee-aee4-9f449a65957d"
