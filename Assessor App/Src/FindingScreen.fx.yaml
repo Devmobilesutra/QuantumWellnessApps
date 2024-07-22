@@ -3102,644 +3102,6 @@ FindingScreen As screen:
                                 Width: =300
                                 ZIndex: =4
 
-                        ctnAddImageFS_2 As groupContainer.horizontalAutoLayoutContainer:
-                            FillPortions: =0
-                            Height: =50
-                            LayoutMinHeight: =100
-                            LayoutMinWidth: =250
-                            LayoutMode: =LayoutMode.Auto
-                            LayoutWrap: =true
-                            ZIndex: =7
-
-                            lblAddImageFS_4 As label:
-                                Color: =AllScreensCSS.RColorBlack
-                                DisplayMode: |-
-                                    =If(
-                                        CountRows(GlryImagesFS.AllItems) = 6,DisplayMode.Disabled,DisplayMode.Edit)
-                                Font: =AllScreensCSS.RFont
-                                FontWeight: =FontWeight.Bold
-                                Size: =18
-                                Text: ="Add Video" 
-                                ZIndex: =5
-
-                            btnAddImageFS_4 As button:
-                                BorderColor: =AllScreensCSS.RActiveColor
-                                DisplayMode: |-
-                                    =If(
-                                        CountRows(GlryImagesFS.AllItems) = 1,DisplayMode.Disabled,DisplayMode.Edit)
-                                Fill: =AllScreensCSS.RActiveColor
-                                Font: =AllScreensCSS.ButtonFont
-                                HoverFill: =AllScreensCSS.RActiveColor
-                                OnSelect: |
-                                    =//for Logs
-                                    UpdateIf(
-                                        GcTraceLog,
-                                        VarDebug = true,
-                                        {
-                                            Path: First(GcTraceLog).Path & "/AddImg=" & Text(
-                                                Now(),
-                                                "mm-dd-yy hh:mm:ss am/pm"
-                                            )
-                                        }
-                                    );
-                                    /*SaveData(
-                                        GcTraceLog,
-                                        "localGcTraceLog"
-                                    );*/
-                                    //for safety check
-                                    If(
-                                        DateDiff(
-                                            UserLastNavigatedTime,
-                                            Now(),
-                                            TimeUnit.Seconds
-                                        ) > SafetyCheckTime,
-                                        Set(
-                                            safetyPopup,
-                                            true
-                                        );
-                                        ,
-                                        Set(
-                                            UserLastNavigatedTime,
-                                            Now()
-                                        );
-                                        
-                                    );
-                                    /*
-                                    If(
-                                        First(gcCollectionCapCounts).IsIndividualCollection = true && (CountRows(GC_checkpointItemAssessment) > Value(First(gcCollectionCapCounts).IndividualCollectionCount)
-                                          || CountRows(GC_checkpointItem_ActionItem) > Value(First(gcCollectionCapCounts).IndividualCollectionCount) || CountRows(GC_checkpointItem_Images) > Value(First(gcCollectionCapCounts).IndividualCollectionCount)),
-                                        Set(
-                                            VarMemoryPressurePopupMessage,
-                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
-                                        );
-                                        Set(
-                                            VarMemoryPressurePopup,
-                                            true
-                                        ),
-                                        Set(
-                                            VarMemoryPressurePopup,
-                                            false
-                                        )
-                                    );
-                                    If(
-                                        First(gcCollectionCapCounts).IsAllCollection = true && (CountRows(GC_actionItems) + CountRows(GC_bankAssessment) + CountRows(GC_checkpointItem_ActionItem) + CountRows(GC_checkpointItemAssessment) + CountRows(GC_unitAssessment) + CountRows(gcAssignmentunit) + CountRows(gcProjectAssignment) + CountRows(gcBankunit) + CountRows(gcBank) + CountRows(gcClient) + CountRows(GC_product) + CountRows(GC_templateCheckpointsItem) + CountRows(GC_templateCheckpoints) + CountRows(GC_templateSections) + CountRows(gcImageDelete) + CountRows(gcActionItemDelete) + CountRows(GC_checkpointItem_Images) + CountRows(GcCheckpointAssessment) + CountRows(GcSectionAssessment)) > Value(First(gcCollectionCapCounts).CombinedCollectionCount),
-                                        Set(
-                                            VarMemoryPressurePopupMessage,
-                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
-                                        );
-                                        Set(
-                                            VarMemoryPressurePopup1,
-                                            true
-                                        ),
-                                        Set(
-                                            VarMemoryPressurePopup1,
-                                            false
-                                        )
-                                    );*/
-                                    If(
-                                        VarImageIsDownloaded = true,
-                                        If(
-                                            CountRows(
-                                                Filter(
-                                                    GC_checkpointItem_Images,
-                                                    CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
-                                                )
-                                            ) >= First(gcCollectionCapCounts).SavedImageCount,
-                                            Set(
-                                                VarImagesExceedPopupText,
-                                                "You have reached limit of " & First(gcCollectionCapCounts).SavedImageCount & " Unsubmitted images. Please submit before continuing the assessment."
-                                            );
-                                     // Notify("You have reached limit of 75 images.You can not add Images.",NotificationType.Error);
-                                    Set(
-                                                VarImagesExceedPopup,
-                                                true
-                                            );
-                                            ,
-                                            If(
-                                                CountRows(
-                                                    Filter(
-                                                        GC_checkpointItem_Images,
-                                                        CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
-                                                    )
-                                                ) > First(gcCollectionCapCounts).SavedImageCount - 10,
-                                                Set(
-                                                    VarImagesExceedPopupText,
-                                                    CountRows(
-                                                        Filter(
-                                                            GC_checkpointItem_Images,
-                                                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
-                                                        )
-                                                    ) & " Unsubmitted Images are already stored. Now you can add only " & First(gcCollectionCapCounts).SavedImageCount - CountRows(
-                                                        Filter(
-                                                            GC_checkpointItem_Images,
-                                                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
-                                                        )
-                                                    ) & " images more."
-                                                );
-                                      //Notify(CountRows(GC_checkpointItem_Images) & " Images are already stored. 75 is a limit.",NotificationType.Error);
-                                    Set(
-                                                    VarImagesExceedPopup,
-                                                    true
-                                                );
-                                            );
-                                            Set(
-                                                UP,
-                                                false
-                                            );
-                                            If(
-                                                CountRows(GlryImagesFS.AllItems) < 4,
-                                                Collect(
-                                                    GC_checkpointItem_Images,
-                                                    {
-                                                        // checkpointItemImagesId:GUID(),
-                                                        checkpointItemImagesId: varBankUnitId & "cii" & Text(
-                                                            Now(),
-                                                            "mmddyyyyhhmmss"
-                                                        ) & "-" & Rand(),
-                                                        assignmentId: LookUp(
-                                                            DropColumns(
-                                                                gcProjectAssignment,
-                                                                AstatusUpdate
-                                                            ),
-                                                            Id = varAssignmentId
-                                                        ),
-                                                        //  bankId:LookUp(gcBank,Id=VarBankId),
-                                                        bankUnitId: LookUp(
-                                                            gcBankunit,
-                                                            Id = varBankUnitId
-                                                        ),
-                                                        section_id: LookUp(
-                                                            DropColumns(
-                                                                GcSectionAssessment,
-                                                                SstatusUpdate
-                                                            ),
-                                                            'sectionAssessment (quantum_sectionassessment)' = varSA
-                                                        ),
-                                                        checkpoint_id: LookUp(
-                                                            DropColumns(
-                                                                GcCheckpointAssessment,
-                                                                CstatusUpdate
-                                                            ),
-                                                            checkpointAssessment_id = GuidId
-                                                        ),
-                                                        checkpointItem_Id: LookUp(
-                                                            DropColumns(
-                                                                GC_checkpointItemAssessment,
-                                                                CIstatusUpdate
-                                                            ),
-                                                            'checkpointItemAssessment (quantum_checkpointitemassessment)' = Text(varCItemA)
-                                                        ),
-                                                        product_id: LookUp(
-                                                            GC_product,
-                                                            product_Model = glryUnitBS.Selected.productModel
-                                                        ),
-                                                        image_annotation: "",
-                                                        ImageSortSequence: LookUp(
-                                                            GC_templateSections,
-                                                            sectionId = VarSectionId,
-                                                            sectionSequence
-                                                        ) & LookUp(
-                                                            GC_templateCheckpoints,
-                                                            checkpointId = ChId,
-                                                            checkpointSequence
-                                                        ) & LookUp(
-                                                            GC_templateCheckpointsItem,
-                                                            checkpointItemId = varCheckpointitemID,
-                                                            checkpointItemSequence
-                                                        ),
-                                                        CIIstatusUpdate: Blank()
-                                                    }
-                                                );
-                                                If(
-                                                    CountRows(GlryImagesFS.AllItems) >= 4,
-                                                    Notify("You can capture 4 images only."),
-                                                    NotificationType.Warning
-                                                )
-                                            );
-                                            Set(
-                                                varImage,
-                                                true
-                                            );
-                                        );
-                                        ,
-                                        Set(
-                                            VarDownloadImagesRestrict,
-                                            true
-                                        )
-                                    );
-                                    
-                                    // Calculate the length of the JSON string
-                                    Set(
-                                        VarBytesEstimate,
-                                        Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_actionItems,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_product,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_templateSections,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_templateCheckpoints,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_templateCheckpointsItem,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(JSON(gcActionItemDelete)) + Len(JSON(gcImageDelete)) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    gcClient,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    gcBank,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    gcBankunit,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    gcProjectAssignment,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    gcAssignmentunit,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_bankAssessment,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_unitAssessment,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GcSectionAssessment,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GcCheckpointAssessment,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_checkpointItemAssessment,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_checkpointItem_ActionItem,
-                                                    Owner
-                                                )
-                                            )
-                                        ) + Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_checkpointItem_Images,
-                                                    Owner
-                                                ),
-                                                JSONFormat.IncludeBinaryData
-                                            )
-                                        )/*+ Len(
-                                            JSON(
-                                                DropColumns(
-                                                    gcCollectionCapCounts,
-                                                    Owner,
-                                                )
-                                            )
-                                        )*/
-                                    );
-                                    /*Set(
-                                        VarJsonStringItem,
-                                        Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_checkpointItemAssessment,
-                                                    "_ownerid_value"
-                                                )
-                                            )
-                                        )
-                                    );
-                                    Set(
-                                        VarJsonStringAction,
-                                        Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_checkpointItem_ActionItem,
-                                                    "_ownerid_value"
-                                                )
-                                            )
-                                        )
-                                    );
-                                    Set(
-                                        VarJsonStringImage,
-                                        Len(
-                                            JSON(
-                                                DropColumns(
-                                                    GC_checkpointItem_Images,
-                                                    "_ownerid_value"
-                                                ),
-                                                JSONFormat.IncludeBinaryData
-                                            )
-                                        )
-                                    );*/
-                                    // Convert characters to bytes (considering UTF-16 encoding)
-                                    /*Set(
-                                        VarBytesEstimate,
-                                        (VarJsonStringAllCol)
-                                    );*/
-                                    //((VarJsonStringItem + VarJsonStringAction + VarJsonStringImage) * 2)
-                                    //*0.0009765625mb
-                                    //convert bytes to MB
-                                    Set(
-                                        VarBytestoMB,
-                                        (VarBytesEstimate / (1024 * 1024))
-                                    );
-                                    //*0.0009765625mb
-                                    If(
-                                        VarBytestoMB > 40,
-                                        Set(
-                                            VarMemoryPressurePopupMessage,
-                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
-                                        );
-                                        Set(
-                                            VarMemoryPressurePopup,
-                                            true
-                                        ),
-                                        Set(
-                                            VarMemoryPressurePopup,
-                                            false
-                                        )
-                                    );
-                                PressedFill: =AllScreensCSS.RActiveColor
-                                RadiusBottomLeft: =1
-                                RadiusBottomRight: =1
-                                RadiusTopLeft: =1
-                                RadiusTopRight: =1
-                                Text: ="+"
-                                Visible: =false
-                                Width: =40
-                                Y: =lblAddImageFS_4.Y
-                                ZIndex: =6
-
-                        Container3 As groupContainer.manualLayoutContainer:
-                            FillPortions: =0
-                            Height: =570
-                            LayoutMinHeight: =100
-                            LayoutMinWidth: =250
-                            ZIndex: =8
-
-                            Video1_1 As videoPlayback:
-                                BorderColor: =RGBA(149, 149, 149, 1)
-                                BorderThickness: =2
-                                Fill: =RGBA(0, 0, 0, 0)
-                                Height: =250
-                                Media: |+
-                                    =//"appres://blobmanager/a3b0175aab6b49e6b6ba6c855715160b/63"
-                                    If(
-                                        IsBlank(AddMediaButton2_1.Media),
-                                        LookUp(
-                                            GC_checkpointItemAssessment,
-                                            assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
-                                            VideoLink
-                                        ),
-                                        AddMediaButton2_1.Media
-                                    )
-                                    /*For sample video
-                                    If(
-                                        IsBlank(AddMediaButton2_1.Media),
-                                        If(
-                                            IsBlank(
-                                                LookUp(
-                                                    GC_checkpointItemAssessment,
-                                                    assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
-                                                    VideoLink
-                                                )
-                                            ),
-                                            SampleVideo,
-                                            LookUp(
-                                                GC_checkpointItemAssessment,
-                                                assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
-                                                VideoLink
-                                            )
-                                        ),
-                                        AddMediaButton2_1.Media
-                                    )*/
-                                    
-                                Width: =400
-                                X: =40
-                                Y: =18
-                                ZIndex: =1
-
-                            AddMediaWithImage3_1 As group:
-                                Height: =5
-                                Width: =5
-                                X: =-2
-                                Y: =-110
-                                ZIndex: =2
-
-                                UploadedImage3_1 As image:
-                                    BorderColor: =RGBA(255, 0, 0, 1)
-                                    Fill: =RGBA(153, 188, 242, 1)
-                                    Height: =0
-                                    Image: =If(IsBlank(AddMediaButton2_1.Media), SampleImage, AddMediaButton2_1.Media)
-                                    ImagePosition: =ImagePosition.Fill
-                                    Width: =0
-                                    X: =AddMediaButton2_1.X
-                                    Y: =400
-                                    ZIndex: =3
-
-                                AddMediaButton2_1 As addMedia:
-                                    BorderColor: =RGBA(255, 0, 0, 1)
-                                    ChangePictureText: ="Change Video"
-                                    Color: =RGBA(255, 255, 255, 1)
-                                    Fill: =RGBA(153, 188, 242, 1)
-                                    FocusedBorderThickness: =0
-                                    Height: =60
-                                    OnChange: = 
-                                    Size: =16
-                                    Text: ="Click to add a Video"
-                                    Width: =460
-                                    Y: =Video1_1.Y+Video1_1.Height+10
-                                    ZIndex: =4
-
-                            Form4 As form:
-                                BorderThickness: =1
-                                DataSource: =checkpointItemAssessment
-                                Height: =230
-                                Item: =LookUp(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)'=varCItemA)
-                                NumberOfColumns: =1
-                                Width: =Parent.Width/2.6
-                                X: =20
-                                Y: =Video1_1.Y+320
-                                ZIndex: =5
-
-                                Video_DataCard3 As typedDataCard.fileEditCard:
-                                    BorderStyle: =BorderStyle.Solid
-                                    DataField: ="cr33a_video"
-                                    Default: |-
-                                        =If(!IsBlank(ThisItem.Video.FileName), Table({DisplayName: ThisItem.Video.FileName, Value: ThisItem.Video.Value}), Blank())
-                                    DisplayMode: =Parent.DisplayMode
-                                    DisplayName: =DataSourceInfo([@checkpointItemAssessment],DataSourceInfo.DisplayName,cr33a_video)
-                                    Fill: =RGBA(0, 0, 0, 0)
-                                    Height: =150
-                                    Required: =false
-                                    Update: =DataCardValue25.Attachments
-                                    Width: =Parent.Width
-                                    X: =0
-                                    Y: =0
-                                    ZIndex: =1
-
-                                    DataCardKey25 As label:
-                                        AutoHeight: =true
-                                        FontWeight: =FontWeight.Bold
-                                        Height: =34
-                                        Text: ="Upload Video" //Parent.DisplayName
-                                        Width: =Parent.Width - 60
-                                        Wrap: =false
-                                        X: =30
-                                        Y: =10
-                                        ZIndex: =1
-
-                                    DataCardValue25 As attachments:
-                                        AddAttachmentText: ="Upload file"
-                                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                                        DisplayMode: =Parent.DisplayMode
-                                        Height: =100
-                                        IsInDataCard: =true
-                                        Items: =Parent.Default
-                                        MaxAttachments: =1
-                                        MaxAttachmentSize: =30
-                                        MaxAttachmentsText: =""
-                                        NoAttachmentsText: ="There is no file."
-                                        PaddingBottom: =5
-                                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                                        PaddingRight: =5
-                                        PaddingTop: =5
-                                        Tooltip: =Parent.DisplayName
-                                        Width: =Parent.Width - 60
-                                        X: =30
-                                        Y: =DataCardKey25.Y + DataCardKey25.Height + 5
-                                        ZIndex: =2
-
-                                    ErrorMessage24 As label:
-                                        AutoHeight: =true
-                                        Height: =10
-                                        Live: =Live.Assertive
-                                        PaddingBottom: =0
-                                        PaddingLeft: =0
-                                        PaddingRight: =0
-                                        PaddingTop: =0
-                                        Text: =Parent.Error
-                                        Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                        Width: =Parent.Width - 60
-                                        X: =30
-                                        Y: =DataCardValue25.Y + DataCardValue25.Height
-                                        ZIndex: =3
-
-                                    StarVisible24 As label:
-                                        Align: =Align.Center
-                                        Height: =DataCardKey25.Height
-                                        Text: ="*"
-                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                        Width: =30
-                                        Wrap: =false
-                                        Y: =DataCardKey25.Y
-                                        ZIndex: =4
-
-                            Button14 As button:
-                                OnSelect: =SubmitForm(Form4)
-                                Text: ="Upload"
-                                Width: =150
-                                X: =Form4.X+30
-                                Y: =Form4.Y+Video_DataCard3.Height+10
-                                ZIndex: =6
-
-                            Button15 As button:
-                                OnSelect: =Set(VarViweVideo,true);
-                                Text: ="View"
-                                Visible: |-
-                                    =If(
-                                        IsBlank(
-                                            LookUp(
-                                                checkpointItemAssessment,
-                                                'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
-                                                Video.Value
-                                            )
-                                        ),
-                                        false,
-                                        true
-                                    )
-                                Width: =150
-                                X: =Button14.X+Button14.Width+30
-                                Y: =Button14.Y
-                                ZIndex: =7
-
-                            Video3 As videoPlayback:
-                                Height: =230
-                                Media: |-
-                                    =LookUp(
-                                        checkpointItemAssessment,
-                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
-                                        Video.Value
-                                    )
-                                Visible: =VarViweVideo=true
-                                Width: =Parent.Width/2.6
-                                X: =Form4.X+Form4.Width+20
-                                Y: =Form4.Y
-                                ZIndex: =8
-
                         Container2 As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
                             Height: =100
@@ -3751,7 +3113,7 @@ FindingScreen As screen:
                             LayoutMode: =LayoutMode.Auto
                             Width: =Parent.Width -40
                             Y: =btnAddImageFS.Height+btnAddImageFS.Y+50
-                            ZIndex: =9
+                            ZIndex: =7
 
                             btnSaveFS As button:
                                 BorderColor: =Self.Fill
@@ -4390,6 +3752,649 @@ FindingScreen As screen:
                                 Visible: =false
                                 Width: =180
                                 ZIndex: =2
+
+                        ctnAddImageFS_2 As groupContainer.horizontalAutoLayoutContainer:
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutWrap: =true
+                            ZIndex: =8
+
+                            lblAddImageFS_4 As label:
+                                Color: =AllScreensCSS.RColorBlack
+                                DisplayMode: |-
+                                    =If(
+                                        CountRows(GlryImagesFS.AllItems) = 6,DisplayMode.Disabled,DisplayMode.Edit)
+                                Font: =AllScreensCSS.RFont
+                                FontWeight: =FontWeight.Bold
+                                Size: =18
+                                Text: ="Add Video (Online)"
+                                Width: =250
+                                ZIndex: =5
+
+                            btnAddImageFS_4 As button:
+                                BorderColor: =AllScreensCSS.RActiveColor
+                                DisplayMode: |-
+                                    =If(
+                                        CountRows(GlryImagesFS.AllItems) = 1,DisplayMode.Disabled,DisplayMode.Edit)
+                                Fill: =AllScreensCSS.RActiveColor
+                                Font: =AllScreensCSS.ButtonFont
+                                HoverFill: =AllScreensCSS.RActiveColor
+                                OnSelect: |
+                                    =//for Logs
+                                    UpdateIf(
+                                        GcTraceLog,
+                                        VarDebug = true,
+                                        {
+                                            Path: First(GcTraceLog).Path & "/AddImg=" & Text(
+                                                Now(),
+                                                "mm-dd-yy hh:mm:ss am/pm"
+                                            )
+                                        }
+                                    );
+                                    /*SaveData(
+                                        GcTraceLog,
+                                        "localGcTraceLog"
+                                    );*/
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            TimeUnit.Seconds
+                                        ) > SafetyCheckTime,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
+                                    /*
+                                    If(
+                                        First(gcCollectionCapCounts).IsIndividualCollection = true && (CountRows(GC_checkpointItemAssessment) > Value(First(gcCollectionCapCounts).IndividualCollectionCount)
+                                          || CountRows(GC_checkpointItem_ActionItem) > Value(First(gcCollectionCapCounts).IndividualCollectionCount) || CountRows(GC_checkpointItem_Images) > Value(First(gcCollectionCapCounts).IndividualCollectionCount)),
+                                        Set(
+                                            VarMemoryPressurePopupMessage,
+                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
+                                        );
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            true
+                                        ),
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            false
+                                        )
+                                    );
+                                    If(
+                                        First(gcCollectionCapCounts).IsAllCollection = true && (CountRows(GC_actionItems) + CountRows(GC_bankAssessment) + CountRows(GC_checkpointItem_ActionItem) + CountRows(GC_checkpointItemAssessment) + CountRows(GC_unitAssessment) + CountRows(gcAssignmentunit) + CountRows(gcProjectAssignment) + CountRows(gcBankunit) + CountRows(gcBank) + CountRows(gcClient) + CountRows(GC_product) + CountRows(GC_templateCheckpointsItem) + CountRows(GC_templateCheckpoints) + CountRows(GC_templateSections) + CountRows(gcImageDelete) + CountRows(gcActionItemDelete) + CountRows(GC_checkpointItem_Images) + CountRows(GcCheckpointAssessment) + CountRows(GcSectionAssessment)) > Value(First(gcCollectionCapCounts).CombinedCollectionCount),
+                                        Set(
+                                            VarMemoryPressurePopupMessage,
+                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
+                                        );
+                                        Set(
+                                            VarMemoryPressurePopup1,
+                                            true
+                                        ),
+                                        Set(
+                                            VarMemoryPressurePopup1,
+                                            false
+                                        )
+                                    );*/
+                                    If(
+                                        VarImageIsDownloaded = true,
+                                        If(
+                                            CountRows(
+                                                Filter(
+                                                    GC_checkpointItem_Images,
+                                                    CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                )
+                                            ) >= First(gcCollectionCapCounts).SavedImageCount,
+                                            Set(
+                                                VarImagesExceedPopupText,
+                                                "You have reached limit of " & First(gcCollectionCapCounts).SavedImageCount & " Unsubmitted images. Please submit before continuing the assessment."
+                                            );
+                                     // Notify("You have reached limit of 75 images.You can not add Images.",NotificationType.Error);
+                                    Set(
+                                                VarImagesExceedPopup,
+                                                true
+                                            );
+                                            ,
+                                            If(
+                                                CountRows(
+                                                    Filter(
+                                                        GC_checkpointItem_Images,
+                                                        CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                    )
+                                                ) > First(gcCollectionCapCounts).SavedImageCount - 10,
+                                                Set(
+                                                    VarImagesExceedPopupText,
+                                                    CountRows(
+                                                        Filter(
+                                                            GC_checkpointItem_Images,
+                                                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                        )
+                                                    ) & " Unsubmitted Images are already stored. Now you can add only " & First(gcCollectionCapCounts).SavedImageCount - CountRows(
+                                                        Filter(
+                                                            GC_checkpointItem_Images,
+                                                            CIIstatusUpdate = 0 || CIIstatusUpdate = 1 || CIIstatusUpdate = Blank()
+                                                        )
+                                                    ) & " images more."
+                                                );
+                                      //Notify(CountRows(GC_checkpointItem_Images) & " Images are already stored. 75 is a limit.",NotificationType.Error);
+                                    Set(
+                                                    VarImagesExceedPopup,
+                                                    true
+                                                );
+                                            );
+                                            Set(
+                                                UP,
+                                                false
+                                            );
+                                            If(
+                                                CountRows(GlryImagesFS.AllItems) < 4,
+                                                Collect(
+                                                    GC_checkpointItem_Images,
+                                                    {
+                                                        // checkpointItemImagesId:GUID(),
+                                                        checkpointItemImagesId: varBankUnitId & "cii" & Text(
+                                                            Now(),
+                                                            "mmddyyyyhhmmss"
+                                                        ) & "-" & Rand(),
+                                                        assignmentId: LookUp(
+                                                            DropColumns(
+                                                                gcProjectAssignment,
+                                                                AstatusUpdate
+                                                            ),
+                                                            Id = varAssignmentId
+                                                        ),
+                                                        //  bankId:LookUp(gcBank,Id=VarBankId),
+                                                        bankUnitId: LookUp(
+                                                            gcBankunit,
+                                                            Id = varBankUnitId
+                                                        ),
+                                                        section_id: LookUp(
+                                                            DropColumns(
+                                                                GcSectionAssessment,
+                                                                SstatusUpdate
+                                                            ),
+                                                            'sectionAssessment (quantum_sectionassessment)' = varSA
+                                                        ),
+                                                        checkpoint_id: LookUp(
+                                                            DropColumns(
+                                                                GcCheckpointAssessment,
+                                                                CstatusUpdate
+                                                            ),
+                                                            checkpointAssessment_id = GuidId
+                                                        ),
+                                                        checkpointItem_Id: LookUp(
+                                                            DropColumns(
+                                                                GC_checkpointItemAssessment,
+                                                                CIstatusUpdate
+                                                            ),
+                                                            'checkpointItemAssessment (quantum_checkpointitemassessment)' = Text(varCItemA)
+                                                        ),
+                                                        product_id: LookUp(
+                                                            GC_product,
+                                                            product_Model = glryUnitBS.Selected.productModel
+                                                        ),
+                                                        image_annotation: "",
+                                                        ImageSortSequence: LookUp(
+                                                            GC_templateSections,
+                                                            sectionId = VarSectionId,
+                                                            sectionSequence
+                                                        ) & LookUp(
+                                                            GC_templateCheckpoints,
+                                                            checkpointId = ChId,
+                                                            checkpointSequence
+                                                        ) & LookUp(
+                                                            GC_templateCheckpointsItem,
+                                                            checkpointItemId = varCheckpointitemID,
+                                                            checkpointItemSequence
+                                                        ),
+                                                        CIIstatusUpdate: Blank()
+                                                    }
+                                                );
+                                                If(
+                                                    CountRows(GlryImagesFS.AllItems) >= 4,
+                                                    Notify("You can capture 4 images only."),
+                                                    NotificationType.Warning
+                                                )
+                                            );
+                                            Set(
+                                                varImage,
+                                                true
+                                            );
+                                        );
+                                        ,
+                                        Set(
+                                            VarDownloadImagesRestrict,
+                                            true
+                                        )
+                                    );
+                                    
+                                    // Calculate the length of the JSON string
+                                    Set(
+                                        VarBytesEstimate,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_actionItems,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_product,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_templateSections,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_templateCheckpoints,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_templateCheckpointsItem,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(JSON(gcActionItemDelete)) + Len(JSON(gcImageDelete)) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcClient,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcBank,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcBankunit,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcProjectAssignment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcAssignmentunit,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_bankAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_unitAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GcSectionAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GcCheckpointAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItemAssessment,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_ActionItem,
+                                                    Owner
+                                                )
+                                            )
+                                        ) + Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_Images,
+                                                    Owner
+                                                ),
+                                                JSONFormat.IncludeBinaryData
+                                            )
+                                        )/*+ Len(
+                                            JSON(
+                                                DropColumns(
+                                                    gcCollectionCapCounts,
+                                                    Owner,
+                                                )
+                                            )
+                                        )*/
+                                    );
+                                    /*Set(
+                                        VarJsonStringItem,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItemAssessment,
+                                                    "_ownerid_value"
+                                                )
+                                            )
+                                        )
+                                    );
+                                    Set(
+                                        VarJsonStringAction,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_ActionItem,
+                                                    "_ownerid_value"
+                                                )
+                                            )
+                                        )
+                                    );
+                                    Set(
+                                        VarJsonStringImage,
+                                        Len(
+                                            JSON(
+                                                DropColumns(
+                                                    GC_checkpointItem_Images,
+                                                    "_ownerid_value"
+                                                ),
+                                                JSONFormat.IncludeBinaryData
+                                            )
+                                        )
+                                    );*/
+                                    // Convert characters to bytes (considering UTF-16 encoding)
+                                    /*Set(
+                                        VarBytesEstimate,
+                                        (VarJsonStringAllCol)
+                                    );*/
+                                    //((VarJsonStringItem + VarJsonStringAction + VarJsonStringImage) * 2)
+                                    //*0.0009765625mb
+                                    //convert bytes to MB
+                                    Set(
+                                        VarBytestoMB,
+                                        (VarBytesEstimate / (1024 * 1024))
+                                    );
+                                    //*0.0009765625mb
+                                    If(
+                                        VarBytestoMB > 40,
+                                        Set(
+                                            VarMemoryPressurePopupMessage,
+                                            "Your device's memory is getting full. Please submit the findings as soon as possible and restart the App."
+                                        );
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            true
+                                        ),
+                                        Set(
+                                            VarMemoryPressurePopup,
+                                            false
+                                        )
+                                    );
+                                PressedFill: =AllScreensCSS.RActiveColor
+                                RadiusBottomLeft: =1
+                                RadiusBottomRight: =1
+                                RadiusTopLeft: =1
+                                RadiusTopRight: =1
+                                Text: ="+"
+                                Visible: =false
+                                Width: =40
+                                Y: =lblAddImageFS_4.Y
+                                ZIndex: =6
+
+                        Container3 As groupContainer.manualLayoutContainer:
+                            FillPortions: =0
+                            Height: =570
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            ZIndex: =9
+
+                            Video1_1 As videoPlayback:
+                                BorderColor: =RGBA(149, 149, 149, 1)
+                                BorderThickness: =2
+                                Fill: =RGBA(0, 0, 0, 0)
+                                Height: =250
+                                Media: |+
+                                    =//"appres://blobmanager/a3b0175aab6b49e6b6ba6c855715160b/63"
+                                    If(
+                                        IsBlank(AddMediaButton2_1.Media),
+                                        LookUp(
+                                            GC_checkpointItemAssessment,
+                                            assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                            VideoLink
+                                        ),
+                                        AddMediaButton2_1.Media
+                                    )
+                                    /*For sample video
+                                    If(
+                                        IsBlank(AddMediaButton2_1.Media),
+                                        If(
+                                            IsBlank(
+                                                LookUp(
+                                                    GC_checkpointItemAssessment,
+                                                    assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                                    VideoLink
+                                                )
+                                            ),
+                                            SampleVideo,
+                                            LookUp(
+                                                GC_checkpointItemAssessment,
+                                                assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = glryItmesAS.Selected.checkpointItemId && 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                                VideoLink
+                                            )
+                                        ),
+                                        AddMediaButton2_1.Media
+                                    )*/
+                                    
+                                Visible: =false
+                                Width: =400
+                                X: =40
+                                Y: |
+                                    =Form4.Y+Form4.Height+20
+                                ZIndex: =1
+
+                            AddMediaWithImage3_1 As group:
+                                Height: =5
+                                Width: =5
+                                X: =-2
+                                Y: =-110
+                                ZIndex: =2
+
+                                UploadedImage3_1 As image:
+                                    BorderColor: =RGBA(255, 0, 0, 1)
+                                    Fill: =RGBA(153, 188, 242, 1)
+                                    Height: =0
+                                    Image: =If(IsBlank(AddMediaButton2_1.Media), SampleImage, AddMediaButton2_1.Media)
+                                    ImagePosition: =ImagePosition.Fill
+                                    Visible: =false
+                                    Width: =0
+                                    X: =AddMediaButton2_1.X
+                                    Y: =400
+                                    ZIndex: =3
+
+                                AddMediaButton2_1 As addMedia:
+                                    BorderColor: =RGBA(255, 0, 0, 1)
+                                    ChangePictureText: ="Change Video"
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(153, 188, 242, 1)
+                                    FocusedBorderThickness: =0
+                                    Height: =60
+                                    OnChange: = 
+                                    Size: =16
+                                    Text: ="Click to add a Video"
+                                    Visible: =false
+                                    Width: =460
+                                    Y: =Video1_1.Y+Video1_1.Height+10
+                                    ZIndex: =4
+
+                            Form4 As form:
+                                BorderThickness: =1
+                                DataSource: =checkpointItemAssessment
+                                Height: =230
+                                Item: =LookUp(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)'=varCItemA)
+                                NumberOfColumns: =1
+                                Width: =Parent.Width/2.6
+                                X: =20
+                                Y: =10//Video1_1.Y+320
+                                ZIndex: =5
+
+                                Video_DataCard3 As typedDataCard.fileEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="cr33a_video"
+                                    Default: |-
+                                        =If(!IsBlank(ThisItem.Video.FileName), Table({DisplayName: ThisItem.Video.FileName, Value: ThisItem.Video.Value}), Blank())
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@checkpointItemAssessment],DataSourceInfo.DisplayName,cr33a_video)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =150
+                                    Required: =false
+                                    Update: =DataCardValue25.Attachments
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =1
+
+                                    DataCardKey25 As label:
+                                        AutoHeight: =true
+                                        FontWeight: =FontWeight.Bold
+                                        Height: =34
+                                        Text: ="Upload Video" //Parent.DisplayName
+                                        Width: =Parent.Width - 60
+                                        Wrap: =false
+                                        X: =30
+                                        Y: =10
+                                        ZIndex: =1
+
+                                    DataCardValue25 As attachments:
+                                        AddAttachmentText: ="Upload file"
+                                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                        DisplayMode: =Parent.DisplayMode
+                                        Height: =100
+                                        IsInDataCard: =true
+                                        Items: =Parent.Default
+                                        MaxAttachments: =1
+                                        MaxAttachmentSize: =30
+                                        MaxAttachmentsText: =""
+                                        NoAttachmentsText: ="There is no file."
+                                        PaddingBottom: =5
+                                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                        PaddingRight: =5
+                                        PaddingTop: =5
+                                        Tooltip: =Parent.DisplayName
+                                        Width: =Parent.Width - 60
+                                        X: =30
+                                        Y: =DataCardKey25.Y + DataCardKey25.Height + 5
+                                        ZIndex: =2
+
+                                    ErrorMessage24 As label:
+                                        AutoHeight: =true
+                                        Height: =10
+                                        Live: =Live.Assertive
+                                        PaddingBottom: =0
+                                        PaddingLeft: =0
+                                        PaddingRight: =0
+                                        PaddingTop: =0
+                                        Text: =Parent.Error
+                                        Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                        Width: =Parent.Width - 60
+                                        X: =30
+                                        Y: =DataCardValue25.Y + DataCardValue25.Height
+                                        ZIndex: =3
+
+                                    StarVisible24 As label:
+                                        Align: =Align.Center
+                                        Height: =DataCardKey25.Height
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        Wrap: =false
+                                        Y: =DataCardKey25.Y
+                                        ZIndex: =4
+
+                            Button14 As button:
+                                OnSelect: =SubmitForm(Form4)
+                                Text: ="Upload"
+                                Width: =150
+                                X: =Form4.X+30
+                                Y: =Form4.Y+Video_DataCard3.Height+10
+                                ZIndex: =6
+
+                            Button15 As button:
+                                OnSelect: =Set(VarViweVideo,true);
+                                Text: ="View"
+                                Visible: |-
+                                    =If(
+                                        IsBlank(
+                                            LookUp(
+                                                checkpointItemAssessment,
+                                                'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                                Video.Value
+                                            )
+                                        ),
+                                        false,
+                                        true
+                                    )
+                                Width: =150
+                                X: =Button14.X+Button14.Width+30
+                                Y: =Button14.Y
+                                ZIndex: =7
+
+                            Video3 As videoPlayback:
+                                Height: =230
+                                Media: |-
+                                    =LookUp(
+                                        checkpointItemAssessment,
+                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                        Video.Value
+                                    )
+                                Visible: =VarViweVideo=true
+                                Width: =Parent.Width/2.6
+                                X: =Form4.X+Form4.Width+20
+                                Y: =Form4.Y
+                                ZIndex: =8
 
     grsafetyHeader As group:
         Height: =5
