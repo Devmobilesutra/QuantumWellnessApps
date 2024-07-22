@@ -1853,19 +1853,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.Form4.Video_DataCard3.DataCardValue25.AccessibleLabel"
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Form4.Video_DataCard3.DataCardValue25.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.Form4.Video_DataCard3.DataCardValue25.AccessibleLabel",
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Form4.Video_DataCard3.DataCardValue25.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen4",
-                "type": "Screen4.Form4.Video_DataCard3.DataCardValue25"
+                "module": "FindingScreen",
+                "type": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Form4.Video_DataCard3.DataCardValue25"
               }
             }
           ],
@@ -2003,49 +2003,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.Video3.ClosedCaptionsUrl"
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Video3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.Video3.ClosedCaptionsUrl",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "ClosedCaptionsUrl",
-                "module": "Screen4",
-                "type": "Screen4.Video3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-CaptionsNeeded",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen4.Video3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen4.Video3.AccessibleLabel",
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Video3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Screen4",
-                "type": "Screen4.Video3"
+                "module": "FindingScreen",
+                "type": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Video3"
               }
             }
           ],
@@ -2057,6 +2027,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Video3.ClosedCaptionsUrl"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Video3.ClosedCaptionsUrl",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ClosedCaptionsUrl",
+                "module": "FindingScreen",
+                "type": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Video3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-CaptionsNeeded",
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -21797,18 +21797,18 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.Form4.Video_DataCard3.DataCardValue25"
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Form4.Video_DataCard3.DataCardValue25"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.Form4.Video_DataCard3.DataCardValue25",
+                  "fullyQualifiedName": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Form4.Video_DataCard3.DataCardValue25",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "module": "Screen4",
-                "type": "Screen4.Form4.Video_DataCard3.DataCardValue25"
+                "module": "FindingScreen",
+                "type": "FindingScreen.ctnMainFS.ctnMiddlePFS_3.Container7_3.ctnCurrent_2.Container6_4.Container3.Form4.Video_DataCard3.DataCardValue25"
               }
             }
           ],

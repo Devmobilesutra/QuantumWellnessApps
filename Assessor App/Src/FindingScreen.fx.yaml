@@ -97,7 +97,8 @@ FindingScreen As screen:
             App.Width > App.Height,
             App.ActiveScreen.Orientation = "Landscape",
             App.ActiveScreen.Orientation = "Landscape"
-        )
+        );
+        Set(VarViweVideo,false);
 
     ctnMainFS As groupContainer.verticalAutoLayoutContainer:
         Height: =Parent.Height
@@ -286,6 +287,7 @@ FindingScreen As screen:
                                 EditedImage:Blank()}
                             );
                             Reset(AddMediaButton2_1);
+                            Set(VarViweVideo,false);
                             Navigate(AssessmentScreen);
                         PaddingBottom: =10
                         PaddingLeft: =0
@@ -3533,7 +3535,7 @@ FindingScreen As screen:
 
                         Container3 As groupContainer.manualLayoutContainer:
                             FillPortions: =0
-                            Height: =350
+                            Height: =570
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
                             ZIndex: =8
@@ -3612,24 +3614,131 @@ FindingScreen As screen:
                                     Y: =Video1_1.Y+Video1_1.Height+10
                                     ZIndex: =4
 
-                            Button11 As button:
-                                OnSelect: |-
-                                    =ClearCollect(
-                                        VI,
-                                        {VideoText: AddMediaButton2_1.Media}
-                                    );
-                                    UpdateIf(
-                                        checkpointItemAssessment,
-                                        assignmentId.Id = glryProject.Selected.Id && bankUnitId.Id = varBankUnitId && checkpointItemId.checkpointItemId = varCheckpointitemID,
-                                        {
-                                            VideoLink:AddMediaButton2_1.Media//,
-                                           // Video:First(VI).VideoText
-                                        }
-                                    )
-                                Text: ="Button"
-                                X: =Parent.Width-300
-                                Y: =60
+                            Form4 As form:
+                                BorderThickness: =1
+                                DataSource: =checkpointItemAssessment
+                                Height: =230
+                                Item: =LookUp(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)'=varCItemA)
+                                NumberOfColumns: =1
+                                Width: =Parent.Width/2.6
+                                X: =20
+                                Y: =Video1_1.Y+320
                                 ZIndex: =5
+
+                                Video_DataCard3 As typedDataCard.fileEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="cr33a_video"
+                                    Default: |-
+                                        =If(!IsBlank(ThisItem.Video.FileName), Table({DisplayName: ThisItem.Video.FileName, Value: ThisItem.Video.Value}), Blank())
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@checkpointItemAssessment],DataSourceInfo.DisplayName,cr33a_video)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =150
+                                    Required: =false
+                                    Update: =DataCardValue25.Attachments
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =1
+
+                                    DataCardKey25 As label:
+                                        AutoHeight: =true
+                                        FontWeight: =FontWeight.Bold
+                                        Height: =34
+                                        Text: ="Upload Video" //Parent.DisplayName
+                                        Width: =Parent.Width - 60
+                                        Wrap: =false
+                                        X: =30
+                                        Y: =10
+                                        ZIndex: =1
+
+                                    DataCardValue25 As attachments:
+                                        AddAttachmentText: ="Upload file"
+                                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                        DisplayMode: =Parent.DisplayMode
+                                        Height: =100
+                                        IsInDataCard: =true
+                                        Items: =Parent.Default
+                                        MaxAttachments: =1
+                                        MaxAttachmentSize: =30
+                                        MaxAttachmentsText: =""
+                                        NoAttachmentsText: ="There is no file."
+                                        PaddingBottom: =5
+                                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                        PaddingRight: =5
+                                        PaddingTop: =5
+                                        Tooltip: =Parent.DisplayName
+                                        Width: =Parent.Width - 60
+                                        X: =30
+                                        Y: =DataCardKey25.Y + DataCardKey25.Height + 5
+                                        ZIndex: =2
+
+                                    ErrorMessage24 As label:
+                                        AutoHeight: =true
+                                        Height: =10
+                                        Live: =Live.Assertive
+                                        PaddingBottom: =0
+                                        PaddingLeft: =0
+                                        PaddingRight: =0
+                                        PaddingTop: =0
+                                        Text: =Parent.Error
+                                        Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                        Width: =Parent.Width - 60
+                                        X: =30
+                                        Y: =DataCardValue25.Y + DataCardValue25.Height
+                                        ZIndex: =3
+
+                                    StarVisible24 As label:
+                                        Align: =Align.Center
+                                        Height: =DataCardKey25.Height
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        Wrap: =false
+                                        Y: =DataCardKey25.Y
+                                        ZIndex: =4
+
+                            Button14 As button:
+                                OnSelect: =SubmitForm(Form4)
+                                Text: ="Upload"
+                                Width: =150
+                                X: =Form4.X+30
+                                Y: =Form4.Y+Video_DataCard3.Height+10
+                                ZIndex: =6
+
+                            Button15 As button:
+                                OnSelect: =Set(VarViweVideo,true);
+                                Text: ="View"
+                                Visible: |-
+                                    =If(
+                                        IsBlank(
+                                            LookUp(
+                                                checkpointItemAssessment,
+                                                'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                                Video.Value
+                                            )
+                                        ),
+                                        false,
+                                        true
+                                    )
+                                Width: =150
+                                X: =Button14.X+Button14.Width+30
+                                Y: =Button14.Y
+                                ZIndex: =7
+
+                            Video3 As videoPlayback:
+                                Height: =230
+                                Media: |-
+                                    =LookUp(
+                                        checkpointItemAssessment,
+                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
+                                        Video.Value
+                                    )
+                                Visible: =VarViweVideo=true
+                                Width: =Parent.Width/2.6
+                                X: =Form4.X+Form4.Width+20
+                                Y: =Form4.Y
+                                ZIndex: =8
 
                         Container2 As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
