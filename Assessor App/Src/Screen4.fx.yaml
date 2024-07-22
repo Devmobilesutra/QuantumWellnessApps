@@ -255,7 +255,7 @@ Screen4 As screen:
 
     Video3 As videoPlayback:
         Height: =194
-        Media: =Gallery1.Selected.Video.Value
+        Media: =LookUp(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessmentid)'=  Gallery1.Selected.'checkpointItemAssessment (quantum_checkpointitemassessmentid)',Video.Value)
         Width: =386
         X: =605
         Y: =449
