@@ -22,7 +22,7 @@
       "blockmovingcontrol": true,
       "cdsdataformatting": false,
       "classiccontrols": false,
-      "commentgeneratedformulas": true,
+      "commentgeneratedformulasv2": false,
       "consistentreturnschemafortabularfunctions": true,
       "copyandmerge": true,
       "dataflowanalysisenabled": false,
@@ -71,6 +71,7 @@
       "longlivingcache": false,
       "mobilenativerendering": false,
       "nativecdsexperimental": true,
+      "offlineprofilegenerationemitscolumns": false,
       "onegrid": false,
       "optimizedforteamsmeeting": false,
       "packagemodernruntime": false,
@@ -153,6 +154,7 @@
     "TemplateCheckpoint",
     "TemplateActionItem",
     "TemplateCheckpointItem",
-    "CompanyDetails"
+    "CompanyDetails",
+    "AnalyticalReportTryout"
   ]
 }

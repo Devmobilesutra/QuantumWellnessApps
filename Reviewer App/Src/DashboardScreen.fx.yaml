@@ -290,11 +290,10 @@ DashboardScreen As screen:
                 Fill: =referenceCSS.RActiveColor
                 HoverColor: =Self.Color
                 HoverFill: =ColorFade(Self.Fill, -20%)
-                OnSelect: =Navigate(CompanyDetails);
+                OnSelect: =Navigate(AnalyticalReportTryout);
                 PressedColor: =Self.Color
                 PressedFill: =Self.Fill
-                Text: ="Add Logo"
-                Visible: =false
+                Text: ="Assessment Report"
                 Width: =260
                 ZIndex: =3
 

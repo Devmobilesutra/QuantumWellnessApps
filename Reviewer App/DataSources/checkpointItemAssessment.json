@@ -25,6 +25,8 @@
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
       "cr28a_checkpointitemsequence": "checkpointitemSequence",
+      "cr33a_video": "Video",
+      "cr33a_videolink": "VideoLink",
       "createdby": "Created By",
       "createdon": "Created On",
       "createdonbehalfby": "Created By (Delegate)",
@@ -46,6 +48,7 @@
       "quantum_checkpointitemassessment_BulkDeleteFailures": "Bulk Delete Failures",
       "quantum_checkpointitemassessment_DuplicateBaseRecord": "Duplicate Records (quantum_checkpointitemassessment_DuplicateBaseRecord)",
       "quantum_checkpointitemassessment_DuplicateMatchingRecord": "Duplicate Records (quantum_checkpointitemassessment_DuplicateMatchingRecord)",
+      "quantum_checkpointitemassessment_FileAttachments": "FileAttachments",
       "quantum_checkpointitemassessment_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
       "quantum_checkpointitemassessment_PrincipalObjectAttributeAccesses": "Field Sharing",
       "quantum_checkpointitemassessment_ProcessSession": "Process Sessions",
