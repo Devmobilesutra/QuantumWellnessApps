@@ -290,7 +290,7 @@ DashboardScreen As screen:
                 Fill: =referenceCSS.RActiveColor
                 HoverColor: =Self.Color
                 HoverFill: =ColorFade(Self.Fill, -20%)
-                OnSelect: =Navigate(AnalyticalReportTryout);
+                OnSelect: =Navigate(InspectionBIReport);
                 PressedColor: =Self.Color
                 PressedFill: =Self.Fill
                 Text: ="Assessment Report"

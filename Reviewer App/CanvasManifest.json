@@ -155,6 +155,7 @@
     "TemplateActionItem",
     "TemplateCheckpointItem",
     "CompanyDetails",
-    "AnalyticalReportTryout"
+    "InspectionBIReport",
+    "AnalyticalReportTryout_1"
   ]
 }

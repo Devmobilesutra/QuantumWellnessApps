@@ -163,7 +163,7 @@ TripReport As screen:
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
-                Width: =Parent.Width
+                Width: =Parent.Width-40
                 Y: =Container20_6.Height+Container20_6.Y
                 ZIndex: =2
 
@@ -197,20 +197,21 @@ TripReport As screen:
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
-                    Visible: =false
+                    PaddingRight: =10
                     Width: =Parent.Width/2
                     ZIndex: =2
 
                     Button9_1 As button:
-                        AlignInContainer: =AlignInContainer.Center
+                        AlignInContainer: =AlignInContainer.End
                         Color: =RGBA(255,255,255,1)
                         Fill: =referenceCSS.RActiveColor
                         Height: =50
                         HoverFill: |-
                             =//ColorFade(RGBA(56, 96, 178, 1), -20%)
                             Self.Fill
-                        Text: ="Approve"
-                        Width: =Parent.Width/3
+                        OnSelect: =Navigate(InspectionBIReport)
+                        Text: ="BI Report"
+                        Width: =150
                         X: =
                         ZIndex: =1
 

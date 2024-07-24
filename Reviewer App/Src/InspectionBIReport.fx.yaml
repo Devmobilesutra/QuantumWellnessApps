@@ -1,0 +1,74 @@
+InspectionBIReport As screen:
+
+    Container25 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        ctnHeaderDashboardScreen_7 As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            FillPortions: =0
+            Height: =90
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            imguserDS_7 As image:
+                Fill: =RGBA(253, 222, 207, 1)
+                Height: =50
+                Image: =userdata.userImage
+                RadiusBottomLeft: =91
+                RadiusBottomRight: =91
+                RadiusTopLeft: =91
+                RadiusTopRight: =91
+                Width: =50
+                X: =lblheaderDS_7.X+lblheaderDS_7.Width
+                Y: =16
+                ZIndex: =1
+
+            lblusernameDS_7 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderUserFontSize
+                Text: =userdata.userdisplayName
+                Width: =ctnHeaderDashboardScreen_7.Width/8
+                X: =imguserDS_7.X+ imguserDS_7.Height
+                ZIndex: =2
+
+            lblheaderDS_7 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =Header.FontWeight
+                Height: =Parent.Height
+                Size: =Header.HeaderFontSize
+                Text: ="BI Report"
+                Width: =ctnHeaderDashboardScreen_7.Width/1.6
+                X: =imgSchindlerlogoDS_7.Width+imgSchindlerlogoDS_7.X
+                ZIndex: =3
+
+            imgSchindlerlogoDS_7 As image:
+                Fill: =referenceCSS.RActiveColor
+                Height: =Parent.Height
+                Image: =VarLogo.CompanyLogo
+                PaddingBottom: =5
+                PaddingLeft: =2
+                PaddingRight: =1
+                PaddingTop: =5
+                Width: =80
+                ZIndex: =4
+
+        PowerBI1 As powerbi:
+            Height: =Parent.Height-90
+            TileUrl: |-
+                ="https://app.powerbi.com/reportEmbed?reportId=934d363e-657a-4b8a-a79c-7fd5c849d789&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90"
+            Width: =Parent.Width
+            WorkspaceId: ="9aee19c1-222f-4998-b7ec-23ddd41e0ebc"
+            ZIndex: =2
+
