@@ -68,7 +68,7 @@ InspectionBIReport As screen:
         PowerBI1 As powerbi:
             Height: =Parent.Height-90
             TileUrl: |-
-                ="https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=" & Assignid
+                ="https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=" &Assignid
                  
             Width: =Parent.Width
             WorkspaceId: ="9aee19c1-222f-4998-b7ec-23ddd41e0ebc"
