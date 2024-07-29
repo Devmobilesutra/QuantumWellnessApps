@@ -61,6 +61,7 @@ InspectionBIReport As screen:
                 PaddingLeft: =2
                 PaddingRight: =1
                 PaddingTop: =5
+                Visible: =false
                 Width: =80
                 ZIndex: =4
 
@@ -72,4 +73,14 @@ InspectionBIReport As screen:
             Width: =Parent.Width
             WorkspaceId: ="9aee19c1-222f-4998-b7ec-23ddd41e0ebc"
             ZIndex: =2
+
+    Icon7 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =44
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        Width: =44
+        X: =imgSchindlerlogoDS_7.X +imgSchindlerlogoDS_7.Width+10
+        Y: =20
+        ZIndex: =3
 
