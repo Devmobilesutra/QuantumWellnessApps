@@ -66,12 +66,16 @@ InspectionBIReport As screen:
                 ZIndex: =4
 
         PowerBI1 As powerbi:
+            AllowNewAPI: =true
             Height: =Parent.Height-90
             TileUrl: |-
-                ="https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=" &Assignid
-                 
+                =//"https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=checkpointItem_ActionItems/assignmentId eq 'cc2ab4dc-4dd3-4cf2-9620-fe128fa6012e'"
+                
+                "https://app.powerbi.com/groups/me/reports/5312f12f-3bbc-417f-aae0-925f092d5f2c/c61555e4e7908ed23120?experience=power-bi?filter=checkpointItem_ActionItems/assignmentId eq 'cc2ab4dc-4dd3-4cf2-9620-fe128fa6012e'"
+                
+                //https://app.powerbi.com/groups/me/reports/5312f12f-3bbc-417f-aae0-925f092d5f2c/c61555e4e7908ed23120?experience=power-bi&filter=checkpointItem_ActionItems/assignmentId eq 'cc2ab4dc-4dd3-4cf2-9620-fe128fa6012e'
             Width: =Parent.Width
-            WorkspaceId: ="9aee19c1-222f-4998-b7ec-23ddd41e0ebc"
+            WorkspaceId: ="__my-workspace"
             ZIndex: =2
 
     Icon7 As icon.Add:

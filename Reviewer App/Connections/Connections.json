@@ -1,4 +1,18 @@
 {
+  "01aad7db-dae8-4199-b526-394b13d98d3c": {
+    "connectionRef": {
+      "displayName": "Power BI",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1694/1.0.1694.3752/powerbi/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_powerbi"
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerBI"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "01aad7db-dae8-4199-b526-394b13d98d3c"
+  },
   "1b61bba4-7521-41ad-b650-6e75501120ac": {
     "appActions": [],
     "connectionRef": {
@@ -169,7 +183,7 @@
       "executionRestrictions": {
         "apiId": "unknown",
         "appVer": "3.24072.14",
-        "modifiedOn": "2024-07-29 12:26:48",
+        "modifiedOn": "2024-07-30 13:31:06",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },

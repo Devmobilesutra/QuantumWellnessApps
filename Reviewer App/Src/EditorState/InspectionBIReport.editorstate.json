@@ -1870,6 +1870,14 @@
           "InvariantPropertyName": "TileUrl",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "false",
+          "InvariantPropertyName": "AllowNewAPI",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "DynamicProperties": [
@@ -1932,6 +1940,11 @@
         {
           "Category": "Data",
           "PropertyName": "TileUrl",
+          "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AllowNewAPI",
           "RuleProviderType": "User"
         },
         {
