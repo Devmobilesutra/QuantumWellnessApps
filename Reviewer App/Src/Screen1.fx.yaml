@@ -4,7 +4,7 @@ Screen1 As screen:
         AllowNewAPI: =true
         DashboardId: ="aaa6d8ba-e8bc-4ede-bb7c-a531f2b51992"
         TileUrl: |-
-            ="https://app.powerbi.com/embed?dashboardId=aaa6d8ba-e8bc-4ede-bb7c-a531f2b51992&tileId=745f2115-d4ed-4057-b1d1-137d35211b66&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVVTLUVBU1QtQS1QUklNQVJZLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6e319&filter=checkpointItem_ActionItems/ActionItem_Name eq '677fdf5f-5ac5-481b-83b0-bdfe4fb57179'"
+            ="https://app.powerbi.com/embed?dashboardId=aaa6d8ba-e8bc-4ede-bb7c-a531f2b51992&tileId=745f2115-d4ed-4057-b1d1-137d35211b66&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVVTLUVBU1QtQS1QUklNQVJZLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6e319&$filter=sectionAssessment/sectionName eq 'Hoistway'"
         WorkspaceId: ="__my-workspace"
         X: =40
         Y: =40
