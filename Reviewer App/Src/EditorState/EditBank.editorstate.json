@@ -3089,7 +3089,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxProductTypeEditBank": {
@@ -3644,7 +3644,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "ctcHeaderEditBank": {

@@ -1053,6 +1053,7 @@ projectAssignment As screen:
                             ZIndex: =1
 
                             lblC_nameEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1069,6 +1070,7 @@ projectAssignment As screen:
                                 ZIndex: =1
 
                             lblGo_NumberEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1085,6 +1087,7 @@ projectAssignment As screen:
                                 ZIndex: =2
 
                             "'lblA-typeEA' As label":
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1152,6 +1155,7 @@ projectAssignment As screen:
                                 ZIndex: =7
 
                             lblReviewerEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1180,6 +1184,7 @@ projectAssignment As screen:
                                 ZIndex: =9
 
                             lblAssessorEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1208,6 +1213,7 @@ projectAssignment As screen:
                                 ZIndex: =11
 
                             lblS_dateEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1234,6 +1240,7 @@ projectAssignment As screen:
                                 ZIndex: =13
 
                             lblD_dateEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)
@@ -1313,6 +1320,7 @@ projectAssignment As screen:
                                     ZIndex: =19
 
                             lblUnitEA As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
                                 FontWeight: =FontWeight.Bold
                                 Height: =30
                                 OnSelect: =Select(Parent)

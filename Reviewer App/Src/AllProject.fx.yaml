@@ -233,7 +233,9 @@ AllProject As screen:
                 ZIndex: =2
 
                 lblProjectName As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
                     Font: =referenceCSS.RFont
+                    FontWeight: =FontWeight.Semibold
                     Height: =50
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
@@ -249,6 +251,7 @@ AllProject As screen:
                     ZIndex: =1
 
                 lblContact As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
                     Font: =referenceCSS.RFont
                     Height: =lblContactNumber.Height
                     OnSelect: =Select(Parent)

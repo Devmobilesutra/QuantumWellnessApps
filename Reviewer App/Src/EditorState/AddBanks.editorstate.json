@@ -4989,7 +4989,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxProductTypeNB": {
@@ -5502,7 +5502,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "ctnAddBanks": {

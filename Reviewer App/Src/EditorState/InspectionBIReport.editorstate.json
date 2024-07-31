@@ -1878,7 +1878,8 @@
           "InvariantPropertyName": "AllowNewAPI",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "PowerBIInteractions"
       ],
       "DynamicProperties": [
         {
@@ -1945,6 +1946,11 @@
         {
           "Category": "Data",
           "PropertyName": "AllowNewAPI",
+          "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "PowerBIInteractions",
           "RuleProviderType": "User"
         },
         {

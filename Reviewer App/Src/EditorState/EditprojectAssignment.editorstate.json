@@ -1970,7 +1970,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxAssessornameEditA": {
@@ -2497,7 +2497,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxClientEditA": {
@@ -3031,7 +3031,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxGonumberEditA": {
@@ -3565,7 +3565,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxReviewerEditA": {
@@ -4085,7 +4085,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultComboboxStyle",
+      "StyleName": "defaultComboBoxStyle",
       "Type": "ControlInfo"
     },
     "cboxunitEditA": {
@@ -6994,7 +6994,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultDatepickerStyle",
+      "StyleName": "defaultDatePickerStyle",
       "Type": "ControlInfo"
     },
     "DatePickerDueDateEditA": {
@@ -7453,7 +7453,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultDatepickerStyle",
+      "StyleName": "defaultDatePickerStyle",
       "Type": "ControlInfo"
     },
     "DatePickerStartDateEditA": {
@@ -7912,7 +7912,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultDatepickerStyle",
+      "StyleName": "defaultDatePickerStyle",
       "Type": "ControlInfo"
     },
     "EditprojectAssignment": {

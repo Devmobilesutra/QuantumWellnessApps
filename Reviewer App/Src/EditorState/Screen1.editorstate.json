@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "PowerBI3": {
+    "PowerBI2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "DisplayMode",
@@ -22,7 +22,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "PowerBI3",
+      "Name": "PowerBI2",
       "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,

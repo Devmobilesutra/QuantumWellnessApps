@@ -182,8 +182,8 @@
       "displayName": "Power Apps Notification V2",
       "executionRestrictions": {
         "apiId": "unknown",
-        "appVer": "3.24072.14",
-        "modifiedOn": "2024-07-30 13:31:06",
+        "appVer": "3.24073.22",
+        "modifiedOn": "2024-07-31 09:50:41",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
