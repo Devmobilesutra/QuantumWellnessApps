@@ -71,7 +71,7 @@ InspectionBIReport As screen:
             TileUrl: |-
                 =//"https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&$filter=checkpointItem_ActionItems/assignmentId eq 'cc2ab4dc-4dd3-4cf2-9620-fe128fa6012e'"
                 
-                "https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=checkpointItem_ActionItems/assignmentId eq 'cc2ab4dc-4dd3-4cf2-9620-fe128fa6012e'"
+                "https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitem_actionitems/assignmentId eq '43c85dbe-a179-4de0-8b21-00e3584300fb'"
                 
                 //"https://app.powerbi.com/groups/me/reports/5312f12f-3bbc-417f-aae0-925f092d5f2c/c61555e4e7908ed23120?experience=power-bi&filter=checkpointItem_ActionItems/assignmentId eq 'cc2ab4dc-4dd3-4cf2-9620-fe128fa6012e'"
                 
