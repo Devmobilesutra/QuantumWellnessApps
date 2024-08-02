@@ -474,8 +474,10 @@ AllProject As screen:
                     HoverFill: =
                     OnSelect: |
                         =Set(Assignid,ThisItem.Id);
+                        Set(VarClientId,ThisItem.clientId.Id);
                         If(ThisItem.reviewerEmail<>userdata.userEmail,Set(VarReviewerResult,true),Set(VarReviewerResult,false));
                         Navigate(BankScreen);
+                        Set(VarProductId,LookUp(  assignmentUnits,assignmentId.Id = ThisItem.Id,productModel);
                         
                         /*If(
                             CountRows(
