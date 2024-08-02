@@ -69,7 +69,7 @@ InspectionBIReport As screen:
             AllowNewAPI: =true
             Height: =Parent.Height-90
             TileUrl: |
-                ="https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitem_actionitems/assignmentId eq '"& Assignid &"' and filter=shlaf_schindlerclient/Id eq "
+                ="https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitem_actionitems/assignmentId eq '"& Assignid &"' And filter=shlaf_schindlerclient/Id eq '"& VarClientId &"'"
             Width: =Parent.Width
             WorkspaceId: ="__my-workspace"
             ZIndex: =2
