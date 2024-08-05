@@ -1,13 +1,13 @@
-InspectionBIReport As screen:
+UnitWiseInspectionBIReport As screen:
 
-    Container25 As groupContainer.verticalAutoLayoutContainer:
+    Container25_2 As groupContainer.verticalAutoLayoutContainer:
         Height: =Parent.Height
         LayoutDirection: =LayoutDirection.Vertical
         LayoutMode: =LayoutMode.Auto
         Width: =Parent.Width
         ZIndex: =2
 
-        ctnHeaderDashboardScreen_7 As groupContainer.manualLayoutContainer:
+        ctnHeaderDashboardScreen_9 As groupContainer.manualLayoutContainer:
             Fill: =Header.HeaderFill
             FillPortions: =0
             Height: =80
@@ -16,7 +16,7 @@ InspectionBIReport As screen:
             Width: =Parent.Width
             ZIndex: =1
 
-            imguserDS_7 As image:
+            imguserDS_9 As image:
                 Fill: =RGBA(253, 222, 207, 1)
                 Height: =50
                 Image: =userdata.userImage
@@ -25,11 +25,11 @@ InspectionBIReport As screen:
                 RadiusTopLeft: =91
                 RadiusTopRight: =91
                 Width: =50
-                X: =lblheaderDS_7.X+lblheaderDS_7.Width
+                X: =lblheaderDS_9.X+lblheaderDS_9.Width
                 Y: =16
                 ZIndex: =1
 
-            lblusernameDS_7 As label:
+            lblusernameDS_9 As label:
                 Align: =Align.Center
                 Color: =Header.HeaderColor
                 Font: =Header.HeaderFont
@@ -37,11 +37,11 @@ InspectionBIReport As screen:
                 Height: =Parent.Height
                 Size: =Header.HeaderUserFontSize
                 Text: =userdata.userdisplayName
-                Width: =ctnHeaderDashboardScreen_7.Width/8
-                X: =imguserDS_7.X+ imguserDS_7.Height
+                Width: =ctnHeaderDashboardScreen_9.Width/8
+                X: =imguserDS_9.X+ imguserDS_9.Height
                 ZIndex: =2
 
-            lblheaderDS_7 As label:
+            lblheaderDS_9 As label:
                 Align: =Align.Center
                 Color: =Header.HeaderColor
                 Font: =Header.HeaderFont
@@ -49,11 +49,11 @@ InspectionBIReport As screen:
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
                 Text: ="BI Report"
-                Width: =ctnHeaderDashboardScreen_7.Width/1.6
-                X: =imgSchindlerlogoDS_7.Width+imgSchindlerlogoDS_7.X
+                Width: =ctnHeaderDashboardScreen_9.Width/1.6
+                X: =imgSchindlerlogoDS_9.Width+imgSchindlerlogoDS_9.X
                 ZIndex: =3
 
-            imgSchindlerlogoDS_7 As image:
+            imgSchindlerlogoDS_9 As image:
                 Fill: =referenceCSS.RActiveColor
                 Height: =Parent.Height
                 Image: =VarLogo.CompanyLogo
@@ -65,22 +65,26 @@ InspectionBIReport As screen:
                 Width: =80
                 ZIndex: =4
 
-        PowerBI1 As powerbi:
+        PowerBI1_2 As powerbi:
             AllowNewAPI: =true
             Height: =Parent.Height-80
             TileUrl: |-
-                ="https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitem_actionitems/assignmentId eq '" & Assignid & "' and shlaf_schindlerclient/Id eq '" & VarClientId & "' and quantum_product/product_Model eq '" & VarProductId & "'"
+                ="https://app.powerbi.com/reportEmbed?reportId=6c153eaf-484d-4145-ace7-14af06b19f39&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitemassessment/bankUnitId eq '"& VarBankUnitId &"'"
+                
+                
+                
+                //"https://app.powerbi.com/reportEmbed?reportId=5312f12f-3bbc-417f-aae0-925f092d5f2c&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitem_actionitems/assignmentId eq '" & Assignid & "' and shlaf_schindlerclient/Id eq '" & VarClientId & "' and quantum_product/product_Model eq '" & VarProductId & "'"
             Width: =Parent.Width
             WorkspaceId: ="__my-workspace"
             ZIndex: =2
 
-    Icon7 As icon.Add:
+    Icon7_1 As icon.Add:
         Color: =RGBA(255, 255, 255, 1)
         Height: =44
         Icon: =Icon.BackArrow
         OnSelect: =Back()
         Width: =44
-        X: =imgSchindlerlogoDS_7.X +imgSchindlerlogoDS_7.Width+10
+        X: =imgSchindlerlogoDS_9.X +imgSchindlerlogoDS_9.Width+10
         Y: =20
         ZIndex: =3
 

@@ -156,7 +156,7 @@
     "TemplateCheckpointItem",
     "CompanyDetails",
     "InspectionBIReport",
-    "AnalyticalReportTryout_1",
-    "Screen1"
+    "UnitWiseInspectionBIReport",
+    "AnalyticalReportTryout_1"
   ]
 }

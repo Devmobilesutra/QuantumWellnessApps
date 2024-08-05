@@ -420,6 +420,19 @@ BankScreen As screen:
                         Y: =30
                         ZIndex: =5
 
+                    Icon8 As icon.Add:
+                        Color: =RGBA(0, 0, 0, 1)
+                        Height: =44
+                        Icon: =Icon.Trending
+                        OnSelect: |-
+                            =
+                            Set(VarBankUnitId,ThisItem.bankUnitId.Id);
+                            Navigate(UnitWiseInspectionBIReport);
+                        Width: =44
+                        X: =btnStartAssessmentBS.X-70
+                        Y: =btnStartAssessmentBS.Y
+                        ZIndex: =6
+
         ctnBackBankScreen As groupContainer.verticalAutoLayoutContainer:
             Height: =ctnHeaderBankScreen.Height+ctnHeaderBankScreen.Y
             LayoutMode: =LayoutMode.Auto
