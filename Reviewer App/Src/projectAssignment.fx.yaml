@@ -1100,7 +1100,7 @@ projectAssignment As screen:
                                 VerticalAlign: =VerticalAlign.Top
                                 Width: =200
                                 X: =10
-                                Y: =GalleryExistingAssignment.Y+20
+                                Y: =lblC_nameEA_1.Y+lblC_nameEA_1.Height+10
                                 ZIndex: =1
 
                             lblGo_NumberEA As label:
@@ -1159,7 +1159,7 @@ projectAssignment As screen:
                                     )
                                 Width: =350
                                 X: =lblC_nameEA.X+lblC_nameEA.Width+10
-                                Y: =GalleryExistingAssignment.Y+20
+                                Y: =lblClientnameEA_1.Y+lblClientnameEA_1.Height+10
                                 ZIndex: =5
 
                             lblAssessmentTypeEA As label:
@@ -1457,6 +1457,35 @@ projectAssignment As screen:
                                 X: =lblC_nameEA.X+lblC_nameEA.Width+10
                                 Y: =lblGOnumberEA.Y+lblGOnumberEA.Height+10
                                 ZIndex: =24
+
+                            lblC_nameEA_1 As label:
+                                BorderColor: =RGBA(0, 0, 0, 1)
+                                FontWeight: =FontWeight.Bold
+                                Height: =30
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =referenceCSS.RLabelFontSize
+                                Text: ="Assignment Name "
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =200
+                                X: =10
+                                Y: =GalleryExistingAssignment.Y+20
+                                ZIndex: =25
+
+                            lblClientnameEA_1 As label:
+                                Height: =30
+                                OnSelect: =Select(Parent)
+                                Size: =referenceCSS.RLabelFontSize
+                                Text: |-
+                                    =
+                                    ThisItem.assignmentName
+                                Width: =350
+                                X: =lblC_nameEA_1.X+lblC_nameEA_1.Width+10
+                                Y: =GalleryExistingAssignment.Y+20
+                                ZIndex: =26
 
     grpRemovePopupPA As group:
         Height: =5
