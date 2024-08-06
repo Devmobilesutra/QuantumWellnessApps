@@ -356,7 +356,7 @@ projectAssignment As screen:
                 Height: |-
                     =If(
                         P,
-                        1100 + glryUnitNA.Height,
+                        1200 + glryUnitNA.Height,
                         GalleryExistingAssignment.Height + 80
                     )
                 LayoutMinHeight: =100
@@ -379,8 +379,32 @@ projectAssignment As screen:
                         PaddingTop: =40
                         Visible: |
                             =P = true
-                        Width: =Parent.Width -20
+                        Width: =Parent.Width 
                         ZIndex: =1
+
+                        lblClientNA_1 As label:
+                            Font: =referenceCSS.RFont
+                            FontWeight: =FontWeight.Bold
+                            Height: =50
+                            PaddingLeft: =0
+                            PaddingTop: =10
+                            Size: =referenceCSS.RLabelFontSize
+                            Text: ="Assignment Name *"
+                            Width: =Parent.Width/3
+                            Y: =ctnNewAssignment.Y+100
+                            ZIndex: =1
+
+                        TextInput4 As text:
+                            BorderColor: =RGBA(0, 0, 0, 1)
+                            Default: =
+                            Height: =50
+                            HintText: ="Enter Assignment Name"
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Width: =Parent.Width/3
+                            ZIndex: =2
 
                         lblClientNA As label:
                             Font: =referenceCSS.RFont
@@ -392,7 +416,7 @@ projectAssignment As screen:
                             Text: ="Client *"
                             Width: =Parent.Width/3
                             Y: =ctnNewAssignment.Y+100
-                            ZIndex: =1
+                            ZIndex: =3
 
                         cboxClientNA As combobox:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -421,7 +445,7 @@ projectAssignment As screen:
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =2
+                            ZIndex: =4
 
                         lblGONumberNA As label:
                             Font: =referenceCSS.RFont
@@ -433,7 +457,7 @@ projectAssignment As screen:
                             Text: ="Inspection Set Id *"
                             Width: =Parent.Width/2
                             Y: =10
-                            ZIndex: =3
+                            ZIndex: =5
 
                         cboxGONumberNA As combobox:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -469,7 +493,7 @@ projectAssignment As screen:
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =4
+                            ZIndex: =6
 
                         lblbankexistNA As label:
                             Color: =referenceCSS.RActiveColor
@@ -483,7 +507,7 @@ projectAssignment As screen:
                             Text: =//"Bank already assigned,please remove before reassign."
                             Visible: =//ShowErrorMsgBAssign = true
                             Width: =Parent.Width
-                            ZIndex: =5
+                            ZIndex: =7
 
                         lblUnitNA As label:
                             Font: =referenceCSS.RFont
@@ -494,7 +518,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Units *" 
                             Width: =Parent.Width/3
-                            ZIndex: =6
+                            ZIndex: =8
 
                         "glryUnitNA As gallery.'BrowseLayout_Flexible_SocialFeed_ver4.0'":
                             '#CopilotOverlayLabel': ="Filtered"
@@ -515,7 +539,7 @@ projectAssignment As screen:
                             ShowScrollbar: =false
                             TemplatePadding: =4
                             TemplateSize: =60
-                            ZIndex: =7
+                            ZIndex: =9
 
                             CboxUnitNA As checkbox:
                                 BorderColor: =
@@ -586,7 +610,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Assessment Type *" 
                             Width: =Parent.Width/3
-                            ZIndex: =8
+                            ZIndex: =10
 
                         cboxAssessmentTypeNA As combobox:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -612,7 +636,7 @@ projectAssignment As screen:
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =9
+                            ZIndex: =11
 
                         lblAssessorNA As label:
                             Font: =referenceCSS.RFont
@@ -623,7 +647,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Assessor *"
                             Width: =Parent.Width/3
-                            ZIndex: =10
+                            ZIndex: =12
 
                         cboxAssessorNA As combobox:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -648,7 +672,7 @@ projectAssignment As screen:
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =11
+                            ZIndex: =13
 
                         lblReviewverNA As label:
                             Font: =referenceCSS.RFont
@@ -659,7 +683,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Reviewer *"
                             Width: =Parent.Width/3
-                            ZIndex: =12
+                            ZIndex: =14
 
                         cboxReviewerNA As combobox:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -685,7 +709,7 @@ projectAssignment As screen:
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =13
+                            ZIndex: =15
 
                         lblstartDateNA As label:
                             Font: =referenceCSS.RFont
@@ -696,7 +720,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Start Date "
                             Width: =Parent.Width/3
-                            ZIndex: =14
+                            ZIndex: =16
 
                         DatePickerStartDateNA As datepicker:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -706,7 +730,7 @@ projectAssignment As screen:
                             PaddingBottom: =10
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =15
+                            ZIndex: =17
 
                         lblDueDateNA As label:
                             Font: =referenceCSS.RFont
@@ -717,7 +741,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Due Date *"
                             Width: =Parent.Width/3
-                            ZIndex: =16
+                            ZIndex: =18
 
                         DatePickerDueDateNA As datepicker:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -727,7 +751,7 @@ projectAssignment As screen:
                             PaddingBottom: =10
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =17
+                            ZIndex: =19
 
                         lblAssignDateNA As label:
                             Font: =referenceCSS.RFont
@@ -738,7 +762,7 @@ projectAssignment As screen:
                             Size: =referenceCSS.RLabelFontSize
                             Text: ="Assign Date "
                             Width: =Parent.Width/3
-                            ZIndex: =18
+                            ZIndex: =20
 
                         DatePickerAssignDateNA As datepicker:
                             BorderColor: =RGBA(0, 0, 0, 1)
@@ -748,7 +772,7 @@ projectAssignment As screen:
                             PaddingBottom: =10
                             Size: =referenceCSS.RInputFontSize
                             Width: =Parent.Width/3
-                            ZIndex: =19
+                            ZIndex: =21
 
                         ctnFooterNewAssignment As groupContainer.verticalAutoLayoutContainer:
                             Height: =150
@@ -759,7 +783,7 @@ projectAssignment As screen:
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             PaddingTop: =30
-                            ZIndex: =20
+                            ZIndex: =22
 
                             ctnLineNewAssignment As groupContainer.verticalAutoLayoutContainer:
                                 AlignInContainer: =AlignInContainer.SetByContainer
@@ -790,6 +814,11 @@ projectAssignment As screen:
                                         Connection.Connected = false,
                                         Notify("Network is not Available"),
                                         If(
+                                            IsBlank(TextInput4.Text),
+                                            Notify(
+                                                "Please Enter Assignment Name .",
+                                                NotificationType.Error
+                                            ),
                                             IsBlank(cboxClientNA.Selected.name),
                                             Notify(
                                                 "Please Enter Client Name .",
@@ -843,6 +872,7 @@ projectAssignment As screen:
                                                 Defaults(assignments),
                                                 {
                                                     Id: idvariable,
+                                                    assignmentName:TextInput4.Text,
                                                     clientId: LookUp(
                                                         schindlerClients,
                                                         name = cboxClientNA.Selected.name
@@ -998,6 +1028,7 @@ projectAssignment As screen:
                                                         popupsuccess,
                                                         true
                                                     );
+                                                    Reset(TextInput4);
                                                     Reset(cboxClientNA);
                                                     Reset(cboxGONumberNA);
                                                     Clear(selectedUnit);

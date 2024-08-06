@@ -156,6 +156,30 @@ EditprojectAssignment As screen:
                     Width: =Parent.Width
                     ZIndex: =2
 
+                    lblClientNA_2 As label:
+                        Font: =referenceCSS.RFont
+                        FontWeight: =FontWeight.Bold
+                        Height: =50
+                        PaddingLeft: =0
+                        PaddingTop: =10
+                        Size: =referenceCSS.RLabelFontSize
+                        Text: ="Assignment Name *"
+                        Width: =Parent.Width/3
+                        Y: =ctnNewAssignment.Y+100
+                        ZIndex: =1
+
+                    TextInput4_1 As text:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Default: =
+                        Height: =50
+                        HintText: ="Enter Assignment Name"
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width/3
+                        ZIndex: =2
+
                     lblClientEditA As label:
                         Font: =referenceCSS.RFont
                         FontWeight: =FontWeight.Bold
@@ -166,7 +190,7 @@ EditprojectAssignment As screen:
                         Text: ="Client"
                         Width: =Parent.Width/3
                         Y: =ctnEditAssignment.Y+100
-                        ZIndex: =1
+                        ZIndex: =3
 
                     cboxClientEditA As combobox:
                         ChevronBackground: =RGBA(0, 0, 0, 0)
@@ -202,7 +226,7 @@ EditprojectAssignment As screen:
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
-                        ZIndex: =2
+                        ZIndex: =4
 
                     lblGoNumberEditA As label:
                         Font: =referenceCSS.RFont
@@ -214,7 +238,7 @@ EditprojectAssignment As screen:
                         Text: ="Inspection Set Id *"
                         Width: =Parent.Width/2
                         Y: =10
-                        ZIndex: =3
+                        ZIndex: =5
 
                     cboxGonumberEditA As combobox:
                         ChevronBackground: =RGBA(0, 0, 0, 0)
@@ -244,7 +268,7 @@ EditprojectAssignment As screen:
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
-                        ZIndex: =4
+                        ZIndex: =6
 
                     lblunitEditA As label:
                         Font: =referenceCSS.RFont
@@ -255,7 +279,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Units" 
                         Width: =Parent.Width/3
-                        ZIndex: =5
+                        ZIndex: =7
 
                     "glryUnitEditA As gallery.'BrowseLayout_Flexible_SocialFeed_ver4.0'":
                         '#CopilotOverlayLabel': ="Filtered"
@@ -276,7 +300,7 @@ EditprojectAssignment As screen:
                         ShowScrollbar: =false
                         TemplatePadding: =4
                         TemplateSize: =60
-                        ZIndex: =6
+                        ZIndex: =8
 
                         cboxunitEditA As checkbox:
                             BorderColor: =
@@ -340,7 +364,7 @@ EditprojectAssignment As screen:
                         Text: ="Bank already assigned."
                         Visible: =//ShowErrorMsgBAssignEdit = true
                         Width: =Parent.Width/3
-                        ZIndex: =7
+                        ZIndex: =9
 
                     lblAssesssmenttypeEditA As label:
                         Font: =referenceCSS.RFont
@@ -351,7 +375,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Assessment Type"
                         Width: =Parent.Width/3
-                        ZIndex: =8
+                        ZIndex: =10
 
                     cboxAssessmntTypeEditA As combobox:
                         BorderColor: =RGBA(0, 0, 0, 1)
@@ -385,7 +409,7 @@ EditprojectAssignment As screen:
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
-                        ZIndex: =9
+                        ZIndex: =11
 
                     lblAssessorEditA As label:
                         Font: =referenceCSS.RFont
@@ -396,7 +420,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Assessor"
                         Width: =Parent.Width/3
-                        ZIndex: =10
+                        ZIndex: =12
 
                     cboxAssessornameEditA As combobox:
                         BorderColor: =RGBA(0, 0, 0, 1)
@@ -429,7 +453,7 @@ EditprojectAssignment As screen:
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
-                        ZIndex: =11
+                        ZIndex: =13
 
                     lblReviewerEditA As label:
                         Font: =referenceCSS.RFont
@@ -440,7 +464,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Reviewer"
                         Width: =Parent.Width/3
-                        ZIndex: =12
+                        ZIndex: =14
 
                     cboxReviewerEditA As combobox:
                         BorderColor: =RGBA(0, 0, 0, 1)
@@ -466,7 +490,7 @@ EditprojectAssignment As screen:
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
-                        ZIndex: =13
+                        ZIndex: =15
 
                     lblStartdateEditA As label:
                         Font: =referenceCSS.RFont
@@ -477,7 +501,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Start Date"
                         Width: =Parent.Width/3
-                        ZIndex: =14
+                        ZIndex: =16
 
                     DatePickerStartDateEditA As datepicker:
                         BorderColor: =RGBA(0, 0, 0, 1)
@@ -494,7 +518,7 @@ EditprojectAssignment As screen:
                         OnChange: =false 
                         PaddingBottom: =10
                         Width: =Parent.Width/3
-                        ZIndex: =15
+                        ZIndex: =17
 
                     lblDuedateEditA As label:
                         Font: =referenceCSS.RFont
@@ -505,7 +529,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Due Date"
                         Width: =Parent.Width/3
-                        ZIndex: =16
+                        ZIndex: =18
 
                     DatePickerDueDateEditA As datepicker:
                         BorderColor: =RGBA(0, 0, 0, 1)
@@ -521,7 +545,7 @@ EditprojectAssignment As screen:
                         Height: =50
                         PaddingBottom: =20
                         Width: =Parent.Width/3
-                        ZIndex: =17
+                        ZIndex: =19
 
                     lblAssignDateEditA As label:
                         Font: =referenceCSS.RFont
@@ -532,7 +556,7 @@ EditprojectAssignment As screen:
                         Size: =referenceCSS.RLabelFontSize
                         Text: ="Assign Date"
                         Width: =Parent.Width/3
-                        ZIndex: =18
+                        ZIndex: =20
 
                     DatePickerAssignDateEditA As datepicker:
                         BorderColor: =RGBA(0, 0, 0, 1)
@@ -549,7 +573,7 @@ EditprojectAssignment As screen:
                         OnChange: =false 
                         PaddingBottom: =10
                         Width: =Parent.Width/3
-                        ZIndex: =19
+                        ZIndex: =21
 
                     ctnFooterEditAssignment As groupContainer.horizontalAutoLayoutContainer:
                         AlignInContainer: =AlignInContainer.SetByContainer
@@ -565,7 +589,7 @@ EditprojectAssignment As screen:
                         PaddingTop: =10
                         X: =40
                         Y: =DatePickerDueDateEditA.Y +DatePickerDueDateEditA.Height+10
-                        ZIndex: =20
+                        ZIndex: =22
 
                         btnSaveEditA As button:
                             Color: =referenceCSS.RColorWhite
