@@ -69,7 +69,7 @@ UnitWiseInspectionBIReport As screen:
             AllowNewAPI: =true
             Height: =Parent.Height-80
             TileUrl: |-
-                ="https://app.powerbi.com/reportEmbed?reportId=6c153eaf-484d-4145-ace7-14af06b19f39&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitemassessment/bankUnitId eq '"& VarBankUnitId &"'"
+                ="https://app.powerbi.com/reportEmbed?reportId=6c153eaf-484d-4145-ace7-14af06b19f39&autoAuth=true&ctid=125c265e-b1f0-494d-a8a1-bbce16d90b90&filter=quantum_checkpointitemassessment/bankUnitId eq '"& VarBankUnitId &"' and shlaf_bankunits/Id eq '"& VarBankUnitId &"'"
                 
                 
                 

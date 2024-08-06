@@ -65,7 +65,7 @@ AllProject As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Assignments"
+                Text: ="Inspections"
                 Width: =ctnHeaderAllProject.Width/1.6
                 X: =imgLogoAllProject.Width+imgLogoAllProject.X
                 ZIndex: =8
