@@ -397,8 +397,11 @@ projectAssignment As screen:
                         TextInput4 As text:
                             BorderColor: =RGBA(0, 0, 0, 1)
                             Default: =
+                            FocusedBorderThickness: =2
                             Height: =50
                             HintText: ="Enter Assignment Name"
+                            HoverBorderColor: =RGBA(0, 0, 0, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
                             RadiusBottomLeft: =0
                             RadiusBottomRight: =0
                             RadiusTopLeft: =0
@@ -1402,6 +1405,7 @@ projectAssignment As screen:
                                             ScreenTransition.None,
                                             {
                                                 nprojectassignment: ThisItem.Id,
+                                                nassignmentName: ThisItem.assignmentName,
                                                 nclientid: ThisItem.clientId,
                                                 nbankid: ThisItem.bankId,
                                                 nassessmenttype: ThisItem.assessmentType,

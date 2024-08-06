@@ -170,7 +170,7 @@ EditprojectAssignment As screen:
 
                     TextInput4_1 As text:
                         BorderColor: =RGBA(0, 0, 0, 1)
-                        Default: =
+                        Default: =nassignmentName
                         Height: =50
                         HintText: ="Enter Assignment Name"
                         RadiusBottomLeft: =0
@@ -610,6 +610,11 @@ EditprojectAssignment As screen:
                                         NotificationType.Error
                                     ),
                                     If(
+                                         IsBlank(TextInput4_1.Text),
+                                        Notify(
+                                            "Please Enter Assignment Name .",
+                                            NotificationType.Error
+                                        ),
                                         IsBlank(cboxGonumberEditA.Selected.goNumber),
                                         Notify(
                                             "Please Select Bank.",
@@ -647,6 +652,7 @@ EditprojectAssignment As screen:
                                                 Id = nprojectassignment
                                             ),
                                             {
+                                                assignmentName:TextInput4_1.Text,
                                                 assessmentType: cboxAssessmntTypeEditA.Selected.type,
                                                 assessorId: LookUp(
                                                     AssessorAD,
@@ -709,6 +715,7 @@ EditprojectAssignment As screen:
                                                 updatePopup,
                                                 true
                                             );
+                                            Reset(TextInput4_1);
                                             Reset(cboxClientEditA);
                                             Reset(cboxGonumberEditA);
                                             Reset(cboxAssessmntTypeEditA);
