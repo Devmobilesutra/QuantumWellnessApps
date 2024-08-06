@@ -318,7 +318,7 @@ ReferanceData As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =50
                         Size: =referenceCSS.RFontSize
-                        Text: ="Assignments"
+                        Text: ="Inspection"
                         Width: =Parent.Width
                         Y: =Parent.Height/6
                         ZIndex: =1

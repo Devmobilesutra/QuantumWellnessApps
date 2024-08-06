@@ -66,7 +66,7 @@ EditprojectAssignment As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Assignment"
+                Text: ="Inspection"
                 Width: =ctnHeaderEditAssignment.Width/1.6
                 X: =imgLogoEA.Width+imgLogoEA.X
                 ZIndex: =8
@@ -163,7 +163,7 @@ EditprojectAssignment As screen:
                         PaddingLeft: =0
                         PaddingTop: =10
                         Size: =referenceCSS.RLabelFontSize
-                        Text: ="Assignment Name *"
+                        Text: ="Inspection Name *"
                         Width: =Parent.Width/3
                         Y: =ctnNewAssignment.Y+100
                         ZIndex: =1
@@ -173,7 +173,7 @@ EditprojectAssignment As screen:
                         Default: =nassignmentName
                         FocusedBorderThickness: =2
                         Height: =50
-                        HintText: ="Enter Assignment Name"
+                        HintText: ="Enter Inspection Name"
                         HoverBorderColor: =RGBA(0, 0, 0, 1)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         RadiusBottomLeft: =0
@@ -615,12 +615,12 @@ EditprojectAssignment As screen:
                                     If(
                                          IsBlank(TextInput4_1.Text),
                                         Notify(
-                                            "Please Enter Assignment Name .",
+                                            "Please Enter Inspection Name .",
                                             NotificationType.Error
                                         ),
                                         IsBlank(cboxGonumberEditA.Selected.goNumber),
                                         Notify(
-                                            "Please Select Bank.",
+                                            "Please Select Inspection Set Id.",
                                             NotificationType.Error
                                         ),
                                         IsBlank(cboxAssessmntTypeEditA.Selected.type),
