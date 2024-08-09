@@ -34,6 +34,7 @@
       "environmentvariabledefinition_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
       "environmentvariabledefinition_PrincipalObjectAttributeAccesses": "Field Sharing",
       "environmentvariabledefinition_ProcessSession": "Process Sessions",
+      "EnvironmentVariableDefinition_ReportParameters": "Report Parameters",
       "environmentvariabledefinition_SyncErrors": "Sync Errors",
       "environmentvariabledefinitionid": "Environment Variable Definition",
       "environmentvariabledefinitionidunique": "EnvironmentVariableDefinitionIdUnique",
