@@ -629,6 +629,7 @@ TripReport As screen:
                     '#CopilotOverlayLabel': ="Filtered"
                     AlignInContainer: =AlignInContainer.Start
                     FillPortions: =0
+                    FocusedBorderThickness: =
                     Height: |-
                         =Parent.Height
                         //CountRows(Gallery14.AllItems)*Gallery14.TemplateHeight+Gallery15.Height
