@@ -279,6 +279,7 @@ BankScreen As screen:
                                     )
                                 }
                             );
+                            Clear(localBanktripReport);
                             /*SaveData(
                                 GcTraceLog,
                                 "localGcTraceLog"
@@ -335,7 +336,6 @@ BankScreen As screen:
                                         VarTripReportNotification,
                                         "Trip report submmited successfully."
                                     ),
-                                    Clear(localBanktripReport);
                                     ClearCollect(
                                         localBanktripReport,
                                         LookUp(
