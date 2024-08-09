@@ -136,7 +136,7 @@
       "MetaDataIDKey": "",
       "Name": "btOkActiionItemTrackerBS_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10118,7 +10118,7 @@
       "MetaDataIDKey": "",
       "Name": "Container38_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11318,14 +11318,7 @@
         },
         "BorderStyle",
         "FocusedBorderColor",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "4",
-          "InvariantPropertyName": "FocusedBorderThickness",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "FocusedBorderThickness",
         "Fill",
         "DisabledFill",
         "PressedFill",
@@ -11580,7 +11573,7 @@
         {
           "Category": "Design",
           "PropertyName": "FocusedBorderThickness",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -12978,7 +12971,7 @@
       "MetaDataIDKey": "",
       "Name": "iconInnerrectangleBS_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13124,7 +13117,7 @@
       "MetaDataIDKey": "",
       "Name": "iconOuterrectangleBS_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13896,7 +13889,7 @@
       "MetaDataIDKey": "",
       "Name": "imgInfoBS_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19373,7 +19366,7 @@
       "MetaDataIDKey": "",
       "Name": "Label29_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20081,7 +20074,7 @@
       "MetaDataIDKey": "",
       "Name": "Label30_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21221,7 +21214,7 @@
       "MetaDataIDKey": "",
       "Name": "Label33_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21587,7 +21580,7 @@
       "MetaDataIDKey": "",
       "Name": "Label34_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21967,7 +21960,7 @@
       "MetaDataIDKey": "",
       "Name": "Label35_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26033,7 +26026,7 @@
       "MetaDataIDKey": "",
       "Name": "lblActionItemtrackerBS_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31080,7 +31073,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle5_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31254,7 +31247,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle6_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31707,7 +31700,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInput2_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
