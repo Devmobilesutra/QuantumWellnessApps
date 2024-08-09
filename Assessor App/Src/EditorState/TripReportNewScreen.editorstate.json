@@ -7846,7 +7846,7 @@
       "MetaDataIDKey": "",
       "Name": "iconInnerRectangleTRS_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8642,7 +8642,7 @@
       "MetaDataIDKey": "",
       "Name": "iconRectangleCommentTRS_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27700,7 +27700,7 @@
       "MetaDataIDKey": "",
       "Name": "txtSectionCommentTRS_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
