@@ -180,7 +180,7 @@ ViewAssessment As screen:
                         Text: |-
                             =glryAssignmentBS.Selected.bankUnitId.unitNumber
                             //1.1//LookUp(schindlerBanks,goNumber=lblBankName.Text,productId.product_Name)
-                        Width: =100
+                        Width: =Parent.Width/2
                         ZIndex: =4
 
                 ctnProductTypeVA As groupContainer.horizontalAutoLayoutContainer:
