@@ -179,7 +179,7 @@ SaveImage As screen:
                 TextRecognizationFlow.Run(
                     {
                         contentBytes: Image2.Image,
-                        name: "image2.Transparency"
+                        name: "img"
                     }
                 )
             );

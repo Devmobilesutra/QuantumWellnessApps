@@ -2302,6 +2302,7 @@ FindingScreen As screen:
                             '#CopilotOverlayLabel': ="Filtered"
                             AlignInContainer: =AlignInContainer.Start
                             FillPortions: =0
+                            FocusedBorderThickness: =0
                             Height: |
                                 =If(CountRows(GlryImagesFS.AllItems)=1,380,CountRows(GlryImagesFS.AllItems)*(GlryImagesFS.TemplateHeight)/2)
                                 
@@ -2592,7 +2593,7 @@ FindingScreen As screen:
                                         'Sample Image'),
                                         ThisItem.EditedImage.Value
                                     )
-                                OnSelect: |-
+                                OnSelect: |
                                     =//for safety check
                                     If(
                                         DateDiff(
@@ -2612,28 +2613,30 @@ FindingScreen As screen:
                                         
                                     );
                                     If(
-                                        IsBlank(ThisItem.Image.Full),
-                                        Set(
-                                            VarPhoto,
-                                            GlryImagesFS.Selected.Image.Value
-                                        );
-                                        Set(
-                                            VarPenInput,
-                                            GlryImagesFS.Selected.EditedImage.Value
-                                        );
-                                        Navigate(SaveImage);
-                                        ,
-                                        Set(
-                                            VarPhoto,
-                                            GlryImagesFS.Selected.Image.Full
-                                        );
-                                        Set(
-                                            VarPenInput,
-                                            GlryImagesFS.Selected.EditedImage.Full
-                                        );
-                                        Navigate(SaveImage);
-                                        
-                                    )
+                                        !IsBlank(ThisItem.Image),
+                                        If(
+                                            IsBlank(ThisItem.Image.Full),
+                                            Set(
+                                                VarPhoto,
+                                                GlryImagesFS.Selected.Image.Value
+                                            );
+                                            Set(
+                                                VarPenInput,
+                                                GlryImagesFS.Selected.EditedImage.Value
+                                            );
+                                            Navigate(SaveImage);
+                                            ,
+                                            Set(
+                                                VarPhoto,
+                                                GlryImagesFS.Selected.Image.Full
+                                            );
+                                            Set(
+                                                VarPenInput,
+                                                GlryImagesFS.Selected.EditedImage.Full
+                                            );
+                                            Navigate(SaveImage);
+                                        )
+                                    );
                                 Visible: =true//If(UP,false)
                                 Width: =Image9_2.Width
                                 X: =Image9_2.X
