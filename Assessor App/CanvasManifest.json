@@ -148,6 +148,7 @@
     "FindingScreen_1",
     "TryOutVideoAddMediaControl",
     "TryOutVideoFromControl",
-    "TextDetectionScreen"
+    "TextDetectionScreen",
+    "Screen1"
   ]
 }

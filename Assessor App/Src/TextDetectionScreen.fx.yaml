@@ -103,7 +103,9 @@ TextDetectionScreen As screen:
 
             TextRecognizer1 As TextRecognizer:
                 BorderColor: =RGBA(210, 208, 206, 1)
-                DefaultImage: =VarTextExtract
+                DefaultImage: |-
+                    =//VarTextExtract
+                    //Image2.Image
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -158,6 +160,7 @@ TextDetectionScreen As screen:
             AlignInContainer: =AlignInContainer.Center
             Fill: =AllScreensCSS.RActiveColor
             Height: =50
+            OnSelect: =//TextRecognizer1.filec
             Text: ="Submit Selected Text"
             Width: =250
             ZIndex: =6
