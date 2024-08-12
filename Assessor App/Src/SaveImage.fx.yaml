@@ -170,11 +170,104 @@ SaveImage As screen:
 
     Button4 As button:
         Fill: =RGBA(255, 0, 0, 1)
+        HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |-
-            =Set(VarTextExtract,Image2.Image);
-            Navigate(TextDetectionScreen);
+            =//Set(VarTextExtract,Image2.Image);
+            //Navigate(TextDetectionScreen);
+            Set(
+                TextOutput,
+                TextRecognizationFlow.Run(
+                    {
+                        contentBytes: Image2.Image,
+                        name: "image2.Transparency"
+                    }
+                )
+            );
+            If(
+                IsBlank(TextOutput),
+                Notify(
+                    "Text data not found.",
+                    NotificationType.Error
+                );
+                ,
+                Set(
+                    VarExtractedTextPopup,
+                    true
+                );
+                
+            )
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
         Text: ="Extract Text"
         X: =Parent.Width-Self.Width-100
         Y: =30
         ZIndex: =11
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =120
+        Y: =120
+        ZIndex: =18
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(219, 219, 219, 0.7)
+            Height: =Parent.Height
+            Visible: =VarExtractedTextPopup
+            Width: =Parent.Width
+            ZIndex: =12
+
+        Rectangle4 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =460
+            Visible: =VarExtractedTextPopup
+            Width: =Parent.Width/2
+            X: =(Parent.Width-Self.Width)/2
+            Y: =(Parent.Height-Self.Height)/2
+            ZIndex: =13
+
+        Label11 As label:
+            FontWeight: =FontWeight.Bold
+            Size: =16
+            Text: ="Extracted Text from Image"
+            Visible: =VarExtractedTextPopup
+            Width: =Rectangle4.Width-40
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Rectangle4.Y+20
+            ZIndex: =14
+
+        TextInput2 As text:
+            BorderColor: =RGBA(149, 149, 149, 1)
+            Color: =RGBA(26, 26, 26, 1)
+            Default: =TextOutput.output
+            FocusedBorderThickness: =2
+            Height: =300
+            HoverBorderColor: =RGBA(116, 116, 116, 1)
+            HoverFill: =Self.Fill
+            Visible: =VarExtractedTextPopup
+            Width: =Parent.Width/2.1
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Label11.Y+Label11.Height+20
+            ZIndex: =15
+
+        Button11 As button:
+            Fill: =AllScreensCSS.RActiveColor
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: =Set(VarExtractedTextPopup,false);
+            Text: ="Save"
+            Visible: =VarExtractedTextPopup
+            X: =(Parent.Width-Self.Width)/2
+            Y: =TextInput2.Y+TextInput2.Height+20
+            ZIndex: =16
+
+        Icon10 As icon.Add:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =44
+            Icon: =Icon.Cancel
+            OnSelect: =Set(VarExtractedTextPopup,false);
+            Visible: =VarExtractedTextPopup
+            Width: =44
+            X: =Label11.X+Label11.Width-40
+            Y: =Rectangle4.Y+20
+            ZIndex: =17
 
