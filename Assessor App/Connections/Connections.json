@@ -50,7 +50,8 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "c78d3088-ee44-45ee-aee4-9f449a65957d"
+      "c78d3088-ee44-45ee-aee4-9f449a65957d",
+      "7cab7581-0a00-4879-b44f-e361b5aec77d"
     ],
     "id": "707fd938-90f1-4e0e-b781-260a197bc02c"
   },
@@ -89,6 +90,50 @@
     "dependencies": {},
     "dependents": [],
     "id": "770b88db-d04c-4caf-9de4-fc329131f3b9"
+  },
+  "7cab7581-0a00-4879-b44f-e361b5aec77d": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "707fd938-90f1-4e0e-b781-260a197bc02c": {
+          "value": "shared_commondataserviceforapps"
+        },
+        "workflowDisplayName": {
+          "value": "TextRecognizationFlow"
+        },
+        "workflowEntityId": {
+          "value": "9e73d3c1-a058-ef11-a317-000d3a32fb21"
+        },
+        "workflowName": {
+          "value": "097afb9f-8033-467d-b4e1-686b87a13dfb"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "707fd938-90f1-4e0e-b781-260a197bc02c"
+        },
+        "workflowDisplayName": {
+          "value": "TextRecognizationFlow"
+        },
+        "workflowEntityId": {
+          "value": "9e73d3c1-a058-ef11-a317-000d3a32fb21"
+        },
+        "workflowName": {
+          "value": "097afb9f-8033-467d-b4e1-686b87a13dfb"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "TextRecognizationFlow"
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "707fd938-90f1-4e0e-b781-260a197bc02c"
+    },
+    "dependents": [],
+    "id": "7cab7581-0a00-4879-b44f-e361b5aec77d"
   },
   "c2db23f9-ba3c-4bc8-b95e-e54fb4758ee5": {
     "appActions": [],
