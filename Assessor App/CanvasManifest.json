@@ -101,7 +101,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 1,
+    "BindingErrorCount": 3,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
     "DocumentAppType": "DesktopOrTablet",
@@ -147,8 +147,6 @@
     "SaveImage",
     "FindingScreen_1",
     "TryOutVideoAddMediaControl",
-    "TryOutVideoFromControl",
-    "TextDetectionScreen",
-    "Screen1"
+    "TryOutVideoFromControl"
   ]
 }

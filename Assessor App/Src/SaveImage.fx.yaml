@@ -173,8 +173,8 @@ SaveImage As screen:
         HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |-
             =//Set(VarTextExtract,Image2.Image);
-            //Navigate(TextDetectionScreen);
-            Set(
+            Navigate(TextDetectionScreen);
+            /*Set(
                 TextOutput,
                 TextRecognizationFlow.Run(
                     {
@@ -195,7 +195,7 @@ SaveImage As screen:
                     true
                 );
                 
-            )
+            )*/
         PressedColor: =Self.Color
         PressedFill: =Self.Fill
         Text: ="Extract Text"
