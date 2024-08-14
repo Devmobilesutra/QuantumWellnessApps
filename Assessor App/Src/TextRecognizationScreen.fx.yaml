@@ -25,6 +25,7 @@ TextRecognizationScreen As screen:
         ZIndex: =2
 
     Icon9 As icon.Add:
+        Color: =RGBA(255, 0, 0, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Back()
         X: =40
