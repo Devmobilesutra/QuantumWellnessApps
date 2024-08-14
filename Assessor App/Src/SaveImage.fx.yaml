@@ -173,7 +173,7 @@ SaveImage As screen:
         HoverFill: =ColorFade(Self.Fill, -20%)
         OnSelect: |-
             =//Set(VarTextExtract,Image2.Image);
-            Navigate(TextDetectionScreen);
+            //Navigate(TextDetectionScreen);
             /*Set(
                 TextOutput,
                 TextRecognizationFlow.Run(
@@ -239,7 +239,7 @@ SaveImage As screen:
         TextInput2 As text:
             BorderColor: =RGBA(149, 149, 149, 1)
             Color: =RGBA(26, 26, 26, 1)
-            Default: =TextOutput.output
+            Default: =//TextOutput.output
             FocusedBorderThickness: =2
             Height: =300
             HoverBorderColor: =RGBA(116, 116, 116, 1)
