@@ -1124,7 +1124,7 @@ TripReportNewScreen As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =ctnHeaderTRS_1.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Trip Report"
+                Text: ="Inspection Report"
                 Width: =If(Parent.Width>821,Parent.Width/1.8,Parent.Width/2.2)
                 X: =imgLogoTRS_1.Width
                 ZIndex: =2
