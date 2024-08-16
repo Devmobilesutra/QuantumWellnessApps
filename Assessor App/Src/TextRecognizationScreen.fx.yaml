@@ -6,7 +6,7 @@ TextRecognizationScreen As screen:
         DisabledColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
         DisplayMode: =DisplayMode.Edit
-        FillColor: =RGBA(61, 95, 174, 1)
+        FillColor: =RGBA(255, 0, 0, 1)
         FontColor: =RGBA(255, 255, 255, 1)
         Height: =Parent.Height
         Width: =Parent.Width/2

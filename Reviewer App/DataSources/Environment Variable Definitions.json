@@ -11,8 +11,8 @@
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
       "apiid": "API Id",
-      "bot_environmentvariabledefinition": "Copilots",
-      "botcomponent_environmentvariabledefinition": "Copilot components",
+      "bot_environmentvariabledefinition": "Chatbots",
+      "botcomponent_environmentvariabledefinition": "Chatbot subcomponents",
       "componentstate": "Component State",
       "createdby": "Created By",
       "createdon": "Created On",

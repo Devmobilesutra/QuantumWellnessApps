@@ -6339,7 +6339,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupRemoveEditBank",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6391,7 +6391,7 @@
       "MetaDataIDKey": "",
       "Name": "grpSuccessEditBank",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
