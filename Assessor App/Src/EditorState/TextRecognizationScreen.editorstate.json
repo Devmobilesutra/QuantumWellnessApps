@@ -596,7 +596,14 @@
         },
         "BorderColor",
         "FontColor",
-        "FillColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "FillColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DisabledBorderColor",
         "DisabledColor",
         "DisabledFill",
