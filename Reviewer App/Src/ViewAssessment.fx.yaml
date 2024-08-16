@@ -1247,7 +1247,7 @@ ViewAssessment As screen:
                 FontWeight: =Header.FontWeight
                 Height: =Parent.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Assessment"
+                Text: ="Product Inspection"
                 Width: =ctnHeaderViewAssessment.Width/1.6
                 X: =imgLogoVA.Width+imgLogoVA.X
                 ZIndex: =8

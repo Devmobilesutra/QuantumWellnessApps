@@ -653,7 +653,7 @@ BankScreen As screen:
             PressedFill: =RGBA(0, 0, 0, 1)
             Reset: =true
             SearchFields: =["mail"]
-            SearchItems: =[]
+            SearchItems: =Search(ReportingGroup.mail,cboxReviewverBS.SearchText,mail)
             SelectionFill: =RGBA(0, 0, 0, 1)
             Visible: =varComment1
             Width: =500

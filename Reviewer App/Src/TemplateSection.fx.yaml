@@ -801,7 +801,7 @@ TemplateSection As screen:
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     PressedFill: =RGBA(255, 255, 255, 1)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Choices('sectionIsApplicable (templateSections)',DataCardValue7_1.SearchText)
                     SelectionFill: =RGBA(77, 77, 77, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
