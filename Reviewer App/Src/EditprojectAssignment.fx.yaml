@@ -225,7 +225,7 @@ EditprojectAssignment As screen:
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Reset: =true
                         SearchFields: =["shlaf_name"]
-                        SearchItems: =[]
+                        SearchItems: =Search(schindlerClients,cboxClientEditA.SearchText,shlaf_name)
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
@@ -267,7 +267,7 @@ EditprojectAssignment As screen:
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Reset: =true
                         SearchFields: =["shlaf_gonumber"]
-                        SearchItems: =[]
+                        SearchItems: =Search(Filter(schindlerBanks,clientId.name=cboxClientEditA.Selected.name).goNumber,cboxGonumberEditA.SearchText,shlaf_gonumber)
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3

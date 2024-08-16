@@ -228,7 +228,7 @@ EditBank As screen:
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Reset: =true
                         SearchFields: =["shlaf_name"]
-                        SearchItems: =[]
+                        SearchItems: =Search(Sort(schindlerClients,name,SortOrder.Ascending),cboxClientEditBank.SearchText,shlaf_name)
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Width: =Parent.Width/3
@@ -364,7 +364,7 @@ EditBank As screen:
                         PressedColor: =RGBA(0, 0, 0, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         SearchFields: =["quantum_product_name"]
-                        SearchItems: =[]
+                        SearchItems: =Search(Sort(Filter(product,product_Name="7000"||product_Name="5500"||product_Name="S9300"),product_Name,SortOrder.Ascending),cboxProductTypeEditBank.SearchText,quantum_product_name)
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Size: =referenceCSS.RInputFontSize

@@ -1189,7 +1189,7 @@ TemplateCheckpointItem As screen:
                     Items: =Choices('checkItemIsApplicable (templateCheckpointsItems)')
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Choices('checkItemIsApplicable (templateCheckpointsItems)',DataCardValue21_1.SearchText)
                     SelectionFill: =RGBA(77, 77, 77, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
@@ -1270,7 +1270,7 @@ TemplateCheckpointItem As screen:
                     Items: =Choices('checkpointItemImage (templateCheckpointsItems)')
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["Value"]
-                    SearchItems: =[]
+                    SearchItems: =Choices('checkpointItemImage (templateCheckpointsItems)',DataCardValue23_1.SearchText)
                     SelectionFill: =RGBA(77, 77, 77, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
