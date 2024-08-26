@@ -633,7 +633,7 @@ AddBanks As screen:
                         PressedFill: =RGBA(0, 0, 0, 0)
                         Reset: =true
                         SearchFields: =["shlaf_name"]
-                        SearchItems: =Search(Sort(schindlerClients,name,SortOrder.Ascending),cboxClientNameNB.SearchText,shlaf_name)
+                        SearchItems: =[]
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Size: =referenceCSS.RInputFontSize
@@ -778,7 +778,7 @@ AddBanks As screen:
                         PressedColor: =RGBA(0, 0, 0, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         SearchFields: =["quantum_product_name"]
-                        SearchItems: =Search(Sort(product,product_Name),cboxProductTypeNB.SearchText,quantum_product_name)
+                        SearchItems: =[]
                         SelectionFill: =RGBA(0, 0, 0, 1)
                         SelectMultiple: =false
                         Size: =referenceCSS.RInputFontSize
