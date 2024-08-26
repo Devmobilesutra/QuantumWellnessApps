@@ -443,7 +443,7 @@ projectAssignment As screen:
                             PressedFill: =RGBA(0, 0, 0, 0)
                             Reset: =true
                             SearchFields: =["shlaf_name"]
-                            SearchItems: =Search(Sort(schindlerClients,name,SortOrder.Ascending),cboxClientNA.SearchText,shlaf_name)
+                            SearchItems: =[]
                             SelectionFill: =RGBA(0, 0, 0, 1)
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
@@ -491,7 +491,7 @@ projectAssignment As screen:
                             PaddingTop: =0
                             Reset: =true
                             SearchFields: =["shlaf_gonumber"]
-                            SearchItems: =Search(Filter(schindlerBanks,clientId.name=cboxClientNA.Selected.name).goNumber,cboxGONumberNA.SearchText,shlaf_gonumber)
+                            SearchItems: =[]
                             SelectionFill: =RGBA(0, 0, 0, 1)
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
@@ -670,7 +670,7 @@ projectAssignment As screen:
                             PaddingTop: =0
                             Reset: =true
                             SearchFields: =["displayName"]
-                            SearchItems: =Search(Sort(AssessorAD.displayName,displayName,SortOrder.Ascending),cboxAssessorNA.SearchText,displayName)
+                            SearchItems: =[]
                             SelectionFill: =RGBA(0, 0, 0, 1)
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize
@@ -707,7 +707,7 @@ projectAssignment As screen:
                             PressedFill: =RGBA(0, 0, 0, 1)
                             Reset: =true
                             SearchFields: =["displayName"]
-                            SearchItems: =Search(Sort(ReviewerAD.displayName,displayName,SortOrder.Ascending),cboxReviewerNA.SearchText,displayName)
+                            SearchItems: =[]
                             SelectionFill: =RGBA(0, 0, 0, 1)
                             SelectMultiple: =false
                             Size: =referenceCSS.RInputFontSize

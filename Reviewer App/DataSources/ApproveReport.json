@@ -1,7 +1,7 @@
 [
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
-    "FlowNameId": "b8741565-075f-4f80-8456-4f0994f563c9",
+    "FlowNameId": "18d64eaa-3b40-4905-9694-2a078ca05341",
     "Name": "ApproveReport",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",

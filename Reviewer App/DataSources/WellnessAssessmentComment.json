@@ -1,7 +1,7 @@
 [
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
-    "FlowNameId": "ba3608af-4236-420b-8b9f-6ba8435c4521",
+    "FlowNameId": "55fcbcac-f97b-4cb6-8650-ee2701ea1439",
     "Name": "WellnessAssessmentComment",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",

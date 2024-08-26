@@ -1011,7 +1011,7 @@ TemplateCheckpoint As screen:
                     Items: =Choices('checkIsApplicable (templateCheckpoints)')
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["Value"]
-                    SearchItems: =Choices('checkIsApplicable (templateCheckpoints)',DataCardValue12_1.SearchText)
+                    SearchItems: =[]
                     SelectionColor: =RGBA(255,255,255,1)
                     SelectionFill: =RGBA(77, 77, 77, 1)
                     SelectMultiple: =false
