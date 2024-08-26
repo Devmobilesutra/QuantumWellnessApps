@@ -23,7 +23,6 @@
       "envdefinition_envdefinition": "Environment Variable Definitions",
       "environmentvariabledefinition_AsyncOperations": "System Jobs",
       "environmentvariabledefinition_BulkDeleteFailures": "Bulk Delete Failures",
-      "environmentvariabledefinition_credential_certificate": "Credentials (environmentvariabledefinition_credential_certificate)",
       "environmentvariabledefinition_credential_cyberarkobject": "Credentials (environmentvariabledefinition_credential_cyberarkobject)",
       "environmentvariabledefinition_credential_cyberarksafe": "Credentials (environmentvariabledefinition_credential_cyberarksafe)",
       "environmentvariabledefinition_credential_cyberarkusername": "Credentials (environmentvariabledefinition_credential_cyberarkusername)",
