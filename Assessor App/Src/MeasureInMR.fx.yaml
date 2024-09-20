@@ -214,6 +214,7 @@ MeasureInMR As screen:
 
     Rectangle5_3 As rectangle:
         Fill: =AllScreensCSS.RActiveColor
+        Height: =80
         Width: =Parent.Width
         ZIndex: =8
 
@@ -224,23 +225,27 @@ MeasureInMR As screen:
         Size: =20
         Text: ="Measure"
         X: =(Parent.Width-Self.Width)/2
-        Y: =30
+        Y: =20
         ZIndex: =9
 
     Icon2_1 As icon.Reset:
         Color: =RGBA(255, 255, 255, 1)
+        Height: =44
         Icon: =Icon.Reset
         OnSelect: |-
             =UpdateContext({galleryvisible:false})
-        X: =Parent.Width-80
-        Y: =15
+        Width: =44
+        X: =Parent.Width-Self.Width-20
+        Y: =18
         ZIndex: =10
 
     Icon1_1 As icon.BackArrow:
         Color: =RGBA(255, 255, 255, 1)
+        Height: =44
         Icon: =Icon.BackArrow
         OnSelect: =Back(ScreenTransition.Cover)
-        X: =18
-        Y: =15
+        Width: =44
+        X: =20
+        Y: =20
         ZIndex: =11
 
