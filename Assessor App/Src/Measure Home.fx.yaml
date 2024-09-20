@@ -1,6 +1,7 @@
 "'Measure Home' As screen":
 
     Button1_4 As button:
+        Fill: =AllScreensCSS.RActiveColor
         Height: =70
         OnSelect: |-
             =Navigate(MeasureInMR,ScreenTransition.Cover,{Measurement:"Distance"})
@@ -12,6 +13,7 @@
         ZIndex: =1
 
     Button2_1 As button:
+        Fill: =AllScreensCSS.RActiveColor
         Height: =70
         OnSelect: |-
             =Navigate(MeasureInMR,ScreenTransition.Cover,{Measurement:"Area"})
@@ -23,6 +25,7 @@
         ZIndex: =2
 
     Button3_1 As button:
+        Fill: =AllScreensCSS.RActiveColor
         Height: =70
         OnSelect: |-
             =Navigate(MeasureInMR,ScreenTransition.Cover,{Measurement:"Volume"})
@@ -34,6 +37,7 @@
         ZIndex: =3
 
     Rectangle5 As rectangle:
+        Fill: =AllScreensCSS.RActiveColor
         Width: =Parent.Width
         ZIndex: =4
 
@@ -46,4 +50,12 @@
         X: =(Parent.Width-Self.Width)/2
         Y: =30
         ZIndex: =5
+
+    Icon1_2 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =18
+        Y: =15
+        ZIndex: =6
 

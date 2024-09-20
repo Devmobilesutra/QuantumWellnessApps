@@ -2474,7 +2474,14 @@
     "MeasureInMR1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "FillColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "RGBA(56, 96, 178, 1)",
+          "InvariantPropertyName": "FillColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TextColor",
         "BorderFillColor",
         "DisabledContentColor",
@@ -2484,7 +2491,14 @@
         "PressedFillColor",
         "PressedBorderColor",
         "HoverContentColor",
-        "HoverFillColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "RGBA(47, 81, 151, 1)",
+          "InvariantPropertyName": "HoverFillColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "HoverBorderColor",
         {
           "AFDDataSourceName": "",
@@ -2559,7 +2573,7 @@
         {
           "Category": "Design",
           "PropertyName": "FillColor",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -2609,7 +2623,7 @@
         {
           "Category": "Design",
           "PropertyName": "HoverFillColor",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -2663,7 +2677,14 @@
     "Rectangle5_3": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Fill",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "RGBA(56, 96, 178, 1)",
+          "InvariantPropertyName": "Fill",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DisabledFill",
         "PressedFill",
         "HoverFill",
@@ -2710,7 +2731,7 @@
         {
           "Category": "Design",
           "PropertyName": "Fill",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
