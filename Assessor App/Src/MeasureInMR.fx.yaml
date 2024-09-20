@@ -38,7 +38,7 @@ MeasureInMR As screen:
             PaddingTop: =0
             Size: =16
             Text: |-
-                ="Height: " & ThisItem.Height
+                ="Height: " & ThisItem.Height & "  "& "Area: " & ThisItem.Area
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.Width-30 //Parent.TemplateWidth - 86
             X: =20
@@ -57,7 +57,7 @@ MeasureInMR As screen:
             PaddingTop: =0
             Size: =16
             Text: |-
-                ="Length: " & ThisItem.Length
+                ="Length: " & ThisItem.Length & "  " & "Volume: " & ThisItem.Volume
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.Width-30 //Parent.TemplateWidth - 86
             X: =20
