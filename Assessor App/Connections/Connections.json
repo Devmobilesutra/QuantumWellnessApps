@@ -5,6 +5,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "7eef6a91-2391-4b05-9171-8012f1d0ba7b": {
+          "value": "shared_commondataserviceforapps"
+        },
         "workflowDisplayName": {
           "value": "TextRecognizationFlow"
         },
@@ -16,6 +19,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "7eef6a91-2391-4b05-9171-8012f1d0ba7b"
+        },
         "workflowDisplayName": {
           "value": "TextRecognizationFlow"
         },

@@ -3756,6 +3756,38 @@ FindingScreen As screen:
                                 Width: =180
                                 ZIndex: =2
 
+                        ctnAddImageFS_3 As groupContainer.horizontalAutoLayoutContainer:
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutWrap: =true
+                            PaddingLeft: =5
+                            PaddingTop: =5
+                            ZIndex: =8
+
+                            Button10 As button:
+                                AlignInContainer: =AlignInContainer.Center
+                                Fill: =AllScreensCSS.RActiveColor
+                                OnSelect: =Navigate('Measure Home',ScreenTransition.Cover)
+                                Text: ="Measure"
+                                X: =845
+                                Y: =92
+                                ZIndex: =1
+
+                            lblAddImageFS_5 As label:
+                                Color: =AllScreensCSS.RColorBlack
+                                DisplayMode: |-
+                                    =If(
+                                        CountRows(GlryImagesFS.AllItems) = 6,DisplayMode.Disabled,DisplayMode.Edit)
+                                Font: =AllScreensCSS.RFont
+                                FontWeight: =FontWeight.Bold
+                                Size: =18
+                                Text: ="(Distance, Area, Volume)"
+                                Width: =400
+                                ZIndex: =2
+
                         ctnAddImageFS_2 As groupContainer.horizontalAutoLayoutContainer:
                             FillPortions: =0
                             Height: =50
@@ -3763,7 +3795,7 @@ FindingScreen As screen:
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutWrap: =true
-                            ZIndex: =8
+                            ZIndex: =9
 
                             lblAddImageFS_4 As label:
                                 Color: =AllScreensCSS.RColorBlack
@@ -4193,7 +4225,7 @@ FindingScreen As screen:
                             Height: =570
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
-                            ZIndex: =9
+                            ZIndex: =10
 
                             Video1_1 As videoPlayback:
                                 BorderColor: =RGBA(149, 149, 149, 1)
@@ -4358,6 +4390,7 @@ FindingScreen As screen:
                                         ZIndex: =4
 
                             Button14 As button:
+                                Fill: =AllScreensCSS.RActiveColor
                                 OnSelect: =SubmitForm(Form4)
                                 Text: ="Upload"
                                 Width: =150
@@ -4366,6 +4399,7 @@ FindingScreen As screen:
                                 ZIndex: =6
 
                             Button15 As button:
+                                Fill: =AllScreensCSS.RActiveColor
                                 OnSelect: =Set(VarViweVideo,true);
                                 Text: ="View"
                                 Visible: |-
@@ -4985,13 +5019,6 @@ FindingScreen As screen:
             X: =(Parent.Width-Self.Width)/2
             Y: =Label2_20.Y+ Label2_20.Height+10
             ZIndex: =53
-
-    Button10 As button:
-        OnSelect: =Navigate('Measure Home',ScreenTransition.Cover)
-        Text: ="Measure"
-        X: =845
-        Y: =92
-        ZIndex: =60
 
     Grp_MemoryPressure_Confirmation_1 As group:
         Height: =5
