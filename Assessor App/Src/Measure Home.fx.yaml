@@ -1,0 +1,49 @@
+"'Measure Home' As screen":
+
+    Button1_4 As button:
+        Height: =70
+        OnSelect: |-
+            =Navigate(MeasureInMR,ScreenTransition.Cover,{Measurement:"Distance"})
+        Size: =24
+        Text: ="Distance"
+        Width: =280
+        X: =(Parent.Width-Self.Width)/2
+        Y: =247
+        ZIndex: =1
+
+    Button2_1 As button:
+        Height: =70
+        OnSelect: |-
+            =Navigate(MeasureInMR,ScreenTransition.Cover,{Measurement:"Area"})
+        Size: =24
+        Text: ="Area"
+        Width: =280
+        X: =(Parent.Width-Self.Width)/2
+        Y: =398
+        ZIndex: =2
+
+    Button3_1 As button:
+        Height: =70
+        OnSelect: |-
+            =Navigate(MeasureInMR,ScreenTransition.Cover,{Measurement:"Volume"})
+        Size: =24
+        Text: ="Volume"
+        Width: =280
+        X: =(Parent.Width-Self.Width)/2
+        Y: =534
+        ZIndex: =3
+
+    Rectangle5 As rectangle:
+        Width: =Parent.Width
+        ZIndex: =4
+
+    Label7 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =20
+        Text: ="Measure"
+        X: =(Parent.Width-Self.Width)/2
+        Y: =30
+        ZIndex: =5
+

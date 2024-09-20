@@ -36,7 +36,6 @@
       "dynamicschema": false,
       "enableappembeddingux": false,
       "enablecanvasappruntimecopilot": false,
-      "enablechatbotfeature": false,
       "enablecomponentnamemaps": true,
       "enablecomponentscopeoldbehavior": false,
       "enablecopilotanswercontrol": false,
@@ -87,7 +86,6 @@
       "rtlsupport": false,
       "showclassicthemes": false,
       "smartemaildatacard": false,
-      "sqlstoredprocedureenabled": false,
       "supportcolumnnamesasidentifiers": true,
       "tabledoesntwraprecords": true,
       "usedisplaynamemetadata": true,
@@ -148,6 +146,8 @@
     "FindingScreen_1",
     "TryOutVideoAddMediaControl",
     "TryOutVideoFromControl",
-    "TextRecognizationScreen"
+    "TextRecognizationScreen",
+    "Measure Home",
+    "MeasureInMR"
   ]
 }

@@ -4986,6 +4986,13 @@ FindingScreen As screen:
             Y: =Label2_20.Y+ Label2_20.Height+10
             ZIndex: =53
 
+    Button10 As button:
+        OnSelect: =Navigate('Measure Home',ScreenTransition.Cover)
+        Text: ="Measure"
+        X: =845
+        Y: =92
+        ZIndex: =60
+
     Grp_MemoryPressure_Confirmation_1 As group:
         Height: =5
         Width: =5
