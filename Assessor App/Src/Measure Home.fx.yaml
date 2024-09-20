@@ -9,7 +9,7 @@
         Text: ="Distance"
         Width: =280
         X: =(Parent.Width-Self.Width)/2
-        Y: =247
+        Y: =Parent.Height/4
         ZIndex: =1
 
     Button2_1 As button:
@@ -21,7 +21,7 @@
         Text: ="Area"
         Width: =280
         X: =(Parent.Width-Self.Width)/2
-        Y: =398
+        Y: =Button1_4.Y+150
         ZIndex: =2
 
     Button3_1 As button:
@@ -33,7 +33,7 @@
         Text: ="Volume"
         Width: =280
         X: =(Parent.Width-Self.Width)/2
-        Y: =534
+        Y: =Button2_1.Y+150
         ZIndex: =3
 
     Rectangle5 As rectangle:

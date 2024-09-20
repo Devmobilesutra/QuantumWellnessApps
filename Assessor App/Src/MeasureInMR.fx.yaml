@@ -36,11 +36,11 @@ MeasureInMR As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =21
+            Size: =16
             Text: |-
                 ="Height: " & ThisItem.Height
             VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
+            Width: =Parent.Width-30 //Parent.TemplateWidth - 86
             X: =20
             Y: =Title2_2.Y+Title2_2.Height
             ZIndex: =2
@@ -55,11 +55,11 @@ MeasureInMR As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =21
+            Size: =16
             Text: |-
                 ="Length: " & ThisItem.Length
             VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
+            Width: =Parent.Width-30 //Parent.TemplateWidth - 86
             X: =20
             Y: =Title2_1.Y+Title2_1.Height
             ZIndex: =3
@@ -74,11 +74,11 @@ MeasureInMR As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =21
+            Size: =16
             Text: |-
                 ="Unit: " & ThisItem.Unit
             VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
+            Width: =Parent.Width-30 //Parent.TemplateWidth - 86
             X: =20
             Y: =Title2.Y+Title2.Height
             ZIndex: =4
@@ -93,11 +93,11 @@ MeasureInMR As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =21
+            Size: =16
             Text: |-
                 ="Label: " & ThisItem.Label
             VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
+            Width: =Parent.Width-30 //Parent.TemplateWidth - 86
             X: =20
             Y: =14
             ZIndex: =5
