@@ -142,8 +142,8 @@ MeasureInMR As screen:
                 "Inches",
                 'MeasureInMR.Units'.MSR_Inches
             )
-        Width: =433
-        X: =128
+        Width: =Parent.Width/2-40
+        X: =20
         Y: =205
         ZIndex: =2
 
@@ -151,8 +151,8 @@ MeasureInMR As screen:
         Height: =70
         Items: =["Centimeters","Meters","Feet","Inches"]
         Size: =21
-        Width: =575
-        X: =33
+        Width: =Parent.Width/2-40
+        X: =20
         Y: =114
         ZIndex: =3
 
