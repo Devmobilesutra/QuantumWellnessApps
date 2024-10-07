@@ -78,7 +78,9 @@
       "pdffunction": false,
       "powerfxdecimal": false,
       "powerfxv1": false,
+      "preferpayamlv3inux": false,
       "primaryoutputpropertycoerciondeprecated": true,
+      "proactivecontrolrename": false,
       "projectionmapping": true,
       "reliableconcurrent": true,
       "reservedkeywords": false,
@@ -99,7 +101,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 0,
+    "BindingErrorCount": 10,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
     "DocumentAppType": "DesktopOrTablet",
