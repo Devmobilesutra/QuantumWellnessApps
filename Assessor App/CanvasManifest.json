@@ -117,13 +117,13 @@
     "Id": "8cd35035-106b-400f-b6f8-853e7bdf1cfc",
     "InstrumentationKey": "",
     "ManualOfflineProfileId": "",
-    "Name": "Assessor App",
+    "Name": "Inspection Assessor App",
     "OriginatingVersion": "1.320",
     "ParserErrorCount": 0,
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "Assessor App",
+    "AppName": "Inspection Assessor App",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",
