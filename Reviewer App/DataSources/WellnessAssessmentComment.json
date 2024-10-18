@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "55fcbcac-f97b-4cb6-8650-ee2701ea1439",
+    "Name": "WellnessAssessmentComment",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "edb23a35-0d0c-ed11-82e5-0022481e0393"
+  }
+]

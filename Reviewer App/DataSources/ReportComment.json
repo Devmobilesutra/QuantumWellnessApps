@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "b7a70590-b17e-43f0-9228-e5d1d32f7b92",
+    "Name": "ReportComment",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "f392b87f-4af1-ec11-bb3d-000d3a4ee143"
+  }
+]
