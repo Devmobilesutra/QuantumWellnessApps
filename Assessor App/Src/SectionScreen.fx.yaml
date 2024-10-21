@@ -562,8 +562,16 @@ SectionScreen As screen:
                         '#CopilotOverlayLabel': ="Filtered"
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: =(CountRows(chglryCheckpointSS.AllItems)*chglryCheckpointSS.TemplateHeight)
-                        Items: |
-                            =Sort(Filter(GC_templateCheckpoints,seriesName=CId && sectionId.sectionId = ThisItem.sectionId,checkpointName),Value(checkpointSequence),SortOrder.Ascending)
+                        Items: |-
+                            =Sort(
+                                Filter(
+                                    GC_templateCheckpoints,
+                                    seriesName = CId && sectionId.sectionId = ThisItem.sectionId,
+                                    checkpointName
+                                ),
+                                Value(checkpointSequence),
+                                SortOrder.Ascending
+                            )
                         Layout: =Layout.Vertical
                         OnSelect: |-
                             =Set(
